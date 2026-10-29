@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:06:49.898Z",
+  "updated": "2026-10-29T18:06:51.300Z",
   "version": 1,
   "artists": [
     {
@@ -102,7 +102,7 @@
       "genre": "Progressive Rock",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 350,
@@ -126,7 +126,7 @@
         "Seamus",
         "Echoes"
       ],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 400,
