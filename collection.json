@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:21:58.668Z",
+  "updated": "2026-10-29T18:22:02.538Z",
   "version": 1,
   "artists": [
     {
@@ -1007,39 +1007,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "e0e1acd9-a021-437f-9614-3ce1823f1424"
-    },
-    {
-      "id": "94628d9d-4c34-4cae-b60f-f22fa8c0af03",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Sonic Origami",
-      "year": 1998,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/ba0a82c4-809e-36e1-b3e0-6fe10737e80a/front-500",
-      "tracks": [
-        "Between Two Worlds",
-        "I Hear Voices",
-        "Perfect Little Heart",
-        "Heartless Land",
-        "Only the Young",
-        "In the Moment",
-        "Question",
-        "Change",
-        "Shelter From the Rain",
-        "Everything in Life",
-        "Across the Miles",
-        "Feels Like",
-        "The Golden Palace",
-        "Sweet Pretender"
-      ],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "ba0a82c4-809e-36e1-b3e0-6fe10737e80a"
     }
   ]
 }
