@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T17:50:56.677Z",
+  "updated": "2026-10-29T18:03:24.075Z",
   "version": 1,
   "artists": [
     {
@@ -432,7 +432,7 @@
       "genre": "Rock",
       "cover": "",
       "tracks": [],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
       "price": null,
