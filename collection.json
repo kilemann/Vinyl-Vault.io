@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:06:40.244Z",
+  "updated": "2026-10-29T18:06:49.898Z",
   "version": 1,
   "artists": [
     {
@@ -34,7 +34,7 @@
       "genre": "Psychedelic Rock",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 450,
@@ -51,7 +51,7 @@
       "genre": "Psychedelic Rock",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 380,
@@ -85,7 +85,7 @@
       "genre": "Progressive Rock",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 520,
