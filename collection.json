@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:38:24.227Z",
+  "updated": "2026-10-29T19:38:56.869Z",
   "version": 1,
   "artists": [
     {
@@ -3261,7 +3261,7 @@
         "From Rochdale to Ocho Rios",
         "Everything You’ve Wanted to Know About !!! (Exclamation Marks)"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
       "price": 100,
