@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:07:01.821Z",
+  "updated": "2026-10-29T18:07:13.330Z",
   "version": 1,
   "artists": [
     {
@@ -449,7 +449,7 @@
       "genre": "Heavy Metal",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 400,
@@ -466,7 +466,7 @@
       "genre": "Heavy Metal",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 380,
@@ -492,7 +492,7 @@
         "Gangland",
         "Hallowed Be Thy Name"
       ],
-      "owned": true,
+      "owned": false,
       "favorite": true,
       "wishlist": false,
       "price": 500,
@@ -519,7 +519,7 @@
         "Sun and Steel",
         "To Tame a Land"
       ],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 420,
