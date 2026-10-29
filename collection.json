@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:22:49.340Z",
+  "updated": "2026-10-29T18:22:53.356Z",
   "version": 1,
   "artists": [
     {
@@ -26,7 +26,7 @@
       "id": "3fffbc24-d1cc-424a-bb85-822bf2b9119c",
       "name": "Led Zeppelin",
       "notes": "",
-      "mbid": ""
+      "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3"
     }
   ],
   "albums": [
