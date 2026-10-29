@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:36.077Z",
+  "updated": "2026-10-29T18:19:40.926Z",
   "version": 1,
   "artists": [
     {
@@ -413,7 +413,13 @@
       "year": 1982,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/935dde7e-8390-39fa-8e0d-1350db96bc3f/front-500",
-      "tracks": [],
+      "tracks": [
+        "Telegraph Road",
+        "Private Investigations",
+        "Industrial Disease",
+        "Love Over Gold",
+        "It Never Rains"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
