@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:43.805Z",
+  "updated": "2026-10-29T18:20:42.444Z",
   "version": 1,
   "artists": [
     {
@@ -488,24 +488,6 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "b286b831-931e-3680-97f1-aa18541f5cc2"
-    },
-    {
-      "id": "3f9bd015-290a-43a8-bb21-f2663af8bb82",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Very Eavy...Very Umble",
-      "year": 1970,
-      "genre": "",
-      "cover": "",
-      "tracks": [],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:04:03.100Z",
-      "rgid": ""
     },
     {
       "id": "db441ba8-b06b-4cbb-89eb-c71628c205c4",
