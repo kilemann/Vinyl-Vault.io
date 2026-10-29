@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:24:46.071Z",
+  "updated": "2026-10-29T18:31:17.055Z",
   "version": 1,
   "artists": [
     {
@@ -149,7 +149,7 @@
         "Brothers in Arms"
       ],
       "owned": true,
-      "favorite": true,
+      "favorite": false,
       "wishlist": false,
       "price": 480,
       "condition": "Near Mint (NM)",
