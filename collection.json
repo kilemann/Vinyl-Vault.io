@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:31:17.055Z",
+  "appVersion": "1.4.0",
+  "updated": "2026-10-29T18:59:19.421Z",
   "version": 1,
   "artists": [
     {
@@ -21,6 +21,12 @@
       "name": "Led Zeppelin",
       "notes": "",
       "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3"
+    },
+    {
+      "id": "5226a0cc-2a7b-4571-9726-7e45899d8be9",
+      "name": "Jokke",
+      "notes": "",
+      "mbid": ""
     }
   ],
   "albums": [
