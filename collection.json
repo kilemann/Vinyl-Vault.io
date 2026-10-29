@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:15.225Z",
+  "updated": "2026-10-29T18:19:16.532Z",
   "version": 1,
   "artists": [
     {
@@ -986,7 +986,20 @@
       "year": 1995,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/01d6762d-007e-3258-bc6d-1d58ce7b48e9/front-500",
-      "tracks": [],
+      "tracks": [
+        "Against the Odds",
+        "Sweet Sugar",
+        "Time of Revelation",
+        "Mistress of All Time",
+        "Universal Wheels",
+        "Fear of Falling",
+        "Spirit of Freedom",
+        "Logical Progression",
+        "Love in Silence",
+        "Words in the Distance",
+        "Fires of Hell",
+        "Dream On"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
