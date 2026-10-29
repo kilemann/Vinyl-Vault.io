@@ -1,0 +1,6 @@
+{
+  "name": "vinyl-vault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vinyl Vault – oversikt over vinylsamlingen. Én HTML-fil, data i localStorage."
+}
