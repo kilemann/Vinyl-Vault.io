@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:28:15.255Z",
+  "updated": "2026-10-29T19:28:16.891Z",
   "version": 1,
   "artists": [
     {
@@ -3012,7 +3012,17 @@
       "year": 1986,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/5ee64e49-30d1-3803-a871-f1b1159fde3c/front-500",
-      "tracks": [],
+      "tracks": [
+        "Cinema",
+        "Juliet",
+        "Just Another Heartache",
+        "Other Side of You",
+        "Hit the Fan",
+        "One From the Heart",
+        "Salty Salty",
+        "White Boy",
+        "A Veteran’s Song"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3030,7 +3040,18 @@
       "year": 1989,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/1e8138bc-c614-3217-b0de-bc2e03b4c9dc/front-500",
-      "tracks": [],
+      "tracks": [
+        "We Are Animals",
+        "Lady Luck",
+        "Hang on to a Dream",
+        "Piece of My Heart",
+        "Trouble",
+        "The Key",
+        "Back to School",
+        "Girls",
+        "Donna - Get Off That Crack",
+        "Helpless"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
