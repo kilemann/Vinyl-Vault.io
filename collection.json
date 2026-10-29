@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:18:57.359Z",
+  "updated": "2026-10-29T19:20:26.696Z",
   "version": 1,
   "artists": [
     {
@@ -1571,9 +1571,9 @@
       "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 200,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2025-10-24",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6"
