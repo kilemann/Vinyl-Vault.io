@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:20:42.444Z",
+  "updated": "2026-10-29T18:21:29.134Z",
   "version": 1,
   "artists": [
     {
@@ -989,37 +989,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "b758605b-912c-387f-9adc-fbfc42ed3000"
-    },
-    {
-      "id": "131e2414-a9cf-41c1-bf3b-a915b4cc1844",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Sea of Light",
-      "year": 1995,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/01d6762d-007e-3258-bc6d-1d58ce7b48e9/front-500",
-      "tracks": [
-        "Against the Odds",
-        "Sweet Sugar",
-        "Time of Revelation",
-        "Mistress of All Time",
-        "Universal Wheels",
-        "Fear of Falling",
-        "Spirit of Freedom",
-        "Logical Progression",
-        "Love in Silence",
-        "Words in the Distance",
-        "Fires of Hell",
-        "Dream On"
-      ],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "01d6762d-007e-3258-bc6d-1d58ce7b48e9"
     },
     {
       "id": "0ebeaee4-5d5a-4f88-b059-a40d0aeedd56",
