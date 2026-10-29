@@ -1,5 +1,14 @@
 # Endringslogg – Vinyl Vault
 
+## 1.4.0 – 2026-10-29
+Raskere coverbilder:
+- Ny GitHub-jobb «Lagre cover» henter cover fra Cover Art Archive (250 og 500 px) og lagrer dem i repoet under `covers/`.
+  Den kjører automatisk når samlingen endres. Egne cover-lenker lagres også (opptil 2 MB).
+  Bilder for album som er slettet, ryddes bort. Album uten cover sjekkes på nytt etter 14 dager.
+- Appen viser cover fra repoet (GitHub Pages) når de finnes, ellers fra nettet som før.
+- Hver enhet husker coverbildene etter første visning (service worker `sw.js`), så de vises straks neste gang, også uten nett.
+  Bare bilder bufres. Appen og samlingen hentes alltid fersk.
+
 ## 1.3.0 – 2026-10-29
 Mindre mobildata:
 - Rutenett og lister bruker 250 px-cover fra Cover Art Archive. 500 px brukes bare på albumsiden.

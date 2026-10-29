@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.3.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.4.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -335,11 +335,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.3.0
+   Vinyl Vault v1.4.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.3.0";
+const APP_VERSION = "1.4.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -397,10 +397,29 @@ function coverSvg(al, artistName){
   </svg>`;
 }
 /* big = albumsiden. Ellers brukes 250 px-versjonen fra Cover Art Archive (ca. en tredjedel av dataene) */
+/* Cover lagret i repoet (covers/, lagt dit av GitHub-jobben «Lagre cover») brukes først.
+   Finnes det ikke ennå, hentes bildet fra nettet som før. big = albumsiden (500 px), ellers 250 px. */
+const CAA_RE = /coverartarchive\.org\/release-group\/([0-9a-f-]{36})\/front(?:-(?:250|500|1200))?$/i;
+const COVER_KEY = "vinylVault.covers";
+let coverIndex = (() => { try{ return JSON.parse(localStorage.getItem(COVER_KEY) || "{}") || {}; }catch(e){ return {}; } })();
+function urlKey(u){   // samme som i scripts/fetch-covers.mjs
+  let h = 0x811c9dc5;
+  for (const b of new TextEncoder().encode(String(u).trim())) { h ^= b; h = Math.imul(h, 16777619) >>> 0; }
+  return "u-" + h.toString(16).padStart(8, "0");
+}
+function coverSrc(al, big){
+  const c = String(al.cover || "").trim();
+  if (!isUrl(c) || /^data:/i.test(c)) return { src: c, fb: "" };
+  const m = c.match(CAA_RE);
+  const web = m && !big ? c.replace(/\/front(?:-(?:500|1200))?$/, "/front-250") : c;
+  const e = coverIndex[m ? m[1].toLowerCase() : urlKey(c)];
+  return e && e.s ? { src: big ? e.l : e.s, fb: web } : { src: web, fb: "" };
+}
+function imgErr(i){ const fb = i.dataset.fb; if (fb) { i.removeAttribute("data-fb"); i.src = fb; } else i.remove(); }
 function coverHtml(al, big = false){
   const name = artistName(al.artistId);
-  const src = big ? al.cover : String(al.cover || "").replace(/(coverartarchive\.org\/release-group\/[0-9a-f-]{36}\/front)-(500|1200)$/, "$1-250");
-  const img = isUrl(src) ? `<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
+  const { src, fb } = coverSrc(al, big);
+  const img = src ? `<img src="${esc(src)}"${fb ? ` data-fb="${esc(fb)}"` : ""} alt="" loading="lazy" referrerpolicy="no-referrer" onerror="imgErr(this)">` : "";
   return coverSvg(al, name) + img;
 }
 const isUrl = s => /^(https?:\/\/|data:image\/)/i.test(String(s || "").trim());
@@ -574,7 +593,19 @@ async function fetchRemote(){
   return { data: validate(await p.json()), sha: null, fromPages: true };
 }
 
+async function loadCoverIndex(){
+  try{
+    const r = await fetch("covers/index.json", { cache: "no-cache" });
+    if (!r.ok) return;
+    const j = await r.json();
+    if (!j || typeof j !== "object" || Array.isArray(j)) return;
+    if (JSON.stringify(j) === JSON.stringify(coverIndex)) return;
+    coverIndex = j; try{ localStorage.setItem(COVER_KEY, JSON.stringify(j)); }catch(e){}
+    if (loadState === "ok" && !$("#modal") && !document.activeElement?.matches("input,textarea,select")) refresh();
+  }catch(e){ /* ingen lokale cover ennå – bildene hentes fra nettet */ }
+}
 async function load(){
+  loadCoverIndex();
   const cached = readCache();
   if (cached){ db = cached; loadState = "ok"; }
   route();
@@ -1659,6 +1690,7 @@ $("#brandDisc").outerHTML = discSvg();
 addEventListener("hashchange", () => { route(); scrollTo({ top: 0 }); });
 drawLock();
 load();
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
 </body>
 </html>

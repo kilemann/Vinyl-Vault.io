@@ -1,4 +1,4 @@
-# Vinyl Vault v1.3.0
+# Vinyl Vault v1.4.0
 Oversikt over vinylsamlingen: hvilke plater du eier, hvilke du mangler og hvor komplett samlingen er per artist.
 
 Åpne: https://kilemann.github.io/Vinyl-Vault.io/
@@ -12,5 +12,11 @@ Oversikt over vinylsamlingen: hvilke plater du eier, hvilke du mangler og hvor k
 - Nøkkelen lagres bare på enheten. Hver lagring blir en commit, så all historikk finnes i GitHub.
 - Album, cover og tracklister kan hentes automatisk fra MusicBrainz og Cover Art Archive (gratis, uten nøkkel).
 - Diagrammene bruker Chart.js fra cdnjs.
+
+## Coverbilder
+- GitHub-jobben **Lagre cover** (`.github/workflows/covers.yml`) kjører når `collection.json` endres.
+  Den henter manglende cover fra Cover Art Archive og legger dem i `covers/`, med oversikt i `covers/index.json`.
+  Kan også startes for hånd under Actions → Lagre cover → Run workflow.
+- Appen viser cover fra `covers/` når de finnes, ellers fra nettet. Hver enhet husker bildene (`sw.js`), så de vises straks neste gang.
 
 Endringer: se [CHANGELOG.md](CHANGELOG.md).
