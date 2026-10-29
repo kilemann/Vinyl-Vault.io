@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:28:13.493Z",
+  "updated": "2026-10-29T19:28:15.255Z",
   "version": 1,
   "artists": [
     {
@@ -2984,7 +2984,17 @@
       "year": 1984,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/4cbdf8de-6f33-40c9-9f15-799c4d5e218b/front-500",
-      "tracks": [],
+      "tracks": [
+        "Party Down",
+        "Ruby Tuesday",
+        "Last Exit Brooklyn",
+        "Moondance",
+        "Love of Freedom",
+        "This Month’s Messiah",
+        "You Don’t Believe in Us",
+        "Sweetheart Tree",
+        "Road to Nowhere"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
