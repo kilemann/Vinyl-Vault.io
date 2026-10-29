@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:40.926Z",
+  "updated": "2026-10-29T18:19:43.805Z",
   "version": 1,
   "artists": [
     {
@@ -465,7 +465,20 @@
       "year": 1991,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/b286b831-931e-3680-97f1-aa18541f5cc2/front-500",
-      "tracks": [],
+      "tracks": [
+        "Calling Elvis",
+        "On Every Street",
+        "When It Comes to You",
+        "Fade to Black",
+        "The Bug",
+        "You and Your Friend",
+        "Heavy Fuel",
+        "Iron Hand",
+        "Ticket to Heaven",
+        "My Parties",
+        "Planet of New Orleans",
+        "How Long"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
