@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:21:54.135Z",
+  "updated": "2026-10-29T18:21:58.668Z",
   "version": 1,
   "artists": [
     {
@@ -1040,36 +1040,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "ba0a82c4-809e-36e1-b3e0-6fe10737e80a"
-    },
-    {
-      "id": "25f459ac-4ed5-4fd9-9309-456c974528b5",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Wake the Sleeper",
-      "year": 2008,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/71c0eb44-d72c-3e43-a664-87f24f3852f8/front-500",
-      "tracks": [
-        "Wake the Sleeper",
-        "Overload",
-        "Tears of the World",
-        "Light of a Thousand Stars",
-        "Heaven’s Rain",
-        "Book of Lies",
-        "What Kind of God",
-        "Ghost of the Ocean",
-        "Angels Walk With You",
-        "Shadow",
-        "War Child"
-      ],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "71c0eb44-d72c-3e43-a664-87f24f3852f8"
     }
   ]
 }
