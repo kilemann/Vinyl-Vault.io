@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:32.564Z",
+  "updated": "2026-10-29T18:19:36.077Z",
   "version": 1,
   "artists": [
     {
@@ -359,7 +359,17 @@
       "year": 1979,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/7e1ada24-6fb0-3b23-a671-9cdaf865c515/front-500",
-      "tracks": [],
+      "tracks": [
+        "Once Upon a Time in the West",
+        "News",
+        "Where Do You Think You’re Going?",
+        "Communiqué",
+        "Lady Writer",
+        "Angel of Mercy",
+        "Portobello Belle",
+        "Single‐Handed Sailor",
+        "Follow Me Home"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
