@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:21:37.322Z",
+  "updated": "2026-10-29T18:21:44.178Z",
   "version": 1,
   "artists": [
     {
@@ -1130,35 +1130,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "2c585f01-3b30-4e67-a760-533d9d151815"
-    },
-    {
-      "id": "8f180ce4-e336-4cfa-8215-8738d66cfc2c",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Living the Dream",
-      "year": 2018,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/0ff5ef80-321e-4d1d-ad90-001d3a8cf774/front-500",
-      "tracks": [
-        "Grazed by Heaven",
-        "Living the Dream",
-        "Take Away My Soul",
-        "Knocking at My Door",
-        "Waters Flowin’",
-        "Rocks in the Road",
-        "It’s All Been Said",
-        "Goodbye to Innocence",
-        "Falling Under Your Spell",
-        "Dreams of Yesteryear"
-      ],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "0ff5ef80-321e-4d1d-ad90-001d3a8cf774"
     }
   ]
 }
