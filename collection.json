@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.4.0",
-  "updated": "2026-10-29T18:59:47.915Z",
+  "updated": "2026-10-29T18:59:49.239Z",
   "version": 1,
   "artists": [
     {
@@ -986,7 +986,21 @@
       "year": 1987,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/83cbbc45-46bc-3175-9aaa-2492d65723a8/front-500",
-      "tracks": [],
+      "tracks": [
+        "Plenty",
+        "Tida er inne",
+        "Midt i en drøm",
+        "CIA",
+        "Det drypper",
+        "Suksess",
+        "Sola skinner",
+        "Spenn",
+        "Gjeld",
+        "Alt kan repareres",
+        "Et hundeliv",
+        "Billa",
+        "To fulle menn"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1004,7 +1018,20 @@
       "year": 1990,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/36e88085-9fb8-377a-98b2-20d64d9633e3/front-500",
-      "tracks": [],
+      "tracks": [
+        "Når du ligger der i mørket",
+        "Selskapssjuk",
+        "Paranoid",
+        "Sitter på en bombe",
+        "Jeg er god",
+        "En perfekt dag",
+        "Et godt parti",
+        "Gutta",
+        "Lei av deg",
+        "En dag",
+        "Telefonen ringer",
+        "Koteletter"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
