@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:23.908Z",
+  "updated": "2026-10-29T18:19:25.496Z",
   "version": 1,
   "artists": [
     {
@@ -1068,7 +1068,19 @@
       "year": 2008,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/71c0eb44-d72c-3e43-a664-87f24f3852f8/front-500",
-      "tracks": [],
+      "tracks": [
+        "Wake the Sleeper",
+        "Overload",
+        "Tears of the World",
+        "Light of a Thousand Stars",
+        "Heaven’s Rain",
+        "Book of Lies",
+        "What Kind of God",
+        "Ghost of the Ocean",
+        "Angels Walk With You",
+        "Shadow",
+        "War Child"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1086,7 +1098,19 @@
       "year": 2011,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/8cc539b4-9d61-4b4c-993c-65834bfd49b2/front-500",
-      "tracks": [],
+      "tracks": [
+        "Nail on the Head",
+        "I Can See You",
+        "Into the Wild",
+        "Money Talk",
+        "I'm Ready",
+        "Trail of Diamonds",
+        "Southern Star",
+        "Believe",
+        "Lost",
+        "T-Bird Angel",
+        "Kiss of Freedom"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
