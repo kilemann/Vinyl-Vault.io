@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:23:54.372Z",
+  "updated": "2026-10-29T18:23:57.954Z",
   "version": 1,
   "artists": [
     {
@@ -1228,7 +1228,16 @@
       "year": 1982,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/61de0438-6c34-363f-904e-b4d6267c79b9/front-500",
-      "tracks": [],
+      "tracks": [
+        "We’re Gonna Groove",
+        "Poor Tom",
+        "I Can’t Quit You Baby",
+        "Walter’s Walk",
+        "Ozone Baby",
+        "Darlene",
+        "Bonzo’s Montreux",
+        "Wearing and Tearing"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
