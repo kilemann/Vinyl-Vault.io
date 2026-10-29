@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:25.496Z",
+  "updated": "2026-10-29T18:19:30.972Z",
   "version": 1,
   "artists": [
     {
@@ -1128,7 +1128,19 @@
       "year": 2014,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/2c585f01-3b30-4e67-a760-533d9d151815/front-500",
-      "tracks": [],
+      "tracks": [
+        "Speed of Sound",
+        "One Minute",
+        "The Law",
+        "Can't Take That Away",
+        "Rock the Foundation",
+        "The Outsider",
+        "Is Anybody Gonna Help Me?",
+        "Looking at You",
+        "Jesse",
+        "Kiss the Rainbow",
+        "Say Goodbye"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1146,7 +1158,18 @@
       "year": 2018,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/0ff5ef80-321e-4d1d-ad90-001d3a8cf774/front-500",
-      "tracks": [],
+      "tracks": [
+        "Grazed by Heaven",
+        "Living the Dream",
+        "Take Away My Soul",
+        "Knocking at My Door",
+        "Waters Flowin’",
+        "Rocks in the Road",
+        "It’s All Been Said",
+        "Goodbye to Innocence",
+        "Falling Under Your Spell",
+        "Dreams of Yesteryear"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
