@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:06.653Z",
+  "updated": "2026-10-29T18:19:09.987Z",
   "version": 1,
   "artists": [
     {
@@ -870,7 +870,18 @@
       "year": 1983,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/d7271a6a-1cb7-3a13-9d12-077f14e77e08/front-500",
-      "tracks": [],
+      "tracks": [
+        "The Other Side of Midnight",
+        "Stay on Top",
+        "Lonely Nights",
+        "Sweet Talk",
+        "Love Is Blind",
+        "Roll-Overture",
+        "Red Lights",
+        "Rollin' the Rock",
+        "Straight Through the Heart",
+        "Weekend Warriors"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -888,7 +899,18 @@
       "year": 1985,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/2e08c703-922c-32e5-adec-1d7e9c4ce15f/front-500",
-      "tracks": [],
+      "tracks": [
+        "Rockarama",
+        "Bad Blood",
+        "Lost One Love",
+        "Angel",
+        "Holding On",
+        "Party Time",
+        "Poor Little Rich Girl",
+        "Skools Burning",
+        "Heartache City",
+        "Night of the Wolf"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
