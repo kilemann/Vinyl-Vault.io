@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:58:41.122Z",
+  "updated": "2026-10-29T20:30:45.443Z",
   "version": 1,
   "artists": [
     {
@@ -63,6 +63,12 @@
       "name": "10cc",
       "notes": "",
       "mbid": "f37c537b-3557-4031-bfd6-ab63ced32854"
+    },
+    {
+      "id": "30ca9c8f-1f93-442c-97e2-f03423061f16",
+      "name": "Pink Floyd",
+      "notes": "",
+      "mbid": "83d91898-7763-47d7-b03b-b92132375c47"
     }
   ],
   "albums": [
