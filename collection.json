@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:01.169Z",
+  "updated": "2026-10-29T18:19:05.082Z",
   "version": 1,
   "artists": [
     {
@@ -785,7 +785,18 @@
       "year": 1978,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/85b45baa-9854-39cf-b303-1799e700e62d/front-500",
-      "tracks": [],
+      "tracks": [
+        "Woman of the Night",
+        "Falling in Love",
+        "One More Night (Last Farewell)",
+        "Put Your Lovin' on Me",
+        "Come Back to Me",
+        "Whad'ya Say",
+        "Save It",
+        "Love or Nothing",
+        "I'm Alive",
+        "Fallen Angel"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -803,7 +814,16 @@
       "year": 1980,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/4786dbab-8b07-33a5-8ab5-a668ed915b8a/front-500",
-      "tracks": [],
+      "tracks": [
+        "No Return",
+        "Imagination",
+        "Feelings",
+        "Fools",
+        "Carry On",
+        "Won't Have to Wait Too Long",
+        "Out on the Street",
+        "It Ain't Easy"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
