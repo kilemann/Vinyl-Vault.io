@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:03:32.980Z",
+  "updated": "2026-10-29T18:04:04.333Z",
   "version": 1,
   "artists": [
     {
@@ -22,6 +22,11 @@
     {
       "id": "ea48521d-ddf8-45e0-a7e2-797452b59c73",
       "name": "Rush",
+      "notes": ""
+    },
+    {
+      "id": "0d08009d-63e9-499b-8c07-387aefa2c91b",
+      "name": "Uriah Heep",
       "notes": ""
     }
   ],
