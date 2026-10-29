@@ -9,9 +9,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23111'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23f5a524'/%3E%3Ccircle cx='32' cy='32' r='2' fill='%23111'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" defer></script>
 <style>
-/* Vinyl Vault v1.2.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.3.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -309,6 +308,11 @@ body.ro .status{pointer-events:none}
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;
   padding:12px 18px;border-radius:14px;background:rgba(30,34,46,.95);border:1px solid var(--line2);font-weight:500;font-size:.9rem;
   box-shadow:0 10px 30px rgba(0,0,0,.4);animation:toast .3s ease;max-width:calc(100vw - 32px)}
+.toast{display:flex;align-items:center;gap:14px}
+.toast .undo{border:0;background:none;color:var(--accent);font-weight:700;padding:4px 2px;white-space:nowrap}
+.warn{display:none;grid-column:1/-1;padding:12px 14px;border-radius:12px;border:1px solid rgba(248,113,113,.5);background:rgba(248,113,113,.12);color:#fecaca;font-size:.9rem}
+.warn.on{display:block}
+.warn ul{margin:6px 0 0;padding-left:18px}
 @keyframes toast{from{opacity:0;transform:translate(-50%,12px)}}
 @media (min-width:900px){.toast{bottom:32px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
@@ -331,11 +335,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.2.0
+   Vinyl Vault v1.3.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.2.0";
+const APP_VERSION = "1.3.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -392,9 +396,11 @@ function coverSvg(al, artistName){
     <text x="12" y="26" fill="rgba(255,255,255,.55)" font-family="Space Grotesk,system-ui,sans-serif" font-weight="700" font-size="10" letter-spacing="2">${esc(al.year || "")}</text>
   </svg>`;
 }
-function coverHtml(al){
+/* big = albumsiden. Ellers brukes 250 px-versjonen fra Cover Art Archive (ca. en tredjedel av dataene) */
+function coverHtml(al, big = false){
   const name = artistName(al.artistId);
-  const img = isUrl(al.cover) ? `<img src="${esc(al.cover)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
+  const src = big ? al.cover : String(al.cover || "").replace(/(coverartarchive\.org\/release-group\/[0-9a-f-]{36}\/front)-(500|1200)$/, "$1-250");
+  const img = isUrl(src) ? `<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "";
   return coverSvg(al, name) + img;
 }
 const isUrl = s => /^(https?:\/\/|data:image\/)/i.test(String(s || "").trim());
@@ -731,8 +737,12 @@ const sortedArtists = () => [...db.artists].sort((a, b) => byName(sortName(a.nam
 /* ---------- endringer ---------- */
 function setOwned(id, owned){
   const a = album(id); if (!a) return;
+  const before = { owned: a.owned, wishlist: a.wishlist };
   a.owned = owned; if (owned) a.wishlist = false;
-  save(); toast(owned ? `✅ ${a.title} – i samlingen` : `❌ ${a.title} – markert som mangler`);
+  save();
+  toast(owned ? `✅ ${a.title} – i samlingen` : `❌ ${a.title} – markert som mangler`, () => {
+    const x = album(id); if (!x || !canEdit()) return; Object.assign(x, before); save(); refresh(); toast("Angret");
+  });
 }
 function toggleFlag(id, key){
   const a = album(id); if (!a) return; a[key] = !a[key]; save();
@@ -878,10 +888,24 @@ function viewDashboard(){
 }
 after[""] = () => drawCharts();
 
-function drawCharts(tries = 0){
+/* Chart.js (ca. 70 kB) hentes først når oversikten vises, og bare én gang */
+const CHART_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js";
+let chartLoad = null;
+function loadChartJs(){
+  if (typeof Chart !== "undefined") return Promise.resolve();
+  if (!chartLoad) chartLoad = new Promise((res, rej) => {
+    const sc = document.createElement("script"); sc.src = CHART_URL; sc.async = true;
+    sc.onload = () => res(); sc.onerror = () => { chartLoad = null; sc.remove(); rej(new Error("Chart.js")); };
+    document.head.appendChild(sc);
+  });
+  return chartLoad;
+}
+function drawCharts(){
+  if (!document.getElementById("ch1")) return;
   if (typeof Chart === "undefined"){
-    if (tries < 25) return void setTimeout(() => { if (document.getElementById("ch1")) drawCharts(tries + 1); }, 200);
-    document.querySelectorAll(".cv").forEach(c => c.outerHTML = '<p class="nochart">Diagrammer krever nett første gang (Chart.js lastes fra cdnjs).</p>');
+    loadChartJs().then(() => drawCharts(), () => {
+      document.querySelectorAll(".cv").forEach(c => c.outerHTML = '<p class="nochart">Diagrammene trenger nett (Chart.js lastes fra cdnjs).</p>');
+    });
     return;
   }
   if (!document.getElementById("ch1")) return;
@@ -980,7 +1004,7 @@ function viewAlbum(id){
   const fact = (k, v) => `<div class="fact"><div class="k">${k}</div><div class="v">${v || '<span class="muted">–</span>'}</div></div>`;
   return `<a class="crumb" href="#/artist/${a.artistId}">${IC.back}${esc(ar ? ar.name : "Tilbake")}</a>
   <div class="album">
-    <div class="left"><div class="bigcover${a.owned ? "" : " missing"}">${coverHtml(a)}</div></div>
+    <div class="left"><div class="bigcover${a.owned ? "" : " missing"}">${coverHtml(a, true)}</div></div>
     <div>
       <a class="artist" href="#/artist/${a.artistId}">${esc(ar ? ar.name : "")}</a>
       <h1 style="margin-top:4px">${esc(a.title)}</h1>
@@ -1026,7 +1050,15 @@ function drawTracks(id, editing){
     }
     if (b.dataset.tr === "cancel") drawTracks(id, false);
     if (!canEdit()) return;
-    if (b.dataset.tr === "save") { a.tracks = parseTracks($("#trackTa").value); save(); toast("Tracklisten er lagret"); refresh(); }
+    if (b.dataset.tr === "save") {
+      const nt = parseTracks($("#trackTa").value), lost = a.tracks.filter(t => !nt.includes(t)).length;
+      const go = () => { const old = a.tracks; a.tracks = nt; save(); refresh();
+        toast(lost ? (nt.length ? `Tracklisten er lagret – ${lost} spor fjernet` : "Tracklisten er slettet") : "Tracklisten er lagret",
+          lost ? () => { if (!canEdit() || !album(a.id)) return; a.tracks = old; save(); refresh(); toast("Tracklisten er tilbake"); } : null); };
+      if (!lost) return go();
+      confirmBox(nt.length ? `Fjerne ${lost} spor?` : "Slette hele tracklisten?", nt.length ? `${lost} av ${a.tracks.length} spor forsvinner fra «${a.title}».` : `Alle ${a.tracks.length} spor forsvinner fra «${a.title}».`, nt.length ? "Fjern" : "Slett")
+        .then(ok => { if (ok) go(); });
+    }
   };
 }
 function drawNotes(id, editing){
@@ -1041,7 +1073,13 @@ function drawNotes(id, editing){
     if (b.dataset.nt === "edit") { drawNotes(id, true); $("#noteTa").focus(); }
     if (b.dataset.nt === "cancel") drawNotes(id, false);
     if (!canEdit()) return;
-    if (b.dataset.nt === "save") { a.notes = $("#noteTa").value.trim(); save(); toast("Notatet er lagret"); drawNotes(id, false); }
+    if (b.dataset.nt === "save") {
+      const nv = $("#noteTa").value.trim(), old = a.notes;
+      const go = () => { a.notes = nv; save(); drawNotes(id, false);
+        toast(nv ? "Notatet er lagret" : "Notatet er slettet", old && !nv ? () => { if (!canEdit() || !album(a.id)) return; a.notes = old; save(); refresh(); toast("Notatet er tilbake"); } : null); };
+      if (old && !nv) confirmBox("Slette notatet?", `Notatet på «${a.title}» forsvinner.`).then(ok => { if (ok) go(); });
+      else go();
+    }
   };
 }
 /* fjerner nummer som «1.», «01 -» eller «A1» hvis de limes inn */
@@ -1450,6 +1488,7 @@ function albumForm(id, presetArtist){
       ${CONDITIONS.concat(a.condition && !CONDITIONS.includes(a.condition) ? [a.condition] : []).map(c => `<option${c === a.condition ? " selected" : ""}>${esc(c)}</option>`).join("")}</select></div>
     <div class="field full"><label for="fTracks">Trackliste</label><textarea id="fTracks" placeholder="Ett spor per linje">${esc(a.tracks.join("\n"))}</textarea></div>
     <div class="field full"><label for="fNotes">Notater</label><textarea id="fNotes" style="min-height:80px">${esc(a.notes)}</textarea></div>
+    <div class="warn" id="fWarn" role="alert"></div>
     <div class="field full checks">
       <label><input type="checkbox" id="fFav"${a.favorite ? " checked" : ""}> ❤️ Favoritt</label>
       <label><input type="checkbox" id="fWish"${a.wishlist ? " checked" : ""}> ⭐ På ønskelisten</label>
@@ -1467,8 +1506,28 @@ function albumForm(id, presetArtist){
     };
     ["#fTitle", "#fYear", "#fCover", "#fNewArtist"].forEach(s => g(s).addEventListener("input", upd));
     g("#fArtist").addEventListener("change", () => { g("#newArtistBox").classList.toggle("on", g("#fArtist").value === "__new"); if (g("#fArtist").value === "__new") g("#fNewArtist").focus(); upd(); });
+    let warned = false;
+    const submitBtn = m.querySelector("button[form=alf]"), submitTxt = submitBtn.textContent;
+    g("#alf").addEventListener("input", () => { if (!warned) return; warned = false; g("#fWarn").classList.remove("on"); submitBtn.textContent = submitTxt; submitBtn.classList.remove("danger"); submitBtn.classList.add("pri"); });
     g("#alf").onsubmit = e => {
       e.preventDefault();
+      // ved redigering: si fra hva som fjernes, og krev et ekstra trykk
+      if (id && !warned){
+        const nt = parseTracks(g("#fTracks").value), lostT = a.tracks.filter(t => !nt.includes(t)).length, cleared = [];
+        if (lostT) cleared.push(nt.length ? `${lostT} spor fra tracklisten` : `hele tracklisten (${a.tracks.length} spor)`);
+        if (a.notes && !g("#fNotes").value.trim()) cleared.push("notatet");
+        if (a.cover && !g("#fCover").value.trim()) cleared.push("cover-lenken");
+        if (a.price != null && g("#fPrice").value === "") cleared.push("kjøpsprisen");
+        if (a.purchaseDate && !g("#fDate").value) cleared.push("kjøpsdatoen");
+        if (a.condition && !g("#fCond").value) cleared.push("tilstanden");
+        if (cleared.length){
+          warned = true;
+          g("#fWarn").innerHTML = `<b>Dette blir fjernet:</b><ul>${cleared.map(c => `<li>${esc(c)}</li>`).join("")}</ul>Trykk «Fjern og lagre» for å bekrefte.`;
+          g("#fWarn").classList.add("on"); g("#fWarn").scrollIntoView({ block: "nearest", behavior: "smooth" });
+          submitBtn.textContent = "Fjern og lagre"; submitBtn.classList.remove("pri"); submitBtn.classList.add("danger");
+          return;
+        }
+      }
       const title = g("#fTitle").value.trim();
       let artistId = g("#fArtist").value;
       m.querySelectorAll(".err").forEach(x => x.classList.remove("err"));
@@ -1523,17 +1582,28 @@ document.addEventListener("click", async e => {
   if (act === "editAlbum") albumForm(id);
   if (act === "delAlbum"){
     const a = album(id); if (!a) return;
-    if (await confirmBox("Slette album?", `«${a.title}» av ${artistName(a.artistId)} slettes for godt.`)){
+    if (await confirmBox("Slette album?", `«${a.title}» av ${artistName(a.artistId)} slettes, med trackliste, notater og kjøpsinfo.`)){
       $("#modalRoot").innerHTML = "";
-      db.albums = db.albums.filter(x => x.id !== id); save(); toast("Albumet er slettet");
+      const idx = db.albums.indexOf(a);
+      db.albums = db.albums.filter(x => x.id !== id); save();
+      toast(`«${a.title}» er slettet`, () => {
+        if (!canEdit() || album(a.id)) return;
+        if (!artist(a.artistId)) { toast("Artisten finnes ikke lenger"); return; }
+        db.albums.splice(Math.min(idx, db.albums.length), 0, a); save(); toast("Albumet er tilbake"); location.hash = "#/album/" + a.id;
+      });
       if (location.hash.startsWith("#/album/")) location.hash = "#/artist/" + a.artistId; else refresh();
     }
   }
   if (act === "delArtist"){
     const a = artist(id); if (!a) return; const n = albumsOf(id).length;
-    if (await confirmBox("Slette artist?", `${a.name} og ${n} ${n === 1 ? "album" : "album"} slettes for godt.`)){
+    if (await confirmBox("Slette artist?", `${a.name} og alle ${n} album slettes, med tracklister, notater og kjøpsinfo.`)){
+      const gone = db.albums.filter(x => x.artistId === id);
       db.artists = db.artists.filter(x => x.id !== id); db.albums = db.albums.filter(x => x.artistId !== id); save();
-      toast(`${a.name} er slettet`); location.hash = "#/artister";
+      toast(`${a.name} er slettet`, () => {
+        if (!canEdit() || artist(a.id)) return;
+        db.artists.push(a); db.albums.push(...gone); save(); toast(`${a.name} er tilbake`); location.hash = "#/artist/" + a.id;
+      });
+      location.hash = "#/artister";
     }
   }
   if (act === "export") exportJson();
@@ -1562,10 +1632,17 @@ $("#fab").addEventListener("click", () => {
 });
 
 let toastT;
-function toast(msg){
+/* undo: funksjon som gjør endringen om igjen – gir en «Angre»-knapp i 7 sekunder */
+function toast(msg, undo){
   document.querySelectorAll(".toast").forEach(t => t.remove());
-  const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); t.textContent = msg;
-  document.body.appendChild(t); clearTimeout(toastT); toastT = setTimeout(() => t.remove(), 2600);
+  const t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status");
+  const sp = document.createElement("span"); sp.textContent = msg; t.appendChild(sp);
+  if (undo){
+    const b = document.createElement("button"); b.className = "undo"; b.textContent = "Angre";
+    b.onclick = () => { t.remove(); clearTimeout(toastT); undo(); };
+    t.appendChild(b);
+  }
+  document.body.appendChild(t); clearTimeout(toastT); toastT = setTimeout(() => t.remove(), undo ? 7000 : 2600);
 }
 
 /* oppdater hvis samlingen endres i en annen fane */

@@ -1,4 +1,4 @@
-# Vinyl Vault v1.2.0
+# Vinyl Vault v1.3.0
 Oversikt over vinylsamlingen: hvilke plater du eier, hvilke du mangler og hvor komplett samlingen er per artist.
 
 Åpne: https://kilemann.github.io/Vinyl-Vault.io/

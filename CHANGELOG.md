@@ -1,5 +1,16 @@
 # Endringslogg – Vinyl Vault
 
+## 1.3.0 – 2026-10-29
+Mindre mobildata:
+- Rutenett og lister bruker 250 px-cover fra Cover Art Archive. 500 px brukes bare på albumsiden.
+- Chart.js hentes først når Oversikten åpnes, og bare én gang.
+
+Tryggere redigering:
+- Bekreftelse før spor fjernes fra tracklisten og før et notat slettes.
+- Albumskjemaet viser hva som blir fjernet (spor, notat, cover, pris, dato, tilstand) og krever et ekstra trykk på «Fjern og lagre».
+- «Angre» i 7 sekunder etter sletting av album og artist, endring av eierstatus, tracklister og notater.
+- Slettebekreftelsen sier tydelig hva som forsvinner.
+
 ## 1.2.0 – 2026-10-29
 - Hent album automatisk fra MusicBrainz når en ny artist legges til (valg i skjemaet, på som standard).
 - Velg riktig artist blant søketreffene, og velg album gruppert som studio, live, samle og annet. Studioalbum er forhåndsvalgt.
