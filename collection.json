@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:28:16.891Z",
+  "updated": "2026-10-29T19:30:17.283Z",
   "version": 1,
   "artists": [
     {
@@ -3061,6 +3061,37 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1e8138bc-c614-3217-b0de-bc2e03b4c9dc"
+    },
+    {
+      "id": "762ddbd7-3a1f-496d-802c-9bbae280c139",
+      "artistId": "43289903-c7e7-470b-915b-2695d6726928",
+      "title": "The Best of Fleetwood Mac",
+      "year": 1969,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/20328c16-1b75-4979-b954-018127fbb3d8/front-500",
+      "tracks": [
+        "Need Your Love So Bad",
+        "Coming Home",
+        "Rambling Pony",
+        "The Big Boat",
+        "I Believe My Time Ain’t Long",
+        "The Sun Is Shining",
+        "Albatross",
+        "Black Magic Woman",
+        "Just The Blues",
+        "Jigsaw Puzzle Blues",
+        "Looking For Somebody",
+        "Stop Messin’ Round"
+      ],
+      "owned": false,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good Plus (VG+)",
+      "purchaseDate": "2025-10-24",
+      "notes": "",
+      "added": "2026-10-29T19:29:44.107Z",
+      "rgid": "20328c16-1b75-4979-b954-018127fbb3d8"
     }
   ]
 }
