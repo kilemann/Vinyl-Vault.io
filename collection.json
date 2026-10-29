@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.4.0",
-  "updated": "2026-10-29T19:03:25.228Z",
+  "updated": "2026-10-29T19:03:42.992Z",
   "version": 1,
   "artists": [
     {
@@ -1183,7 +1183,7 @@
       "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
+      "price": 2000,
       "condition": "Near Mint (NM)",
       "purchaseDate": "2024-09-06",
       "notes": "",
