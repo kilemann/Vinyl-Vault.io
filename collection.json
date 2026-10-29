@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.4.0",
-  "updated": "2026-10-29T18:59:19.421Z",
+  "updated": "2026-10-29T18:59:23.678Z",
   "version": 1,
   "artists": [
     {
@@ -26,7 +26,7 @@
       "id": "5226a0cc-2a7b-4571-9726-7e45899d8be9",
       "name": "Jokke",
       "notes": "",
-      "mbid": ""
+      "mbid": "888bc436-cc47-4e42-bf5d-936aa9ee40c3"
     }
   ],
   "albums": [
