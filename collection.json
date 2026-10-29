@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:03:25.833Z",
+  "updated": "2026-10-29T18:03:32.980Z",
   "version": 1,
   "artists": [
     {
@@ -329,7 +329,7 @@
         "Wild West End",
         "Lions"
       ],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 320,
@@ -346,9 +346,9 @@
       "genre": "Rock",
       "cover": "",
       "tracks": [],
-      "owned": false,
+      "owned": true,
       "favorite": false,
-      "wishlist": true,
+      "wishlist": false,
       "price": null,
       "condition": "",
       "purchaseDate": "",
@@ -371,7 +371,7 @@
         "Solid Rock",
         "Les Boys"
       ],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 300,
@@ -388,7 +388,7 @@
       "genre": "Rock",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 280,
