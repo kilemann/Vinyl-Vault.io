@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:07:13.330Z",
+  "updated": "2026-10-29T18:07:14.658Z",
   "version": 1,
   "artists": [
     {
@@ -562,7 +562,7 @@
       "genre": "Heavy Metal",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 390,
@@ -579,7 +579,7 @@
       "genre": "Heavy Metal",
       "cover": "",
       "tracks": [],
-      "owned": true,
+      "owned": false,
       "favorite": false,
       "wishlist": false,
       "price": 410,
