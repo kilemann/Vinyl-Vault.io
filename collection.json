@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:30:17.283Z",
+  "updated": "2026-10-29T19:32:11.345Z",
   "version": 1,
   "artists": [
     {
@@ -2938,12 +2938,12 @@
         "Take the Rap",
         "Mexico"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-04-30",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1a8179ec-7a42-3e98-9bad-f0e1df15cb1d"
@@ -2967,12 +2967,12 @@
         "Local Still",
         "Where Are You Now"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 100,
+      "condition": "Very Good Plus (VG+)",
+      "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "4b03c3c3-548d-3a17-acc3-37a4190a1c6c"
