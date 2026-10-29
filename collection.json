@@ -1,28 +1,32 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.1.0",
-  "updated": "2026-10-29T18:07:22.533Z",
+  "appVersion": "1.2.0",
+  "updated": "2026-10-29T18:18:08.362Z",
   "version": 1,
   "artists": [
     {
       "id": "802bd207-21bc-4edf-b726-b54211c97a62",
       "name": "Pink Floyd",
-      "notes": ""
+      "notes": "",
+      "mbid": ""
     },
     {
       "id": "5711d3de-0f42-4616-a472-b671516d73af",
       "name": "Dire Straits",
-      "notes": ""
+      "notes": "",
+      "mbid": ""
     },
     {
       "id": "797a4a2a-c3ea-4399-80c2-5909f853fd13",
       "name": "Iron Maiden",
-      "notes": ""
+      "notes": "",
+      "mbid": ""
     },
     {
       "id": "0d08009d-63e9-499b-8c07-387aefa2c91b",
       "name": "Uriah Heep",
-      "notes": ""
+      "notes": "",
+      "mbid": "f1548c5b-329e-4036-921c-02213a04b525"
     }
   ],
   "albums": [
@@ -41,7 +45,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2021-04-17",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "c35a0213-2215-4d80-84ea-aae05c3c0fdd",
@@ -58,7 +63,8 @@
       "condition": "Very Good (VG)",
       "purchaseDate": "2021-09-02",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "652f4317-51e9-473e-903e-737036e810fa",
@@ -75,7 +81,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "c88f2631-5c82-4300-bfcd-50c48929d75e",
@@ -92,7 +99,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2022-02-12",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "d5c6fb69-01cc-40c4-9de5-b5eb6e8e69e7",
@@ -109,7 +117,8 @@
       "condition": "Very Good (VG)",
       "purchaseDate": "2022-06-30",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "c153538c-418c-49c6-843e-a6b5f5e253dc",
@@ -133,7 +142,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2020-11-21",
       "notes": "",
-      "added": "2026-10-29T17:50:56.675Z"
+      "added": "2026-10-29T17:50:56.675Z",
+      "rgid": ""
     },
     {
       "id": "35ebb691-6e49-4246-b125-3b79d5d7838d",
@@ -150,7 +160,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2023-01-14",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "f37adc99-1895-45d1-8ea6-764402005dfb",
@@ -178,7 +189,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2019-08-10",
       "notes": "Gatefold med begge plakatene og klistremerkene.",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "8020da44-bb96-4b1b-9803-a8d294ef2722",
@@ -201,7 +213,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2020-03-07",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "130fb65b-d4bc-4aa4-8556-193098883ac1",
@@ -224,7 +237,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "Ser etter en original pressing.",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "d09ecb28-a05b-4405-87ff-f48407106ef2",
@@ -241,7 +255,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2021-12-24",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "85464f0e-c030-4ff6-ba54-6f5ce51ec521",
@@ -258,7 +273,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "002717f6-6f4b-4eef-adad-5bca5542ef24",
@@ -275,7 +291,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2024-05-18",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "36503792-b889-418f-acf2-cf4a254dcd08",
@@ -292,7 +309,8 @@
       "condition": "Mint (M)",
       "purchaseDate": "2025-02-08",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "01c617ca-3302-42f2-bc48-e49780b1e01f",
@@ -309,7 +327,8 @@
       "condition": "Mint (M)",
       "purchaseDate": "2025-10-04",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "ad04d76a-d9e3-4513-bf89-17209dc1793c",
@@ -336,7 +355,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2022-08-19",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "83ca12b9-ed62-4c21-b2f4-06d99ae2ed81",
@@ -353,7 +373,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "2f8f526e-9eed-4b5f-a8cb-260bfe146dad",
@@ -378,7 +399,8 @@
       "condition": "Very Good (VG)",
       "purchaseDate": "2023-03-25",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "a89c504d-e893-495e-959f-4af7613a6e69",
@@ -395,7 +417,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2023-07-01",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "0a24ed0c-6839-4b50-9e88-673199bb8f88",
@@ -422,7 +445,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2026-06-13",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "443b9316-7063-4e5b-8d53-c9b573805412",
@@ -439,7 +463,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "9d9dbb15-31d0-493e-bac2-b0f9270212b3",
@@ -456,7 +481,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2020-05-16",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "aa9245ec-a072-4b8c-bf50-5b28dd1cbb1e",
@@ -473,7 +499,8 @@
       "condition": "Very Good (VG)",
       "purchaseDate": "2020-05-16",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "86db68dc-ddf4-488e-8cad-1d5dd729b95f",
@@ -499,7 +526,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2019-10-12",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "687e89d3-f72f-44fb-a2d0-f773fb259b11",
@@ -526,7 +554,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2021-02-27",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "b5f6880b-b7ac-4cc6-bc02-9bac30e93a0d",
@@ -552,7 +581,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "c0d8f114-183f-4d0b-b2ff-ac744804cf09",
@@ -569,7 +599,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2022-04-09",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "b9126bba-140f-42a9-9071-7e3228df467a",
@@ -586,7 +617,8 @@
       "condition": "Near Mint (NM)",
       "purchaseDate": "2022-10-22",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "0010dab4-93db-4d78-8055-e907671c1713",
@@ -603,7 +635,8 @@
       "condition": "Very Good (VG)",
       "purchaseDate": "2024-01-20",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "fae6a67b-03f3-45df-858e-d67654a3f8fc",
@@ -620,7 +653,8 @@
       "condition": "Very Good Plus (VG+)",
       "purchaseDate": "2024-09-07",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "fa87274b-eedc-4793-8709-27cd348b3206",
@@ -637,7 +671,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "fa501f3e-d595-4928-b7f4-bbc8f7928cb5",
@@ -654,7 +689,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "65c07acf-6ef8-4091-91e9-06e2e5a80e49",
@@ -671,7 +707,8 @@
       "condition": "Mint (M)",
       "purchaseDate": "2026-09-26",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "40afa92e-211c-4c0b-8ee9-608523d9f534",
@@ -688,7 +725,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "8e1de6a4-bd34-4c5e-ab12-ade28bee88f7",
@@ -705,7 +743,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "8ed37990-c6e9-4f7d-a490-234315401098",
@@ -722,7 +761,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "4695a1f0-72b8-489c-b9b6-2bcd3aaf9954",
@@ -739,7 +779,8 @@
       "condition": "Mint (M)",
       "purchaseDate": "2025-07-12",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "291d4727-38df-4f5c-bde3-328524da29a6",
@@ -756,7 +797,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T17:50:56.676Z"
+      "added": "2026-10-29T17:50:56.676Z",
+      "rgid": ""
     },
     {
       "id": "3f9bd015-290a-43a8-bb21-f2663af8bb82",
@@ -773,7 +815,8 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-29T18:04:03.100Z"
+      "added": "2026-10-29T18:04:03.100Z",
+      "rgid": ""
     }
   ]
 }
