@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.4.0",
-  "updated": "2026-10-29T19:03:42.992Z",
+  "appVersion": "1.5.0",
+  "updated": "2026-10-29T19:15:53.995Z",
   "version": 1,
   "artists": [
     {
@@ -27,6 +27,12 @@
       "name": "Jokke & Valentinerne",
       "notes": "",
       "mbid": ""
+    },
+    {
+      "id": "9661a3a7-183c-4d34-a5bd-f9eaad1e3c72",
+      "name": "Marquee Band",
+      "notes": "",
+      "mbid": "3b289568-99d1-485e-bb4a-95ccc79d6342"
     }
   ],
   "albums": [
