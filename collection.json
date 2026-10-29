@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:09.987Z",
+  "updated": "2026-10-29T18:19:15.225Z",
   "version": 1,
   "artists": [
     {
@@ -14,7 +14,7 @@
       "id": "5711d3de-0f42-4616-a472-b671516d73af",
       "name": "Dire Straits",
       "notes": "",
-      "mbid": ""
+      "mbid": "614e3804-7d34-41ba-857f-811bad7c2b7a"
     },
     {
       "id": "0d08009d-63e9-499b-8c07-387aefa2c91b",
@@ -928,7 +928,18 @@
       "year": 1989,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/9c4eb4be-9a2c-3fd5-b02a-39ae37421d66/front-500",
-      "tracks": [],
+      "tracks": [
+        "Hold Your Head Up",
+        "Blood Red Roses",
+        "Voice on My TV",
+        "Rich Kid",
+        "Cry Freedom",
+        "Bad Bad Man",
+        "More Fool You",
+        "When the War Is Over",
+        "Lifeline",
+        "Rough Justice"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -946,7 +957,18 @@
       "year": 1991,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/b758605b-912c-387f-9adc-fbfc42ed3000/front-500",
-      "tracks": [],
+      "tracks": [
+        "Blood on Stone",
+        "Which Way Will the Wind Blow",
+        "All God's Children",
+        "All for One",
+        "Different World",
+        "Step by Step",
+        "Seven Days",
+        "First Touch",
+        "One on One",
+        "Cross That Line"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
