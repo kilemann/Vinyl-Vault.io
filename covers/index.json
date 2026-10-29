@@ -7,6 +7,10 @@
   "s": "covers/0c9bc273-a9e9-3290-b423-c61b9f8d20bc-250.jpg",
   "l": "covers/0c9bc273-a9e9-3290-b423-c61b9f8d20bc-500.jpg"
  },
+ "0e48be49-f1e4-3368-adb2-361d366200d8": {
+  "s": "covers/0e48be49-f1e4-3368-adb2-361d366200d8-250.jpg",
+  "l": "covers/0e48be49-f1e4-3368-adb2-361d366200d8-500.jpg"
+ },
  "0f18ec88-aa87-38a9-8a65-f03d81763560": {
   "s": "covers/0f18ec88-aa87-38a9-8a65-f03d81763560-250.jpg",
   "l": "covers/0f18ec88-aa87-38a9-8a65-f03d81763560-500.jpg"
@@ -45,6 +49,10 @@
  },
  "2bb97402-547b-4b0f-ad09-dfd74eb0b16b": {
   "none": "2026-10-29"
+ },
+ "2e00dec6-8fd3-460c-85d3-400af2987476": {
+  "s": "covers/2e00dec6-8fd3-460c-85d3-400af2987476-250.jpg",
+  "l": "covers/2e00dec6-8fd3-460c-85d3-400af2987476-500.jpg"
  },
  "2e08c703-922c-32e5-adec-1d7e9c4ce15f": {
   "s": "covers/2e08c703-922c-32e5-adec-1d7e9c4ce15f-250.jpg",
@@ -136,6 +144,10 @@
  "62d88709-b653-3c37-b7f1-52974ea05010": {
   "s": "covers/62d88709-b653-3c37-b7f1-52974ea05010-250.jpg",
   "l": "covers/62d88709-b653-3c37-b7f1-52974ea05010-500.jpg"
+ },
+ "64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c": {
+  "s": "covers/64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c-250.jpg",
+  "l": "covers/64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c-500.jpg"
  },
  "680b3cd8-426b-3112-bcf3-42cd66f75fa9": {
   "s": "covers/680b3cd8-426b-3112-bcf3-42cd66f75fa9-250.jpg",
@@ -241,6 +253,10 @@
   "s": "covers/bdb083d6-be5e-32b3-97df-3d899a8ff858-250.jpg",
   "l": "covers/bdb083d6-be5e-32b3-97df-3d899a8ff858-500.jpg"
  },
+ "bfdfc6df-9fc8-486e-a76c-66b1c7e13c35": {
+  "s": "covers/bfdfc6df-9fc8-486e-a76c-66b1c7e13c35-250.jpg",
+  "l": "covers/bfdfc6df-9fc8-486e-a76c-66b1c7e13c35-500.jpg"
+ },
  "c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b": {
   "s": "covers/c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b-250.jpg",
   "l": "covers/c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b-500.jpg"
@@ -257,9 +273,16 @@
   "s": "covers/d12f085d-7861-36cd-a2fb-55a18ddc6e56-250.jpg",
   "l": "covers/d12f085d-7861-36cd-a2fb-55a18ddc6e56-500.jpg"
  },
+ "d2d20ae5-7790-4fe9-858d-6c6e565d66a8": {
+  "none": "2026-10-29"
+ },
  "d69e5ab6-a884-4c5b-9cbe-31f8b2d15411": {
   "s": "covers/d69e5ab6-a884-4c5b-9cbe-31f8b2d15411-250.jpg",
   "l": "covers/d69e5ab6-a884-4c5b-9cbe-31f8b2d15411-500.jpg"
+ },
+ "d71cda5b-2d0d-49b2-90c0-515b0fb31f06": {
+  "s": "covers/d71cda5b-2d0d-49b2-90c0-515b0fb31f06-250.jpg",
+  "l": "covers/d71cda5b-2d0d-49b2-90c0-515b0fb31f06-500.jpg"
  },
  "d7271a6a-1cb7-3a13-9d12-077f14e77e08": {
   "s": "covers/d7271a6a-1cb7-3a13-9d12-077f14e77e08-250.jpg",
