@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:30.972Z",
+  "updated": "2026-10-29T18:19:32.564Z",
   "version": 1,
   "artists": [
     {
@@ -1187,7 +1187,17 @@
       "year": 2023,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/b0a21891-c424-42a8-bef8-dfbf6bdb93bb/front-500",
-      "tracks": [],
+      "tracks": [
+        "Save Me Tonight",
+        "Silver Sunlight",
+        "Hail the Sunrise",
+        "Hurricane",
+        "One Nation, One Sun",
+        "Golden Light",
+        "You'll Never Be Alone",
+        "Fly Like an Eagle",
+        "Freedom to Be Free"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
