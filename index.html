@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" defer></script>
 <style>
-/* Vinyl Vault v1.0.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.1.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -270,6 +270,24 @@ textarea.ta:focus{border-color:var(--accent)}
 .newartist{display:none;margin-top:8px}
 .newartist.on{display:block}
 
+/* ---------- lås og lagring ---------- */
+body.ro .edit-only{display:none!important}
+body.ro .status{pointer-events:none}
+.lockbar{display:flex;align-items:center;gap:8px}
+.lockbtn{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line2);
+  background:var(--glass);font-weight:600;font-size:.82rem;color:var(--muted);white-space:nowrap}
+.lockbtn.on{color:#a7f3d0;border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.12)}
+.sync{font-size:.75rem;color:var(--muted);white-space:nowrap;background:none;border:0;padding:0}
+.sync.ok{color:var(--ok)} .sync.err{color:var(--miss);text-decoration:underline}
+.side .lockbar{flex-direction:column;align-items:stretch;margin:0 4px 14px}
+.side .lockbtn{justify-content:center}
+.side .sync{text-align:center}
+@media (min-width:900px){#lockTop{display:none}.topbar{margin:0}}
+.steps{margin:0 0 14px;padding-left:20px;color:var(--muted)} .steps li{margin:5px 0} .steps b{color:var(--ink)}
+.steps a{color:var(--accent)}
+.loading{padding:60px 20px;text-align:center;color:var(--muted)}
+.loading .disc{width:56px;height:56px;margin-bottom:12px}
+
 /* ---------- toast ---------- */
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;
   padding:12px 18px;border-radius:14px;background:rgba(30,34,46,.95);border:1px solid var(--line2);font-weight:500;font-size:.9rem;
@@ -279,16 +297,16 @@ textarea.ta:focus{border-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
-<body>
+<body class="ro">
 <div class="bgfx" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <nav class="side glass" id="side" aria-label="Hovedmeny"></nav>
 <main id="main">
-  <div class="topbar"><a class="brand" href="#/"><span id="brandDisc"></span>Vinyl Vault</a></div>
+  <div class="topbar"><a class="brand" href="#/"><span id="brandDisc"></span>Vinyl Vault</a><div class="lockbar" id="lockTop"></div></div>
   <div id="view"></div>
 </main>
 <nav class="bottom glass" id="bottom" aria-label="Hovedmeny"></nav>
-<button class="fab" id="fab" aria-label="Legg til">
+<button class="fab edit-only" id="fab" aria-label="Legg til">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
 </button>
 <div id="modalRoot"></div>
@@ -296,12 +314,17 @@ textarea.ta:focus{border-color:var(--accent)}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.0.0
-   Én fil, ingen backend. Alle data i localStorage.
+   Vinyl Vault v1.1.0
+   Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
+   alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.0.0";
-const STORE_KEY = "vinylVault.data.v1";
+const APP_VERSION = "1.1.0";
+const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
+const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
+const TOKEN_KEY = "vinylVault.token";         // GitHub-nøkkelen (bare på enheter som er låst opp)
+const SYNC_KEY = "vinylVault.sync";           // { sha, dirty } – hva GitHub har og om noe er ulagret
+const GH = { owner: "kilemann", repo: "Vinyl-Vault.io", path: "collection.json", branch: "main" };
 const CONDITIONS = ["Mint (M)","Near Mint (NM)","Very Good Plus (VG+)","Very Good (VG)","Good Plus (G+)","Good (G)","Fair (F)","Poor (P)"];
 
 /* ---------- hjelpere ---------- */
@@ -476,12 +499,199 @@ function validate(d){
   const albums = d.albums.filter(a => a && a.title && ids.has(String(a.artistId))).map(a => blankAlbum({ ...a, id: String(a.id || uid()), artistId: String(a.artistId) }));
   return { version: 1, artists, albums };
 }
-function load(){
-  try{ const raw = localStorage.getItem(STORE_KEY); if (raw){ db = validate(JSON.parse(raw)); return; } }catch(e){ console.warn("Kunne ikke lese lagret samling", e); }
-  db = seed(); save();
+const ls = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k, v){ try{ localStorage.setItem(k, v); return true; }catch(e){ return false; } },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} },
+};
+let token = ls.get(TOKEN_KEY) || "";
+const canEdit = () => !!token;
+let sync = (() => { try{ return JSON.parse(ls.get(SYNC_KEY) || "{}") || {}; }catch(e){ return {}; } })();
+const saveSync = () => ls.set(SYNC_KEY, JSON.stringify(sync));
+let loadState = "loading", loadError = "", syncState = "", syncMsg = "", changeNo = 0;
+
+function readCache(){ try{ const raw = ls.get(CACHE_KEY); return raw ? validate(JSON.parse(raw)) : null; }catch(e){ return null; } }
+function writeCache(){ if (!ls.set(CACHE_KEY, JSON.stringify(db))) toast("Klarte ikke å lagre på enheten (fullt lager?)"); }
+const fileText = d => JSON.stringify({ app: "Vinyl Vault", appVersion: APP_VERSION, updated: new Date().toISOString(), version: 1, artists: d.artists, albums: d.albums }, null, 2) + "\n";
+/* innholdet sammenlignet uten id-er, så to like samlinger regnes som like */
+function sig(d){
+  const nm = id => (d.artists.find(a => a.id === id) || {}).name || "";
+  return JSON.stringify(d.albums.map(a => [nm(a.artistId), a.title, a.year, a.genre, a.cover, a.tracks, a.owned, a.favorite, a.wishlist, a.price, a.condition, a.purchaseDate, a.notes]).sort()
+    .concat(d.artists.map(a => a.name).sort()));
 }
+
+/* ---------- GitHub ---------- */
+const API = `https://api.github.com/repos/${GH.owner}/${GH.repo}`;
+function ghHeaders(t = token){ const h = { Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" }; if (t) h.Authorization = "Bearer " + t; return h; }
+function b64encode(str){ const b = new TextEncoder().encode(str); let out = ""; for (let i = 0; i < b.length; i += 0x8000) out += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(out); }
+function b64decode(b64){ const x = atob(String(b64).replace(/\s/g, "")); const b = new Uint8Array(x.length); for (let i = 0; i < x.length; i++) b[i] = x.charCodeAt(i); return new TextDecoder().decode(b); }
+async function httpErr(r){
+  let m = ""; try{ m = (await r.json()).message || ""; }catch(e){}
+  const e = new Error(
+    r.status === 401 ? "GitHub-nøkkelen er ugyldig eller utløpt. Lås opp på nytt med en ny nøkkel." :
+    r.status === 403 && /rate limit/i.test(m) ? "GitHub har midlertidig sperret for mange forespørsler. Prøv igjen om litt." :
+    r.status === 403 ? "Nøkkelen mangler skrivetilgang. Den må ha «Contents: Read and write» for Vinyl-Vault.io." :
+    r.status === 404 ? "Nøkkelen har ikke tilgang til repoet Vinyl-Vault.io." : `GitHub svarte ${r.status}${m ? ": " + m : ""}`);
+  e.status = r.status; e.auth = r.status === 401; e.msg = m;
+  return e;
+}
+/* Henter samlingen: { data, sha } – data er null hvis filen ikke finnes ennå */
+async function fetchRemote(){
+  let r;
+  try{ r = await fetch(`${API}/contents/${GH.path}?ref=${GH.branch}`, { headers: ghHeaders(), cache: "no-store" }); }catch(e){ r = null; }
+  if (r && r.status === 404 && !canEdit()) r = null;              // prøv også Pages-kopien
+  if (r && r.status === 404) return { data: null, sha: null, missing: true };
+  if (r && r.status === 401 && canEdit()) throw await httpErr(r);
+  if (r && r.ok){ const j = await r.json(); return { data: validate(JSON.parse(b64decode(j.content))), sha: j.sha }; }
+  // reserve: filen slik GitHub Pages serverer den (kan være noen minutter gammel)
+  const p = await fetch(`./${GH.path}?t=${Date.now()}`, { cache: "no-store" });
+  if (p.status === 404) return { data: null, sha: null, missing: true };
+  if (!p.ok) throw new Error("Fikk ikke hentet samlingen (" + p.status + ").");
+  return { data: validate(await p.json()), sha: null, fromPages: true };
+}
+
+async function load(){
+  const cached = readCache();
+  if (cached){ db = cached; loadState = "ok"; }
+  route();
+  try{
+    const rem = await fetchRemote();
+    if (canEdit() && sync.dirty && cached){
+      // endringer på denne enheten ble ikke lastet opp sist
+      if (rem.missing || !rem.sha || rem.sha === sync.sha){ loadState = "ok"; refresh(); save(); return; }
+      const mine = await confirmBox("Ulagrede endringer", "Denne enheten har endringer som ikke ble lagret, og samlingen på nettet er endret siden. Vil du beholde endringene fra denne enheten?", "Behold mine", false, "Bruk den på nettet");
+      if (mine){ sync.sha = rem.sha; saveSync(); loadState = "ok"; refresh(); save(); return; }
+    }
+    if (rem.data) db = rem.data; else if (!cached) db = seed();
+    if (rem.sha) sync.sha = rem.sha;
+    sync.dirty = false; saveSync(); writeCache(); loadState = "ok";
+    if (canEdit() && rem.missing) save();                          // første lagring lager filen
+  }catch(e){
+    if (e.auth){ lockOut(e.message); return load(); }
+    if (loadState === "ok") toast("Viser lagret kopi – fikk ikke kontakt med GitHub");
+    else { loadState = "error"; loadError = e.message; }
+  }
+  refresh();
+}
+
+/* Lagrer på enheten straks, og til GitHub litt etter siste endring (så mange klikk blir én lagring) */
+let pushT = null, pushing = false, pushAgain = false;
 function save(){
-  try{ localStorage.setItem(STORE_KEY, JSON.stringify(db)); }catch(e){ toast("Klarte ikke å lagre (fullt lager?)"); }
+  writeCache();
+  if (!canEdit()) return;
+  changeNo++; sync.dirty = true; saveSync(); setSync("saving");
+  clearTimeout(pushT); pushT = setTimeout(pushNow, 1500);
+}
+async function pushNow(){
+  clearTimeout(pushT);
+  if (!canEdit() || !sync.dirty) return;
+  if (pushing){ pushAgain = true; return; }
+  pushing = true; setSync("saving");
+  const n = changeNo;
+  try{
+    if (!sync.sha){
+      const g = await fetch(`${API}/contents/${GH.path}?ref=${GH.branch}`, { headers: ghHeaders(), cache: "no-store" });
+      if (g.ok) sync.sha = (await g.json()).sha; else if (g.status !== 404) throw await httpErr(g);
+    }
+    const body = { message: "Oppdater samling (Vinyl Vault " + APP_VERSION + ")", content: b64encode(fileText(db)), branch: GH.branch };
+    if (sync.sha) body.sha = sync.sha;
+    const r = await fetch(`${API}/contents/${GH.path}`, { method: "PUT", headers: { ...ghHeaders(), "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (!r.ok){
+      const e = await httpErr(r);
+      if (r.status === 409 || (r.status === 422 && /sha/i.test(e.msg))) { await conflict(); return; }
+      throw e;
+    }
+    sync.sha = (await r.json()).content.sha;
+    if (changeNo === n) sync.dirty = false; else pushAgain = true;
+    saveSync(); setSync(sync.dirty ? "saving" : "ok");
+  }catch(e){
+    if (e.auth) lockOut(e.message);
+    else setSync("error", e.message || "Ingen kontakt med GitHub");
+  }finally{
+    pushing = false;
+    if (pushAgain){ pushAgain = false; if (sync.dirty && canEdit()) pushNow(); }
+  }
+}
+/* GitHub har en nyere versjon enn den denne enheten bygde på */
+async function conflict(){
+  let rem;
+  try{ rem = await fetchRemote(); }catch(e){ setSync("error", e.message); return; }
+  const mine = await confirmBox("Samlingen er endret et annet sted", "Det er lagret en nyere versjon fra en annen enhet. Vil du overskrive den med det du har her?", "Overskriv", false, "Bruk den nyeste");
+  sync.sha = rem.sha;
+  if (mine) { saveSync(); pushAgain = true; return; }
+  if (rem.data) db = rem.data;
+  sync.dirty = false; saveSync(); writeCache(); setSync("ok"); refresh();
+}
+function setSync(state, msg = ""){ syncState = state; syncMsg = msg; drawLock(); }
+
+/* ---------- lås ---------- */
+function lockHtml(){
+  const st = !canEdit() ? "" :
+    syncState === "error" ? `<button class="sync err" data-act="retrySync" title="${esc(syncMsg)}">⚠️ Ikke lagret – prøv igjen</button>` :
+    syncState === "saving" ? '<span class="sync">Lagrer…</span>' : syncState === "ok" ? '<span class="sync ok">✓ Lagret på GitHub</span>' : "";
+  return st + `<button class="lockbtn${canEdit() ? " on" : ""}" data-act="lock" aria-label="${canEdit() ? "Redigering er på. Trykk for å låse" : "Lås opp redigering"}">${canEdit() ? "🔓 Redigerer" : "🔒 Lås opp"}</button>`;
+}
+function drawLock(){
+  document.body.classList.toggle("ro", !canEdit());
+  const h = lockHtml();
+  ["#lockTop", "#sideLock"].forEach(id => { const el = $(id); if (el) el.innerHTML = h; });
+}
+function lockOut(msg){ token = ""; ls.del(TOKEN_KEY); clearTimeout(pushT); syncState = ""; toast(msg || "🔒 Redigering er låst"); drawLock(); refresh(); }
+
+async function verifyToken(t){
+  let r;
+  try{ r = await fetch(API, { headers: ghHeaders(t), cache: "no-store" }); }catch(e){ throw new Error("Fikk ikke kontakt med GitHub. Sjekk nettet."); }
+  if (!r.ok) throw await httpErr(r);
+  const j = await r.json();
+  if (j.permissions && j.permissions.push === false) throw new Error("Brukeren bak nøkkelen har ikke skrivetilgang til repoet.");
+}
+function unlockForm(){
+  openModal(`<h2>🔒 Lås opp redigering</h2>
+    <p class="muted">Alle kan se samlingen. For å endre den trenger du en GitHub-nøkkel med skrivetilgang til repoet. Nøkkelen lagres bare på denne enheten.</p>
+    <ol class="steps">
+      <li>Åpne <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → ny fine-grained token</a></li>
+      <li>Repository access: <b>Only select repositories</b> → <b>Vinyl-Vault.io</b></li>
+      <li>Permissions → Repository permissions → <b>Contents: Read and write</b></li>
+      <li>Trykk <b>Generate token</b>, kopier og lim inn her</li>
+    </ol>
+    <form class="form" id="tf" novalidate><div class="field full"><label for="tok">GitHub-nøkkel</label>
+      <input id="tok" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…"></div></form>
+    <p class="muted" id="tokMsg" role="alert" style="min-height:1.4em;margin:8px 0 0"></p>
+    <div class="acts"><button class="btn" data-close>Avbryt</button><button class="btn pri" form="tf" type="submit" id="tokBtn">Lås opp</button></div>`,
+  (m, close) => {
+    const msg = m.querySelector("#tokMsg"), btn = m.querySelector("#tokBtn");
+    m.querySelector("#tf").onsubmit = async e => {
+      e.preventDefault();
+      const t = m.querySelector("#tok").value.trim();
+      if (!t) { msg.textContent = "Lim inn nøkkelen først."; return; }
+      btn.disabled = true; msg.style.color = ""; msg.textContent = "Sjekker nøkkelen…";
+      try{
+        await verifyToken(t);
+        token = t; ls.set(TOKEN_KEY, t); close(); drawLock();
+        toast("🔓 Redigering er slått på for denne enheten");
+        await afterUnlock();
+      }catch(err){ msg.style.color = "var(--miss)"; msg.textContent = err.message; btn.disabled = false; }
+    };
+  });
+}
+async function afterUnlock(){
+  let rem;
+  try{ rem = await fetchRemote(); }catch(e){ if (e.auth) return lockOut(e.message); toast(e.message); return; }
+  sync.sha = rem.sha; sync.dirty = false; saveSync();
+  if (rem.data) db = rem.data;
+  // samling fra v1.0.0 som bare lå på denne enheten
+  let legacy = null; try{ const raw = ls.get(STORE_KEY); legacy = raw ? validate(JSON.parse(raw)) : null; }catch(e){}
+  if (legacy){
+    ls.set(BACKUP_KEY, JSON.stringify({ date: new Date().toISOString(), app: APP_VERSION, data: legacy }));
+    ls.del(STORE_KEY);
+    const same = sig(legacy) === sig(rem.data || seed());
+    if (!same && legacy.albums.length){
+      const up = await confirmBox("Samling fra før på denne enheten", `Denne enheten har en samling fra før (${legacy.artists.length} artister, ${legacy.albums.length} album). Vil du laste den opp og erstatte samlingen på nettet?`, "Last opp", false, "Nei, bruk den på nettet");
+      if (up){ db = legacy; save(); refresh(); return; }
+    }
+  }
+  writeCache(); refresh();
+  if (rem.missing) save(); else setSync("ok");
 }
 
 /* ---------- oppslag og statistikk ---------- */
@@ -523,10 +733,11 @@ function drawNav(route){
   const active = h => h === top || (h === "#/artister" && top === "#/artist") || (h === "#/mer" && ["#/onsker","#/favoritter","#/data"].includes(top));
   const items = NAV.map(([h, t, i]) => `<a class="navbtn${active(h) ? " on" : ""}" href="${h}" ${active(h) ? 'aria-current="page"' : ""}>${IC[i]}<span>${t}</span></a>`).join("");
   $("#bottom").innerHTML = items;
-  $("#side").innerHTML = `<a class="brand" href="#/">${discSvg()}Vinyl Vault</a>` + NAV.slice(0, 4).map(([h, t, i]) =>
+  $("#side").innerHTML = `<a class="brand" href="#/">${discSvg()}Vinyl Vault</a><div class="lockbar" id="sideLock"></div>` + NAV.slice(0, 4).map(([h, t, i]) =>
       `<a class="navbtn${active(h) ? " on" : ""}" href="${h}">${IC[i]}<span>${t}</span></a>`).join("") + '<div class="sep"></div>' +
     SIDE_EXTRA.map(([h, e, t]) => `<a class="navbtn${top === h ? " on" : ""}" href="${h}"><span style="width:22px;text-align:center">${e}</span><span>${t}</span></a>`).join("") +
     `<div class="foot">Vinyl Vault v${APP_VERSION}</div>`;
+  drawLock();
 }
 
 const ui = { // husker valg mens appen er åpen
@@ -539,11 +750,14 @@ function route(){
   charts.forEach(c => { try{ c.destroy(); }catch(e){} }); charts = [];
   if (/^#\/samling\?kjop/.test(location.hash)) { ui.samling.sort = "kjop"; ui.samling.status = "eier"; history.replaceState(null, "", "#/samling"); }
   const parts = location.hash.split("?")[0].replace(/^#\/?/, "").split("/").map(decodeURIComponent);
-  const [r, id] = parts;
+  let [r, id] = parts;
   drawNav(parts);
   const V = $("#view");
   let html;
+  if (loadState !== "ok") r = "__" + loadState;
   switch (r){
+    case "__loading": html = `<div class="loading">${discSvg()}<p>Henter samlingen …</p></div>`; break;
+    case "__error": html = `<div class="empty glass">${IC.missing}<p>Fikk ikke hentet samlingen.<br><span class="muted">${esc(loadError)}</span></p><button class="btn pri" data-act="reload">Prøv igjen</button></div>`; break;
     case "": case undefined: html = viewDashboard(); break;
     case "artister": html = viewArtists(); break;
     case "artist": html = artist(id) ? viewArtist(id) : notFound(); break;
@@ -557,7 +771,7 @@ function route(){
     default: html = notFound();
   }
   V.innerHTML = `<div class="view">${html}</div>`;
-  after[r || ""]?.(id);
+  if (html !== notFound()) after[r || ""]?.(id);   // ikke tegn detaljer for noe som ikke finnes (f.eks. etter import)
   document.title = (r === "album" && album(id) ? album(id).title + " – " : r === "artist" && artist(id) ? artist(id).name + " – " : "") + "Vinyl Vault";
 }
 /* tegner på nytt uten å hoppe til toppen */
@@ -686,7 +900,7 @@ function drawCharts(tries = 0){
 function viewArtists(){
   const s = ui.artists;
   return `<div class="head"><div><h1>Artister</h1><p class="sub">${db.artists.length} artister i samlingen</p></div>
-    <button class="btn pri" data-act="newArtist">${IC.plus}Ny artist</button></div>
+    <button class="btn pri edit-only" data-act="newArtist">${IC.plus}Ny artist</button></div>
   <div class="tools">
     <label class="search">${IC.search}<input id="aq" type="search" placeholder="Søk etter artist…" value="${esc(s.q)}" autocomplete="off"></label>
     <select class="sel" id="asort" aria-label="Sorter">
@@ -707,7 +921,7 @@ function drawArtistList(){
         ${progress(x.s.pct)}
         <div class="meta" style="margin:8px 0 0"><span>${x.s.miss ? `Mangler ${x.s.miss}` : x.s.total ? "🎉 Komplett!" : "Ingen album ennå"}</span></div>
       </div></a>`).join("")
-    : emptyBox(db.artists.length ? "Ingen artister passer søket." : "Ingen artister ennå.", '<button class="btn pri" data-act="newArtist">Legg til artist</button>');
+    : emptyBox(db.artists.length ? "Ingen artister passer søket." : "Ingen artister ennå.", '<button class="btn pri edit-only" data-act="newArtist">Legg til artist</button>');
 }
 after.artister = () => {
   drawArtistList();
@@ -727,7 +941,7 @@ function viewArtist(id){
       <div class="txt"><h1>${esc(a.name)}</h1>
         <p class="sub">${s.own} av ${s.total} album · ${s.miss ? `mangler ${s.miss}` : s.total ? "komplett 🎉" : "ingen album ennå"}</p>
         ${a.notes ? `<p class="sub notes">${esc(a.notes)}</p>` : ""}
-        <div class="btns" style="margin-top:14px">
+        <div class="btns edit-only" style="margin-top:14px">
           <button class="btn pri" data-act="newAlbum" data-artist="${a.id}">${IC.plus}Legg til album</button>
           <button class="btn" data-act="editArtist" data-id="${a.id}">${IC.edit}Rediger</button>
           <button class="btn danger" data-act="delArtist" data-id="${a.id}">${IC.trash}Slett</button>
@@ -736,7 +950,7 @@ function viewArtist(id){
     </div>
   </div>
   ${l.length ? `<div class="grid stag">${l.map((x, i) => albumCard(x, i)).join("")}</div>`
-    : emptyBox("Ingen album registrert for denne artisten ennå.", `<button class="btn pri" data-act="newAlbum" data-artist="${a.id}">Legg til første album</button>`)}`;
+    : emptyBox("Ingen album registrert for denne artisten ennå.", `<button class="btn pri edit-only" data-act="newAlbum" data-artist="${a.id}">Legg til første album</button>`)}`;
 }
 
 /* =====================================================================
@@ -752,11 +966,11 @@ function viewAlbum(id){
       <a class="artist" href="#/artist/${a.artistId}">${esc(ar ? ar.name : "")}</a>
       <h1 style="margin-top:4px">${esc(a.title)}</h1>
       <p class="sub">${[a.year, a.genre, a.tracks.length ? a.tracks.length + " spor" : ""].filter(Boolean).map(esc).join(" · ")}</p>
-      <div class="toggle" role="group" aria-label="Eierstatus">
+      <div class="toggle edit-only" role="group" aria-label="Eierstatus">
         <button class="own${a.owned ? " on" : ""}" data-set="${a.id}" data-own="1" aria-pressed="${a.owned}">✅ Eier</button>
         <button class="miss${a.owned ? "" : " on"}" data-set="${a.id}" data-own="0" aria-pressed="${!a.owned}">❌ Mangler</button>
       </div>
-      <div class="btns">
+      <div class="btns edit-only">
         <button class="iconbtn${a.favorite ? " on" : ""}" data-flag="favorite" data-id="${a.id}" aria-pressed="${a.favorite}" title="Favoritt" aria-label="Favoritt">${a.favorite ? "❤️" : "🤍"}</button>
         ${a.owned ? "" : `<button class="iconbtn wish${a.wishlist ? " on" : ""}" data-flag="wishlist" data-id="${a.id}" aria-pressed="${a.wishlist}" title="Ønskeliste" aria-label="Ønskeliste">${a.wishlist ? "⭐" : "☆"}</button>`}
         <button class="btn" data-act="editAlbum" data-id="${a.id}">${IC.edit}Rediger</button>
@@ -765,7 +979,7 @@ function viewAlbum(id){
       <div class="facts" style="margin-top:16px">
         ${fact("Artist", esc(ar ? ar.name : ""))}${fact("Utgivelsesår", a.year)}${fact("Sjanger", esc(a.genre))}
         ${fact("Antall spor", a.tracks.length || "")}${fact("Kjøpspris", a.price != null ? nok(a.price) : "")}${fact("Tilstand", esc(a.condition))}
-        ${fact("Kjøpsdato", fmtDate(a.purchaseDate))}${fact("Status", a.owned ? "✅ Eier" : "❌ Mangler")}
+        ${fact("Kjøpsdato", fmtDate(a.purchaseDate))}${fact("Status", (a.owned ? "✅ Eier" : "❌ Mangler") + (a.favorite ? " · ❤️" : "") + (a.wishlist && !a.owned ? " · ⭐" : ""))}
       </div>
       <div class="panel glass" id="trackPanel"></div>
       <div class="panel glass" id="notePanel"></div>
@@ -779,12 +993,13 @@ function drawTracks(id, editing){
        <textarea class="ta" id="trackTa" placeholder="Ett spor per linje">${esc(a.tracks.join("\n"))}</textarea>
        <p class="muted" style="font-size:.8rem;margin:6px 0 0">Ett spor per linje. Nummerering legges på automatisk.</p>
        <div class="btns" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-tr="cancel">Avbryt</button><button class="btn pri" data-tr="save">Lagre</button></div>`
-    : `<div class="ph"><h2>Trackliste</h2><button class="link" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div>
+    : `<div class="ph"><h2>Trackliste</h2><button class="link edit-only" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div>
        ${a.tracks.length ? `<ol class="tracks">${a.tracks.map(t => `<li>${esc(t)}</li>`).join("")}</ol>` : '<p class="muted">Ingen spor registrert.</p>'}`;
   P.onclick = e => {
     const b = e.target.closest("[data-tr]"); if (!b) return;
     if (b.dataset.tr === "edit") { drawTracks(id, true); $("#trackTa").focus(); }
     if (b.dataset.tr === "cancel") drawTracks(id, false);
+    if (!canEdit()) return;
     if (b.dataset.tr === "save") { a.tracks = parseTracks($("#trackTa").value); save(); toast("Tracklisten er lagret"); refresh(); }
   };
 }
@@ -793,12 +1008,13 @@ function drawNotes(id, editing){
   P.innerHTML = editing
     ? `<div class="ph"><h2>Notater</h2></div><textarea class="ta" id="noteTa" style="min-height:110px" placeholder="Pressing, kjøpested, minner …">${esc(a.notes)}</textarea>
        <div class="btns" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-nt="cancel">Avbryt</button><button class="btn pri" data-nt="save">Lagre</button></div>`
-    : `<div class="ph"><h2>Notater</h2><button class="link" data-nt="edit">${a.notes ? "Rediger" : "Skriv notat"}</button></div>
+    : `<div class="ph"><h2>Notater</h2><button class="link edit-only" data-nt="edit">${a.notes ? "Rediger" : "Skriv notat"}</button></div>
        ${a.notes ? `<p class="notes" style="margin:0">${esc(a.notes)}</p>` : '<p class="muted" style="margin:0">Ingen notater.</p>'}`;
   P.onclick = e => {
     const b = e.target.closest("[data-nt]"); if (!b) return;
     if (b.dataset.nt === "edit") { drawNotes(id, true); $("#noteTa").focus(); }
     if (b.dataset.nt === "cancel") drawNotes(id, false);
+    if (!canEdit()) return;
     if (b.dataset.nt === "save") { a.notes = $("#noteTa").value.trim(); save(); toast("Notatet er lagret"); drawNotes(id, false); }
   };
 }
@@ -874,8 +1090,8 @@ function drawMissing(){
   $("#mcount").textContent = n ? `${n} album fra ${groups.length} ${groups.length === 1 ? "artist" : "artister"}` : "";
   $("#mlist").innerHTML = groups.length ? `<div class="stag">${groups.map((g, i) => `<div class="group glass" style="--i:${i}">
       <h3><a href="#/artist/${g.a.id}">${esc(g.a.name)}</a><small>${g.s.own} av ${g.s.total} · ${g.s.pct} %</small></h3>
-      ${g.l.map(x => thumbRow(x, "", `<button class="rowbtn" data-flagrow="${x.id}" title="Ønskeliste" aria-label="Ønskeliste">${x.wishlist ? "⭐" : "☆"}</button>
-        <button class="rowbtn" data-toggle="${x.id}" title="Marker som eid" aria-label="Marker som eid">❌</button>`)).join("")}
+      ${g.l.map(x => thumbRow(x, "", `<button class="rowbtn edit-only" data-flagrow="${x.id}" title="Ønskeliste" aria-label="Ønskeliste">${x.wishlist ? "⭐" : "☆"}</button>
+        <button class="rowbtn edit-only" data-toggle="${x.id}" title="Marker som eid" aria-label="Marker som eid">❌</button>`)).join("")}
     </div>`).join("")}</div>`
     : emptyBox(q ? "Ingen manglende album passer søket." : "🎉 Du mangler ingenting! Samlingen er komplett.");
 }
@@ -908,7 +1124,7 @@ function viewMore(){
     ${it("#/data", "💾", "Data og backup", "Eksport, import, backup og gjenoppretting")}
     <a class="mitem glass" href="#/" style="pointer-events:none"><div class="ic">💰</div><div><b>Samlingsverdi</b><span>${nok(t.value)} for ${t.own} eide plater</span></div></a>
   </div>
-  <p class="muted" style="margin-top:28px;font-size:.8rem;text-align:center">Vinyl Vault v${APP_VERSION} · data lagres kun på denne enheten</p>`;
+  <p class="muted" style="margin-top:28px;font-size:.8rem;text-align:center">Vinyl Vault v${APP_VERSION} · samlingen lagres på GitHub</p>`;
 }
 
 /* =====================================================================
@@ -918,29 +1134,30 @@ function readBackup(){ try{ const b = JSON.parse(localStorage.getItem(BACKUP_KEY
 function viewData(){
   const b = readBackup(), t = totals();
   return `<a class="crumb" href="#/mer">${IC.back}Mer</a>
-  <div class="head"><div><h1>Data og backup</h1><p class="sub">Alt lagres lokalt i nettleseren på denne enheten.</p></div></div>
+  <div class="head"><div><h1>Data og backup</h1><p class="sub">Samlingen lagres i GitHub-repoet Vinyl-Vault.io (collection.json). Alle kan se den, bare den som har låst opp kan endre.</p></div></div>
   <div class="two">
     <div class="panel glass" style="margin:0"><h2>Fil</h2>
-      <p class="muted">Lagre samlingen som en JSON-fil, f.eks. for å flytte den til en annen enhet.</p>
+      <p class="muted">Lagre samlingen som en JSON-fil.</p>
       <div class="btns"><button class="btn pri" data-act="export">⬇️ Eksporter til JSON</button>
-        <label class="btn" tabindex="0">⬆️ Importer fra JSON<input type="file" id="importFile" accept=".json,application/json" hidden></label></div>
-      <p class="muted" style="font-size:.8rem">Import erstatter samlingen. Det lages automatisk en backup først.</p>
+        <label class="btn edit-only" tabindex="0">⬆️ Importer fra JSON<input type="file" id="importFile" accept=".json,application/json" hidden></label></div>
+      <p class="muted edit-only" style="font-size:.8rem">Import erstatter samlingen. Det lages automatisk en backup først.</p>
+      ${canEdit() ? "" : '<p class="muted" style="font-size:.8rem">Lås opp for å importere og endre.</p>'}
     </div>
-    <div class="panel glass" style="margin:0"><h2>Backup i nettleseren</h2>
+    <div class="panel glass edit-only" style="margin:0"><h2>Backup på denne enheten</h2>
       <p class="muted">${b ? `Siste backup: <b style="color:var(--ink)">${new Date(b.date).toLocaleString("nb-NO")}</b> (${b.data.albums.length} album)` : "Ingen backup tatt ennå."}</p>
       <div class="btns"><button class="btn pri" data-act="backup">🛟 Ta backup nå</button>
         <button class="btn" data-act="restore"${b ? "" : " disabled"}>↩️ Gjenopprett backup</button></div>
-      <p class="muted" style="font-size:.8rem">Backupen ligger på samme enhet. Eksporter til fil for ekstra sikkerhet.</p>
+      <p class="muted" style="font-size:.8rem">Alle lagringer finnes også i historikken til collection.json på GitHub.</p>
     </div>
   </div>
-  <div class="panel glass"><h2>Tilbakestill</h2>
+  <div class="panel glass edit-only"><h2>Tilbakestill</h2>
     <p class="muted">Nå: ${t.artists} artister og ${t.total} album.</p>
     <div class="btns"><button class="btn" data-act="loadDemo">Last inn eksempeldata</button><button class="btn danger" data-act="wipe">Slett alt</button></div>
   </div>`;
 }
 after.data = () => {
   $("#importFile").addEventListener("change", async e => {
-    const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+    const f = e.target.files[0]; e.target.value = ""; if (!f || !canEdit()) return;
     try{
       const d = validate(JSON.parse(await f.text()));
       const ok = await confirmBox("Importere samling?", `Filen har ${d.artists.length} artister og ${d.albums.length} album. Den erstatter samlingen din. En backup tas først.`, "Importer");
@@ -978,11 +1195,11 @@ function openModal(html, onMount){
   const f = m.querySelector("input:not([type=hidden]):not([type=radio]):not([type=checkbox]),select,textarea"); f && setTimeout(() => f.focus(), 60);
   return close;
 }
-function confirmBox(title, text, okText = "Slett", danger = true){
+function confirmBox(title, text, okText = "Slett", danger = true, cancelText = "Avbryt"){
   return new Promise(res => {
     let done = false;
     const close = openModal(`<h2>${esc(title)}</h2><p class="muted">${esc(text)}</p>
-      <div class="acts"><button class="btn" data-close>Avbryt</button><button class="btn ${danger ? "danger" : "pri"}" id="cOk">${esc(okText)}</button></div>`,
+      <div class="acts"><button class="btn" data-close>${esc(cancelText)}</button><button class="btn ${danger ? "danger" : "pri"}" id="cOk">${esc(okText)}</button></div>`,
       (m, cl) => { m.querySelector("#cOk").onclick = () => { done = true; cl(); res(true); }; });
     const obs = new MutationObserver(() => { if (!$("#modal")) { obs.disconnect(); if (!done) res(false); } });
     obs.observe($("#modalRoot"), { childList: true });
@@ -1087,7 +1304,9 @@ function albumForm(id, presetArtist){
 /* =====================================================================
    FELLES KLIKK
    ===================================================================== */
+const EDIT_ACTS = new Set(["newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
 document.addEventListener("click", async e => {
+  if (!canEdit() && e.target.closest("[data-toggle],[data-flagrow],[data-set],[data-flag]")) return;
   const tg = e.target.closest("[data-toggle]");
   if (tg) { e.preventDefault(); e.stopPropagation();
     const a = album(tg.dataset.toggle); if (!a) return;
@@ -1100,6 +1319,14 @@ document.addEventListener("click", async e => {
   if (fl) { toggleFlag(fl.dataset.id, fl.dataset.flag); refresh(); return; }
   const b = e.target.closest("[data-act]"); if (!b) return;
   const act = b.dataset.act, id = b.dataset.id;
+  if (EDIT_ACTS.has(act) && !canEdit()) return;
+  if (act === "lock"){
+    if (!canEdit()) return unlockForm();
+    if (await confirmBox("Låse redigering?", "Nøkkelen fjernes fra denne enheten." + (sync.dirty ? " NB: Siste endring er ikke lagret på GitHub ennå." : ""), "Lås", false)) lockOut();
+    return;
+  }
+  if (act === "retrySync") return void pushNow();
+  if (act === "reload") { loadState = "loading"; route(); return void load(); }
   if (act === "newArtist") artistForm();
   if (act === "editArtist") artistForm(id);
   if (act === "newAlbum") albumForm(null, b.dataset.artist);
@@ -1138,6 +1365,7 @@ document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.ma
 
 /* pluss-knappen: nytt album (med artisten du står på) – ny artist hvis ingen finnes */
 $("#fab").addEventListener("click", () => {
+  if (!canEdit()) return;
   if (!db.artists.length) return artistForm();
   const m = location.hash.match(/^#\/artist\/(.+)$/), am = location.hash.match(/^#\/album\/(.+)$/);
   albumForm(null, m ? decodeURIComponent(m[1]) : am && album(decodeURIComponent(am[1])) ? album(decodeURIComponent(am[1])).artistId : "");
@@ -1151,13 +1379,19 @@ function toast(msg){
 }
 
 /* oppdater hvis samlingen endres i en annen fane */
-addEventListener("storage", e => { if (e.key === STORE_KEY) { load(); refresh(); } });
+addEventListener("storage", e => {
+  if (e.key === CACHE_KEY) { const d = readCache(); if (d) { db = d; refresh(); } }
+  if (e.key === TOKEN_KEY) { token = ls.get(TOKEN_KEY) || ""; drawLock(); refresh(); }
+});
+/* lagre med en gang hvis appen lukkes eller legges i bakgrunnen */
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden" && sync.dirty && canEdit()) pushNow(); });
+addEventListener("online", () => { if (sync.dirty && canEdit()) pushNow(); });
 
 /* ---------- start ---------- */
 $("#brandDisc").outerHTML = discSvg();
-load();
 addEventListener("hashchange", () => { route(); scrollTo({ top: 0 }); });
-route();
+drawLock();
+load();
 </script>
 </body>
 </html>

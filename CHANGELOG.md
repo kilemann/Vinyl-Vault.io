@@ -1,5 +1,15 @@
 # Endringslogg – Vinyl Vault
 
+## 1.1.0 – 2026-10-29
+- Samlingen ligger nå i `collection.json` i GitHub-repoet. Alle som åpner lenken ser samme samling.
+- Lesemodus for alle. Redigering låses opp med en GitHub-nøkkel (fine-grained token med «Contents: Read and write»
+  for Vinyl-Vault.io), som lagres bare på enheten den legges inn på.
+- Endringer lagres automatisk til GitHub ca. 1,5 sekunder etter siste klikk. Statusvisning: Lagrer… / Lagret / Ikke lagret – prøv igjen.
+- Varsler hvis samlingen er endret fra en annen enhet, og lar deg velge hvilken versjon som skal gjelde.
+- Ulagrede endringer sendes neste gang appen åpnes.
+- Ved første opplåsing tilbys en samling lagret lokalt i v1.0.0 lastet opp (en lokal backup tas uansett).
+- Rettet: visningen kunne krasje hvis samlingen ble byttet ut mens et album som ikke lenger fantes var åpent.
+
 ## 1.0.0 – 2026-10-29
 Første versjon.
 - Oversikt med statistikk, samlingsverdi, siste innkjøp, mest komplette artister, ønskeliste og favoritter
