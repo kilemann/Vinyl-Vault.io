@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.4.0",
-  "updated": "2026-10-29T18:59:49.239Z",
+  "updated": "2026-10-29T18:59:50.614Z",
   "version": 1,
   "artists": [
     {
@@ -1049,7 +1049,21 @@
       "year": 1991,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/d8cf139f-a064-3c3c-ae7a-8cf5a4719632/front-500",
-      "tracks": [],
+      "tracks": [
+        "Frelst!",
+        "Hr Smith",
+        "Sørgelig",
+        "Dere får meg ikke til å le",
+        "Gnukk",
+        "Ikke gå",
+        "Her kommer vinteren",
+        "Tempo",
+        "Kong Eddie",
+        "Kleggen & Knugern",
+        "Sitte",
+        "Eller var det en drøm",
+        "Aftenbønn"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1067,7 +1081,20 @@
       "year": 1994,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/8fb32a19-64af-38f7-812a-0b450ef3ba99/front-500",
-      "tracks": [],
+      "tracks": [
+        "Det blåser hardt på toppene",
+        "Oldiser",
+        "Invitert",
+        "Ta meg med",
+        "Mine klamme hender",
+        "Er du helt sikker",
+        "Jeg er redd",
+        "Trall",
+        "Annie",
+        "Feil igjen",
+        "Hyttetur",
+        "Alt kan repeteres"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
