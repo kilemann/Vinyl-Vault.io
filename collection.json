@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:22:02.538Z",
+  "updated": "2026-10-29T18:22:06.288Z",
   "version": 1,
   "artists": [
     {
@@ -989,24 +989,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "b758605b-912c-387f-9adc-fbfc42ed3000"
-    },
-    {
-      "id": "0ebeaee4-5d5a-4f88-b059-a40d0aeedd56",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "The Magician's Birthday",
-      "year": 1995,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/e0e1acd9-a021-437f-9614-3ce1823f1424/front-500",
-      "tracks": [],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "e0e1acd9-a021-437f-9614-3ce1823f1424"
     }
   ]
 }
