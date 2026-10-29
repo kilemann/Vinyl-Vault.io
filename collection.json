@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:05.082Z",
+  "updated": "2026-10-29T18:19:06.653Z",
   "version": 1,
   "artists": [
     {
@@ -841,7 +841,18 @@
       "year": 1982,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/b1c57669-8bb9-3897-a8c6-3d2f291116b6/front-500",
-      "tracks": [],
+      "tracks": [
+        "Too Scared to Run",
+        "Chasing Shadows",
+        "On the Rebound",
+        "Hot Night in a Cold Town",
+        "Running All Night (with the Lion)",
+        "That's the Way That It Is",
+        "Prisoner",
+        "Hot Persuasion",
+        "Sell Your Soul",
+        "Think It Over"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
