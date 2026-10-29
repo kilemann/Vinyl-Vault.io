@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:35:31.467Z",
+  "updated": "2026-10-29T19:38:24.227Z",
   "version": 1,
   "artists": [
     {
@@ -2717,12 +2717,12 @@
         "Sunshine",
         "Shapes of Things / Space Safari"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "3056bf8e-c292-35da-b006-fb719d753211"
@@ -2885,12 +2885,12 @@
         "Ship of Dreams",
         "Turning a New Leaf"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "3057a94d-976a-3881-bbe0-0d460cdcd6cc"
@@ -3414,6 +3414,35 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.863Z",
       "rgid": "91fef7a2-b7b8-3caf-b8b5-86a9dd852538"
+    },
+    {
+      "id": "1374bd87-29c4-4197-bdee-9cf727159f71",
+      "artistId": "d7e26c04-601b-4325-951c-bb7fe15d304b",
+      "title": "The Ballad Album",
+      "year": 1985,
+      "genre": "Hard Rock",
+      "cover": "https://coverartarchive.org/release-group/b18ddebc-4d8b-415c-99c7-f76d6b6a65b3/front-500",
+      "tracks": [
+        "Love Hurts",
+        "Where Are You Now",
+        "Ruby Tuesday",
+        "Moonlight Eyes",
+        "Games",
+        "Dream On",
+        "Heart’s Grown Cold",
+        "Moondance",
+        "Love Leads to Madness",
+        "Sunshine"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-10-01",
+      "notes": "",
+      "added": "2026-10-29T19:37:51.007Z",
+      "rgid": "b18ddebc-4d8b-415c-99c7-f76d6b6a65b3"
     }
   ]
 }
