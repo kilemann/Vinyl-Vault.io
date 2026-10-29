@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" defer></script>
 <style>
-/* Vinyl Vault v1.1.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.2.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -288,6 +288,23 @@ body.ro .status{pointer-events:none}
 .loading{padding:60px 20px;text-align:center;color:var(--muted)}
 .loading .disc{width:56px;height:56px;margin-bottom:12px}
 
+/* ---------- henting fra MusicBrainz ---------- */
+.pick{display:flex;flex-direction:column;gap:8px;max-height:52vh;overflow:auto;margin:0 -4px;padding:0 4px}
+.pick .opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--glass);text-align:left;width:100%}
+.pick .opt:hover{border-color:var(--accent)}
+.pick .opt b{display:block}
+.pick .opt span{color:var(--muted);font-size:.82rem}
+.pick h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:10px 4px 2px;display:flex;justify-content:space-between;align-items:center}
+.pick h3 button{font-size:.8rem;text-transform:none;letter-spacing:0}
+.pick label.opt{cursor:pointer}
+.pick label.opt input{width:20px;height:20px;flex:none;accent-color:var(--accent)}
+.pick label.opt.have{opacity:.5;cursor:default}
+.pick .th{width:44px;height:44px;flex:none;border-radius:6px;overflow:hidden;position:relative;background:#111}
+.pick .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spin{display:inline-block;width:18px;height:18px;border:2px solid var(--line2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-3px;margin-right:8px}
+.src{font-size:.75rem;color:var(--dim);margin-top:10px}
+.src a{color:var(--muted)}
+
 /* ---------- toast ---------- */
 .toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 30px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;
   padding:12px 18px;border-radius:14px;background:rgba(30,34,46,.95);border:1px solid var(--line2);font-weight:500;font-size:.9rem;
@@ -314,11 +331,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.1.0
+   Vinyl Vault v1.2.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.2.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -396,6 +413,7 @@ function blankAlbum(p = {}){
     price: p.price === "" || p.price == null || isNaN(Number(p.price)) ? null : Number(p.price),
     condition: String(p.condition || ""), purchaseDate: /^\d{4}-\d{2}-\d{2}$/.test(p.purchaseDate || "") ? p.purchaseDate : "",
     notes: String(p.notes || ""), added: p.added || new Date().toISOString(),
+    rgid: /^[0-9a-f-]{36}$/.test(p.rgid || "") ? p.rgid : "",   // MusicBrainz release group (for cover og trackliste)
   };
 }
 
@@ -494,7 +512,7 @@ function seed(){
 
 function validate(d){
   if (!d || typeof d !== "object" || !Array.isArray(d.artists) || !Array.isArray(d.albums)) throw new Error("Filen er ikke en Vinyl Vault-samling.");
-  const artists = d.artists.filter(a => a && a.id && String(a.name || "").trim()).map(a => ({ id: String(a.id), name: String(a.name).trim(), notes: String(a.notes || "") }));
+  const artists = d.artists.filter(a => a && a.id && String(a.name || "").trim()).map(a => ({ id: String(a.id), name: String(a.name).trim(), notes: String(a.notes || ""), mbid: /^[0-9a-f-]{36}$/.test(a.mbid || "") ? a.mbid : "" }));
   const ids = new Set(artists.map(a => a.id));
   const albums = d.albums.filter(a => a && a.title && ids.has(String(a.artistId))).map(a => blankAlbum({ ...a, id: String(a.id || uid()), artistId: String(a.artistId) }));
   return { version: 1, artists, albums };
@@ -943,6 +961,7 @@ function viewArtist(id){
         ${a.notes ? `<p class="sub notes">${esc(a.notes)}</p>` : ""}
         <div class="btns edit-only" style="margin-top:14px">
           <button class="btn pri" data-act="newAlbum" data-artist="${a.id}">${IC.plus}Legg til album</button>
+          <button class="btn" data-act="fetchAlbums" data-id="${a.id}">🔎 Hent album</button>
           <button class="btn" data-act="editArtist" data-id="${a.id}">${IC.edit}Rediger</button>
           <button class="btn danger" data-act="delArtist" data-id="${a.id}">${IC.trash}Slett</button>
         </div>
@@ -950,7 +969,7 @@ function viewArtist(id){
     </div>
   </div>
   ${l.length ? `<div class="grid stag">${l.map((x, i) => albumCard(x, i)).join("")}</div>`
-    : emptyBox("Ingen album registrert for denne artisten ennå.", `<button class="btn pri edit-only" data-act="newAlbum" data-artist="${a.id}">Legg til første album</button>`)}`;
+    : emptyBox("Ingen album registrert for denne artisten ennå.", `<div class="btns edit-only" style="justify-content:center"><button class="btn pri" data-act="fetchAlbums" data-id="${a.id}">🔎 Hent album automatisk</button><button class="btn" data-act="newAlbum" data-artist="${a.id}">Legg inn manuelt</button></div>`)}`;
 }
 
 /* =====================================================================
@@ -994,10 +1013,17 @@ function drawTracks(id, editing){
        <p class="muted" style="font-size:.8rem;margin:6px 0 0">Ett spor per linje. Nummerering legges på automatisk.</p>
        <div class="btns" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-tr="cancel">Avbryt</button><button class="btn pri" data-tr="save">Lagre</button></div>`
     : `<div class="ph"><h2>Trackliste</h2><button class="link edit-only" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div>
-       ${a.tracks.length ? `<ol class="tracks">${a.tracks.map(t => `<li>${esc(t)}</li>`).join("")}</ol>` : '<p class="muted">Ingen spor registrert.</p>'}`;
+       ${a.tracks.length ? `<ol class="tracks">${a.tracks.map(t => `<li>${esc(t)}</li>`).join("")}</ol>` : '<p class="muted">Ingen spor registrert.</p>' + (a.rgid ? '<button class="btn edit-only" data-tr="fetch">🔎 Hent trackliste fra MusicBrainz</button>' : "")}`;
   P.onclick = e => {
     const b = e.target.closest("[data-tr]"); if (!b) return;
     if (b.dataset.tr === "edit") { drawTracks(id, true); $("#trackTa").focus(); }
+    if (b.dataset.tr === "fetch" && canEdit()) {
+      b.disabled = true; b.innerHTML = '<span class="spin"></span>Henter …';
+      mbTracks(a.rgid).then(t => {
+        if (!t.length) { toast("MusicBrainz har ingen trackliste for dette albumet"); drawTracks(id, false); return; }
+        a.tracks = t; save(); toast("Tracklisten er hentet"); refresh();
+      }).catch(err => { toast(err.message); drawTracks(id, false); });
+    }
     if (b.dataset.tr === "cancel") drawTracks(id, false);
     if (!canEdit()) return;
     if (b.dataset.tr === "save") { a.tracks = parseTracks($("#trackTa").value); save(); toast("Tracklisten er lagret"); refresh(); }
@@ -1206,12 +1232,174 @@ function confirmBox(title, text, okText = "Slett", danger = true, cancelText = "
   });
 }
 
+/* =====================================================================
+   HENTE ALBUM AUTOMATISK – MusicBrainz (data) og Cover Art Archive (cover)
+   Gratis og uten nøkkel. MusicBrainz tillater ca. 1 kall i sekundet, så alle kall går i kø.
+   ===================================================================== */
+const MB = "https://musicbrainz.org/ws/2";
+const sleep = ms => new Promise(res => setTimeout(res, ms));
+let mbNext = 0, mbChain = Promise.resolve();
+function mb(path){
+  const run = async () => {
+    for (let tries = 0; ; tries++){
+      const wait = mbNext - Date.now(); if (wait > 0) await sleep(wait);
+      mbNext = Date.now() + 1100;
+      let r;
+      try{ r = await fetch(MB + path + (path.includes("?") ? "&" : "?") + "fmt=json", { headers: { Accept: "application/json" } }); }
+      catch(e){ throw new Error("Fikk ikke kontakt med MusicBrainz. Sjekk nettet og prøv igjen."); }
+      if ((r.status === 503 || r.status === 429) && tries < 3) { await sleep(2500 * (tries + 1)); continue; }
+      if (!r.ok) throw new Error(r.status === 503 ? "MusicBrainz er travel akkurat nå. Prøv igjen om litt." : "MusicBrainz svarte " + r.status + ".");
+      return r.json();
+    }
+  };
+  const p = mbChain.then(run, run); mbChain = p.catch(() => {}); return p;
+}
+const caaCover = rgid => `https://coverartarchive.org/release-group/${rgid}/front-500`;
+const titleCase = s => String(s || "").replace(/(^|[\s-])\S/g, c => c.toUpperCase());
+
+async function mbSearchArtist(name){
+  const q = encodeURIComponent(`artist:"${name.replace(/"/g, "")}"`);
+  const j = await mb(`/artist?query=${q}&limit=8`);
+  return (j.artists || []).map(a => ({ mbid: a.id, name: a.name, dis: a.disambiguation || "", country: a.country || "",
+    begin: ((a["life-span"] || {}).begin || "").slice(0, 4), type: a.type || "", score: a.score || 0 }));
+}
+/* alle release groups av typen album, sortert etter første utgivelse */
+async function mbAlbums(mbid){
+  let out = [], offset = 0, total = 1;
+  while (offset < total && offset < 500){
+    const j = await mb(`/release-group?artist=${mbid}&type=album&limit=100&offset=${offset}`);
+    const l = j["release-groups"] || [];
+    total = j["release-group-count"] || 0;
+    out = out.concat(l); offset += 100;
+    if (!l.length) break;
+  }
+  return out.map(g => {
+    const sec = (g["secondary-types"] || []).map(x => x.toLowerCase());
+    const kind = !sec.length ? "studio" : sec.includes("live") ? "live" : sec.includes("compilation") ? "samle" : "annet";
+    return { rgid: g.id, title: g.title, year: parseInt((g["first-release-date"] || "").slice(0, 4)) || null, kind, sec };
+  }).sort((a, b) => (a.year || 9999) - (b.year || 9999) || byName(a.title, b.title));
+}
+async function mbGenre(mbid){
+  try{
+    const j = await mb(`/artist/${mbid}?inc=genres`);
+    const g = (j.genres || []).sort((a, b) => (b.count || 0) - (a.count || 0))[0];
+    return g ? titleCase(g.name) : "";
+  }catch(e){ return ""; }
+}
+/* trackliste: velger helst en offisiell vinylutgave, ellers den eldste offisielle */
+async function mbTracks(rgid){
+  const j = await mb(`/release?release-group=${rgid}&status=official&inc=recordings+media&limit=25`);
+  const rel = (j.releases || []).filter(x => (x.media || []).some(m => (m.tracks || []).length));
+  if (!rel.length) return [];
+  const isVinyl = x => (x.media || []).some(m => /vinyl/i.test(m.format || ""));
+  const date = x => x.date || "9999";
+  rel.sort((a, b) => (isVinyl(b) - isVinyl(a)) || date(a).localeCompare(date(b)));
+  return rel[0].media.flatMap(m => (m.tracks || []).map(t => t.title || (t.recording || {}).title || "")).filter(Boolean);
+}
+
+/* tracklister hentes i bakgrunnen etter at albumene er lagt inn */
+const trackQueue = [];
+let trackRunning = false;
+function queueTracks(ids){
+  ids.forEach(id => { if (!trackQueue.includes(id)) trackQueue.push(id); });
+  if (!trackRunning) runTrackQueue();
+}
+async function runTrackQueue(){
+  trackRunning = true;
+  let done = 0, total = trackQueue.length;
+  while (trackQueue.length){
+    const a = album(trackQueue.shift());
+    if (!a || !a.rgid || a.tracks.length || !canEdit()) continue;
+    try{
+      const t = await mbTracks(a.rgid);
+      if (t.length && album(a.id) && !a.tracks.length){ a.tracks = t; done++; save(); if (location.hash === "#/album/" + a.id) refresh(); }
+    }catch(e){ /* albumsiden har en knapp for å prøve igjen */ }
+  }
+  trackRunning = false;
+  if (total > 1) toast(`🎵 Tracklister hentet for ${done} av ${total} album`);
+}
+
+/* Flyt: velg riktig artist i MusicBrainz → velg album → legges inn som «Mangler» */
+function fetchAlbumsFlow(artistId){
+  const ar = artist(artistId); if (!ar || !canEdit()) return;
+  const src = '<p class="src">Data fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>, cover fra <a href="https://coverartarchive.org" target="_blank" rel="noopener">Cover Art Archive</a>.</p>';
+  let cancelled = false;
+  const close = openModal(`<h2>Hent album: ${esc(ar.name)}</h2><div id="mbBody"></div>`, () => {});
+  const body = () => document.getElementById("mbBody");
+  const gone = () => cancelled || !body();
+  const busy = t => { if (!gone()) body().innerHTML = `<p class="muted"><span class="spin"></span>${t}</p><div class="acts"><button class="btn" data-close>Avbryt</button></div>`; };
+  const fail = (msg, retry) => {
+    if (gone()) return;
+    body().innerHTML = `<p style="color:var(--miss)">${esc(msg)}</p>${src}<div class="acts"><button class="btn" data-close>Lukk</button><button class="btn pri" id="mbRetry">Prøv igjen</button></div>`;
+    body().querySelector("#mbRetry").onclick = retry;
+  };
+
+  async function chooseArtist(){
+    busy("Søker etter artisten i MusicBrainz …");
+    let list;
+    try{ list = await mbSearchArtist(ar.name); }catch(e){ return fail(e.message, chooseArtist); }
+    if (gone()) return;
+    if (!list.length) return fail(`Fant ingen artist som heter «${ar.name}» i MusicBrainz. Sjekk stavemåten under Rediger artist.`, chooseArtist);
+    body().innerHTML = `<p class="muted">Velg riktig artist:</p><div class="pick">${list.map((x, i) => `<button class="opt" data-pick="${i}">
+        <div><b>${esc(x.name)}</b><span>${esc([x.dis, x.type === "Group" ? "Band" : x.type === "Person" ? "Artist" : x.type, x.country, x.begin && "fra " + x.begin].filter(Boolean).join(" · ") || "Ingen detaljer")}</span></div></button>`).join("")}</div>
+      ${src}<div class="acts"><button class="btn" data-close>Avbryt</button></div>`;
+    body().querySelector(".pick").onclick = e => {
+      const b = e.target.closest("[data-pick]"); if (!b) return;
+      ar.mbid = list[+b.dataset.pick].mbid; save(); chooseAlbums();
+    };
+  }
+
+  async function chooseAlbums(){
+    busy("Henter albumene …");
+    let list, genre;
+    try{ list = await mbAlbums(ar.mbid); genre = await mbGenre(ar.mbid); }catch(e){ return fail(e.message, chooseAlbums); }
+    if (gone()) return;
+    const mine = albumsOf(ar.id);
+    const have = x => mine.some(a => a.rgid === x.rgid || norm(a.title) === norm(x.title));
+    if (!list.length) return fail("MusicBrainz har ingen album registrert for denne artisten.", chooseAlbums);
+    // album du allerede har registrert får cover og trackliste når de finnes i MusicBrainz
+    const linked = [];
+    list.forEach(x => { const a = mine.find(y => !y.rgid && norm(y.title) === norm(x.title)); if (a){ a.rgid = x.rgid; if (!a.cover) a.cover = caaCover(x.rgid); linked.push(a.id); } });
+    if (linked.length){ save(); queueTracks(linked); }
+    const groups = [["studio", "Studioalbum", true], ["live", "Livealbum", false], ["samle", "Samlealbum", false], ["annet", "Annet (soundtrack, remiks …)", false]];
+    const row = (x, on) => { const h = have(x);
+      return `<label class="opt${h ? " have" : ""}"><input type="checkbox" data-rg="${x.rgid}"${h ? " disabled" : on ? " checked" : ""}>
+        <div class="th"><img src="${caaCover(x.rgid).replace("-500", "-250")}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+        <div><b>${esc(x.title)}</b><span>${x.year || "Ukjent år"}${h ? " · finnes allerede" : ""}</span></div></label>`; };
+    body().innerHTML = `<p class="muted" style="margin-top:0">Avkryssede album legges inn som <b style="color:var(--ink)">❌ Mangler</b>. Marker etterpå de du eier.</p>
+      ${linked.length ? `<p class="muted" style="font-size:.85rem">✓ ${linked.length} album du allerede har er koblet til MusicBrainz og får cover og trackliste.</p>` : ""}
+      <div class="pick">${groups.map(([k, t, on]) => { const l = list.filter(x => x.kind === k); return l.length ? `<h3>${t} (${l.length})<button type="button" class="link" data-all="${k}">Velg alle</button></h3>${l.map(x => row(x, on)).join("")}` : ""; }).join("")}</div>
+      ${src}<div class="acts"><button class="btn" data-close>Avbryt</button><button class="btn pri" id="mbAdd"></button></div>`;
+    const B = body(), btn = B.querySelector("#mbAdd");
+    const count = () => { const n = B.querySelectorAll("input[data-rg]:checked").length; btn.textContent = n ? `Legg til ${n} album` : "Velg album"; btn.disabled = !n; };
+    B.addEventListener("change", count); count();
+    B.querySelectorAll("[data-all]").forEach(b => b.onclick = () => {
+      const boxes = list.filter(x => x.kind === b.dataset.all).map(x => B.querySelector(`input[data-rg="${x.rgid}"]`)).filter(i => !i.disabled);
+      const all = boxes.every(i => i.checked); boxes.forEach(i => i.checked = !all); count();
+    });
+    btn.onclick = () => {
+      const pickIds = [...B.querySelectorAll("input[data-rg]:checked")].map(i => i.dataset.rg);
+      const added = list.filter(x => pickIds.includes(x.rgid)).map(x => blankAlbum({ artistId: ar.id, title: x.title, year: x.year, rgid: x.rgid,
+        cover: caaCover(x.rgid), genre: x.kind === "live" ? (genre ? genre + " · Live" : "Live") : genre, owned: false }));
+      db.albums.push(...added); save(); close(); refresh();
+      toast(`${added.length} album lagt til – tracklister hentes i bakgrunnen`);
+      queueTracks(added.map(a => a.id));
+    };
+  }
+
+  // lukkes vinduet, stoppes flyten
+  const obs = new MutationObserver(() => { if (!document.getElementById("mbBody")) { cancelled = true; obs.disconnect(); } });
+  obs.observe($("#modalRoot"), { childList: true });
+  ar.mbid ? chooseAlbums() : chooseArtist();
+}
+
 function artistForm(id){
   const a = id ? artist(id) : null;
   openModal(`<h2>${a ? "Rediger artist" : "Ny artist"}</h2>
     <form class="form" id="af" novalidate>
       <div class="field full"><label for="aName">Artistnavn</label><input id="aName" required maxlength="120" value="${esc(a ? a.name : "")}" autocomplete="off"></div>
       <div class="field full"><label for="aNotes">Notater (valgfritt)</label><textarea id="aNotes" style="min-height:80px">${esc(a ? a.notes : "")}</textarea></div>
+      ${a ? "" : `<div class="field full checks"><label><input type="checkbox" id="aFetch" checked> Hent album automatisk (MusicBrainz)</label></div>`}
     </form>
     <div class="acts"><button class="btn" data-close>Avbryt</button><button class="btn pri" form="af" type="submit">${a ? "Lagre" : "Opprett artist"}</button></div>`,
   (m, close) => {
@@ -1221,12 +1409,13 @@ function artistForm(id){
       if (!name) { m.querySelector("#aName").parentElement.classList.add("err"); return; }
       const dup = db.artists.find(x => norm(x.name) === norm(name) && x.id !== id);
       if (dup) { toast("Artisten finnes allerede"); return; }
-      if (a) { a.name = name; a.notes = notes; save(); close(); toast("Artisten er oppdatert"); refresh(); }
+      if (a) { if (norm(a.name) !== norm(name)) a.mbid = ""; a.name = name; a.notes = notes; save(); close(); toast("Artisten er oppdatert"); refresh(); }
       else {
-        const n = { id: uid(), name, notes }; db.artists.push(n); save(); close();
-        toast(`${name} er opprettet – legg inn album`);
+        const auto = m.querySelector("#aFetch").checked;
+        const n = { id: uid(), name, notes, mbid: "" }; db.artists.push(n); save(); close();
+        toast(auto ? `${name} er opprettet` : `${name} er opprettet – legg inn album`);
         location.hash = "#/artist/" + n.id;
-        setTimeout(() => albumForm(null, n.id), 250);
+        setTimeout(() => auto ? fetchAlbumsFlow(n.id) : albumForm(null, n.id), 250);
       }
     };
   });
@@ -1304,7 +1493,7 @@ function albumForm(id, presetArtist){
 /* =====================================================================
    FELLES KLIKK
    ===================================================================== */
-const EDIT_ACTS = new Set(["newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
+const EDIT_ACTS = new Set(["fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
 document.addEventListener("click", async e => {
   if (!canEdit() && e.target.closest("[data-toggle],[data-flagrow],[data-set],[data-flag]")) return;
   const tg = e.target.closest("[data-toggle]");
@@ -1327,6 +1516,7 @@ document.addEventListener("click", async e => {
   }
   if (act === "retrySync") return void pushNow();
   if (act === "reload") { loadState = "loading"; route(); return void load(); }
+  if (act === "fetchAlbums") fetchAlbumsFlow(id);
   if (act === "newArtist") artistForm();
   if (act === "editArtist") artistForm(id);
   if (act === "newAlbum") albumForm(null, b.dataset.artist);

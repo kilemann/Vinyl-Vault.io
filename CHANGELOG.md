@@ -1,5 +1,15 @@
 # Endringslogg – Vinyl Vault
 
+## 1.2.0 – 2026-10-29
+- Hent album automatisk fra MusicBrainz når en ny artist legges til (valg i skjemaet, på som standard).
+- Velg riktig artist blant søketreffene, og velg album gruppert som studio, live, samle og annet. Studioalbum er forhåndsvalgt.
+- Album legges inn som «Mangler» med år, sjanger og cover fra Cover Art Archive.
+- Tracklister hentes i bakgrunnen. Vinylutgaven foretrekkes når den finnes.
+- Knappen «Hent album» på artistsiden henter det som mangler for eksisterende artister.
+  Album du allerede har med samme tittel får cover og trackliste, og legges ikke inn på nytt.
+- Knappen «Hent trackliste» på albumsiden for album uten spor.
+- Kall til MusicBrainz går i kø med minst 1,1 sekund mellomrom, og prøves på nytt hvis tjenesten er travel.
+
 ## 1.1.0 – 2026-10-29
 - Samlingen ligger nå i `collection.json` i GitHub-repoet. Alle som åpner lenken ser samme samling.
 - Lesemodus for alle. Redigering låses opp med en GitHub-nøkkel (fine-grained token med «Contents: Read and write»
