@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:21:29.134Z",
+  "updated": "2026-10-29T18:21:37.322Z",
   "version": 1,
   "artists": [
     {
@@ -1159,34 +1159,6 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "0ff5ef80-321e-4d1d-ad90-001d3a8cf774"
-    },
-    {
-      "id": "cd67662a-de18-4ee4-95a2-03af01b9ade0",
-      "artistId": "0d08009d-63e9-499b-8c07-387aefa2c91b",
-      "title": "Chaos & Colour",
-      "year": 2023,
-      "genre": "Hard Rock",
-      "cover": "https://coverartarchive.org/release-group/b0a21891-c424-42a8-bef8-dfbf6bdb93bb/front-500",
-      "tracks": [
-        "Save Me Tonight",
-        "Silver Sunlight",
-        "Hail the Sunrise",
-        "Hurricane",
-        "One Nation, One Sun",
-        "Golden Light",
-        "You'll Never Be Alone",
-        "Fly Like an Eagle",
-        "Freedom to Be Free"
-      ],
-      "owned": false,
-      "favorite": false,
-      "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
-      "notes": "",
-      "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "b0a21891-c424-42a8-bef8-dfbf6bdb93bb"
     }
   ]
 }
