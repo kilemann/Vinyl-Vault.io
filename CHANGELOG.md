@@ -1,5 +1,10 @@
 # Endringslogg – Vinyl Vault
 
+## 1.5.0 – 2026-10-29
+- Samlingen lagres til GitHub 1 minutt etter siste endring i stedet for 1,5 sekunder. Færre commits og publiseringer.
+- Ny knapp «💾 Lagre nå» øverst mens noe venter på å bli lagret.
+- Lagrer straks når appen legges i bakgrunnen (som før). Lukkes fanen med ulagrede endringer, spør nettleseren først.
+
 ## 1.4.0 – 2026-10-29
 Raskere coverbilder:
 - Ny GitHub-jobb «Lagre cover» henter cover fra Cover Art Archive (250 og 500 px) og lagrer dem i repoet under `covers/`.

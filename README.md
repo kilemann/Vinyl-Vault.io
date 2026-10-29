@@ -1,4 +1,4 @@
-# Vinyl Vault v1.4.0
+# Vinyl Vault v1.5.0
 Oversikt over vinylsamlingen: hvilke plater du eier, hvilke du mangler og hvor komplett samlingen er per artist.
 
 Åpne: https://kilemann.github.io/Vinyl-Vault.io/
@@ -9,7 +9,7 @@ Oversikt over vinylsamlingen: hvilke plater du eier, hvilke du mangler og hvor k
   1. https://github.com/settings/personal-access-tokens/new
   2. Repository access: **Only select repositories** → **Vinyl-Vault.io**
   3. Repository permissions: **Contents: Read and write**
-- Nøkkelen lagres bare på enheten. Hver lagring blir en commit, så all historikk finnes i GitHub.
+- Endringer lagres til GitHub 1 minutt etter siste endring, eller straks med «💾 Lagre nå». Nøkkelen lagres bare på enheten. Hver lagring blir en commit, så all historikk finnes i GitHub.
 - Album, cover og tracklister kan hentes automatisk fra MusicBrainz og Cover Art Archive (gratis, uten nøkkel).
 - Diagrammene bruker Chart.js fra cdnjs.
 

@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.4.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.5.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -277,7 +277,11 @@ body.ro .status{pointer-events:none}
   background:var(--glass);font-weight:600;font-size:.82rem;color:var(--muted);white-space:nowrap}
 .lockbtn.on{color:#a7f3d0;border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.12)}
 .sync{font-size:.75rem;color:var(--muted);white-space:nowrap;background:none;border:0;padding:0}
-.sync.ok{color:var(--ok)} .sync.err{color:var(--miss);text-decoration:underline}
+.sync.ok{color:var(--ok)}
+.savebtn{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:999px;border:1px solid rgba(245,165,36,.55);
+  background:rgba(245,165,36,.15);color:#fcd9a0;font-weight:600;font-size:.8rem;white-space:nowrap;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 4px rgba(245,165,36,.12)}}
+.side .savebtn{justify-content:center;height:36px} .sync.err{color:var(--miss);text-decoration:underline}
 .side .lockbar{flex-direction:column;align-items:stretch;margin:0 4px 14px}
 .side .lockbtn{justify-content:center}
 .side .sync{text-align:center}
@@ -335,11 +339,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.4.0
+   Vinyl Vault v1.5.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.4.0";
+const APP_VERSION = "1.5.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -630,12 +634,13 @@ async function load(){
 }
 
 /* Lagrer på enheten straks, og til GitHub litt etter siste endring (så mange klikk blir én lagring) */
+const SAVE_DELAY = 60000;   // lagres til GitHub 1 minutt etter siste endring (eller straks med «Lagre nå»)
 let pushT = null, pushing = false, pushAgain = false;
 function save(){
   writeCache();
   if (!canEdit()) return;
-  changeNo++; sync.dirty = true; saveSync(); setSync("saving");
-  clearTimeout(pushT); pushT = setTimeout(pushNow, 1500);
+  changeNo++; sync.dirty = true; saveSync(); if (!pushing) setSync("pending");
+  clearTimeout(pushT); pushT = setTimeout(pushNow, SAVE_DELAY);
 }
 async function pushNow(){
   clearTimeout(pushT);
@@ -683,6 +688,7 @@ function setSync(state, msg = ""){ syncState = state; syncMsg = msg; drawLock();
 function lockHtml(){
   const st = !canEdit() ? "" :
     syncState === "error" ? `<button class="sync err" data-act="retrySync" title="${esc(syncMsg)}">⚠️ Ikke lagret – prøv igjen</button>` :
+    syncState === "pending" ? '<button class="savebtn" data-act="saveNow" title="Lagres automatisk etter 1 minutt uten endringer">💾 Lagre nå</button>' :
     syncState === "saving" ? '<span class="sync">Lagrer…</span>' : syncState === "ok" ? '<span class="sync ok">✓ Lagret på GitHub</span>' : "";
   return st + `<button class="lockbtn${canEdit() ? " on" : ""}" data-act="lock" aria-label="${canEdit() ? "Redigering er på. Trykk for å låse" : "Lås opp redigering"}">${canEdit() ? "🔓 Redigerer" : "🔒 Lås opp"}</button>`;
 }
@@ -1604,7 +1610,7 @@ document.addEventListener("click", async e => {
     if (await confirmBox("Låse redigering?", "Nøkkelen fjernes fra denne enheten." + (sync.dirty ? " NB: Siste endring er ikke lagret på GitHub ennå." : ""), "Lås", false)) lockOut();
     return;
   }
-  if (act === "retrySync") return void pushNow();
+  if (act === "retrySync" || act === "saveNow") return void pushNow();
   if (act === "reload") { loadState = "loading"; route(); return void load(); }
   if (act === "fetchAlbums") fetchAlbumsFlow(id);
   if (act === "newArtist") artistForm();
@@ -1683,6 +1689,8 @@ addEventListener("storage", e => {
 });
 /* lagre med en gang hvis appen lukkes eller legges i bakgrunnen */
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden" && sync.dirty && canEdit()) pushNow(); });
+/* lukkes fanen med ulagrede endringer: prøv å lagre, og la nettleseren spørre */
+addEventListener("beforeunload", e => { if (sync.dirty && canEdit()) { pushNow(); e.preventDefault(); e.returnValue = ""; } });
 addEventListener("online", () => { if (sync.dirty && canEdit()) pushNow(); });
 
 /* ---------- start ---------- */
