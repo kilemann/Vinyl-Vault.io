@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.2.0",
-  "updated": "2026-10-29T18:19:16.532Z",
+  "updated": "2026-10-29T18:19:23.908Z",
   "version": 1,
   "artists": [
     {
@@ -330,7 +330,7 @@
       "title": "Dire Straits",
       "year": 1978,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/0c9bc273-a9e9-3290-b423-c61b9f8d20bc/front-500",
       "tracks": [
         "Down to the Waterline",
         "Water of Love",
@@ -350,7 +350,7 @@
       "purchaseDate": "2022-08-19",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "0c9bc273-a9e9-3290-b423-c61b9f8d20bc"
     },
     {
       "id": "83ca12b9-ed62-4c21-b2f4-06d99ae2ed81",
@@ -358,7 +358,7 @@
       "title": "Communiqué",
       "year": 1979,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/7e1ada24-6fb0-3b23-a671-9cdaf865c515/front-500",
       "tracks": [],
       "owned": true,
       "favorite": false,
@@ -368,7 +368,7 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "7e1ada24-6fb0-3b23-a671-9cdaf865c515"
     },
     {
       "id": "2f8f526e-9eed-4b5f-a8cb-260bfe146dad",
@@ -376,7 +376,7 @@
       "title": "Making Movies",
       "year": 1980,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/5b0a15ce-8aa9-323b-8fb6-02b657756ba9/front-500",
       "tracks": [
         "Tunnel of Love",
         "Romeo and Juliet",
@@ -394,7 +394,7 @@
       "purchaseDate": "2023-03-25",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "5b0a15ce-8aa9-323b-8fb6-02b657756ba9"
     },
     {
       "id": "a89c504d-e893-495e-959f-4af7613a6e69",
@@ -402,7 +402,7 @@
       "title": "Love over Gold",
       "year": 1982,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/935dde7e-8390-39fa-8e0d-1350db96bc3f/front-500",
       "tracks": [],
       "owned": false,
       "favorite": false,
@@ -412,7 +412,7 @@
       "purchaseDate": "2023-07-01",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "935dde7e-8390-39fa-8e0d-1350db96bc3f"
     },
     {
       "id": "0a24ed0c-6839-4b50-9e88-673199bb8f88",
@@ -420,7 +420,7 @@
       "title": "Brothers in Arms",
       "year": 1985,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/b02f651e-32a1-30ae-bc23-070b59170278/front-500",
       "tracks": [
         "So Far Away",
         "Money for Nothing",
@@ -440,7 +440,7 @@
       "purchaseDate": "2026-06-13",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "b02f651e-32a1-30ae-bc23-070b59170278"
     },
     {
       "id": "443b9316-7063-4e5b-8d53-c9b573805412",
@@ -448,7 +448,7 @@
       "title": "On Every Street",
       "year": 1991,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/b286b831-931e-3680-97f1-aa18541f5cc2/front-500",
       "tracks": [],
       "owned": false,
       "favorite": false,
@@ -458,7 +458,7 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": ""
+      "rgid": "b286b831-931e-3680-97f1-aa18541f5cc2"
     },
     {
       "id": "3f9bd015-290a-43a8-bb21-f2663af8bb82",
@@ -1035,7 +1035,22 @@
       "year": 1998,
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/ba0a82c4-809e-36e1-b3e0-6fe10737e80a/front-500",
-      "tracks": [],
+      "tracks": [
+        "Between Two Worlds",
+        "I Hear Voices",
+        "Perfect Little Heart",
+        "Heartless Land",
+        "Only the Young",
+        "In the Moment",
+        "Question",
+        "Change",
+        "Shelter From the Rain",
+        "Everything in Life",
+        "Across the Miles",
+        "Feels Like",
+        "The Golden Palace",
+        "Sweet Pretender"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
