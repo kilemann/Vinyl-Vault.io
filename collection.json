@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.4.0",
-  "updated": "2026-10-29T18:59:44.862Z",
+  "updated": "2026-10-29T18:59:47.915Z",
   "version": 1,
   "artists": [
     {
@@ -955,7 +955,20 @@
       "year": 1986,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/78ca3864-965a-307b-b010-57593b763d26/front-500",
-      "tracks": [],
+      "tracks": [
+        "Hvis jeg var deg",
+        "Uskyldighet",
+        "Action",
+        "Hvor er du nå",
+        "Nederlag",
+        "Feig",
+        "Søvnløse netter",
+        "Øl",
+        "Snyltegjesten",
+        "Hvor har du vært",
+        "Pene ben",
+        "En skabbete hund krysser sine spor"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
