@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T19:38:56.869Z",
+  "updated": "2026-10-29T19:42:30.605Z",
   "version": 1,
   "artists": [
     {
@@ -2400,7 +2400,7 @@
         "Trio Khramphathah",
         "Grethe Waitz"
       ],
-      "owned": false,
+      "owned": true,
       "favorite": false,
       "wishlist": false,
       "price": 200,
