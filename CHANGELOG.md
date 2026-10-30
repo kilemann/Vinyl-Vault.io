@@ -1,5 +1,11 @@
 # Endringslogg – Vinyl Vault
 
+## 1.7.0 – 2026-10-30
+- Artister: artistene vises først, mappene nederst.
+- Samling: mappene står sist i filteret.
+- Ny plate rett i en mappe med «＋ Legg til plate» på mappesiden (eller pluss-knappen i mappen). Artistnavnet skrives som tekst,
+  med forslag fra navn du har fra før, og det lages ingen egen artist. «Hent info fra nettet etter lagring» er valgt som standard.
+
 ## 1.6.0 – 2026-10-30
 Oversikt:
 - «Mest komplette artister», «Album per artist» og «Topp 10 artister» viser bare artister du eier minst 2 plater av.

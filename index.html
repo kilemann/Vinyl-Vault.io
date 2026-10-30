@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.6.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.7.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -354,11 +354,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.6.0
+   Vinyl Vault v1.7.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.6.0";
+const APP_VERSION = "1.7.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -1023,18 +1023,20 @@ function viewArtists(){
       ${[["navn","Navn A–Å"],["komplett","Mest komplett"],["minst","Minst komplett"],["antall","Flest album"]].map(([v, t]) => `<option value="${v}"${s.sort === v ? " selected" : ""}>${t}</option>`).join("")}
     </select>
   </div>
-  <div id="flistWrap"></div>
-  <div class="agrid stag" id="alist"></div>`;
+  <div id="ahead"></div>
+  <div class="agrid stag" id="alist"></div>
+  <div id="flistWrap"></div>`;
 }
 function drawArtistList(){
   const s = ui.artists, q = norm(s.q);
   const fl = sortedFolders().filter(f => !q || norm(f.name).includes(q) || folderAlbums(f.id).some(a => norm(a.artistText + " " + a.title).includes(q)));
-  $("#flistWrap").innerHTML = fl.length ? `<div class="subhead">Mapper</div><div class="agrid stag" style="margin-bottom:22px">${fl.map((f, i) => { const st = folderStats(f.id);
+  $("#ahead").innerHTML = fl.length && db.artists.length ? '<div class="subhead">Artister</div>' : "";
+  $("#flistWrap").innerHTML = fl.length ? `<div class="subhead" style="margin-top:26px">Mapper</div><div class="agrid stag">${fl.map((f, i) => { const st = folderStats(f.id);
       return `<a class="acard glass fcard" href="#/mappe/${f.id}" style="--i:${i}">${mosaic(null, folderAlbums(f.id))}
         <div class="info"><h3>${esc(f.name)}</h3>
           <div class="meta"><span>${st.total} ${st.total === 1 ? "plate" : "plater"}</span><span>${st.own} eid</span></div>
           <div class="meta" style="margin:4px 0 0"><span>${esc([...new Set(folderAlbums(f.id).map(a => a.artistText))].slice(0, 3).join(", ") || "Tom mappe")}</span>${st.value ? `<span>${nok(st.value)}</span>` : ""}</div>
-        </div></a>`; }).join("")}</div>${db.artists.length ? '<div class="subhead">Artister</div>' : ""}` : "";
+        </div></a>`; }).join("")}</div>` : "";
   let l = db.artists.filter(a => !q || norm(a.name).includes(q)).map(a => ({ a, s: artistStats(a.id) }));
   const cmp = { navn: (x, y) => byName(sortName(x.a.name), sortName(y.a.name)), komplett: (x, y) => y.s.pct - x.s.pct || y.s.own - x.s.own,
     minst: (x, y) => x.s.pct - y.s.pct, antall: (x, y) => y.s.total - x.s.total }[s.sort];
@@ -1091,7 +1093,8 @@ function viewFolder(id){
         <p class="sub">${st.total} ${st.total === 1 ? "plate" : "plater"} · ${st.own} eid${st.value ? " · verdi " + nok(st.value) : ""}</p>
         ${f.notes ? `<p class="sub notes">${esc(f.notes)}</p>` : ""}
         <div class="btns edit-only" style="margin-top:14px">
-          ${need ? `<button class="btn pri" data-act="fetchInfoAll" data-id="${f.id}">🔎 Hent info for ${need} ${need === 1 ? "plate" : "plater"}</button>` : ""}
+          <button class="btn pri" data-act="newFolderAlbum" data-id="${f.id}">${IC.plus}Legg til plate</button>
+          ${need ? `<button class="btn" data-act="fetchInfoAll" data-id="${f.id}">🔎 Hent info for ${need} ${need === 1 ? "plate" : "plater"}</button>` : ""}
           <button class="btn" data-act="editFolder" data-id="${f.id}">${IC.edit}Rediger</button>
           <button class="btn danger" data-act="delFolder" data-id="${f.id}">${IC.trash}Slett</button>
         </div>
@@ -1104,7 +1107,7 @@ function viewFolder(id){
 function drawFolder(id){
   const q = norm(ui.mappe.q), l = folderAlbums(id).filter(a => !q || norm(a.artistText + " " + a.title + " " + a.year).includes(q));
   $("#fgrid").innerHTML = l.length ? l.map((a, i) => albumCard(a, i, { showArtist: true })).join("")
-    : `<div style="grid-column:1/-1">${emptyBox(folderAlbums(id).length ? "Ingen plater passer søket." : "Mappen er tom. Åpne et album og trykk «📁 Flytt til mappe».")}</div>`;
+    : `<div style="grid-column:1/-1">${emptyBox(folderAlbums(id).length ? "Ingen plater passer søket." : "Mappen er tom. Trykk «＋ Legg til plate», eller åpne et album og trykk «📁 Flytt til mappe».")}</div>`;
 }
 after.mappe = id => { if (ui.mappe.id !== id) { ui.mappe = { q: "", id }; } drawFolder(id); $("#fq")?.addEventListener("input", e => { ui.mappe.q = e.target.value; drawFolder(id); }); };
 
@@ -1310,8 +1313,8 @@ function viewCollection(){
 function drawCollection(){
   const s = ui.samling, q = norm(s.q);
   $("#cchips").innerHTML = `<button class="chip${s.artists.length ? "" : " on"}" data-chip="">Alle artister</button>` +
-    sortedFolders().map(f => `<button class="chip${s.artists.includes("f:" + f.id) ? " on" : ""}" data-chip="f:${f.id}">📁 ${esc(f.name)}</button>`).join("") +
-    sortedArtists().map(a => `<button class="chip${s.artists.includes(a.id) ? " on" : ""}" data-chip="${a.id}">${esc(a.name)}</button>`).join("");
+    sortedArtists().map(a => `<button class="chip${s.artists.includes(a.id) ? " on" : ""}" data-chip="${a.id}">${esc(a.name)}</button>`).join("") +
+    sortedFolders().map(f => `<button class="chip${s.artists.includes("f:" + f.id) ? " on" : ""}" data-chip="f:${f.id}">📁 ${esc(f.name)}</button>`).join("");
   let l = db.albums.filter(a => (s.status === "alle" || (s.status === "eier") === a.owned) &&
     (!s.artists.length || (a.folderId ? s.artists.includes("f:" + a.folderId) : s.artists.includes(a.artistId))) &&
     (!q || norm([a.title, albArtist(a), a.genre, a.year, a.notes, a.tracks.join(" "), a.folderId ? folder(a.folderId).name : ""].join(" ")).includes(q)));
@@ -1772,14 +1775,17 @@ function artistForm(id){
   });
 }
 
-function albumForm(id, presetArtist){
-  const a = id ? album(id) : blankAlbum({ artistId: presetArtist || "", owned: true });
+function albumForm(id, presetArtist, presetFolder){
+  const a = id ? album(id) : blankAlbum({ artistId: presetFolder ? "" : presetArtist || "", folderId: presetFolder && folder(presetFolder) ? presetFolder : "", owned: true });
   const arts = sortedArtists();
   if (!id && !a.artistId && arts.length === 1) a.artistId = arts[0].id;
   const inF = !!a.folderId;
-  openModal(`<h2>${id ? "Rediger album" : "Nytt album"}</h2>
+  const knownArtists = inF ? [...new Set(db.artists.map(x => x.name).concat(db.albums.map(x => x.artistText).filter(Boolean)))].sort(byName) : [];
+  openModal(`<h2>${id ? "Rediger album" : inF ? `Ny plate i 📁 ${esc(folder(a.folderId).name)}` : "Nytt album"}</h2>
   <form class="form" id="alf" novalidate>
-    ${inF ? `<div class="field full"><label for="fArtistText">Artist <span style="text-transform:none;letter-spacing:0">· 📁 ${esc(folder(a.folderId).name)}</span></label><input id="fArtistText" maxlength="120" value="${esc(a.artistText)}" autocomplete="off"></div>` : `<div class="field full"><label for="fArtist">Artist</label>
+    ${inF ? `<div class="field full"><label for="fArtistText">Artist <span style="text-transform:none;letter-spacing:0">· 📁 ${esc(folder(a.folderId).name)}</span></label><input id="fArtistText" list="artistNames" maxlength="120" value="${esc(a.artistText)}" placeholder="Skriv artistnavnet" autocomplete="off">
+      <datalist id="artistNames">${knownArtists.map(n => `<option value="${esc(n)}">`).join("")}</datalist>
+      ${id ? "" : `<div class="hint">Det lages ingen egen artist. Navnet brukes når du henter info fra nettet.</div>`}</div>` : `<div class="field full"><label for="fArtist">Artist</label>
       <select id="fArtist">${arts.map(x => `<option value="${x.id}"${x.id === a.artistId ? " selected" : ""}>${esc(x.name)}</option>`).join("")}
         <option value="__new"${arts.length ? "" : " selected"}>＋ Ny artist…</option></select>
       <div class="newartist${arts.length ? "" : " on"}" id="newArtistBox"><input id="fNewArtist" placeholder="Navn på ny artist" maxlength="120" autocomplete="off"></div>
@@ -1806,6 +1812,7 @@ function albumForm(id, presetArtist){
     <div class="field full checks">
       <label><input type="checkbox" id="fFav"${a.favorite ? " checked" : ""}> ❤️ Favoritt</label>
       <label><input type="checkbox" id="fWish"${a.wishlist ? " checked" : ""}> ⭐ På ønskelisten</label>
+      ${inF && !id ? `<label><input type="checkbox" id="fAutoInfo" checked> 🔎 Hent info fra nettet etter lagring</label>` : ""}
     </div>
   </form>
   <div class="acts">${id ? `<button class="btn danger" data-act="delAlbum" data-id="${id}" style="margin-right:auto">${IC.trash}Slett</button>` : ""}
@@ -1846,6 +1853,7 @@ function albumForm(id, presetArtist){
       let artistId = inF ? "" : g("#fArtist").value;
       m.querySelectorAll(".err").forEach(x => x.classList.remove("err"));
       if (!title) { g("#fTitle").parentElement.classList.add("err"); g("#fTitle").focus(); return; }
+      if (inF && !id && !g("#fArtistText").value.trim()) { g("#fArtistText").parentElement.classList.add("err"); g("#fArtistText").focus(); return; }
       if (artistId === "__new"){
         const nm = g("#fNewArtist").value.trim();
         if (!nm) { g("#fNewArtist").parentElement.parentElement.classList.add("err"); g("#fNewArtist").focus(); return; }
@@ -1857,8 +1865,11 @@ function albumForm(id, presetArtist){
         tracks: parseTracks(g("#fTracks").value), owned, price: g("#fPrice").value, purchaseDate: g("#fDate").value,
         condition: g("#fCond").value, notes: g("#fNotes").value.trim(), favorite: g("#fFav").checked, wishlist: g("#fWish").checked && !owned });
       if (id) Object.assign(album(id), data); else db.albums.push(data);
-      save(); close(); toast(id ? "Albumet er oppdatert" : `${title} er lagt til`);
-      if (!id && !inF && !location.hash.startsWith("#/artist/" + artistId)) location.hash = "#/artist/" + artistId; else refresh();
+      const autoInfo = inF && !id && g("#fAutoInfo")?.checked;
+      save(); close(); toast(id ? "Albumet er oppdatert" : inF ? `${title} er lagt i 📁 ${folder(a.folderId).name}` : `${title} er lagt til`);
+      if (!id && inF && !location.hash.startsWith("#/mappe/" + a.folderId)) location.hash = "#/mappe/" + a.folderId;
+      else if (!id && !inF && !location.hash.startsWith("#/artist/" + artistId)) location.hash = "#/artist/" + artistId; else refresh();
+      if (autoInfo) setTimeout(() => fetchInfoFlow(data.id), 250);
     };
   });
 }
@@ -1866,7 +1877,7 @@ function albumForm(id, presetArtist){
 /* =====================================================================
    FELLES KLIKK
    ===================================================================== */
-const EDIT_ACTS = new Set(["newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
+const EDIT_ACTS = new Set(["newFolderAlbum", "newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
 document.addEventListener("click", async e => {
   if (!canEdit() && e.target.closest("[data-toggle],[data-flagrow],[data-set],[data-flag]")) return;
   const tg = e.target.closest("[data-toggle]");
@@ -1909,6 +1920,7 @@ document.addEventListener("click", async e => {
   if (act === "newArtist") artistForm();
   if (act === "editArtist") artistForm(id);
   if (act === "newAlbum") albumForm(null, b.dataset.artist);
+  if (act === "newFolderAlbum") albumForm(null, "", id);
   if (act === "editAlbum") albumForm(id);
   if (act === "delAlbum"){
     const a = album(id); if (!a) return;
@@ -1956,9 +1968,12 @@ document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.ma
 /* pluss-knappen: nytt album (med artisten du står på) – ny artist hvis ingen finnes */
 $("#fab").addEventListener("click", () => {
   if (!canEdit()) return;
+  const fm = location.hash.match(/^#\/mappe\/(.+)$/), am = location.hash.match(/^#\/album\/(.+)$/);
+  if (fm && folder(decodeURIComponent(fm[1]))) return albumForm(null, "", decodeURIComponent(fm[1]));
+  const fa = am && album(decodeURIComponent(am[1]));
+  if (fa && fa.folderId) return albumForm(null, "", fa.folderId);
   if (!db.artists.length) return artistForm();
-  const m = location.hash.match(/^#\/artist\/(.+)$/), am = location.hash.match(/^#\/album\/(.+)$/);
-  if (am && album(decodeURIComponent(am[1]))?.folderId) return albumForm(null, "");
+  const m = location.hash.match(/^#\/artist\/(.+)$/);
   albumForm(null, m ? decodeURIComponent(m[1]) : am && album(decodeURIComponent(am[1])) ? album(decodeURIComponent(am[1])).artistId : "");
 });
 
