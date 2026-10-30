@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.5.0",
-  "updated": "2026-10-30T12:40:17.658Z",
+  "appVersion": "1.6.0",
+  "updated": "2026-10-30T12:59:19.545Z",
   "version": 1,
   "artists": [
     {
@@ -71,6 +71,13 @@
       "mbid": "83d91898-7763-47d7-b03b-b92132375c47"
     }
   ],
+  "folders": [
+    {
+      "id": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "name": "Diverse LP'er",
+      "notes": ""
+    }
+  ],
   "albums": [
     {
       "id": "ad04d76a-d9e3-4513-bf89-17209dc1793c",
@@ -98,7 +105,9 @@
       "purchaseDate": "2022-08-19",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "0c9bc273-a9e9-3290-b423-c61b9f8d20bc"
+      "rgid": "0c9bc273-a9e9-3290-b423-c61b9f8d20bc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "83ca12b9-ed62-4c21-b2f4-06d99ae2ed81",
@@ -126,7 +135,9 @@
       "purchaseDate": "2025-09-18",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "7e1ada24-6fb0-3b23-a671-9cdaf865c515"
+      "rgid": "7e1ada24-6fb0-3b23-a671-9cdaf865c515",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2f8f526e-9eed-4b5f-a8cb-260bfe146dad",
@@ -152,7 +163,9 @@
       "purchaseDate": "2023-03-25",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "5b0a15ce-8aa9-323b-8fb6-02b657756ba9"
+      "rgid": "5b0a15ce-8aa9-323b-8fb6-02b657756ba9",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a89c504d-e893-495e-959f-4af7613a6e69",
@@ -176,7 +189,9 @@
       "purchaseDate": "2023-07-01",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "935dde7e-8390-39fa-8e0d-1350db96bc3f"
+      "rgid": "935dde7e-8390-39fa-8e0d-1350db96bc3f",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "0a24ed0c-6839-4b50-9e88-673199bb8f88",
@@ -204,7 +219,9 @@
       "purchaseDate": "2026-06-13",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "b02f651e-32a1-30ae-bc23-070b59170278"
+      "rgid": "b02f651e-32a1-30ae-bc23-070b59170278",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "443b9316-7063-4e5b-8d53-c9b573805412",
@@ -235,7 +252,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
-      "rgid": "b286b831-931e-3680-97f1-aa18541f5cc2"
+      "rgid": "b286b831-931e-3680-97f1-aa18541f5cc2",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "db441ba8-b06b-4cbb-89eb-c71628c205c4",
@@ -262,7 +281,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "7486e67b-89f9-372b-8624-9cb11fd44773"
+      "rgid": "7486e67b-89f9-372b-8624-9cb11fd44773",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "115e1685-e700-4d09-835a-1bae90fe8c2f",
@@ -288,7 +309,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "99100318-0642-3138-9023-6e5d681a2b7e"
+      "rgid": "99100318-0642-3138-9023-6e5d681a2b7e",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b68d57fe-e8b6-48d5-953c-cdcbf7aa7be9",
@@ -313,7 +336,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "62d88709-b653-3c37-b7f1-52974ea05010"
+      "rgid": "62d88709-b653-3c37-b7f1-52974ea05010",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "ff8d2fda-9dde-4b49-b0b2-8997d8722942",
@@ -341,7 +366,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "19f95cb8-6ffc-307f-a474-369103dd1b82"
+      "rgid": "19f95cb8-6ffc-307f-a474-369103dd1b82",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a727eb9e-4ee2-47b6-b326-c94acc723e05",
@@ -368,7 +395,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "35453797-1c54-383d-bbb1-4d12dfa5e74e"
+      "rgid": "35453797-1c54-383d-bbb1-4d12dfa5e74e",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "369d7aba-d315-46ef-86f0-df4b8de507d2",
@@ -395,7 +424,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "5d94cee4-0756-3fc0-9673-718dd6921a44"
+      "rgid": "5d94cee4-0756-3fc0-9673-718dd6921a44",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "f7e482de-cc7b-472f-89de-341ba84ebdba",
@@ -423,7 +454,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "eb02333a-88dc-3f5e-851b-99c0dd7c97bc"
+      "rgid": "eb02333a-88dc-3f5e-851b-99c0dd7c97bc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "4284d4b0-cbca-4f5f-9145-62e7a9358f51",
@@ -451,7 +484,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "ef753054-4db6-3a62-a86f-b1948a6d32fa"
+      "rgid": "ef753054-4db6-3a62-a86f-b1948a6d32fa",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "6914da8c-4cf5-4c5c-84ec-6cfc598ee3a2",
@@ -480,7 +515,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "265b3998-4596-3405-902b-86aa449f8f33"
+      "rgid": "265b3998-4596-3405-902b-86aa449f8f33",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2c030cba-bede-447e-9ffc-9dfc90451fc6",
@@ -507,7 +544,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "8c9c245c-8cd0-368a-aa7f-af8a95780dfc"
+      "rgid": "8c9c245c-8cd0-368a-aa7f-af8a95780dfc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1c4b4921-1337-4064-924f-80ee71f561c0",
@@ -535,7 +574,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "f0c44ac2-6467-33f2-b5d9-80e6718083a2"
+      "rgid": "f0c44ac2-6467-33f2-b5d9-80e6718083a2",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b6cb48f8-fef9-4c5c-b10d-48bcd8b7dba7",
@@ -564,7 +605,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "85b45baa-9854-39cf-b303-1799e700e62d"
+      "rgid": "85b45baa-9854-39cf-b303-1799e700e62d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "0e7d1f53-3e4c-44cc-8024-0b3de6233430",
@@ -591,7 +634,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "4786dbab-8b07-33a5-8ab5-a668ed915b8a"
+      "rgid": "4786dbab-8b07-33a5-8ab5-a668ed915b8a",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "f6565a64-436a-41e8-b21f-9b37d6cf51d9",
@@ -620,7 +665,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "b1c57669-8bb9-3897-a8c6-3d2f291116b6"
+      "rgid": "b1c57669-8bb9-3897-a8c6-3d2f291116b6",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "c11f2846-fba7-422f-9745-2999307466de",
@@ -649,7 +696,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "d7271a6a-1cb7-3a13-9d12-077f14e77e08"
+      "rgid": "d7271a6a-1cb7-3a13-9d12-077f14e77e08",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "62827b57-5b9a-4736-a390-d51264627ff8",
@@ -678,7 +727,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "2e08c703-922c-32e5-adec-1d7e9c4ce15f"
+      "rgid": "2e08c703-922c-32e5-adec-1d7e9c4ce15f",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "67483fe0-52ce-47db-846e-765443986811",
@@ -707,7 +758,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "9c4eb4be-9a2c-3fd5-b02a-39ae37421d66"
+      "rgid": "9c4eb4be-9a2c-3fd5-b02a-39ae37421d66",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "0af55654-b9f2-4a45-8268-186866acc707",
@@ -736,7 +789,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
-      "rgid": "b758605b-912c-387f-9adc-fbfc42ed3000"
+      "rgid": "b758605b-912c-387f-9adc-fbfc42ed3000",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "4c9f47c7-95d8-4931-864b-3af2026c2dc4",
@@ -764,7 +819,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
-      "rgid": "0f18ec88-aa87-38a9-8a65-f03d81763560"
+      "rgid": "0f18ec88-aa87-38a9-8a65-f03d81763560",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "8446bcba-330c-46f8-b97a-a0acfb0851e6",
@@ -792,7 +849,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
-      "rgid": "33b4653d-006e-3cc1-8afb-386b15a6cd6e"
+      "rgid": "33b4653d-006e-3cc1-8afb-386b15a6cd6e",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2809c14d-1815-4e39-8bc6-deb564393144",
@@ -821,7 +880,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
-      "rgid": "53f80f76-f8af-3558-bfd5-e7221e055c75"
+      "rgid": "53f80f76-f8af-3558-bfd5-e7221e055c75",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "17e81715-cb89-4b43-80ee-c13b57cb2655",
@@ -848,7 +909,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "2e61da88-39e9-3473-81d2-c964cb394952"
+      "rgid": "2e61da88-39e9-3473-81d2-c964cb394952",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "68ace9ae-fa58-4840-bfac-49e9c73a3002",
@@ -875,7 +938,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "9b5006e5-b276-3a05-bcdd-8d986842320b"
+      "rgid": "9b5006e5-b276-3a05-bcdd-8d986842320b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "ad6efc6b-33a3-45c4-aaa4-c40e7059e0ac",
@@ -909,7 +974,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "116c9490-6af4-3827-8261-2d5b1f508fe7"
+      "rgid": "116c9490-6af4-3827-8261-2d5b1f508fe7",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "d62b83e0-a793-4928-829c-70fae44a3f67",
@@ -935,7 +1002,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "42f8acce-90fc-3471-a4cd-ace1ab816276"
+      "rgid": "42f8acce-90fc-3471-a4cd-ace1ab816276",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "d5ef3330-ff83-4375-912c-e8af73ce1be3",
@@ -961,7 +1030,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "2fbf4c3e-09e5-38f0-ae59-fbdc9ea16b87"
+      "rgid": "2fbf4c3e-09e5-38f0-ae59-fbdc9ea16b87",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2574eb06-dd69-410c-bc86-1fb3beff3caa",
@@ -988,7 +1059,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
-      "rgid": "61de0438-6c34-363f-904e-b4d6267c79b9"
+      "rgid": "61de0438-6c34-363f-904e-b4d6267c79b9",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "f7d78958-950c-400e-b057-1f38e328bc34",
@@ -1073,7 +1146,9 @@
       "purchaseDate": "2024-09-06",
       "notes": "",
       "added": "2026-10-29T19:00:22.297Z",
-      "rgid": "50b00cbd-959d-4056-a5bb-9889eaa01d46"
+      "rgid": "50b00cbd-959d-4056-a5bb-9889eaa01d46",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "041204c8-2ba8-41cd-9c48-2c84205bbffc",
@@ -1091,7 +1166,9 @@
       "purchaseDate": "2026-04-30",
       "notes": "",
       "added": "2026-10-29T19:15:02.794Z",
-      "rgid": ""
+      "rgid": "",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "ba39bda3-15a6-4d61-99ab-5bd250d4e983",
@@ -1122,7 +1199,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "265dda3d-802e-3e21-b133-34ac7e064146"
+      "rgid": "265dda3d-802e-3e21-b133-34ac7e064146",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1df83644-c4f7-4aa7-8691-5ee5b254452e",
@@ -1153,7 +1232,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "ccac79cd-3df4-3fd1-80bd-a328dc049664"
+      "rgid": "ccac79cd-3df4-3fd1-80bd-a328dc049664",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1d58ccbd-1f5d-4f7e-8d45-1e167b552e84",
@@ -1182,7 +1263,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "51c70552-4906-3b27-b3f4-f64e764551d0"
+      "rgid": "51c70552-4906-3b27-b3f4-f64e764551d0",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "c95a73ef-2d36-4750-8181-dba3365bcc2a",
@@ -1215,7 +1298,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "f8d4b05b-e5dc-3c67-aed8-13cac163b06c"
+      "rgid": "f8d4b05b-e5dc-3c67-aed8-13cac163b06c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "bc3fcff1-ea94-4171-87c6-bb23fba0012a",
@@ -1244,7 +1329,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "612a2c86-9e8f-385b-89a3-c22f00d9a44f"
+      "rgid": "612a2c86-9e8f-385b-89a3-c22f00d9a44f",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "99ffc231-8283-4c02-b5e2-f5b3791ba91e",
@@ -1271,7 +1358,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "10510365-3d3a-3ec9-8ba1-e210432c8234"
+      "rgid": "10510365-3d3a-3ec9-8ba1-e210432c8234",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1c256fca-1875-4574-8aea-01713db69599",
@@ -1300,7 +1389,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "22b4b56c-47e0-31ea-9762-99ce3414fb20"
+      "rgid": "22b4b56c-47e0-31ea-9762-99ce3414fb20",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "9ec79ffb-d187-4396-afab-cc8e2aebffbb",
@@ -1331,7 +1422,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b"
+      "rgid": "c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "62b5e94f-edd1-4793-9498-389a0b384fae",
@@ -1359,7 +1452,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "794390eb-7d85-3427-ac16-0973a8998133"
+      "rgid": "794390eb-7d85-3427-ac16-0973a8998133",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2a599721-2a81-4311-8c1c-4117a1e9a1e3",
@@ -1389,7 +1484,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "a0d6e4c6-f7cd-3245-ac2d-aba871b9d353"
+      "rgid": "a0d6e4c6-f7cd-3245-ac2d-aba871b9d353",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "fda45a9a-4da9-471c-b5f3-3c4e6b2dbbae",
@@ -1419,7 +1516,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "6b5d9bf1-f496-34b5-9488-7df2533d6208"
+      "rgid": "6b5d9bf1-f496-34b5-9488-7df2533d6208",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2d108dcb-2746-43c7-b51a-7eaf318915b0",
@@ -1449,7 +1548,9 @@
       "purchaseDate": "2025-10-24",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6"
+      "rgid": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b0a469a9-755d-46fc-92f1-1bbb0dfba105",
@@ -1488,7 +1589,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "22deeac8-6009-31ad-a069-26e85d246412"
+      "rgid": "22deeac8-6009-31ad-a069-26e85d246412",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2083b454-f93f-42d4-8644-8dd56807ee22",
@@ -1519,7 +1622,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "a0e25b7f-30d4-3e87-b469-df315573bb16"
+      "rgid": "a0e25b7f-30d4-3e87-b469-df315573bb16",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b164ad46-9511-486e-b6ed-67d57289f62c",
@@ -1550,7 +1655,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "680b3cd8-426b-3112-bcf3-42cd66f75fa9"
+      "rgid": "680b3cd8-426b-3112-bcf3-42cd66f75fa9",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "75ded509-2703-4788-b988-bf2cc47edfde",
@@ -1582,7 +1689,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "0088f94b-d9f5-37a0-a7ce-499319c6e8ee"
+      "rgid": "0088f94b-d9f5-37a0-a7ce-499319c6e8ee",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a184a877-7a49-469a-9d60-37b40f8900c7",
@@ -1600,7 +1709,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "2bb97402-547b-4b0f-ad09-dfd74eb0b16b"
+      "rgid": "2bb97402-547b-4b0f-ad09-dfd74eb0b16b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "0323b6ac-5c18-4063-9a07-050af241004c",
@@ -1618,7 +1729,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "a012a156-0ad1-480b-856f-8809cdf563dd"
+      "rgid": "a012a156-0ad1-480b-856f-8809cdf563dd",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "3cdb1247-5976-44f3-bba1-dd5933ef74d8",
@@ -1650,7 +1763,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "1941ab98-f1d0-3a61-b788-e49c5e42a69d"
+      "rgid": "1941ab98-f1d0-3a61-b788-e49c5e42a69d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "3e3ad3e9-d1c0-430e-a726-47035ab772aa",
@@ -1687,7 +1802,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "450b9699-fcc4-3c6f-9a91-9c4cf86d6522"
+      "rgid": "450b9699-fcc4-3c6f-9a91-9c4cf86d6522",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "384547b7-a69e-467f-896f-59d0718a30f8",
@@ -1705,7 +1822,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
-      "rgid": "5b3a26aa-592f-40d9-8e17-670a4c09c264"
+      "rgid": "5b3a26aa-592f-40d9-8e17-670a4c09c264",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "c464ef49-80e5-4051-8793-e1fedaceb807",
@@ -1733,7 +1852,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "bdb083d6-be5e-32b3-97df-3d899a8ff858"
+      "rgid": "bdb083d6-be5e-32b3-97df-3d899a8ff858",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "34ed9110-7ebf-4610-bc27-4f57b380e28e",
@@ -1759,7 +1880,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "3a2bbe30-d2c7-367b-9326-f0082adad661"
+      "rgid": "3a2bbe30-d2c7-367b-9326-f0082adad661",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "3a6b66a1-3a07-4676-a2cc-c8eb7da8b2be",
@@ -1785,7 +1908,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "bacc3ccf-32aa-3103-b50c-4edaa35e6fb6"
+      "rgid": "bacc3ccf-32aa-3103-b50c-4edaa35e6fb6",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "99191f2c-a52f-4c06-811d-feade665ea14",
@@ -1811,7 +1936,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "ebdb53c3-fbae-34b1-81cb-f825c9a56822"
+      "rgid": "ebdb53c3-fbae-34b1-81cb-f825c9a56822",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "2d9d3567-1a1d-4759-8a09-29e6a47dd8df",
@@ -1837,7 +1964,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "b9547871-240a-3ca4-97d7-9f2dfffe471c"
+      "rgid": "b9547871-240a-3ca4-97d7-9f2dfffe471c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "e57b7544-76e7-4ac0-b9e9-3370420dc7ff",
@@ -1863,7 +1992,9 @@
       "purchaseDate": "2025-10-24",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "d00243c5-adcf-3018-9aa7-1957d7a5a774"
+      "rgid": "d00243c5-adcf-3018-9aa7-1957d7a5a774",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "4db1ba7d-5407-4a78-b585-91bbabb719ce",
@@ -1889,7 +2020,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "edba2b6f-8f50-3bc9-b2ac-1df8bdb51daa"
+      "rgid": "edba2b6f-8f50-3bc9-b2ac-1df8bdb51daa",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "395b5b87-4721-45a1-9e67-1407b7561a32",
@@ -1916,7 +2049,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "e8459360-b0d1-331e-a1e7-9717c962d29f"
+      "rgid": "e8459360-b0d1-331e-a1e7-9717c962d29f",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "ca1d52a2-1ab9-4f3b-9d7e-f459861d821a",
@@ -1944,7 +2079,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "95d17f98-dfe2-36c4-b950-fcdc1bdbc279"
+      "rgid": "95d17f98-dfe2-36c4-b950-fcdc1bdbc279",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "498e9a9e-a1e1-466a-ae9a-a9ff1c3cf9d6",
@@ -1972,7 +2109,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "d12f085d-7861-36cd-a2fb-55a18ddc6e56"
+      "rgid": "d12f085d-7861-36cd-a2fb-55a18ddc6e56",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "5d5ba7b4-3dbc-4733-8764-5be04bc734ae",
@@ -1996,7 +2135,9 @@
       "purchaseDate": "2026-10-29",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "ef2cbff3-f65e-39c1-b366-5da7cd69616e"
+      "rgid": "ef2cbff3-f65e-39c1-b366-5da7cd69616e",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "f159643a-4df8-4e7e-8326-140da806f7a9",
@@ -2023,7 +2164,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "41a276ce-ea2b-377c-9ad8-0ef0bfd1f5c2"
+      "rgid": "41a276ce-ea2b-377c-9ad8-0ef0bfd1f5c2",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "fdf2e412-a8c2-400c-8d5d-a4f365c74967",
@@ -2041,7 +2184,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "d69e5ab6-a884-4c5b-9cbe-31f8b2d15411"
+      "rgid": "d69e5ab6-a884-4c5b-9cbe-31f8b2d15411",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "07d633be-b8d8-4b06-b777-dab06b9307cb",
@@ -2070,7 +2215,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "3627b95b-c892-3c42-bbf6-d203ef6ffe6b"
+      "rgid": "3627b95b-c892-3c42-bbf6-d203ef6ffe6b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "77dc9dfe-318b-49e2-956b-a9399581182e",
@@ -2098,7 +2245,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "f00f78f4-f04c-3e38-9797-892c047f3a0a"
+      "rgid": "f00f78f4-f04c-3e38-9797-892c047f3a0a",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "49899e86-03ce-4004-ac24-a61e30a6b071",
@@ -2127,7 +2276,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "4859ab03-71a1-3217-93ec-df15dca6e2e3"
+      "rgid": "4859ab03-71a1-3217-93ec-df15dca6e2e3",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b8dd42d6-39d5-4682-9b6b-b74bba7f9b0a",
@@ -2159,7 +2310,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
-      "rgid": "ed6487db-873e-317b-9a72-6085b53ea966"
+      "rgid": "ed6487db-873e-317b-9a72-6085b53ea966",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "720c26eb-5955-4385-924f-9caf1b5d6256",
@@ -2195,7 +2348,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
-      "rgid": "da7002bf-070c-46c3-9036-a5eeb87b1de8"
+      "rgid": "da7002bf-070c-46c3-9036-a5eeb87b1de8",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "753b3ead-fe77-40dd-b046-b8823fda78d4",
@@ -2231,7 +2386,9 @@
       "purchaseDate": "2026-10-29",
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
-      "rgid": "0e48be49-f1e4-3368-adb2-361d366200d8"
+      "rgid": "0e48be49-f1e4-3368-adb2-361d366200d8",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "d9c0c161-8451-4d5c-aa0a-0a09f7937747",
@@ -2267,7 +2424,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
-      "rgid": "2e00dec6-8fd3-460c-85d3-400af2987476"
+      "rgid": "2e00dec6-8fd3-460c-85d3-400af2987476",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "abb03c00-b647-4795-a9e0-bbd70a317924",
@@ -2303,7 +2462,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
-      "rgid": "64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c"
+      "rgid": "64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "bfce86f3-c028-4d17-9e67-8f11db65776f",
@@ -2338,7 +2499,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
-      "rgid": "d71cda5b-2d0d-49b2-90c0-515b0fb31f06"
+      "rgid": "d71cda5b-2d0d-49b2-90c0-515b0fb31f06",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "998267ec-6b2d-4daa-b3ea-5dcf17c59960",
@@ -2374,7 +2537,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
-      "rgid": "d2d20ae5-7790-4fe9-858d-6c6e565d66a8"
+      "rgid": "d2d20ae5-7790-4fe9-858d-6c6e565d66a8",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "714ab932-a1cd-426b-9159-418c0effccff",
@@ -2409,7 +2574,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
-      "rgid": "bfdfc6df-9fc8-486e-a76c-66b1c7e13c35"
+      "rgid": "bfdfc6df-9fc8-486e-a76c-66b1c7e13c35",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "d51cf26c-07ef-4e66-acfa-ada59bb43212",
@@ -2437,7 +2604,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.160Z",
-      "rgid": "61fe7e06-0344-3197-bfc0-4d1fd57bce65"
+      "rgid": "61fe7e06-0344-3197-bfc0-4d1fd57bce65",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "4e2be3c7-29e5-428d-bd92-ceab28fb54b3",
@@ -2466,7 +2635,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "b927b247-1666-360a-91ba-3c5fafaead14"
+      "rgid": "b927b247-1666-360a-91ba-3c5fafaead14",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "11fdb2ff-f1c8-4795-898d-8bd438c468a1",
@@ -2493,7 +2664,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "012ced1a-45b5-3736-aaf8-35d6fad66fcc"
+      "rgid": "012ced1a-45b5-3736-aaf8-35d6fad66fcc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "dc4b7996-2fd3-43d5-b471-8ee3ccd6a272",
@@ -2521,7 +2694,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "1c9736e1-a608-3deb-aa2d-b60d21f6e2ab"
+      "rgid": "1c9736e1-a608-3deb-aa2d-b60d21f6e2ab",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "8e0d5ce4-5984-4aa4-b4b5-815e8141a595",
@@ -2548,7 +2723,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "3056bf8e-c292-35da-b006-fb719d753211"
+      "rgid": "3056bf8e-c292-35da-b006-fb719d753211",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "5255dc09-e2b9-425a-8fcb-4505e8e52f69",
@@ -2575,7 +2752,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "d3178fcf-56f6-3188-b921-f57d98876434"
+      "rgid": "d3178fcf-56f6-3188-b921-f57d98876434",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "90b5c1a6-82d0-4db7-b4e9-ee4d444741d7",
@@ -2603,7 +2782,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "67d10906-4afd-373f-813c-428e7388c87b"
+      "rgid": "67d10906-4afd-373f-813c-428e7388c87b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "55cd7283-07dc-49ce-959a-83296c1fbea5",
@@ -2631,7 +2812,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "1bc8ecb3-008b-36bd-aa3b-3c9d7300fbb2"
+      "rgid": "1bc8ecb3-008b-36bd-aa3b-3c9d7300fbb2",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "95e6be68-7375-4b6e-ab2f-0392ff83941b",
@@ -2660,7 +2843,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "ed5bfedd-6493-32fd-b118-ad81b0d2a994"
+      "rgid": "ed5bfedd-6493-32fd-b118-ad81b0d2a994",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "659a56a6-8a43-41de-976c-c5b1c849c8d2",
@@ -2687,7 +2872,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "601b5e30-af94-3350-981c-3a7ccfe010ff"
+      "rgid": "601b5e30-af94-3350-981c-3a7ccfe010ff",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "44283bd1-e62f-4297-98c8-e8209cbb436c",
@@ -2716,7 +2903,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "3057a94d-976a-3881-bbe0-0d460cdcd6cc"
+      "rgid": "3057a94d-976a-3881-bbe0-0d460cdcd6cc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "ed417bae-aa70-45da-b71a-4fc7756c88d4",
@@ -2745,7 +2934,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "6a0f4783-61f4-3798-8f2b-9bfe59f5182d"
+      "rgid": "6a0f4783-61f4-3798-8f2b-9bfe59f5182d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "410f2b9c-d4a9-4c5c-b077-ade24c20bb12",
@@ -2775,7 +2966,9 @@
       "purchaseDate": "2026-04-30",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "1a8179ec-7a42-3e98-9bad-f0e1df15cb1d"
+      "rgid": "1a8179ec-7a42-3e98-9bad-f0e1df15cb1d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "697f3f7a-11a4-443e-b598-2a4419218ef0",
@@ -2804,7 +2997,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "4b03c3c3-548d-3a17-acc3-37a4190a1c6c"
+      "rgid": "4b03c3c3-548d-3a17-acc3-37a4190a1c6c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "3f61db00-9d65-4a4a-a47b-0febd45d24ab",
@@ -2832,7 +3027,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "4cbdf8de-6f33-40c9-9f15-799c4d5e218b"
+      "rgid": "4cbdf8de-6f33-40c9-9f15-799c4d5e218b",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "e6bed9c3-fb9c-4b86-a2e8-a6b1c4312952",
@@ -2860,7 +3057,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "5ee64e49-30d1-3803-a871-f1b1159fde3c"
+      "rgid": "5ee64e49-30d1-3803-a871-f1b1159fde3c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "099680fb-9e82-42aa-afe4-b4751007b168",
@@ -2889,7 +3088,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
-      "rgid": "1e8138bc-c614-3217-b0de-bc2e03b4c9dc"
+      "rgid": "1e8138bc-c614-3217-b0de-bc2e03b4c9dc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "762ddbd7-3a1f-496d-802c-9bbae280c139",
@@ -2920,7 +3121,9 @@
       "purchaseDate": "2025-10-24",
       "notes": "",
       "added": "2026-10-29T19:29:44.107Z",
-      "rgid": "20328c16-1b75-4979-b954-018127fbb3d8"
+      "rgid": "20328c16-1b75-4979-b954-018127fbb3d8",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "8e403a26-4e03-4d7b-8b1b-45c6c7fb0429",
@@ -2949,7 +3152,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "c4950b4d-cd2f-39a4-b83d-210e4a853f2a"
+      "rgid": "c4950b4d-cd2f-39a4-b83d-210e4a853f2a",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "907ffd28-a206-40d8-916f-fab3f33e9429",
@@ -2978,7 +3183,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "909e7c30-838a-32ac-bf8b-c65a7e101fec"
+      "rgid": "909e7c30-838a-32ac-bf8b-c65a7e101fec",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "10376a7b-0767-4d2b-a2c3-38552bfdd0b1",
@@ -3005,7 +3212,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "a043938b-94d7-307b-a6cf-e15e4494a8fd"
+      "rgid": "a043938b-94d7-307b-a6cf-e15e4494a8fd",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b9600a2d-5f98-4cf1-99e4-444252110e95",
@@ -3033,7 +3242,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "12e8510d-f95b-3b10-8b62-8048f2578844"
+      "rgid": "12e8510d-f95b-3b10-8b62-8048f2578844",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "51e550be-6451-42a6-8b32-d44033a21fd6",
@@ -3061,7 +3272,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "66c6544c-43bf-3d81-8278-680c5c1790fc"
+      "rgid": "66c6544c-43bf-3d81-8278-680c5c1790fc",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "75d70734-b839-478e-8a4d-4341727dc556",
@@ -3092,7 +3305,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "c9d4a138-fd56-3173-92dd-b7c48ede65ee"
+      "rgid": "c9d4a138-fd56-3173-92dd-b7c48ede65ee",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "efa60b9d-18c4-47a7-9338-564d55a1c04a",
@@ -3122,7 +3337,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "2335a168-3874-3ce8-b42d-9118f95386ff"
+      "rgid": "2335a168-3874-3ce8-b42d-9118f95386ff",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1773ad01-f2bc-45b2-9bef-b9e1c7f4765f",
@@ -3151,7 +3368,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "e0678398-284b-3284-b15c-e48153f78187"
+      "rgid": "e0678398-284b-3284-b15c-e48153f78187",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "08fff64f-6332-4b35-995d-ba6ff0937afd",
@@ -3178,7 +3397,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "843431ea-c658-3504-bb08-8b7aecb5da5d"
+      "rgid": "843431ea-c658-3504-bb08-8b7aecb5da5d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a942893a-84d0-436a-bc7b-09710e914156",
@@ -3207,7 +3428,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
-      "rgid": "de9bd816-8c2f-3d2d-bbca-36e8ad611158"
+      "rgid": "de9bd816-8c2f-3d2d-bbca-36e8ad611158",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "85aac069-0c21-43f0-95f4-ac0ddc9a9efa",
@@ -3236,7 +3459,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T19:32:58.863Z",
-      "rgid": "91fef7a2-b7b8-3caf-b8b5-86a9dd852538"
+      "rgid": "91fef7a2-b7b8-3caf-b8b5-86a9dd852538",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1374bd87-29c4-4197-bdee-9cf727159f71",
@@ -3265,7 +3490,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T19:37:51.007Z",
-      "rgid": "b18ddebc-4d8b-415c-99c7-f76d6b6a65b3"
+      "rgid": "b18ddebc-4d8b-415c-99c7-f76d6b6a65b3",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "1640a33c-6046-4e79-9327-6fb391f78491",
@@ -3295,7 +3522,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "6792b6d1-4e65-3c3c-9d20-d08aa1dcfc60"
+      "rgid": "6792b6d1-4e65-3c3c-9d20-d08aa1dcfc60",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a7b5948b-07d7-4939-8664-8fd79e2db62c",
@@ -3321,7 +3550,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "8a9caa40-b7c6-33eb-a13c-6c15f09b1c44"
+      "rgid": "8a9caa40-b7c6-33eb-a13c-6c15f09b1c44",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "c3d41b79-76ae-41b1-b48e-a6c8539c58ab",
@@ -3349,7 +3580,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "b7aa61ae-3572-32c0-8b93-6af78ea83760"
+      "rgid": "b7aa61ae-3572-32c0-8b93-6af78ea83760",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "b02c3c52-e1d1-4f3b-89e4-b804ad30bcba",
@@ -3373,7 +3606,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "e2f503d7-5488-3fe1-b3ac-f236d9f1b44c"
+      "rgid": "e2f503d7-5488-3fe1-b3ac-f236d9f1b44c",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "56e5015d-1a73-43b6-a1d5-2a18f98b36db",
@@ -3398,7 +3633,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "4e98c9b4-92f6-3049-b9da-a1088b623672"
+      "rgid": "4e98c9b4-92f6-3049-b9da-a1088b623672",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "74e7b087-8142-42fd-a267-5cc2926aff4c",
@@ -3427,7 +3664,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "f5093c06-23e3-404f-aeaa-40f72885ee3a"
+      "rgid": "f5093c06-23e3-404f-aeaa-40f72885ee3a",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "a660618b-7297-4283-8489-511071e076ac",
@@ -3451,7 +3690,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "1a272023-10d3-38ee-bab3-317b55fcc21d"
+      "rgid": "1a272023-10d3-38ee-bab3-317b55fcc21d",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "d850bd35-02ba-466c-a5df-982494ea6f04",
@@ -3475,7 +3716,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "20c77fb4-1c9f-33c8-9d7e-c4977f11e847"
+      "rgid": "20c77fb4-1c9f-33c8-9d7e-c4977f11e847",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "aacfef4e-1ff5-4d6c-97a2-a4bc1b6b5aad",
@@ -3520,7 +3763,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "f2026101-945b-3d05-9ef4-aa718fc3feef"
+      "rgid": "f2026101-945b-3d05-9ef4-aa718fc3feef",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "192b5168-cb31-467c-99e6-ca50c9c5720e",
@@ -3551,7 +3796,9 @@
       "purchaseDate": "2026-10-01",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "e8b7e7a3-ef56-34a5-bedf-085783c9a076"
+      "rgid": "e8b7e7a3-ef56-34a5-bedf-085783c9a076",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "9d3fcc4b-300a-4dc6-ae0c-442664d0b173",
@@ -3580,7 +3827,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "4940b8aa-898b-3e60-9992-94e073bab6f6"
+      "rgid": "4940b8aa-898b-3e60-9992-94e073bab6f6",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "84e34a46-3d08-4d8d-bd50-7d930475bcec",
@@ -3610,7 +3859,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "90878b63-f639-3c8b-aefb-190bdf3d1790"
+      "rgid": "90878b63-f639-3c8b-aefb-190bdf3d1790",
+      "folderId": "",
+      "artistText": ""
     },
     {
       "id": "9ba11e5d-9ece-402e-9375-b1139665510e",
@@ -3647,7 +3898,9 @@
       "purchaseDate": "",
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
-      "rgid": "38b4c840-16ce-40fa-b7c0-a354b7c87178"
+      "rgid": "38b4c840-16ce-40fa-b7c0-a354b7c87178",
+      "folderId": "",
+      "artistText": ""
     }
   ]
 }
