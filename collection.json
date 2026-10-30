@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.6.0",
-  "updated": "2026-10-30T12:59:19.545Z",
+  "updated": "2026-10-30T13:00:55.837Z",
   "version": 1,
   "artists": [
     {
@@ -27,12 +27,6 @@
       "name": "Jokke & Valentinerne",
       "notes": "",
       "mbid": ""
-    },
-    {
-      "id": "9661a3a7-183c-4d34-a5bd-f9eaad1e3c72",
-      "name": "Marquee Band",
-      "notes": "",
-      "mbid": "3b289568-99d1-485e-bb4a-95ccc79d6342"
     },
     {
       "id": "43289903-c7e7-470b-915b-2695d6726928",
@@ -1152,7 +1146,7 @@
     },
     {
       "id": "041204c8-2ba8-41cd-9c48-2c84205bbffc",
-      "artistId": "9661a3a7-183c-4d34-a5bd-f9eaad1e3c72",
+      "artistId": "",
       "title": "Verken fioliner eller englekor",
       "year": 1981,
       "genre": "Pop",
@@ -1167,8 +1161,8 @@
       "notes": "",
       "added": "2026-10-29T19:15:02.794Z",
       "rgid": "",
-      "folderId": "",
-      "artistText": ""
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Marquee Band"
     },
     {
       "id": "ba39bda3-15a6-4d61-99ab-5bd250d4e983",
