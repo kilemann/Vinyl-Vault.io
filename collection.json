@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.5.0",
-  "updated": "2026-10-29T20:35:06.090Z",
+  "updated": "2026-10-30T11:56:04.224Z",
   "version": 1,
   "artists": [
     {
@@ -69,6 +69,12 @@
       "name": "Pink Floyd",
       "notes": "",
       "mbid": "83d91898-7763-47d7-b03b-b92132375c47"
+    },
+    {
+      "id": "b3fbefb5-ad1c-4470-816a-00cad91fb011",
+      "name": "Diverse LP",
+      "notes": "",
+      "mbid": ""
     }
   ],
   "albums": [
