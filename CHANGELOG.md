@@ -1,5 +1,24 @@
 # Endringslogg – Vinyl Vault
 
+## 1.6.0 – 2026-10-30
+Oversikt:
+- «Mest komplette artister», «Album per artist» og «Topp 10 artister» viser bare artister du eier minst 2 plater av.
+- Ønskelisten på oversikten viser alle platene i en egen boks som kan rulles, sortert på artist.
+
+Hent album:
+- Ingen album er forhåndsvalgt. Du krysser av selv, eller bruker «Velg alle».
+
+Mapper (nytt):
+- Lag egne mapper, f.eks. «Til salgs» eller «Diverse», for å samle plater uten å ha mange artister. Mappene vises øverst på Artister-siden.
+- «📁 Flytt til mappe» på albumsiden. Platen beholder artistnavnet. Blir artisten tom, får du spørsmål om å slette den. Kan angres.
+- Flytt mellom mapper, eller tilbake til en egen artist (artisten opprettes på nytt om den er slettet).
+- «🔎 Hent info for N plater» i mappen søker opp hver plate (artist + tittel) i MusicBrainz og fyller ut år, cover og sjanger.
+  Bare sikre treff brukes. Tracklister hentes i bakgrunnen.
+- «🔎 Hent info» på albumsiden for plater uten MusicBrainz-kobling. Viser treff du velger mellom, og lar deg justere søket.
+  Bare tomme felt fylles ut.
+- Plater i mapper teller med i totaler, samlingsverdi og diagrammet per tiår, og vises i Samling (egen mappe-chip) og Mangler.
+- Sletting av mappe sletter platene i den, med bekreftelse og «Angre».
+
 ## 1.5.0 – 2026-10-29
 - Samlingen lagres til GitHub 1 minutt etter siste endring i stedet for 1,5 sekunder. Færre commits og publiseringer.
 - Ny knapp «💾 Lagre nå» øverst mens noe venter på å bli lagret.
