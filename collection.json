@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:44:20.079Z",
+  "updated": "2026-10-31T10:46:59.500Z",
   "version": 1,
   "artists": [
     {
@@ -5740,6 +5740,86 @@
       "rgid": "b0732b50-1b4e-34a3-bd82-d23c8437d6ba",
       "folderId": "",
       "artistText": ""
+    },
+    {
+      "id": "9cb229ad-0e3d-4f9f-abaf-6f2665aebb8c",
+      "artistId": "25144e90-f9e6-4d01-b394-931b471a18a1",
+      "title": "The Movie Album",
+      "year": 1985,
+      "genre": "Rock",
+      "cover": "",
+      "tracks": [
+        "The Midnight Special",
+        "Proud Mary",
+        "I Heard It Through the Grapevine",
+        "Bad Moon Rising",
+        "Keep On Chooglin'",
+        "Who'll Stop the Rain",
+        "Fortunate Son",
+        "Hey Tonight"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:43:53.398Z",
+      "rgid": "",
+      "folderId": "",
+      "artistText": ""
+    },
+    {
+      "id": "0f5d1627-1ebb-4e16-8d46-b64ac207409e",
+      "artistId": "",
+      "title": "The Elder",
+      "year": 1981,
+      "genre": "Hard Rock",
+      "cover": "https://coverartarchive.org/release-group/8ee07b4e-25bb-36cc-9cc5-7330b7776f71/front-500",
+      "tracks": [
+        "Fanfare",
+        "Just a Boy",
+        "Odyssey",
+        "Only You",
+        "Under the Rose",
+        "Dark Light",
+        "A World Without Heroes",
+        "The Oath",
+        "Mr. Blackwell",
+        "I"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:45:47.698Z",
+      "rgid": "8ee07b4e-25bb-36cc-9cc5-7330b7776f71",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Kiss"
+    },
+    {
+      "id": "11e48f27-f1dd-4019-94fc-9397b80c7a84",
+      "artistId": "",
+      "title": "Uniforms",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:46:24.302Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Tore Hansen"
     }
   ]
 }
