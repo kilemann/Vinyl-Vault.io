@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:28:07.537Z",
+  "updated": "2026-10-31T11:29:46.194Z",
   "version": 1,
   "artists": [
     {
@@ -6668,6 +6668,55 @@
       "rgid": "a0a6e8e0-71dc-39d3-9f1f-066ae17e869b",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Black Sabbath"
+    },
+    {
+      "id": "523f3b73-6937-484c-9e68-ac5a4230608a",
+      "artistId": "",
+      "title": "Victims of the future",
+      "year": 1983,
+      "genre": "Blues Rock",
+      "cover": "https://coverartarchive.org/release-group/8169e694-095b-3e29-a1d7-3853d5242036/front-500",
+      "tracks": [
+        "Victims of the Future",
+        "Teenage Idol",
+        "Shapes of Things to Come",
+        "Empty Rooms",
+        "Murder in the Skies",
+        "All I Want",
+        "Hold on to Love",
+        "The Law of the Jungle"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:28:06.819Z",
+      "rgid": "8169e694-095b-3e29-a1d7-3853d5242036",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Gary Moore"
+    },
+    {
+      "id": "3c1f5137-1b47-4f90-bfbd-1b23d7435c15",
+      "artistId": "",
+      "title": "Rock Galaxy",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:28:54.469Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "David Bowie"
     }
   ]
 }
