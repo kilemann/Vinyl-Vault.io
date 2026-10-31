@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:55:52.628Z",
+  "updated": "2026-10-31T09:58:05.466Z",
   "version": 1,
   "artists": [
     {
@@ -4096,17 +4096,27 @@
     {
       "id": "4b4f9bae-6cc1-49f0-a086-742128e04144",
       "artistId": "",
-      "title": "debut",
-      "year": null,
-      "genre": "",
+      "title": "Debut album",
+      "year": 1969,
+      "genre": "Art Rock",
       "cover": "https://musicbrainz.org/release/7a5710f8-9fe2-4a6f-91e3-3fc190ccad3b",
-      "tracks": [],
+      "tracks": [
+        "Waiting",
+        "Evil Ways",
+        "Shades of Time",
+        "Savor",
+        "Jingo",
+        "Persuasion",
+        "Treat",
+        "You Just Don't Care",
+        "Soul Sacrifice"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
-      "condition": "",
-      "purchaseDate": "",
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
       "notes": "",
       "added": "2026-10-31T09:51:54.752Z",
       "rgid": "",
