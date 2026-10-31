@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:02:04.467Z",
+  "updated": "2026-10-31T11:04:47.250Z",
   "version": 1,
   "artists": [
     {
@@ -6379,6 +6379,68 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kiss"
+    },
+    {
+      "id": "2196b8a9-e845-461e-b704-6803d9c6eb99",
+      "artistId": "",
+      "title": "Livet er for kjipt",
+      "year": 1981,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/58d6af7e-f23f-4e00-9722-3878f00cfadf/front-500",
+      "tracks": [
+        "Barnets mor",
+        "Bare 4 år",
+        "Jeg vil ikke mer",
+        "Livet er for kjipt",
+        "Samme rakker'n",
+        "Jeg vil dimme",
+        "En ny dag",
+        "Lik som ørnen",
+        "Hvordan",
+        "Skjønner ingenting"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-29",
+      "notes": "",
+      "added": "2026-10-31T11:02:56.449Z",
+      "rgid": "58d6af7e-f23f-4e00-9722-3878f00cfadf",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Lars Kilevold"
+    },
+    {
+      "id": "54e31640-9fff-4dc0-9f17-1ca20b9cccb8",
+      "artistId": "",
+      "title": "Caravanserai",
+      "year": 1972,
+      "genre": "Latin Rock",
+      "cover": "https://coverartarchive.org/release-group/5dc38932-b507-3bcd-94a9-3b39c1d96526/front-500",
+      "tracks": [
+        "Eternal Caravan of Reincarnation",
+        "Waves Within",
+        "Look Up (To See What’s Coming Down)",
+        "Just in Time to See the Sun",
+        "Song of the Wind",
+        "All the Love of the Universe",
+        "Future Primitive",
+        "Stone Flower",
+        "La fuente del ritmo",
+        "Every Step of the Way"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:03:53.853Z",
+      "rgid": "5dc38932-b507-3bcd-94a9-3b39c1d96526",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Santana"
     }
   ]
 }
