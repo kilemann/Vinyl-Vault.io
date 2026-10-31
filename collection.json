@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:31:31.225Z",
+  "updated": "2026-10-31T11:32:53.482Z",
   "version": 1,
   "artists": [
     {
@@ -87,6 +87,12 @@
       "name": "Foreigner",
       "notes": "",
       "mbid": "160629ab-ec18-4931-8c95-02cb92d06186"
+    },
+    {
+      "id": "3d6f28b7-0000-4402-b718-303868b9721d",
+      "name": "The Rolling Stones",
+      "notes": "",
+      "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598"
     }
   ],
   "folders": [
