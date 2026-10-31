@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:59:30.321Z",
+  "updated": "2026-10-31T10:00:53.304Z",
   "version": 1,
   "artists": [
     {
@@ -4132,6 +4132,36 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Santana"
+    },
+    {
+      "id": "710fa0db-4e80-4418-a890-1b635e65fed7",
+      "artistId": "",
+      "title": "The invisible man",
+      "year": 1985,
+      "genre": "New Age",
+      "cover": "https://coverartarchive.org/release-group/ef791eac-d21e-3afb-8501-2d673a013e49/front-500",
+      "tracks": [
+        "Samurai",
+        "Carte Blanche",
+        "Silver Water",
+        "Your Favorite Toy",
+        "Intro",
+        "Mikado",
+        "Coda",
+        "Heavy Traffic",
+        "The Invisible Man"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:00:02.205Z",
+      "rgid": "ef791eac-d21e-3afb-8501-2d673a013e49",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Michael Cretu"
     }
   ]
 }
