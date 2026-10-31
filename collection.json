@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:11:21.609Z",
+  "updated": "2026-10-31T10:15:15.253Z",
   "version": 1,
   "artists": [
     {
@@ -4341,6 +4341,68 @@
       "rgid": "a2de1d1e-ed74-3317-8a72-d73934c0d474",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Van Zant"
+    },
+    {
+      "id": "5d2295c5-76e5-44c4-a48c-d9a1adcc2485",
+      "artistId": "",
+      "title": "Reackless",
+      "year": 1984,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/fe1d2bcd-cdb6-333b-b2c6-8389e5890f04/front-500",
+      "tracks": [
+        "One Night Love Affair",
+        "She’s Only Happy When She’s Dancin’",
+        "Run to You",
+        "Heaven",
+        "Somebody",
+        "Summer of ’69",
+        "Kids Wanna Rock",
+        "It’s Only Love",
+        "Long Gone",
+        "Ain’t Gonna Cry"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:12:58.170Z",
+      "rgid": "fe1d2bcd-cdb6-333b-b2c6-8389e5890f04",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Bryan Adams"
+    },
+    {
+      "id": "4a5ac49b-97c4-4440-8cf4-9bf1286ec233",
+      "artistId": "",
+      "title": "Heartbreaker",
+      "year": 1982,
+      "genre": "Pop",
+      "cover": "https://coverartarchive.org/release-group/270019a2-10a9-3635-92ba-839a5f2cb895/front-500",
+      "tracks": [
+        "Heartbreaker",
+        "It Makes No Difference",
+        "Yours",
+        "Take the Short Way Home",
+        "Misunderstood",
+        "All the Love in the World",
+        "I Can’t See Anything (but You)",
+        "Just One More Night",
+        "You Are My Love",
+        "Our Day Will Come"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:13:43.250Z",
+      "rgid": "270019a2-10a9-3635-92ba-839a5f2cb895",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Dionne Warwick"
     }
   ]
 }
