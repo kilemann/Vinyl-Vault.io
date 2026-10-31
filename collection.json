@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:24:38.621Z",
+  "updated": "2026-10-31T11:28:07.537Z",
   "version": 1,
   "artists": [
     {
@@ -6637,6 +6637,37 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Moron Cafe"
+    },
+    {
+      "id": "2594f55c-272b-4ba2-ac3d-33139131bb9f",
+      "artistId": "",
+      "title": "Greatest Hits",
+      "year": 1977,
+      "genre": "Heavy Metal",
+      "cover": "https://coverartarchive.org/release-group/a0a6e8e0-71dc-39d3-9f1f-066ae17e869b/front-500",
+      "tracks": [
+        "Paranoid",
+        "N.I.B.",
+        "Changes",
+        "Sabbath Bloody Sabbath",
+        "Iron Man",
+        "Black Sabbath",
+        "War Pigs",
+        "Laguna Sunrise",
+        "Tomorrow's Dream",
+        "Sweet Leaf"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:26:24.561Z",
+      "rgid": "a0a6e8e0-71dc-39d3-9f1f-066ae17e869b",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Black Sabbath"
     }
   ]
 }
