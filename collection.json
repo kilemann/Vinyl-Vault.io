@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:22:54.479Z",
+  "updated": "2026-10-31T10:24:56.271Z",
   "version": 1,
   "artists": [
     {
@@ -4476,6 +4476,36 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "The Hollies"
+    },
+    {
+      "id": "db2b0044-d92c-42ba-b1ec-41de42280fda",
+      "artistId": "",
+      "title": "Down on the street",
+      "year": 1984,
+      "genre": "Jazz-Funk",
+      "cover": "https://coverartarchive.org/release-group/a371b43e-ccac-3c88-b955-a645e2e10df1/front-500",
+      "tracks": [
+        "Down on the Street",
+        "Holding On",
+        "Summer Sky",
+        "Hypnotised",
+        "Don't Blame It on Love",
+        "Photograph",
+        "Watching You",
+        "Fire Dance",
+        "Lady (To Billie Holiday)"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:23:09.116Z",
+      "rgid": "a371b43e-ccac-3c88-b955-a645e2e10df1",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Shakatak"
     }
   ]
 }
