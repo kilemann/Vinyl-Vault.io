@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:27:53.247Z",
+  "updated": "2026-10-31T10:31:59.726Z",
   "version": 1,
   "artists": [
     {
@@ -4843,6 +4843,41 @@
       "rgid": "610138b1-1d41-3c54-9ef3-652734586f21",
       "folderId": "",
       "artistText": ""
+    },
+    {
+      "id": "90810318-561a-46ee-8eaf-83595d09d089",
+      "artistId": "",
+      "title": "Rock",
+      "year": 1980,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/2b07f108-6fc2-466e-a610-a79002aab1cc/front-500",
+      "tracks": [
+        "Dizzy Miss Lizzy",
+        "Any Time at All",
+        "Drive My Car",
+        "Everybody’s Trying to Be My Baby",
+        "The Night Before",
+        "I’m Down",
+        "Revolution",
+        "Back in the U.S.S.R.",
+        "Helter Skelter",
+        "Taxman",
+        "Got to Get You Into My Life",
+        "Hey Bulldog",
+        "Birthday",
+        "Get Back"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:29:50.125Z",
+      "rgid": "2b07f108-6fc2-466e-a610-a79002aab1cc",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "The Beatles"
     }
   ]
 }
