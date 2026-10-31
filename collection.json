@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:09:54.249Z",
+  "updated": "2026-10-31T10:11:21.609Z",
   "version": 1,
   "artists": [
     {
@@ -4314,9 +4314,9 @@
     {
       "id": "6e3cff3f-0d75-43f1-8ad1-9815c923f8e6",
       "artistId": "",
-      "title": "v",
+      "title": "Debut album",
       "year": 1985,
-      "genre": "",
+      "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/a2de1d1e-ed74-3317-8a72-d73934c0d474/front-500",
       "tracks": [
         "Midnight Sensation",
