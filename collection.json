@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:08:02.114Z",
+  "updated": "2026-10-31T11:11:44.102Z",
   "version": 1,
   "artists": [
     {
@@ -6476,11 +6476,22 @@
     {
       "id": "60d1c79b-19fd-4a81-89e8-61de29fdc59b",
       "artistId": "",
-      "title": "Changes teo bowie",
-      "year": null,
-      "genre": "",
+      "title": "Changes two Bowie",
+      "year": 1981,
+      "genre": "Art Rock",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Aladdin Sane (1913-1938-197?) / On Broadway",
+        "Oh! You Pretty Things",
+        "Starman",
+        "1984",
+        "Ashes To Ashes",
+        "Sound And Vision",
+        "Fashion",
+        "Wild Is The Wind",
+        "John I'm Only Dancing (Again) (1975)",
+        "D.J."
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6492,6 +6503,57 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "David Bowie"
+    },
+    {
+      "id": "4dce6875-0600-4d0b-b12f-39cbfae3f9a7",
+      "artistId": "",
+      "title": "No kiddin'",
+      "year": 2004,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/d6a91ad3-5c7f-4f6c-acc8-9131d67031aa/front-500",
+      "tracks": [
+        "Luisa",
+        "Tallerkenvaskerens Blues",
+        "Prinsesse Anne",
+        "Der Er Ingen, Der Gør Det Bedre",
+        "En Er For Mange (Og En Million Er Ikke Nok)",
+        "Jeg Går Under Jorden",
+        "Colt 45",
+        "Der Hvor Kragerne Vender",
+        "Love You In The Rain (Instr.)",
+        "Tallerkenvaskerens Blues (Live)"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:10:05.477Z",
+      "rgid": "d6a91ad3-5c7f-4f6c-acc8-9131d67031aa",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Franz Beckerlee"
+    },
+    {
+      "id": "111bd9eb-4bb0-4f1d-9607-cc737d94145b",
+      "artistId": "",
+      "title": "Mr. Pityful",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:10:59.870Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Jimi Hendrix"
     }
   ]
 }
