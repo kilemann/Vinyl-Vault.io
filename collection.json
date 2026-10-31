@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:14:14.554Z",
+  "updated": "2026-10-31T11:15:35.119Z",
   "version": 1,
   "artists": [
     {
@@ -6564,6 +6564,26 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jimi Hendrix"
+    },
+    {
+      "id": "4bd2f8a3-4dda-4b74-a236-253cb06d2279",
+      "artistId": "",
+      "title": "Salute To British Rock",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:15:02.734Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Various"
     }
   ]
 }
