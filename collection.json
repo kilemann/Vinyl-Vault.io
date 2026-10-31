@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:15:15.253Z",
+  "updated": "2026-10-31T10:17:17.702Z",
   "version": 1,
   "artists": [
     {
@@ -4403,6 +4403,54 @@
       "rgid": "270019a2-10a9-3635-92ba-839a5f2cb895",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Dionne Warwick"
+    },
+    {
+      "id": "5512ca42-924f-4ebd-806c-c6014d46a9eb",
+      "artistId": "",
+      "title": "In the eye of the storm",
+      "year": 1984,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/4abc2d79-a253-33a2-a7b5-7ce860552949/front-500",
+      "tracks": [
+        "Had a Dream (Sleeping With the Enemy)",
+        "In Jeopardy",
+        "Lovers in the Wind",
+        "Hooked on a Problem",
+        "Give Me Love, Give Me Life",
+        "I'm Not Afraid",
+        "Only Because of You"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:15:00.589Z",
+      "rgid": "4abc2d79-a253-33a2-a7b5-7ce860552949",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Roger Hodgson"
+    },
+    {
+      "id": "60f82c43-160b-4cc4-a118-3293bae105d2",
+      "artistId": "",
+      "title": "History",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:15:58.516Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Hollies"
     }
   ]
 }
