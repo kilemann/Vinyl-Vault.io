@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:58:05.466Z",
+  "updated": "2026-10-31T09:59:30.321Z",
   "version": 1,
   "artists": [
     {
@@ -4048,7 +4048,17 @@
       "year": 1985,
       "genre": "Pop",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Day By Day\t3:43",
+        "Once Upon A Time\t4:44",
+        "Secret\t3:31",
+        "Physical Attraction\t6:11",
+        "City Rhythm\t3:59",
+        "I Must Be Dreaming\t3:30",
+        "Africa\t3:16",
+        "Goodbye Mickey Mouse\t4:07",
+        "Vive La Fantasy"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
