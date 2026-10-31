@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T12:20:58.781Z",
+  "updated": "2026-10-31T12:22:17.449Z",
   "version": 1,
   "artists": [
     {
@@ -6362,7 +6362,7 @@
       "title": "Paul Stanley",
       "year": 1978,
       "genre": "Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/217877c6-9d80-4976-8724-18465a95c6f2/front-500",
       "tracks": [
         "Tonight You Belong To Me",
         "Move On",
@@ -6382,7 +6382,7 @@
       "purchaseDate": "2026-09-30",
       "notes": "",
       "added": "2026-10-31T11:00:05.979Z",
-      "rgid": "",
+      "rgid": "217877c6-9d80-4976-8724-18465a95c6f2",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kiss"
     },
