@@ -1,5 +1,11 @@
 # Endringslogg – Vinyl Vault
 
+## 1.8.0 – 2026-10-31
+- Mapper: artister med 2 eller flere plater i samme mappe samles automatisk i en stabel med antall plater.
+  Trykk på stabelen for å se platene. Søk i mappen viser treffene enkeltvis.
+- Fra en stabel: «＋ Legg til plate» og pluss-knappen fyller ut artistnavnet. Albumsiden viser «📁 Mappe › Artist» som vei tilbake.
+- Rettet: lange artist- og albumnavn kunne gjøre rutenettet bredere enn skjermen på mobil (Samling, mapper m.fl.).
+
 ## 1.7.0 – 2026-10-30
 - Artister: artistene vises først, mappene nederst.
 - Samling: mappene står sist i filteret.

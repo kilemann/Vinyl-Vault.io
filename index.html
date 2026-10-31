@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.7.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.8.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -157,7 +157,17 @@ select.sel{height:46px;padding:0 12px;border-radius:14px;border:1px solid var(--
 .status:active{transform:scale(.85)}
 .status.pop{animation:pop .35s ease}
 @keyframes pop{50%{transform:scale(1.25)}}
+/* lange navn skal kuttes med … i stedet for å gjøre kolonnene bredere enn skjermen */
+.grid>*,.agrid>*,.two>*,.charts>*,.stats>*,.facts>*,.menu>*{min-width:0}
 .badges{position:absolute;left:14px;top:14px;z-index:2;display:flex;gap:4px}
+/* stabel: artist med flere plater i en mappe */
+.stack .pile{position:relative;margin:8px 8px 0 0}
+.stack .pile::before,.stack .pile::after{content:"";position:absolute;inset:0;border-radius:12px;background:#1b1f29;border:1px solid var(--line2)}
+.stack .pile::before{transform:translate(8px,-8px) rotate(3deg);opacity:.55}
+.stack .pile::after{transform:translate(4px,-4px) rotate(1.5deg);opacity:.8}
+.stack .pile .cover{z-index:1}
+.stack .count{position:absolute;top:14px;right:14px;z-index:2;min-width:38px;height:38px;padding:0 10px;border-radius:999px;display:grid;place-items:center;
+  font:700 .95rem var(--head);color:#1a1005;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 4px 14px rgba(0,0,0,.4)}
 .badges span{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(10,12,16,.6);font-size:.75rem;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 
 /* ---------- artist detalj ---------- */
@@ -354,11 +364,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.7.0
+   Vinyl Vault v1.8.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.7.0";
+const APP_VERSION = "1.8.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -850,7 +860,7 @@ function route(){
   charts.forEach(c => { try{ c.destroy(); }catch(e){} }); charts = [];
   if (/^#\/samling\?kjop/.test(location.hash)) { ui.samling.sort = "kjop"; ui.samling.status = "eier"; history.replaceState(null, "", "#/samling"); }
   const parts = location.hash.split("?")[0].replace(/^#\/?/, "").split("/").map(decodeURIComponent);
-  let [r, id] = parts;
+  let [r, id, sub] = parts;
   drawNav(parts);
   const V = $("#view");
   let html;
@@ -861,7 +871,7 @@ function route(){
     case "": case undefined: html = viewDashboard(); break;
     case "artister": html = viewArtists(); break;
     case "artist": html = artist(id) ? viewArtist(id) : notFound(); break;
-    case "mappe": html = folder(id) ? viewFolder(id) : notFound(); break;
+    case "mappe": html = !folder(id) ? notFound() : sub ? viewFolderArtist(id, sub) : viewFolder(id); break;
     case "album": html = album(id) ? viewAlbum(id) : notFound(); break;
     case "samling": html = viewCollection(); break;
     case "mangler": html = viewMissing(); break;
@@ -872,8 +882,8 @@ function route(){
     default: html = notFound();
   }
   V.innerHTML = `<div class="view">${html}</div>`;
-  if (html !== notFound()) after[r || ""]?.(id);   // ikke tegn detaljer for noe som ikke finnes (f.eks. etter import)
-  document.title = (r === "album" && album(id) ? album(id).title + " – " : r === "artist" && artist(id) ? artist(id).name + " – " : r === "mappe" && folder(id) ? folder(id).name + " – " : "") + "Vinyl Vault";
+  if (html !== notFound()) after[r || ""]?.(id, sub);   // ikke tegn detaljer for noe som ikke finnes (f.eks. etter import)
+  document.title = (r === "album" && album(id) ? album(id).title + " – " : r === "artist" && artist(id) ? artist(id).name + " – " : r === "mappe" && folder(id) ? (sub && folderGroups(id).get(sub) ? folderGroups(id).get(sub)[0].artistText + " – " : "") + folder(id).name + " – " : "") + "Vinyl Vault";
 }
 /* tegner på nytt uten å hoppe til toppen */
 function refresh(){ const y = scrollY; route(); scrollTo(0, y); }
@@ -1104,12 +1114,55 @@ function viewFolder(id){
   ${l.length > 6 ? `<div class="tools"><label class="search">${IC.search}<input id="fq" type="search" placeholder="Søk i mappen…" value="${esc(ui.mappe.q)}" autocomplete="off"></label></div>` : ""}
   <div class="grid stag" id="fgrid"></div>`;
 }
-function drawFolder(id){
-  const q = norm(ui.mappe.q), l = folderAlbums(id).filter(a => !q || norm(a.artistText + " " + a.title + " " + a.year).includes(q));
-  $("#fgrid").innerHTML = l.length ? l.map((a, i) => albumCard(a, i, { showArtist: true })).join("")
-    : `<div style="grid-column:1/-1">${emptyBox(folderAlbums(id).length ? "Ingen plater passer søket." : "Mappen er tom. Trykk «＋ Legg til plate», eller åpne et album og trykk «📁 Flytt til mappe».")}</div>`;
+/* artister med minst 2 plater i samme mappe vises som én stabel */
+const akey = t => norm(String(t || "").trim()) || "?";
+function folderGroups(id){
+  const m = new Map();
+  for (const a of folderAlbums(id)) { const k = akey(a.artistText); if (!m.has(k)) m.set(k, []); m.get(k).push(a); }
+  return m;
 }
-after.mappe = id => { if (ui.mappe.id !== id) { ui.mappe = { q: "", id }; } drawFolder(id); $("#fq")?.addEventListener("input", e => { ui.mappe.q = e.target.value; drawFolder(id); }); };
+const groupHref = (fid, name) => `#/mappe/${fid}/${encodeURIComponent(akey(name))}`;
+function stackCard(fid, list, i){
+  const own = list.filter(a => a.owned).length, top = list.find(a => a.owned) || list[0], name = list[0].artistText || "Ukjent artist";
+  return `<a class="card glass stack" href="${groupHref(fid, name)}" style="--i:${i}" aria-label="${esc(name)}, ${list.length} plater">
+    <div class="pile"><div class="cover">${coverHtml(top)}</div></div>
+    <span class="count">${list.length}</span>
+    <div class="t">${esc(name)}</div>
+    <div class="y">${list.length} plater · ${own} eid</div>
+  </a>`;
+}
+function drawFolder(id){
+  const q = norm(ui.mappe.q), all = folderAlbums(id);
+  let html;
+  if (q) {   // ved søk: vis treffene enkeltvis
+    const l = all.filter(a => norm(a.artistText + " " + a.title + " " + a.year).includes(q));
+    html = l.map((a, i) => albumCard(a, i, { showArtist: true })).join("");
+  } else {
+    const seen = new Set(), g = folderGroups(id), parts = [];
+    for (const a of all) {
+      const k = akey(a.artistText), list = g.get(k);
+      if (list.length < 2) parts.push(albumCard(a, parts.length, { showArtist: true }));
+      else if (!seen.has(k)) { seen.add(k); parts.push(stackCard(id, list, parts.length)); }
+    }
+    html = parts.join("");
+  }
+  $("#fgrid").innerHTML = html || `<div style="grid-column:1/-1">${emptyBox(all.length ? "Ingen plater passer søket." : "Mappen er tom. Trykk «＋ Legg til plate», eller åpne et album og trykk «📁 Flytt til mappe».")}</div>`;
+}
+after.mappe = (id, sub) => {
+  if (sub) return;
+  if (ui.mappe.id !== id) { ui.mappe = { q: "", id }; }
+  drawFolder(id); $("#fq")?.addEventListener("input", e => { ui.mappe.q = e.target.value; drawFolder(id); });
+};
+/* én artist i en mappe */
+function viewFolderArtist(id, k){
+  const f = folder(id), l = folderGroups(id).get(k) || [];
+  if (!l.length) return `<a class="crumb" href="#/mappe/${f.id}">${IC.back}📁 ${esc(f.name)}</a>${emptyBox("Ingen plater av denne artisten i mappen lenger.", `<a class="btn" href="#/mappe/${f.id}">Til mappen</a>`)}`;
+  const name = l[0].artistText || "Ukjent artist", own = l.filter(a => a.owned), val = own.reduce((s, a) => s + (a.price || 0), 0);
+  return `<a class="crumb" href="#/mappe/${f.id}">${IC.back}📁 ${esc(f.name)}</a>
+  <div class="head"><div><h1>${esc(name)}</h1><p class="sub">${l.length} plater i 📁 ${esc(f.name)} · ${own.length} eid${val ? " · verdi " + nok(val) : ""}</p></div>
+    <button class="btn pri edit-only" data-act="newFolderAlbum" data-id="${f.id}" data-artist-text="${esc(name)}">${IC.plus}Legg til plate</button></div>
+  <div class="grid stag">${l.map((a, i) => albumCard(a, i)).join("")}</div>`;
+}
 
 function folderForm(id, onCreate){
   const f = id ? folder(id) : null;
@@ -1206,7 +1259,8 @@ function moveToArtist(albumId){
 function viewAlbum(id){
   const a = album(id), ar = artist(a.artistId), fo = a.folderId ? folder(a.folderId) : null;
   const fact = (k, v) => `<div class="fact"><div class="k">${k}</div><div class="v">${v || '<span class="muted">–</span>'}</div></div>`;
-  return `${fo ? `<a class="crumb" href="#/mappe/${fo.id}">${IC.back}📁 ${esc(fo.name)}</a>` : `<a class="crumb" href="#/artist/${a.artistId}">${IC.back}${esc(ar ? ar.name : "Tilbake")}</a>`}
+  const inStack = fo && (folderGroups(fo.id).get(akey(a.artistText)) || []).length >= 2;
+  return `${fo ? (inStack ? `<a class="crumb" href="${groupHref(fo.id, a.artistText)}">${IC.back}📁 ${esc(fo.name)} › ${esc(a.artistText)}</a>` : `<a class="crumb" href="#/mappe/${fo.id}">${IC.back}📁 ${esc(fo.name)}</a>`) : `<a class="crumb" href="#/artist/${a.artistId}">${IC.back}${esc(ar ? ar.name : "Tilbake")}</a>`}
   <div class="album">
     <div class="left"><div class="bigcover${a.owned ? "" : " missing"}">${coverHtml(a, true)}</div></div>
     <div>
@@ -1775,8 +1829,8 @@ function artistForm(id){
   });
 }
 
-function albumForm(id, presetArtist, presetFolder){
-  const a = id ? album(id) : blankAlbum({ artistId: presetFolder ? "" : presetArtist || "", folderId: presetFolder && folder(presetFolder) ? presetFolder : "", owned: true });
+function albumForm(id, presetArtist, presetFolder, presetText){
+  const a = id ? album(id) : blankAlbum({ artistId: presetFolder ? "" : presetArtist || "", folderId: presetFolder && folder(presetFolder) ? presetFolder : "", artistText: presetText || "", owned: true });
   const arts = sortedArtists();
   if (!id && !a.artistId && arts.length === 1) a.artistId = arts[0].id;
   const inF = !!a.folderId;
@@ -1867,7 +1921,7 @@ function albumForm(id, presetArtist, presetFolder){
       if (id) Object.assign(album(id), data); else db.albums.push(data);
       const autoInfo = inF && !id && g("#fAutoInfo")?.checked;
       save(); close(); toast(id ? "Albumet er oppdatert" : inF ? `${title} er lagt i 📁 ${folder(a.folderId).name}` : `${title} er lagt til`);
-      if (!id && inF && !location.hash.startsWith("#/mappe/" + a.folderId)) location.hash = "#/mappe/" + a.folderId;
+      if (!id && inF && !location.hash.startsWith("#/mappe/" + a.folderId)) location.hash = (folderGroups(a.folderId).get(akey(data.artistText)) || []).length >= 2 ? groupHref(a.folderId, data.artistText) : "#/mappe/" + a.folderId;
       else if (!id && !inF && !location.hash.startsWith("#/artist/" + artistId)) location.hash = "#/artist/" + artistId; else refresh();
       if (autoInfo) setTimeout(() => fetchInfoFlow(data.id), 250);
     };
@@ -1920,7 +1974,7 @@ document.addEventListener("click", async e => {
   if (act === "newArtist") artistForm();
   if (act === "editArtist") artistForm(id);
   if (act === "newAlbum") albumForm(null, b.dataset.artist);
-  if (act === "newFolderAlbum") albumForm(null, "", id);
+  if (act === "newFolderAlbum") albumForm(null, "", id, b.dataset.artistText || "");
   if (act === "editAlbum") albumForm(id);
   if (act === "delAlbum"){
     const a = album(id); if (!a) return;
@@ -1968,10 +2022,13 @@ document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.ma
 /* pluss-knappen: nytt album (med artisten du står på) – ny artist hvis ingen finnes */
 $("#fab").addEventListener("click", () => {
   if (!canEdit()) return;
-  const fm = location.hash.match(/^#\/mappe\/(.+)$/), am = location.hash.match(/^#\/album\/(.+)$/);
-  if (fm && folder(decodeURIComponent(fm[1]))) return albumForm(null, "", decodeURIComponent(fm[1]));
+  const fm = location.hash.match(/^#\/mappe\/([^/?]+)(?:\/([^?]+))?/), am = location.hash.match(/^#\/album\/(.+)$/);
+  if (fm && folder(decodeURIComponent(fm[1]))) {
+    const fid = decodeURIComponent(fm[1]), g = fm[2] && folderGroups(fid).get(decodeURIComponent(fm[2]));
+    return albumForm(null, "", fid, g ? g[0].artistText : "");
+  }
   const fa = am && album(decodeURIComponent(am[1]));
-  if (fa && fa.folderId) return albumForm(null, "", fa.folderId);
+  if (fa && fa.folderId) return albumForm(null, "", fa.folderId, (folderGroups(fa.folderId).get(akey(fa.artistText)) || []).length >= 2 ? fa.artistText : "");
   if (!db.artists.length) return artistForm();
   const m = location.hash.match(/^#\/artist\/(.+)$/);
   albumForm(null, m ? decodeURIComponent(m[1]) : am && album(decodeURIComponent(am[1])) ? album(decodeURIComponent(am[1])).artistId : "");
