@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:17:17.702Z",
+  "updated": "2026-10-31T10:22:54.479Z",
   "version": 1,
   "artists": [
     {
@@ -4433,13 +4433,38 @@
       "artistText": "Roger Hodgson"
     },
     {
-      "id": "60f82c43-160b-4cc4-a118-3293bae105d2",
+      "id": "cfeacb34-a489-473b-946b-196a91669123",
       "artistId": "",
-      "title": "History",
+      "title": "The history of the Hollies",
       "year": null,
-      "genre": "",
+      "genre": "Pop",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "(Ain't That) Just Like Me",
+        "Searchin'",
+        "Stay",
+        "Just One Look",
+        "Here I Go Again",
+        "We're Through",
+        "Yes I Will",
+        "I'm Alive",
+        "Look Through Any Window",
+        "If I Needed Someone",
+        "I Can't Let Go",
+        "Bus Stop",
+        "Stop Stop Stop",
+        "On A Carousel",
+        "Carrie Anne",
+        "King Midas In Reverse",
+        "Jennifer Eccles",
+        "Listen To Me",
+        "Sorry Suzanne",
+        "He Ain't Heavy, He's My Brother",
+        "I Can't Tell The Bottom From The Top",
+        "Gasoline Alley Bred",
+        "Hey Willy",
+        "Long Cool Woman (In A Black Dress)"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4447,10 +4472,10 @@
       "condition": "Good Plus (G+)",
       "purchaseDate": "2026-09-30",
       "notes": "",
-      "added": "2026-10-31T10:15:58.516Z",
+      "added": "2026-10-31T10:17:57.968Z",
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
-      "artistText": "Hollies"
+      "artistText": "The Hollies"
     }
   ]
 }
