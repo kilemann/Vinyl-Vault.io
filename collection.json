@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:02:26.101Z",
+  "updated": "2026-10-31T10:05:45.304Z",
   "version": 1,
   "artists": [
     {
@@ -4194,6 +4194,67 @@
       "rgid": "f370c1b4-fe41-41e3-8648-302364960e43",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Claudia & Big Hand & Casino"
+    },
+    {
+      "id": "c6848ed9-de63-42f6-a23b-b7b891650285",
+      "artistId": "",
+      "title": "Division one",
+      "year": 1985,
+      "genre": "Soft Rock",
+      "cover": "https://coverartarchive.org/release-group/cc1ef8fb-7631-37ad-b543-8f4722f2545f/front-500",
+      "tracks": [
+        "Stairway to Heaven",
+        "You Are the Woman",
+        "One of Your Lovers",
+        "Live Inside Your Dreams",
+        "Johnny Don’t Go the Distance",
+        "Fire and Water",
+        "If You Could See You Through My Eyes",
+        "No One Else Will Do",
+        "Rock ’n’ Roll Connection"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:02:38.881Z",
+      "rgid": "cc1ef8fb-7631-37ad-b543-8f4722f2545f",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Far corporation"
+    },
+    {
+      "id": "ea5037b0-f5af-4b06-abe0-98015f8be6e2",
+      "artistId": "",
+      "title": "Whose side are you on",
+      "year": 1984,
+      "genre": "Jazz",
+      "cover": "https://coverartarchive.org/release-group/efdf287b-4d24-40e6-a768-6f18b26324dd/front-500",
+      "tracks": [
+        "Whose Side Are You On? (Extended Version)",
+        "More Than I Can Bear",
+        "No No Never",
+        "Half A Minute",
+        "Matts Mood",
+        "Get Out Of Your Lazy Bed",
+        "It's Getting Late",
+        "Sneaking Out The Back Door",
+        "Riding With The Wind",
+        "Matts Mood II"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:03:54.307Z",
+      "rgid": "efdf287b-4d24-40e6-a768-6f18b26324dd",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Matt Bianco"
     }
   ]
 }
