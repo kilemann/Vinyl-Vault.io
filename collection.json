@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.8.0",
-  "updated": "2026-10-31T13:10:05.565Z",
+  "updated": "2026-10-31T13:10:07.776Z",
   "version": 1,
   "artists": [
     {
@@ -8201,7 +8201,18 @@
       "year": 1980,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/0c977adb-6dd3-330c-9acb-a40d2104a539/front-500",
-      "tracks": [],
+      "tracks": [
+        "Dance",
+        "Summer Romance",
+        "Send It to Me",
+        "Let Me Go",
+        "Indian Girl",
+        "Where the Boys Go",
+        "Down in the Hole",
+        "Emotional Rescue",
+        "She’s So Cold",
+        "All About You"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
