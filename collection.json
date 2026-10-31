@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:00:53.304Z",
+  "updated": "2026-10-31T10:02:26.101Z",
   "version": 1,
   "artists": [
     {
@@ -4162,6 +4162,38 @@
       "rgid": "ef791eac-d21e-3afb-8501-2d673a013e49",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Michael Cretu"
+    },
+    {
+      "id": "934504fd-1762-4083-b444-a715292ff72e",
+      "artistId": "",
+      "title": "Oh yeah",
+      "year": 1985,
+      "genre": "Americana",
+      "cover": "https://coverartarchive.org/release-group/f370c1b4-fe41-41e3-8648-302364960e43/front-500",
+      "tracks": [
+        "Prisoners of the Blues",
+        "Light on the Mountain",
+        "Faded Blue",
+        "Lonely Days and Nights",
+        "The Dam's Gonna Break Tonight",
+        "It's Hard to Feel Blue (When You're Red)",
+        "Honky Tonk Night",
+        "Thinking Back to My Younger Days",
+        "Love Sweet Love",
+        "Barrom Roses",
+        "Give Me Strength"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:01:17.073Z",
+      "rgid": "f370c1b4-fe41-41e3-8648-302364960e43",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Claudia & Big Hand & Casino"
     }
   ]
 }
