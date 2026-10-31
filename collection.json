@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T12:19:04.267Z",
+  "updated": "2026-10-31T12:20:58.781Z",
   "version": 1,
   "artists": [
     {
@@ -7315,6 +7315,39 @@
       "notes": "",
       "added": "2026-10-31T12:18:21.422Z",
       "rgid": "8e438b76-bcf3-4dd2-b0e7-743d7422bfb2",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Jerusalem"
+    },
+    {
+      "id": "7eb10fbe-d71a-48ed-b819-28644474e6e0",
+      "artistId": "",
+      "title": "Jerusalem",
+      "year": 1978,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/6b513263-4dbe-42a1-94e6-495d7d746b61/front-500",
+      "tracks": [
+        "Tänk Om Jesus Har Rätt",
+        "Noa",
+        "Kanske",
+        "Pappa Vem Har Gjort",
+        "Mr Ego",
+        "Kom Till Mej",
+        "Om Du Lyssnar",
+        "Dagarna Går",
+        "Jesus Är Det Underbaraste",
+        "Hög Tid",
+        "Fångsång",
+        "Neutral"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T12:19:46.456Z",
+      "rgid": "6b513263-4dbe-42a1-94e6-495d7d746b61",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jerusalem"
     }
