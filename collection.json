@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:04:47.250Z",
+  "updated": "2026-10-31T11:08:02.114Z",
   "version": 1,
   "artists": [
     {
@@ -6441,6 +6441,57 @@
       "rgid": "5dc38932-b507-3bcd-94a9-3b39c1d96526",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Santana"
+    },
+    {
+      "id": "a9b1d158-a7cb-444b-9434-a2c748046474",
+      "artistId": "",
+      "title": "Greatest hits",
+      "year": 1977,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/411219a7-856c-4cd0-a243-3833b58d670f/front-500",
+      "tracks": [
+        "Lay Back in the Arms of Someone",
+        "Something’s Been Making Me Blue",
+        "If You Think You Know How to Love Me",
+        "Pass It Around",
+        "I’ll Meet You at Midnight",
+        "Living Next Door to Alice",
+        "Changing All the Time",
+        "Don’t Play Your Rock ’n’ Roll to Me",
+        "Back to Bradford",
+        "Wild Wild Angels"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 50,
+      "condition": "Fair (F)",
+      "purchaseDate": "2025-03-31",
+      "notes": "",
+      "added": "2026-10-31T11:05:33.581Z",
+      "rgid": "411219a7-856c-4cd0-a243-3833b58d670f",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Smokie"
+    },
+    {
+      "id": "60d1c79b-19fd-4a81-89e8-61de29fdc59b",
+      "artistId": "",
+      "title": "Changes teo bowie",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:06:56.340Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "David Bowie"
     }
   ]
 }
