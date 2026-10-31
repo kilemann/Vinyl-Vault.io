@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:38:43.832Z",
+  "updated": "2026-10-31T12:16:27.462Z",
   "version": 1,
   "artists": [
     {
@@ -7195,6 +7195,37 @@
       "rgid": "5d1b18d7-567e-3779-bcbf-8a24df5f823a",
       "folderId": "",
       "artistText": ""
+    },
+    {
+      "id": "478b47ce-bd2b-4a63-8ba7-55780d1b4bd0",
+      "artistId": "",
+      "title": "17",
+      "year": 1984,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/3053c046-7bf3-34e7-b314-1fa2682ca81b/front-500",
+      "tracks": [
+        "Stay the Night",
+        "We Can Stop the Hurtin’",
+        "Hard Habit to Break",
+        "Only You",
+        "Remember the Feeling",
+        "Along Comes a Woman",
+        "You’re the Inspiration",
+        "Please Hold On",
+        "Prima Donna",
+        "Once in a Lifetime"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T12:15:39.158Z",
+      "rgid": "3053c046-7bf3-34e7-b314-1fa2682ca81b",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Chicago"
     }
   ]
 }
