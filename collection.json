@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:44:35.752Z",
+  "updated": "2026-10-31T09:48:37.442Z",
   "version": 1,
   "artists": [
     {
@@ -4014,7 +4014,37 @@
     {
       "id": "7a0ac1be-b56b-4d7e-b40d-a18b83d5da10",
       "artistId": "",
-      "title": "debut",
+      "title": "Debut Album",
+      "year": 1985,
+      "genre": "Art Rock",
+      "cover": "",
+      "tracks": [
+        "Silent running",
+        "All i need is a miracle",
+        "Par avion",
+        "Hanging by a thread",
+        "I get the feeling",
+        "Take the reins",
+        "You are the one",
+        "A call to arms",
+        "Taken in"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T09:41:41.945Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Mike + the mechanics"
+    },
+    {
+      "id": "e17fa7f0-95dd-43b4-873c-cf44caec534c",
+      "artistId": "",
+      "title": "city rythm",
       "year": null,
       "genre": "",
       "cover": "",
@@ -4026,10 +4056,10 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-31T09:41:41.945Z",
+      "added": "2026-10-31T09:47:51.734Z",
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
-      "artistText": "Mike + the mechanics"
+      "artistText": "shakatak"
     }
   ]
 }
