@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:56:15.228Z",
+  "updated": "2026-10-31T10:57:22.955Z",
   "version": 1,
   "artists": [
     {
@@ -6320,6 +6320,26 @@
       "rgid": "ad04187e-4435-3f28-be27-99b08aea7738",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Suzi Quatro"
+    },
+    {
+      "id": "b19aa1ef-ab02-4d06-8487-cbc4057666d1",
+      "artistId": "",
+      "title": "Nein Danke",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 200,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2025-09-25",
+      "notes": "",
+      "added": "2026-10-31T10:56:42.001Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Apoptgyma Berzerk"
     }
   ]
 }
