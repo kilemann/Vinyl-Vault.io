@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:58:55.499Z",
+  "updated": "2026-10-31T11:01:31.908Z",
   "version": 1,
   "artists": [
     {
@@ -6349,6 +6349,26 @@
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Apoptgyma Berzerk"
+    },
+    {
+      "id": "804192b5-5da5-48f1-b658-7ccd29e95b81",
+      "artistId": "",
+      "title": "Paul Stanley",
+      "year": null,
+      "genre": "",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T11:00:05.979Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Kiss"
     }
   ]
 }
