@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:57:22.955Z",
+  "updated": "2026-10-31T10:58:55.499Z",
   "version": 1,
   "artists": [
     {
@@ -6328,7 +6328,16 @@
       "year": null,
       "genre": "",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Soma Coma",
+        "Atom & Eve",
+        "A Battle For The Crown",
+        "Nearest",
+        "Deep Red (The Long Cut By Vile Electrodes)",
+        "Atom & Eve (C-64 Version)",
+        "A Battle For The Crown (Drugwar Remix)",
+        "Jennifer Corvino"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
