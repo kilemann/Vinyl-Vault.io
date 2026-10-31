@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:48:37.442Z",
+  "updated": "2026-10-31T09:52:23.098Z",
   "version": 1,
   "artists": [
     {
@@ -4044,7 +4044,59 @@
     {
       "id": "e17fa7f0-95dd-43b4-873c-cf44caec534c",
       "artistId": "",
-      "title": "city rythm",
+      "title": "City rythm",
+      "year": 1985,
+      "genre": "Pop",
+      "cover": "",
+      "tracks": [],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T09:47:51.734Z",
+      "rgid": "",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Shakatak"
+    },
+    {
+      "id": "033fd078-b93d-4c20-97ec-040797a4e62a",
+      "artistId": "",
+      "title": "Ængel",
+      "year": 1992,
+      "genre": "Pop",
+      "cover": "https://coverartarchive.org/release-group/b01ca7be-675f-478d-ba39-d03e28d2d318/front-500",
+      "tracks": [
+        "Maria M.",
+        "Han Mikkel",
+        "Testamentet tel ho mor",
+        "Vi ser han aldri mer",
+        "Jeg vet en deilig have",
+        "Ængel med skit på vingan",
+        "Salamandra i fra nesset",
+        "På hver sin kant av landet",
+        "Titter'n",
+        "Ta mæ med",
+        "Apekoret"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T09:50:46.707Z",
+      "rgid": "b01ca7be-675f-478d-ba39-d03e28d2d318",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Unit five"
+    },
+    {
+      "id": "4b4f9bae-6cc1-49f0-a086-742128e04144",
+      "artistId": "",
+      "title": "1",
       "year": null,
       "genre": "",
       "cover": "",
@@ -4056,10 +4108,10 @@
       "condition": "",
       "purchaseDate": "",
       "notes": "",
-      "added": "2026-10-31T09:47:51.734Z",
+      "added": "2026-10-31T09:51:54.752Z",
       "rgid": "",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
-      "artistText": "shakatak"
+      "artistText": "Santana"
     }
   ]
 }
