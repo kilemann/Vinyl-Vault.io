@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:39:04.837Z",
+  "updated": "2026-10-31T10:42:07.060Z",
   "version": 1,
   "artists": [
     {
@@ -75,6 +75,12 @@
       "name": "Genesis",
       "notes": "",
       "mbid": "8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e"
+    },
+    {
+      "id": "25144e90-f9e6-4d01-b394-931b471a18a1",
+      "name": "Creedence Clearwater Revival",
+      "notes": "",
+      "mbid": "109958eb-a335-4c5e-907e-597ff4c6af46"
     }
   ],
   "folders": [
@@ -2375,7 +2381,7 @@
       "artistId": "5def97f8-da82-4211-b296-ad9afa3ed239",
       "title": "Brakara",
       "year": 1978,
-      "genre": "",
+      "genre": "Tullemusikk",
       "cover": "https://coverartarchive.org/release-group/0e48be49-f1e4-3368-adb2-361d366200d8/front-500",
       "tracks": [
         "Brakara",
