@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:06:07.689Z",
+  "updated": "2026-10-31T10:08:13.079Z",
   "version": 1,
   "artists": [
     {
@@ -4286,6 +4286,30 @@
       "rgid": "70706fd9-e724-37ed-8be5-243ff0dc5ab1",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Laura Branigan"
+    },
+    {
+      "id": "c5587186-d9c7-4c05-8377-fa0c0a94e264",
+      "artistId": "",
+      "title": "Careless whisper",
+      "year": 1984,
+      "genre": "Pop",
+      "cover": "https://coverartarchive.org/release-group/91d9ccb1-0c30-3413-8b66-9c2e9a2d86a8/front-500",
+      "tracks": [
+        "Careless Whisper (extended mix)",
+        "Careless Whisper (Special version)",
+        "Careless Whisper (instrumental)"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": null,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:06:34.615Z",
+      "rgid": "91d9ccb1-0c30-3413-8b66-9c2e9a2d86a8",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "George Michael"
     }
   ]
 }
