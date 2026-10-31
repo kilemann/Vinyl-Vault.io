@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T12:16:27.462Z",
+  "updated": "2026-10-31T12:19:04.267Z",
   "version": 1,
   "artists": [
     {
@@ -7226,6 +7226,97 @@
       "rgid": "3053c046-7bf3-34e7-b314-1fa2682ca81b",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Chicago"
+    },
+    {
+      "id": "7085e1b6-92d4-4560-b4ce-f9f3d1e2c3b7",
+      "artistId": "",
+      "title": "Chicago",
+      "year": 1986,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/3dafdde9-a5a6-3be4-b555-e68fffbf49d0/front-500",
+      "tracks": [
+        "Niagara Falls",
+        "Forever",
+        "If She Would Have Been Faithful…",
+        "25 or 6 to 4",
+        "Will You Still Love Me?",
+        "Over and Over",
+        "It’s Alright",
+        "Nothin’s Gonna Stop Us Now",
+        "I Believe",
+        "One More Day"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T12:16:09.392Z",
+      "rgid": "3dafdde9-a5a6-3be4-b555-e68fffbf49d0",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Chicago"
+    },
+    {
+      "id": "0a961d12-1892-40d7-aa8d-0dde411325d1",
+      "artistId": "",
+      "title": "Krigsman",
+      "year": 1981,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/adff6f8a-828f-4109-9521-4a92c884227e/front-500",
+      "tracks": [
+        "Ständig förändring",
+        "Krigsman",
+        "Du är",
+        "It’s Mad",
+        "Moderne man",
+        "Sodom",
+        "Domedagsprofeter",
+        "Farväl"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T12:17:54.985Z",
+      "rgid": "adff6f8a-828f-4109-9521-4a92c884227e",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Jerusalem"
+    },
+    {
+      "id": "bbcbe198-ed7b-4602-b5f4-d0e67326ae3e",
+      "artistId": "",
+      "title": "Vi kan inte stoppas",
+      "year": 1983,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/8e438b76-bcf3-4dd2-b0e7-743d7422bfb2/front-500",
+      "tracks": [
+        "Vi Kan Inte Stoppas",
+        "Loves You More",
+        "Vinden Blåser...",
+        "I Skuggan Av Det Förflutna",
+        "Kärlekseld",
+        "Let's go (Dancin')",
+        "Sorgsnas Parad",
+        "Regn",
+        "Pusselbiten",
+        "Heartbeat"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T12:18:21.422Z",
+      "rgid": "8e438b76-bcf3-4dd2-b0e7-743d7422bfb2",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Jerusalem"
     }
   ]
 }
