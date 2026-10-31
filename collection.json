@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:54:01.046Z",
+  "updated": "2026-10-31T09:54:58.368Z",
   "version": 1,
   "artists": [
     {
@@ -4096,7 +4096,7 @@
     {
       "id": "4b4f9bae-6cc1-49f0-a086-742128e04144",
       "artistId": "",
-      "title": "https://musicbrainz.org/release-group/cbe55545-7a3e-3f8c-8c5f-33984a818e91",
+      "title": "debut",
       "year": null,
       "genre": "",
       "cover": "https://musicbrainz.org/release-group/cbe55545-7a3e-3f8c-8c5f-33984a818e91",
