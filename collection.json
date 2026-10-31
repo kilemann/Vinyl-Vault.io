@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:19:21.941Z",
+  "updated": "2026-10-31T11:24:38.621Z",
   "version": 1,
   "artists": [
     {
@@ -4071,7 +4071,7 @@
       "title": "City rythm",
       "year": 1985,
       "genre": "Pop",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/a8095cf5-60d3-31c4-b612-15da5eded4b8/front-500",
       "tracks": [
         "Day By Day\t3:43",
         "Once Upon A Time\t4:44",
@@ -4091,7 +4091,7 @@
       "purchaseDate": "2026-09-30",
       "notes": "",
       "added": "2026-10-31T09:47:51.734Z",
-      "rgid": "",
+      "rgid": "a8095cf5-60d3-31c4-b612-15da5eded4b8",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Shakatak"
     },
@@ -6606,10 +6606,26 @@
       "id": "506ad5d4-479a-49c2-8d84-d328c61efe2d",
       "artistId": "",
       "title": "Noe godt fra sør",
-      "year": null,
-      "genre": "",
+      "year": 1981,
+      "genre": "Art Rock",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Krypton - On My Way Down",
+        "Square Wave  – Dont Wanna Climb To Daddy No More",
+        "Erik Gunvaldsen Band – Camilla",
+        "Rock Shelter – Kjedelig",
+        "Reino Ilkama Band – Time´s Aint Bad",
+        "Hogs – Falconbridge Blues",
+        "Lily & The Gigolos – The Worst Enemy",
+        "Mac Meadows – To A Friend",
+        "Noize - We Are The Heroes",
+        "Boys Voice – Spoiled",
+        "Black Message – Why",
+        "Southstate Slim And His Slim Dusters – Bad Luck",
+        "Rockokko – Stans Stoffet!",
+        "Tequila Band – Pub Rock",
+        "Stormy –\tShould I Ever Be"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
