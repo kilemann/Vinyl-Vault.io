@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:05:45.304Z",
+  "updated": "2026-10-31T10:06:07.689Z",
   "version": 1,
   "artists": [
     {
@@ -4255,6 +4255,37 @@
       "rgid": "efdf287b-4d24-40e6-a768-6f18b26324dd",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Matt Bianco"
+    },
+    {
+      "id": "b64e3549-ce12-4f18-bdd8-b2752ca89c42",
+      "artistId": "",
+      "title": "Self control",
+      "year": 1984,
+      "genre": "Pop",
+      "cover": "https://coverartarchive.org/release-group/70706fd9-e724-37ed-8be5-243ff0dc5ab1/front-500",
+      "tracks": [
+        "The Lucky One",
+        "Self Control",
+        "Ti Amo",
+        "Heart",
+        "Will You Still Love Me Tomorrow",
+        "Satisfaction",
+        "Silent Partners",
+        "Breaking Out",
+        "Take Me",
+        "With Every Beat of My Heart"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:05:22.533Z",
+      "rgid": "70706fd9-e724-37ed-8be5-243ff0dc5ab1",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Laura Branigan"
     }
   ]
 }
