@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:36:43.844Z",
+  "updated": "2026-10-31T10:39:04.837Z",
   "version": 1,
   "artists": [
     {
@@ -4026,10 +4026,10 @@
     {
       "id": "7a0ac1be-b56b-4d7e-b40d-a18b83d5da10",
       "artistId": "",
-      "title": "Debut Album",
+      "title": "Mike",
       "year": 1985,
       "genre": "Art Rock",
-      "cover": "",
+      "cover": "https://coverartarchive.org/release-group/eb8f4523-a2f2-385a-86b8-3a8e5651907d/front-500",
       "tracks": [
         "Silent running",
         "All i need is a miracle",
@@ -4049,7 +4049,7 @@
       "purchaseDate": "2026-09-30",
       "notes": "",
       "added": "2026-10-31T09:41:41.945Z",
-      "rgid": "",
+      "rgid": "eb8f4523-a2f2-385a-86b8-3a8e5651907d",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Mike + the mechanics"
     },
@@ -5491,6 +5491,37 @@
       "rgid": "1714d8ac-6d18-352e-a905-7774d1c49c1a",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kim Larsen"
+    },
+    {
+      "id": "9efb2476-0d19-4324-8be8-f25877658cb9",
+      "artistId": "",
+      "title": "broken",
+      "year": 1980,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/dadda20e-1b62-44c6-a5e5-244fd72f8508/front-500",
+      "tracks": [
+        "Stop Looking At Me",
+        "Shooting All the Lights Out",
+        "No Chance",
+        "Death of Gog",
+        "Mona Lisa",
+        "Shotover Hill",
+        "Run Away From Home",
+        "Jerusalem",
+        "Bird Has Flown",
+        "China in Your Heart"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Very Good (VG)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:37:05.572Z",
+      "rgid": "dadda20e-1b62-44c6-a5e5-244fd72f8508",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Broken Home"
     }
   ]
 }
