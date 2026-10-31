@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:08:13.079Z",
+  "updated": "2026-10-31T10:09:54.249Z",
   "version": 1,
   "artists": [
     {
@@ -4310,6 +4310,37 @@
       "rgid": "91d9ccb1-0c30-3413-8b66-9c2e9a2d86a8",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "George Michael"
+    },
+    {
+      "id": "6e3cff3f-0d75-43f1-8ad1-9815c923f8e6",
+      "artistId": "",
+      "title": "v",
+      "year": 1985,
+      "genre": "",
+      "cover": "https://coverartarchive.org/release-group/a2de1d1e-ed74-3317-8a72-d73934c0d474/front-500",
+      "tracks": [
+        "Midnight Sensation",
+        "She’s Out With a Gun",
+        "I’m a Fighter",
+        "You’ve Got to Believe in Love",
+        "Two Strangers",
+        "2 + 2",
+        "Heart to the Flame",
+        "Does a Fool Ever Learn",
+        "Right on Time",
+        "Lonely Girls"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T10:07:54.677Z",
+      "rgid": "a2de1d1e-ed74-3317-8a72-d73934c0d474",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Van Zant"
     }
   ]
 }
