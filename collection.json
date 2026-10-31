@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T09:40:07.171Z",
+  "updated": "2026-10-31T09:42:05.525Z",
   "version": 1,
   "artists": [
     {
@@ -3979,6 +3979,37 @@
       "rgid": "1e2debec-897c-3121-a42e-c01c9ac1eff6",
       "folderId": "",
       "artistText": ""
+    },
+    {
+      "id": "f41479a4-e00b-4f33-b71c-74d03d03cfab",
+      "artistId": "",
+      "title": "Building the perfect beast",
+      "year": 1984,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/cb763b61-26ae-3fbb-80ff-946275a4e697/front-500",
+      "tracks": [
+        "The Boys of Summer",
+        "You Can’t Make Love",
+        "Man With a Mission",
+        "You’re Not Drinking Enough",
+        "Not Enough Love in the World",
+        "Building the Perfect Beast",
+        "All She Wants to Do Is Dance",
+        "Sunset Grill",
+        "Drivin’ With Your Eyes Closed",
+        "Land of the Living"
+      ],
+      "owned": true,
+      "favorite": false,
+      "wishlist": false,
+      "price": 100,
+      "condition": "Good Plus (G+)",
+      "purchaseDate": "2026-09-30",
+      "notes": "",
+      "added": "2026-10-31T09:40:00.833Z",
+      "rgid": "cb763b61-26ae-3fbb-80ff-946275a4e697",
+      "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
+      "artistText": "Don Henley"
     }
   ]
 }
