@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:11:44.102Z",
+  "updated": "2026-10-31T11:14:14.554Z",
   "version": 1,
   "artists": [
     {
@@ -6539,10 +6539,20 @@
       "id": "111bd9eb-4bb0-4f1d-9607-cc737d94145b",
       "artistId": "",
       "title": "Mr. Pityful",
-      "year": null,
-      "genre": "",
+      "year": 1981,
+      "genre": "Rock",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Wolly Bully",
+        "Left Alone",
+        "Have Mercy",
+        "Something You've Got",
+        "Itsy Bitsy Teenie Weenie Yellow Polka Dot Bikini",
+        "Stand By Me",
+        "Hold On To What You Got",
+        "Mr. Pitiful",
+        "I Should've Quit You"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
