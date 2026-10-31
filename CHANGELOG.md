@@ -1,5 +1,12 @@
 # Endringslogg – Vinyl Vault
 
+## 1.9.0 – 2026-10-31
+- Hent info for én plate overskriver nå med info fra nettet: tittel, år, sjanger, cover og trackliste (og artistnavn for plater i mapper).
+  Pris, tilstand, kjøpsdato, notater og eierstatus beholdes. «Angre» i 7 sekunder.
+- Knappen vises på alle plater: «🔎 Hent info», eller «🔎 Oppdater fra nettet» når platen har info fra før.
+- «Hent info for alle» i en mappe fyller fortsatt bare tomme felt.
+- Ønskeliste og favoritter: artister med flere album samles i en stabel, som i mappene. Gjelder egne sider og boksene på Oversikten.
+
 ## 1.8.0 – 2026-10-31
 - Mapper: artister med 2 eller flere plater i samme mappe samles automatisk i en stabel med antall plater.
   Trykk på stabelen for å se platene. Søk i mappen viser treffene enkeltvis.
