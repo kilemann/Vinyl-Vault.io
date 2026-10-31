@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.6.0",
-  "updated": "2026-10-30T13:00:55.837Z",
+  "appVersion": "1.7.0",
+  "updated": "2026-10-31T09:35:40.217Z",
   "version": 1,
   "artists": [
     {
@@ -1151,11 +1151,23 @@
       "year": 1981,
       "genre": "Pop",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Gammelråkk i kåken",
+        "Svarte penger",
+        "Æ hakke løst på dæ",
+        "Født i kvadraturen",
+        "Boom Boom",
+        "Full rulle",
+        "Vi er ikke alene",
+        "Rastlløs",
+        "Rovdyr i jeans",
+        "Det er noe faenskap i gang",
+        "Dritkjipt å miste dama"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
-      "price": null,
+      "price": 100,
       "condition": "",
       "purchaseDate": "2026-04-30",
       "notes": "",
