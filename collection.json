@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T11:01:31.908Z",
+  "updated": "2026-10-31T11:02:04.467Z",
   "version": 1,
   "artists": [
     {
@@ -6354,10 +6354,20 @@
       "id": "804192b5-5da5-48f1-b658-7ccd29e95b81",
       "artistId": "",
       "title": "Paul Stanley",
-      "year": null,
-      "genre": "",
+      "year": 1978,
+      "genre": "Rock",
       "cover": "",
-      "tracks": [],
+      "tracks": [
+        "Tonight You Belong To Me",
+        "Move On",
+        "Ain't Quite Right",
+        "Wouldn't You Like To Know Me?",
+        "Take Me Away (Together As One)",
+        "It's Alright",
+        "Hold Me, Touch Me (Think Of Me When We're Apart)",
+        "Love In Chains",
+        "Goodbye"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
