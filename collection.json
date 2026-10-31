@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.8.0",
-  "updated": "2026-10-31T12:48:48.622Z",
+  "updated": "2026-10-31T13:03:22.484Z",
   "version": 1,
   "artists": [
     {
@@ -4381,7 +4381,7 @@
     {
       "id": "5d2295c5-76e5-44c4-a48c-d9a1adcc2485",
       "artistId": "",
-      "title": "Reackless",
+      "title": "Reckless",
       "year": 1984,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/fe1d2bcd-cdb6-333b-b2c6-8389e5890f04/front-500",
