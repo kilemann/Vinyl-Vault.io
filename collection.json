@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.7.0",
-  "updated": "2026-10-31T10:54:35.104Z",
+  "updated": "2026-10-31T10:56:15.228Z",
   "version": 1,
   "artists": [
     {
@@ -6290,10 +6290,25 @@
       "id": "5117ad84-01a6-4a68-80be-0e26db405cd0",
       "artistId": "",
       "title": "Greatest hits",
-      "year": null,
-      "genre": "",
-      "cover": "",
-      "tracks": [],
+      "year": 1980,
+      "genre": "Rock",
+      "cover": "https://coverartarchive.org/release-group/ad04187e-4435-3f28-be27-99b08aea7738/front-500",
+      "tracks": [
+        "Can the Can",
+        "She's in Love With You",
+        "48 Crash",
+        "The Wild One",
+        "Too Big",
+        "I May Be Too Young",
+        "If You Can't Give Me Love",
+        "Devil Gate Drive",
+        "Daytona Demon",
+        "Mama's Boy",
+        "Tear Me Apart",
+        "The Race Is On",
+        "Your Mamma Won't Like Me",
+        "I've Never Been in Love"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6302,9 +6317,9 @@
       "purchaseDate": "2026-09-30",
       "notes": "",
       "added": "2026-10-31T10:53:41.595Z",
-      "rgid": "",
+      "rgid": "ad04187e-4435-3f28-be27-99b08aea7738",
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
-      "artistText": "Suzie Quatro"
+      "artistText": "Suzi Quatro"
     }
   ]
 }
