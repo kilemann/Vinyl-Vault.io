@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.9.0",
-  "updated": "2026-11-01T09:43:33.803Z",
+  "updated": "2026-11-01T09:48:25.933Z",
   "version": 1,
   "artists": [
     {
@@ -4883,7 +4883,7 @@
     {
       "id": "90810318-561a-46ee-8eaf-83595d09d089",
       "artistId": "",
-      "title": "Rock",
+      "title": "Rock ’n’ Roll Music – Volume 2",
       "year": 1980,
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/2b07f108-6fc2-466e-a610-a79002aab1cc/front-500",
