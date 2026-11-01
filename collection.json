@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.9.0",
-  "updated": "2026-11-01T09:48:25.933Z",
+  "updated": "2026-11-01T09:50:22.845Z",
   "version": 1,
   "artists": [
     {
@@ -5525,7 +5525,7 @@
     {
       "id": "9efb2476-0d19-4324-8be8-f25877658cb9",
       "artistId": "",
-      "title": "broken",
+      "title": "Broken Home",
       "year": 1980,
       "genre": "",
       "cover": "https://coverartarchive.org/release-group/dadda20e-1b62-44c6-a5e5-244fd72f8508/front-500",
