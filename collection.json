@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.9.0",
-  "updated": "2026-11-01T09:42:54.127Z",
+  "updated": "2026-11-01T09:43:33.803Z",
   "version": 1,
   "artists": [
     {
@@ -105,12 +105,6 @@
       "name": "Faith No More",
       "notes": "",
       "mbid": "b15ebd71-a252-417d-9e1c-3e6863da68f8"
-    },
-    {
-      "id": "d4f3a632-7587-4eec-866f-7509ca7b288e",
-      "name": "wishbone ash",
-      "notes": "",
-      "mbid": "406f1b42-0c9e-4427-aeb7-02f78e188ec4"
     }
   ],
   "folders": [
