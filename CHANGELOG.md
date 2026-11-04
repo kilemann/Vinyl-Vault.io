@@ -1,5 +1,20 @@
 # Endringslogg – Vinyl Vault
 
+## 1.11.0 – 2026-11-04
+Albumsiden:
+- Ny layout på PC/nettbrett: cover og trackliste til venstre, info, singler og notater til høyre.
+  På mobil: cover, info, trackliste, singler, notater.
+- Tracklisten viser spilletid per spor, total spilletid og A/B-sider med nummer fra 1 på hver side.
+  Sider og spilletid hentes fra vinylutgaven i MusicBrainz når den finnes.
+- Ny lenke under tracklisten: «Søk etter vinylplaten på Google».
+- Singler vises uten bilde: tittel, år og spilletid (spilletiden for samme spor på albumet).
+- Notatene ligger under singlene.
+
+Redigering:
+- Tracklisten kan redigeres med sider og spilletid: «Side A» / «Side B» på egne linjer, spilletid til slutt (3:45). «A1 Tittel» forstås også.
+- «🔎 Hent spilletid og sider» på albumsiden for plater som mangler det, med «Angre».
+- «🎵 Spilletid og sider» under Data og backup henter for alle plater som mangler det (ca. 1 sekund per plate).
+
 ## 1.10.0 – 2026-11-04
 - Ny boks «Singler» på albumsiden: singlene som ble gitt ut fra albumet, med år og cover. Trykk for detaljer på MusicBrainz.
   - Hentes fra MusicBrainz-relasjonen «single from» (singel tatt fra albumet).

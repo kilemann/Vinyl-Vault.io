@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.10.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.11.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -195,7 +195,10 @@ select.sel{height:46px;padding:0 12px;border-radius:14px;border:1px solid var(--
 .album .bigcover{position:relative;aspect-ratio:1;border-radius:20px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.55)}
 .album .bigcover>svg,.album .bigcover>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .album .bigcover.missing>svg,.album .bigcover.missing>img{filter:grayscale(.8) brightness(.65)}
-@media (min-width:900px){.album .left{position:sticky;top:28px}}
+/* mobil: én kolonne i rekkefølgen cover, info, trackliste, singler, notater */
+@media (max-width:899px){.album{display:flex;flex-direction:column;gap:0}.album .left,.album .right{display:contents}
+  .album .o1{order:1}.album .o2{order:2;margin-top:22px}.album .o3{order:3}.album .o4{order:4}.album .o5{order:5}}
+@media (min-width:900px){.album .left>.panel:first-of-type{margin-top:18px}}
 .album .artist{color:var(--accent);font-weight:600;text-decoration:none}
 .toggle{display:flex;gap:8px;margin:16px 0}
 .toggle button{flex:1;min-height:48px;border-radius:14px;border:1px solid var(--line);background:var(--glass);font-weight:600;color:var(--muted);transition:all .2s}
@@ -208,13 +211,22 @@ select.sel{height:46px;padding:0 12px;border-radius:14px;border:1px solid var(--
 .fact .v{font-weight:600;margin-top:2px;word-break:break-word}
 .panel{padding:16px;margin-top:14px}
 .panel .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.tracks{list-style:none;margin:0;padding:0;counter-reset:t}
-.tracks li{counter-increment:t;display:flex;gap:14px;padding:10px 6px;border-bottom:1px solid var(--line);align-items:baseline}
+.tracks{list-style:none;margin:0;padding:0}
+.tracks li{display:flex;gap:12px;padding:9px 4px;border-bottom:1px solid var(--line);align-items:baseline}
+.tracks .n{min-width:22px;text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;font-size:.85rem;flex:none}
+.tracks .tt{flex:1;min-width:0}
+.tracks .len,.singles .len{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.85rem;flex:none}
+.sideh{display:flex;justify-content:space-between;align-items:baseline;margin:14px 4px 2px;font:700 .78rem var(--head);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.sideh:first-child{margin-top:0}
+.sideh span{color:var(--muted);font:500 .8rem var(--body);letter-spacing:0;text-transform:none}
+.ph .tot{color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.glink{display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:var(--accent);font-weight:600;font-size:.9rem;text-decoration:none}
+.glink:hover{text-decoration:underline}
 .tracks li:last-child{border-bottom:0}
 .singles{list-style:none;margin:0;padding:0}
 .singles li{border-bottom:1px solid var(--line)}
 .singles li:last-child{border-bottom:0}
-.singles a{display:flex;align-items:center;gap:12px;padding:8px 2px;text-decoration:none}
+.singles a{display:flex;align-items:center;gap:12px;padding:9px 4px;text-decoration:none}
 .singles .sth{width:44px;height:44px;flex:none;border-radius:6px;overflow:hidden;position:relative;background:#111 radial-gradient(circle,#2a2a2a 0 18%,#111 19% 100%)}
 .singles .sth img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .singles .st{flex:1;min-width:0}
@@ -222,7 +234,7 @@ select.sel{height:46px;padding:0 12px;border-radius:14px;border:1px solid var(--
 .singles .st span{color:var(--muted);font-size:.82rem}
 .guess{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;border:1px solid var(--line2);font-size:.7rem;color:var(--muted);vertical-align:1px}
 .ph .acts2{display:flex;gap:14px;align-items:center}
-.tracks li::before{content:counter(t);min-width:22px;text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;font-size:.85rem}
+
 .notes{white-space:pre-wrap;color:var(--ink)}
 .muted{color:var(--muted)}
 textarea.ta{width:100%;min-height:160px;padding:12px;border-radius:12px;border:1px solid var(--line2);background:rgba(0,0,0,.25);resize:vertical;outline:none;line-height:1.5}
@@ -383,11 +395,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.10.0
+   Vinyl Vault v1.11.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.10.0";
+const APP_VERSION = "1.11.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -477,11 +489,52 @@ const isUrl = s => /^(https?:\/\/|data:image\/)/i.test(String(s || "").trim());
    ===================================================================== */
 let db = { version: 1, artists: [], albums: [], folders: [] };
 
+/* spor med spilletid (sekunder) og side (A, B …) i parallelle lister */
+function cleanTracks(p){
+  const out = { tracks: [], trackLen: [], trackSide: [] };
+  (Array.isArray(p.tracks) ? p.tracks : []).forEach((t, i) => {
+    t = String(t ?? "").trim(); if (!t) return;
+    const len = Array.isArray(p.trackLen) ? Math.round(Number(p.trackLen[i])) : 0;
+    const side = Array.isArray(p.trackSide) ? String(p.trackSide[i] || "").trim().toUpperCase().slice(0, 2) : "";
+    out.tracks.push(t); out.trackLen.push(len > 0 && len < 7200 ? len : null); out.trackSide.push(/^[A-Z]{1,2}$/.test(side) ? side : "");
+  });
+  if (!out.trackLen.some(Boolean)) out.trackLen = [];
+  if (!out.trackSide.some(Boolean)) out.trackSide = [];
+  return out;
+}
+function setTracks(a, list){ Object.assign(a, cleanTracks({ tracks: list.map(x => x.t), trackLen: list.map(x => x.len), trackSide: list.map(x => x.side) })); }
+const trackRows = a => a.tracks.map((t, i) => ({ t, len: a.trackLen[i] || null, side: a.trackSide[i] || "" }));
+const mmss = s => s ? Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0") : "";
+const hmmss = s => s >= 3600 ? Math.floor(s / 3600) + ":" + String(Math.floor(s % 3600 / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0") : mmss(s);
+const totalLen = a => (a.trackLen || []).reduce((x, y) => x + (y || 0), 0);
+/* tekstformat for redigering: «Side A»-linjer, ett spor per linje, spilletid til slutt (3:45) */
+function tracksToText(a){
+  let side = null, out = [];
+  trackRows(a).forEach(r => { if (r.side && r.side !== side) { side = r.side; out.push("Side " + side); } out.push(r.t + (r.len ? " " + mmss(r.len) : "")); });
+  return out.join("\n");
+}
+function parseTrackText(txt){
+  let side = "", list = [];
+  for (let line of String(txt).split(/\r?\n/)) {
+    line = line.trim(); if (!line) continue;
+    const h = line.match(/^(?:side\s*([A-Z]{1,2})|-+\s*([A-Z]{1,2})\s*-+|([A-Z]{1,2})\s*:)$/i);
+    if (h) { side = (h[1] || h[2] || h[3]).toUpperCase(); continue; }
+    const ab = line.match(/^([A-H])\s?(\d{1,2})[.):\-–]?\s+(.+)$/i);
+    if (ab) { side = ab[1].toUpperCase(); line = ab[3]; }
+    else line = line.replace(/^\d{1,2}\s*[.):\-–]\s*/, "");
+    let len = null;
+    const m = line.match(/\s+[\(\[]?(\d{1,2}):([0-5]\d)[\)\]]?$/);
+    if (m) { len = +m[1] * 60 + +m[2]; line = line.slice(0, m.index).trim(); }
+    if (line) list.push({ t: line, len, side });
+  }
+  return list;
+}
+const parseTracks = s => parseTrackText(s).map(x => x.t);
 function blankAlbum(p = {}){
   return {
     id: p.id || uid(), artistId: p.artistId || "", title: String(p.title || "").trim(), year: p.year ? Number(p.year) || null : null,
     genre: String(p.genre || "").trim(), cover: String(p.cover || "").trim(),
-    tracks: Array.isArray(p.tracks) ? p.tracks.map(t => String(t).trim()).filter(Boolean) : [],
+    ...cleanTracks(p),
     owned: !!p.owned, favorite: !!p.favorite, wishlist: !!p.wishlist,
     price: p.price === "" || p.price == null || isNaN(Number(p.price)) ? null : Number(p.price),
     condition: String(p.condition || ""), purchaseDate: /^\d{4}-\d{2}-\d{2}$/.test(p.purchaseDate || "") ? p.purchaseDate : "",
@@ -1302,11 +1355,15 @@ function viewAlbum(id){
   const inStack = fo && (folderGroups(fo.id).get(akey(a.artistText)) || []).length >= 2;
   return `${fo ? (inStack ? `<a class="crumb" href="${groupHref(fo.id, a.artistText)}">${IC.back}📁 ${esc(fo.name)} › ${esc(a.artistText)}</a>` : `<a class="crumb" href="#/mappe/${fo.id}">${IC.back}📁 ${esc(fo.name)}</a>`) : `<a class="crumb" href="#/artist/${a.artistId}">${IC.back}${esc(ar ? ar.name : "Tilbake")}</a>`}
   <div class="album">
-    <div class="left"><div class="bigcover${a.owned ? "" : " missing"}">${coverHtml(a, true)}</div></div>
-    <div>
+    <div class="left">
+      <div class="bigcover o1${a.owned ? "" : " missing"}">${coverHtml(a, true)}</div>
+      <div class="panel glass o3" id="trackPanel"></div>
+    </div>
+    <div class="right">
+    <div class="o2">
       ${fo ? `<span class="artist">${esc(albArtist(a))}</span><a class="foldertag" href="#/mappe/${fo.id}">📁 ${esc(fo.name)}</a>` : `<a class="artist" href="#/artist/${a.artistId}">${esc(ar ? ar.name : "")}</a>`}
       <h1 style="margin-top:4px">${esc(a.title)}</h1>
-      <p class="sub">${[a.year, a.genre, a.tracks.length ? a.tracks.length + " spor" : ""].filter(Boolean).map(esc).join(" · ")}</p>
+      <p class="sub">${[a.year, a.genre, a.tracks.length ? a.tracks.length + " spor" : "", hmmss(totalLen(a))].filter(Boolean).map(esc).join(" · ")}</p>
       <div class="toggle edit-only" role="group" aria-label="Eierstatus">
         <button class="own${a.owned ? " on" : ""}" data-set="${a.id}" data-own="1" aria-pressed="${a.owned}">✅ Eier</button>
         <button class="miss${a.owned ? "" : " on"}" data-set="${a.id}" data-own="0" aria-pressed="${!a.owned}">❌ Mangler</button>
@@ -1321,41 +1378,57 @@ function viewAlbum(id){
       </div>
       <div class="facts" style="margin-top:16px">
         ${fact("Artist", esc(albArtist(a)))}${fo ? fact("Mappe", esc(fo.name)) : ""}${fact("Utgivelsesår", a.year)}${fact("Sjanger", esc(a.genre))}
-        ${fact("Antall spor", a.tracks.length || "")}${fact("Kjøpspris", a.price != null ? nok(a.price) : "")}${fact("Tilstand", esc(a.condition))}
+        ${fact("Spor", a.tracks.length ? a.tracks.length + (totalLen(a) ? " · " + hmmss(totalLen(a)) : "") : "")}${fact("Kjøpspris", a.price != null ? nok(a.price) : "")}${fact("Tilstand", esc(a.condition))}
         ${fact("Kjøpsdato", fmtDate(a.purchaseDate))}${fact("Status", (a.owned ? "✅ Eier" : "❌ Mangler") + (a.favorite ? " · ❤️" : "") + (a.wishlist && !a.owned ? " · ⭐" : ""))}
       </div>
-      <div class="panel glass" id="trackPanel"></div>
-      <div class="panel glass" id="singlePanel"></div>
-      <div class="panel glass" id="notePanel"></div>
+    </div>
+      <div class="panel glass o4" id="singlePanel"></div>
+      <div class="panel glass o5" id="notePanel"></div>
     </div>
   </div>`;
 }
+/* trackliste: grupperes per side med nummer fra 1 på hver side */
+function trackListHtml(a){
+  const rows = trackRows(a), groups = [];
+  rows.forEach(r => { const g = groups[groups.length - 1]; if (g && g.side === r.side) g.rows.push(r); else groups.push({ side: r.side, rows: [r] }); });
+  return groups.map(g => {
+    const tot = g.rows.reduce((x, r) => x + (r.len || 0), 0);
+    return (g.side ? `<div class="sideh">Side ${esc(g.side)}${tot ? `<span>${mmss(tot)}</span>` : ""}</div>` : "") +
+      `<ol class="tracks">${g.rows.map((r, i) => `<li><span class="n">${i + 1}</span><span class="tt">${esc(r.t)}</span>${r.len ? `<span class="len">${mmss(r.len)}</span>` : ""}</li>`).join("")}</ol>`;
+  }).join("");
+}
+const googleUrl = a => "https://www.google.com/search?q=" + encodeURIComponent(`"${albArtist(a)}" "${a.title}" vinyl LP`);
 function drawTracks(id, editing){
   const a = album(id), P = $("#trackPanel");
   P.innerHTML = editing
     ? `<div class="ph"><h2>Trackliste</h2></div>
-       <textarea class="ta" id="trackTa" placeholder="Ett spor per linje">${esc(a.tracks.join("\n"))}</textarea>
-       <p class="muted" style="font-size:.8rem;margin:6px 0 0">Ett spor per linje. Nummerering legges på automatisk.</p>
+       <textarea class="ta" id="trackTa" style="min-height:220px" placeholder="Side A&#10;Speak to Me 1:13&#10;Breathe 2:43&#10;Side B&#10;Money 6:22">${esc(tracksToText(a))}</textarea>
+       <p class="muted" style="font-size:.8rem;margin:6px 0 0">Ett spor per linje, spilletid til slutt (3:45). Skriv «Side A», «Side B» på egne linjer for sider. Nummerering legges på automatisk.</p>
        <div class="btns" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-tr="cancel">Avbryt</button><button class="btn pri" data-tr="save">Lagre</button></div>`
-    : `<div class="ph"><h2>Trackliste</h2><button class="link edit-only" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div>
-       ${a.tracks.length ? `<ol class="tracks">${a.tracks.map(t => `<li>${esc(t)}</li>`).join("")}</ol>` : '<p class="muted">Ingen spor registrert.</p>' + (a.rgid ? '<button class="btn edit-only" data-tr="fetch">🔎 Hent trackliste fra MusicBrainz</button>' : "")}`;
+    : `<div class="ph"><h2>Trackliste</h2><div class="acts2">${totalLen(a) ? `<span class="tot">${hmmss(totalLen(a))}</span>` : ""}<button class="link edit-only" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div></div>
+       ${a.tracks.length ? trackListHtml(a) : '<p class="muted">Ingen spor registrert.</p>'}
+       ${a.rgid && (!a.tracks.length || !a.trackLen.length) ? `<button class="btn edit-only" data-tr="fetch" style="margin-top:10px">🔎 ${a.tracks.length ? "Hent spilletid og sider" : "Hent trackliste"} fra MusicBrainz</button>` : ""}
+       <div><a class="glink" href="${googleUrl(a)}" target="_blank" rel="noopener">🔎 Søk etter vinylplaten på Google ↗</a></div>`;
   P.onclick = e => {
     const b = e.target.closest("[data-tr]"); if (!b) return;
     if (b.dataset.tr === "edit") { drawTracks(id, true); $("#trackTa").focus(); }
     if (b.dataset.tr === "fetch" && canEdit()) {
       b.disabled = true; b.innerHTML = '<span class="spin"></span>Henter …';
+      const old = trackRows(a);
       mbTracks(a.rgid).then(t => {
         if (!t.length) { toast("MusicBrainz har ingen trackliste for dette albumet"); drawTracks(id, false); return; }
-        a.tracks = t; save(); toast("Tracklisten er hentet"); refresh();
+        setTracks(a, t); save(); refresh();
+        toast(old.length ? "Tracklisten er oppdatert med spilletid" + (a.trackSide.length ? " og sider" : "") : "Tracklisten er hentet",
+          old.length ? () => { const x = album(id); if (!x || !canEdit()) return; setTracks(x, old); save(); refresh(); toast("Angret"); } : null);
       }).catch(err => { toast(err.message); drawTracks(id, false); });
     }
     if (b.dataset.tr === "cancel") drawTracks(id, false);
     if (!canEdit()) return;
     if (b.dataset.tr === "save") {
-      const nt = parseTracks($("#trackTa").value), lost = a.tracks.filter(t => !nt.includes(t)).length;
-      const go = () => { const old = a.tracks; a.tracks = nt; save(); refresh();
+      const rows = parseTrackText($("#trackTa").value), nt = rows.map(x => x.t), lost = a.tracks.filter(t => !nt.includes(t)).length;
+      const go = () => { const old = trackRows(a); setTracks(a, rows); save(); refresh();
         toast(lost ? (nt.length ? `Tracklisten er lagret – ${lost} spor fjernet` : "Tracklisten er slettet") : "Tracklisten er lagret",
-          lost ? () => { if (!canEdit() || !album(a.id)) return; a.tracks = old; save(); refresh(); toast("Tracklisten er tilbake"); } : null); };
+          lost ? () => { if (!canEdit() || !album(a.id)) return; setTracks(a, old); save(); refresh(); toast("Tracklisten er tilbake"); } : null); };
       if (!lost) return go();
       confirmBox(nt.length ? `Fjerne ${lost} spor?` : "Slette hele tracklisten?", nt.length ? `${lost} av ${a.tracks.length} spor forsvinner fra «${a.title}».` : `Alle ${a.tracks.length} spor forsvinner fra «${a.title}».`, nt.length ? "Fjern" : "Slett")
         .then(ok => { if (ok) go(); });
@@ -1383,8 +1456,7 @@ function drawNotes(id, editing){
     }
   };
 }
-/* fjerner nummer som «1.», «01 -» eller «A1» hvis de limes inn */
-const parseTracks = s => String(s).split(/\r?\n/).map(t => t.replace(/^\s*(?:\d{1,2}\s*[.):\-–]\s*|[A-D]\d{1,2}[.):\-–]?\s+)/i, "").trim()).filter(Boolean);
+
 after.album = id => { drawTracks(id, false); drawSingles(id); drawNotes(id, false); };
 
 /* =====================================================================
@@ -1432,10 +1504,16 @@ const parseSingles = txt => String(txt).split(/\r?\n/).map(l => l.trim()).filter
   const m = l.match(/^(.*?)[\s,–-]*\(?((?:19|20)\d{2})\)?\s*$/);
   return m && m[1].trim() ? { t: m[1].trim(), y: +m[2], rg: "" } : { t: l, y: null, rg: "" };
 });
-function singlesList(list){
+/* spilletid for en singel: lengden på samme spor på albumet */
+function singleLen(a, title){
+  const f = t => norm(t).replace(/[^a-z0-9æøå]+/g, ""), keys = String(title).split(/\s+\/\s+/).flatMap(t => [tnorm(t), f(t)]);
+  const i = a.tracks.findIndex(t => keys.includes(tnorm(t)) || keys.includes(f(t)));
+  return i >= 0 ? a.trackLen[i] || null : null;
+}
+function singlesList(list, a){
   return `<ul class="singles">${list.map(x => {
-    const inner = `<div class="sth">${x.rg ? `<img src="https://coverartarchive.org/release-group/${x.rg}/front-250" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</div>
-      <div class="st"><b>${esc(x.t)}${x.guess ? '<span class="guess" title="Sporet finnes på albumet og ble gitt ut som singel rundt samme tid">sannsynlig</span>' : ""}</b><span>${x.y || "Ukjent år"}</span></div>`;
+    const len = singleLen(a, x.t);
+    const inner = `<div class="st"><b>${esc(x.t)}${x.guess ? '<span class="guess" title="Sporet finnes på albumet og ble gitt ut som singel rundt samme tid">sannsynlig</span>' : ""}</b><span>${x.y || "Ukjent år"}</span></div>${len ? `<span class="len">${mmss(len)}</span>` : ""}`;
     return `<li>${x.rg ? `<a href="https://musicbrainz.org/release-group/${x.rg}" target="_blank" rel="noopener">${inner}</a>` : `<a>${inner}</a>`}</li>`; }).join("")}</ul>`;
 }
 async function drawSingles(id, mode){
@@ -1466,7 +1544,7 @@ async function drawSingles(id, mode){
   const editBtn = `<button class="link edit-only" data-sg="edit">${manual || (shown && shown.length) ? "Rediger" : "Legg inn"}</button>`;
   const reloadBtn = !manual && a.rgid ? `<button class="link" data-sg="reload" title="Hent på nytt fra MusicBrainz">↻</button>` : "";
   if (shown && mode !== "reload") {
-    P.innerHTML = head(reloadBtn + editBtn) + (shown.length ? singlesList(shown)
+    P.innerHTML = head(reloadBtn + editBtn) + (shown.length ? singlesList(shown, a)
       : '<p class="muted" style="margin:0">Ingen singler funnet for dette albumet i MusicBrainz.</p>')
       + (manual ? '<p class="src">Lagt inn for hånd.</p>' : shown.length ? '<p class="src">Fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>. Trykk på en singel for detaljer.</p>' : "");
     return;
@@ -1631,6 +1709,9 @@ function viewData(){
       <p class="muted" style="font-size:.8rem">Alle lagringer finnes også i historikken til collection.json på GitHub.</p>
     </div>
   </div>
+  ${(() => { const n = db.albums.filter(x => x.rgid && !x.trackLen.length).length; return n ? `<div class="panel glass edit-only"><h2>Spilletid og sider</h2>
+    <p class="muted">${n} ${n === 1 ? "plate" : "plater"} koblet til MusicBrainz mangler spilletid. Tracklisten hentes på nytt med spilletid og A/B-sider (vinylutgaven når den finnes). Tar ca. 1 sekund per plate.</p>
+    <div class="btns"><button class="btn pri" data-act="fetchLenAll">🎵 Hent for ${n} ${n === 1 ? "plate" : "plater"}</button></div></div>` : ""; })()}
   <div class="panel glass edit-only"><h2>Tilbakestill</h2>
     <p class="muted">Nå: ${t.artists} artister og ${t.total} album.</p>
     <div class="btns"><button class="btn" data-act="loadDemo">Last inn eksempeldata</button><button class="btn danger" data-act="wipe">Slett alt</button></div>
@@ -1749,7 +1830,10 @@ async function mbTracks(rgid){
   const isVinyl = x => (x.media || []).some(m => /vinyl/i.test(m.format || ""));
   const date = x => x.date || "9999";
   rel.sort((a, b) => (isVinyl(b) - isVinyl(a)) || date(a).localeCompare(date(b)));
-  return rel[0].media.flatMap(m => (m.tracks || []).map(t => t.title || (t.recording || {}).title || "")).filter(Boolean);
+  return rel[0].media.flatMap(m => (m.tracks || []).map(t => {
+    const num = String(t.number || "").trim(), sm = num.match(/^([A-Z]{1,2})\s*\d*$/i);
+    return { t: t.title || (t.recording || {}).title || "", len: Math.round((t.length || (t.recording || {}).length || 0) / 1000) || null, side: sm ? sm[1].toUpperCase() : "" };
+  })).filter(x => x.t);
 }
 
 /* søk etter ett album (artist + tittel) – brukes av «Hent info» */
@@ -1780,7 +1864,7 @@ async function overwriteInfo(a, x){
   if (x.year && x.year !== a.year) { a.year = x.year; changed.push("år"); }
   const cov = caaCover(x.rgid); if (a.cover !== cov) { a.cover = cov; changed.push("cover"); }
   if (x.artistMbid) { const g = await mbGenreCached(x.artistMbid); const gg = g ? (x.live ? g + " · Live" : g) : ""; if (gg && gg !== a.genre) { a.genre = gg; changed.push("sjanger"); } }
-  try{ const t = await mbTracks(x.rgid); if (t.length && JSON.stringify(t) !== JSON.stringify(a.tracks)) { a.tracks = t; changed.push(t.length + " spor"); } }catch(e){}
+  try{ const t = await mbTracks(x.rgid); if (t.length && JSON.stringify(t) !== JSON.stringify(trackRows(a))) { setTracks(a, t); changed.push(t.length + " spor"); } }catch(e){}
   return changed;
 }
 /* fyller bare felt som er tomme – brukes når en hel mappe hentes på én gang */
@@ -1790,7 +1874,7 @@ async function applyInfo(a, x, withTracks){
   if (!a.year && x.year) { a.year = x.year; filled.push("år"); }
   if (!a.cover) { a.cover = caaCover(x.rgid); filled.push("cover"); }
   if (!a.genre && x.artistMbid) { const g = await mbGenreCached(x.artistMbid); if (g) { a.genre = x.live ? g + " · Live" : g; filled.push("sjanger"); } }
-  if (withTracks && !a.tracks.length) { try{ const t = await mbTracks(x.rgid); if (t.length) { a.tracks = t; filled.push(t.length + " spor"); } }catch(e){} }
+  if (withTracks && !a.tracks.length) { try{ const t = await mbTracks(x.rgid); if (t.length) { setTracks(a, t); filled.push(t.length + " spor"); } }catch(e){} }
   return filled;
 }
 function fetchInfoFlow(albumId){
@@ -1821,7 +1905,7 @@ function fetchInfoFlow(albumId){
     body().querySelector(".pick").onclick = async e => {
       const b = e.target.closest("[data-pick]"); if (!b) return;
       busy("Henter år, cover, sjanger og trackliste …");
-      const before = { title: a.title, artistText: a.artistText, year: a.year, genre: a.genre, cover: a.cover, tracks: [...a.tracks], rgid: a.rgid };
+      const before = { title: a.title, artistText: a.artistText, year: a.year, genre: a.genre, cover: a.cover, tracks: [...a.tracks], trackLen: [...a.trackLen], trackSide: [...a.trackSide], rgid: a.rgid };
       const changed = await overwriteInfo(a, list[+b.dataset.pick]);
       if (!album(a.id)) return;
       save(); if (!gone()) $("#modalRoot").innerHTML = ""; refresh();
@@ -1868,6 +1952,38 @@ function fetchInfoAllFlow(folderId){
   })();
 }
 
+/* spilletid og sider for alle plater som mangler det */
+function fetchLenAllFlow(){
+  const todo = db.albums.filter(x => x.rgid && !x.trackLen.length);
+  if (!todo.length || !canEdit()) return;
+  let cancelled = false;
+  openModal(`<h2>🎵 Spilletid og sider</h2><div id="mbBody">
+    <p class="muted" style="margin-top:0" id="mbStat">Starter …</p><ul class="prog" id="mbProg"></ul>
+    <p class="src">Fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>. Tracklisten erstattes med vinylutgavens når den finnes.</p>
+    <div class="acts"><button class="btn" data-close id="mbClose">Avbryt</button></div></div>`, () => {});
+  const obs = new MutationObserver(() => { if (!document.getElementById("mbBody")) { cancelled = true; obs.disconnect(); } });
+  obs.observe($("#modalRoot"), { childList: true });
+  const line = (ic, t) => { const ul = $("#mbProg"); if (!ul) return; const li = document.createElement("li"); li.innerHTML = `<span>${ic}</span><span>${t}</span>`; ul.appendChild(li); li.scrollIntoView({ block: "nearest" }); };
+  (async () => {
+    let ok = 0;
+    for (let i = 0; i < todo.length; i++){
+      if (cancelled) break;
+      const a = todo[i]; if (!album(a.id) || a.trackLen.length) continue;
+      const st = $("#mbStat"); if (st) st.innerHTML = `<span class="spin"></span>${i + 1} av ${todo.length}: ${esc(albArtist(a))} – ${esc(a.title)}`;
+      try{
+        const t = await mbTracks(a.rgid);
+        if (cancelled) break;
+        if (!t.length || !t.some(x => x.len)) { line("❓", `${esc(albArtist(a))} – ${esc(a.title)}: ingen spilletid i MusicBrainz`); continue; }
+        setTracks(a, t); ok++; save();
+        line("✅", `${esc(albArtist(a))} – ${esc(a.title)}: ${t.length} spor, ${hmmss(totalLen(a))}${a.trackSide.length ? ", sider " + [...new Set(a.trackSide.filter(Boolean))].join("/") : ""}`);
+      }catch(e){ line("⚠️", `${esc(albArtist(a))} – ${esc(a.title)}: ${esc(e.message)}`); }
+    }
+    const st = $("#mbStat"); if (st) st.innerHTML = `<b style="color:var(--ink)">${cancelled ? "Stoppet." : "Ferdig."}</b> Spilletid lagt inn for ${ok} av ${todo.length} plater.`;
+    const c = $("#mbClose"); if (c) { c.textContent = "Lukk"; c.classList.add("pri"); }
+    if (ok) refresh();
+  })();
+}
+
 /* tracklister hentes i bakgrunnen etter at albumene er lagt inn */
 const trackQueue = [];
 let trackRunning = false;
@@ -1883,7 +1999,7 @@ async function runTrackQueue(){
     if (!a || !a.rgid || a.tracks.length || !canEdit()) continue;
     try{
       const t = await mbTracks(a.rgid);
-      if (t.length && album(a.id) && !a.tracks.length){ a.tracks = t; done++; save(); if (location.hash === "#/album/" + a.id) refresh(); }
+      if (t.length && album(a.id) && !a.tracks.length){ setTracks(a, t); done++; save(); if (location.hash === "#/album/" + a.id) refresh(); }
     }catch(e){ /* albumsiden har en knapp for å prøve igjen */ }
   }
   trackRunning = false;
@@ -2023,7 +2139,7 @@ function albumForm(id, presetArtist, presetFolder, presetText){
     <div class="field"><label for="fDate">Kjøpsdato</label><input id="fDate" type="date" value="${esc(a.purchaseDate)}"></div>
     <div class="field full"><label for="fCond">Tilstand</label><select id="fCond"><option value="">–</option>
       ${CONDITIONS.concat(a.condition && !CONDITIONS.includes(a.condition) ? [a.condition] : []).map(c => `<option${c === a.condition ? " selected" : ""}>${esc(c)}</option>`).join("")}</select></div>
-    <div class="field full"><label for="fTracks">Trackliste</label><textarea id="fTracks" placeholder="Ett spor per linje">${esc(a.tracks.join("\n"))}</textarea></div>
+    <div class="field full"><label for="fTracks">Trackliste</label><textarea id="fTracks" placeholder="Side A&#10;Speak to Me 1:13&#10;Side B&#10;Money 6:22">${esc(tracksToText(a))}</textarea><div class="hint">Ett spor per linje, spilletid til slutt (3:45). «Side A» / «Side B» på egne linjer.</div></div>
     <div class="field full"><label for="fNotes">Notater</label><textarea id="fNotes" style="min-height:80px">${esc(a.notes)}</textarea></div>
     <div class="warn" id="fWarn" role="alert"></div>
     <div class="field full checks">
@@ -2079,7 +2195,7 @@ function albumForm(id, presetArtist, presetFolder, presetText){
       }
       const owned = g("#fOwn1").checked;
       const data = blankAlbum({ ...a, artistId, artistText: inF ? g("#fArtistText").value : "", title, year: g("#fYear").value, genre: g("#fGenre").value, cover: g("#fCover").value,
-        tracks: parseTracks(g("#fTracks").value), owned, price: g("#fPrice").value, purchaseDate: g("#fDate").value,
+        ...(() => { const t = parseTrackText(g("#fTracks").value); return { tracks: t.map(x => x.t), trackLen: t.map(x => x.len), trackSide: t.map(x => x.side) }; })(), owned, price: g("#fPrice").value, purchaseDate: g("#fDate").value,
         condition: g("#fCond").value, notes: g("#fNotes").value.trim(), favorite: g("#fFav").checked, wishlist: g("#fWish").checked && !owned });
       if (id) Object.assign(album(id), data); else db.albums.push(data);
       const autoInfo = inF && !id && g("#fAutoInfo")?.checked;
@@ -2094,7 +2210,7 @@ function albumForm(id, presetArtist, presetFolder, presetText){
 /* =====================================================================
    FELLES KLIKK
    ===================================================================== */
-const EDIT_ACTS = new Set(["newFolderAlbum", "newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
+const EDIT_ACTS = new Set(["fetchLenAll", "newFolderAlbum", "newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
 document.addEventListener("click", async e => {
   if (!canEdit() && e.target.closest("[data-toggle],[data-flagrow],[data-set],[data-flag]")) return;
   const tg = e.target.closest("[data-toggle]");
@@ -2123,6 +2239,7 @@ document.addEventListener("click", async e => {
   if (act === "moveAlbum") moveDialog(id);
   if (act === "fetchInfo") fetchInfoFlow(id);
   if (act === "fetchInfoAll") fetchInfoAllFlow(id);
+  if (act === "fetchLenAll") fetchLenAllFlow();
   if (act === "delFolder"){
     const f = folder(id); if (!f) return; const gone = folderAlbums(id), n = gone.length;
     if (await confirmBox("Slette mappen?", n ? `«${f.name}» og alle ${n} plater i den slettes, med tracklister, notater og kjøpsinfo. Vil du beholde platene, flytt dem ut først.` : `Den tomme mappen «${f.name}» slettes.`)){
