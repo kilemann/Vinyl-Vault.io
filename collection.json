@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:11:50.321Z",
+  "updated": "2026-11-04T12:11:52.234Z",
   "version": 1,
   "artists": [
     {
@@ -3627,8 +3627,20 @@
         "You Fool No One",
         "Stormbringer"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        452,
+        702,
+        259,
+        1004,
+        333
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
