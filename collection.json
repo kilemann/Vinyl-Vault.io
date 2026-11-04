@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:01.553Z",
+  "updated": "2026-11-04T12:13:03.522Z",
   "version": 1,
   "artists": [
     {
@@ -5927,7 +5927,18 @@
         "Age of Consent",
         "Everything Is Not Enough"
       ],
-      "trackLen": [],
+      "trackLen": [
+        353,
+        244,
+        278,
+        198,
+        320,
+        340,
+        233,
+        202,
+        342,
+        268
+      ],
       "trackSide": [],
       "owned": false,
       "favorite": false,
