@@ -1,4 +1,4 @@
-/* Vinyl Vault – bildebuffer (v1.11.1)
+/* Vinyl Vault – bildebuffer (v1.12.0)
    Husker coverbilder på enheten etter første visning, så de vises straks neste gang – også uten nett.
    Rører bare bilder. Appen, samlingen og GitHub hentes alltid fra nettet som før. */
 const CACHE = "vinylvault-bilder-v2";                // v2: gamle «opaque»-svar (kan være feilsvar) ble kastet

@@ -1,5 +1,8 @@
 # Endringslogg – Vinyl Vault
 
+## 1.12.0 – 2026-11-04
+- Navn, versjon og info-knapp (i) øverst til venstre (i sidemenyen på PC), med bruksanvisning og versjonsliste, som i de andre appene.
+
 ## 1.11.1 – 2026-11-04
 Rettinger etter gjennomgang av koden:
 - Tekst du holder på å skrive (notater, trackliste, singler) forsvinner ikke lenger når en bakgrunnsjobb eller en annen fane oppdaterer siden. Lagring bruker alltid den nyeste samlingen.

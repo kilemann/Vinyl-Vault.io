@@ -377,6 +377,22 @@ body.ro .status{pointer-events:none}
 @keyframes toast{from{opacity:0;transform:translate(-50%,12px)}}
 @media (min-width:900px){.toast{bottom:32px}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- navn, versjon og info-knapp (som i Himmelur) ---------- */
+.ai-row{display:flex;align-items:center;gap:10px;min-width:0}
+.ai-ver{font:500 11px ui-monospace,monospace;color:var(--muted);margin-left:2px;align-self:flex-start;margin-top:-2px;letter-spacing:0}
+.ai-btn{all:unset;box-sizing:border-box;cursor:pointer;flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line2);
+  display:grid;place-items:center;font:700 15px var(--head);color:var(--muted);background:var(--glass)}
+.ai-btn:hover{border-color:var(--accent);color:var(--accent)} .ai-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.side .ai-row{margin:0 4px 18px 8px;gap:6px} .side .ai-row .brand{margin:0;white-space:nowrap;gap:8px} .side .bt{display:flex;flex-direction:column;line-height:1.1} .side .ai-ver{font-size:10px;margin:2px 0 0;align-self:auto}
+@media (min-width:900px){.topbar .ai-row{display:none}}
+.info h3{font:600 1rem var(--head);margin:16px 0 6px}
+.info p,.info li{font-size:.92rem;line-height:1.55;color:var(--ink)}
+.info p{margin:0 0 8px} .info ul{margin:0 0 8px;padding-left:20px}
+.info .vlog{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.88rem;line-height:1.5}
+.info .vlog b{font:500 .8rem ui-monospace,monospace;white-space:nowrap;color:var(--muted)}
+.info .ihead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.info .ihead h2{margin:0}
 </style>
 </head>
 <body class="ro">
@@ -384,7 +400,7 @@ body.ro .status{pointer-events:none}
 
 <nav class="side glass" id="side" aria-label="Hovedmeny"></nav>
 <main id="main">
-  <div class="topbar"><a class="brand" href="#/"><span id="brandDisc"></span>Vinyl Vault</a><div class="lockbar" id="lockTop"></div></div>
+  <div class="topbar"><div class="ai-row"><a class="brand" href="#/"><span id="brandDisc"></span>Vinyl Vault<span class="ai-ver" id="brandVer"></span></a><button type="button" class="ai-btn" data-info aria-label="Om appen og hjelp" title="Om appen og hjelp" aria-haspopup="dialog">i</button></div><div class="lockbar" id="lockTop"></div></div>
   <div id="view"></div>
 </main>
 <nav class="bottom glass" id="bottom" aria-label="Hovedmeny"></nav>
@@ -396,11 +412,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.11.1
+   Vinyl Vault v1.12.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.11.1";
+const APP_VERSION = "1.12.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -938,7 +954,7 @@ function drawNav(route){
   const active = h => h === top || (h === "#/artister" && (top === "#/artist" || top === "#/mappe")) || (h === "#/mer" && ["#/onsker","#/favoritter","#/data"].includes(top));
   const items = NAV.map(([h, t, i]) => `<a class="navbtn${active(h) ? " on" : ""}" href="${h}" ${active(h) ? 'aria-current="page"' : ""}>${IC[i]}<span>${t}</span></a>`).join("");
   $("#bottom").innerHTML = items;
-  $("#side").innerHTML = `<a class="brand" href="#/">${discSvg()}Vinyl Vault</a><div class="lockbar" id="sideLock"></div>` + NAV.slice(0, 4).map(([h, t, i]) =>
+  $("#side").innerHTML = `<div class="ai-row"><a class="brand" href="#/">${discSvg()}<span class="bt">Vinyl Vault<span class="ai-ver">v${APP_VERSION}</span></span></a><button type="button" class="ai-btn" data-info aria-label="Om appen og hjelp" title="Om appen og hjelp" aria-haspopup="dialog">i</button></div><div class="lockbar" id="sideLock"></div>` + NAV.slice(0, 4).map(([h, t, i]) =>
       `<a class="navbtn${active(h) ? " on" : ""}" href="${h}">${IC[i]}<span>${t}</span></a>`).join("") + '<div class="sep"></div>' +
     SIDE_EXTRA.map(([h, e, t]) => `<a class="navbtn${top === h ? " on" : ""}" href="${h}"><span style="width:22px;text-align:center">${e}</span><span>${t}</span></a>`).join("") +
     `<div class="foot">Vinyl Vault v${APP_VERSION}</div>`;
@@ -2393,6 +2409,27 @@ addEventListener("online", () => { if (sync.dirty && canEdit()) pushNow(); });
 
 /* ---------- start ---------- */
 $("#brandDisc").outerHTML = discSvg();
+/* ---------- info-vindu (i) ---------- */
+function openInfo(){
+  openModal(`<div class="info"><div class="ihead"><h2>Om Vinyl Vault</h2><button class="btn" data-close aria-label="Lukk">✕</button></div>
+    <h3>Slik bruker du appen</h3>
+    <ul>
+      <li><b>Oversikt:</b> hvor mange plater du eier og mangler, hvor komplett samlingen er per artist, og statistikk.</li>
+      <li><b>Artister:</b> alle artister og mapper. Trykk på en artist for platene, og på en plate for detaljer.</li>
+      <li><b>Samling</b> og <b>Mangler:</b> alle plater du eier, og de du er på jakt etter.</li>
+      <li><b>Mer:</b> ønskeliste, favoritter, og data og backup.</li>
+    </ul>
+    <h3>Redigere</h3>
+    <p>Alle som åpner lenken ser samlingen, men bare den som har en GitHub-nøkkel kan endre den. Trykk <b>🔒 Lås opp</b> og lim inn nøkkelen. Den lagres bare på denne enheten.</p>
+    <p>Endringer lagres til GitHub 1 minutt etter siste endring, eller med en gang med «💾 Lagre nå». Hver lagring blir en commit, så all historikk finnes i GitHub.</p>
+    <h3>Info fra nettet</h3>
+    <p>Album, cover og tracklister hentes fra MusicBrainz og Cover Art Archive. Coverbildene lagres i repoet og på enheten, så de vises raskt neste gang.</p>
+    <h3>Versjoner</h3>
+    <div class="vlog"><b>v1.12.0</b><span>Navn, versjon og info-knapp øverst til venstre, som i de andre appene.</span><b>v1.11.1</b><span>Rettinger: tekst du skriver forsvinner ikke ved oppdatering, bedre valg av vinylutgave, innholdspolicy.</span><b>v1.11.0</b><span>Ny layout på albumsiden for PC og nettbrett.</span><b>v1.10.0</b><span>Singler fra albumet vises på albumsiden.</span><b>v1.9.0</b><span>«Hent info» oppdaterer tittel, år, sjanger, cover og trackliste.</span><b>v1.8.0</b><span>Mapper: artister med flere plater samles i en stabel.</span><b>v1.7.0</b><span>Artister vises før mappene.</span><b>v1.6.0</b><span>Statistikk bare for artister med minst 2 plater.</span><b>v1.5.0</b><span>Lagrer til GitHub 1 minutt etter siste endring.</span><b>v1.4.0</b><span>Coverbilder lagres i repoet.</span><b>v1.3.0</b><span>Mindre cover i rutenett og lister.</span><b>v1.2.0</b><span>Henter album automatisk fra MusicBrainz for nye artister.</span><b>v1.1.0</b><span>Samlingen ligger i GitHub, lik for alle.</span><b>v1.0.0</b><span>Første versjon.</span></div></div>`);
+}
+document.addEventListener("click", e => { if (e.target.closest && e.target.closest("[data-info]")) openInfo(); });
+$("#brandVer").textContent = "v" + APP_VERSION;
+
 addEventListener("hashchange", () => { route(); scrollTo({ top: 0 }); });
 drawLock();
 load();
