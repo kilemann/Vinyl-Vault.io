@@ -1,7 +1,7 @@
-/* Vinyl Vault – bildebuffer (v1.4.0)
+/* Vinyl Vault – bildebuffer (v1.11.1)
    Husker coverbilder på enheten etter første visning, så de vises straks neste gang – også uten nett.
    Rører bare bilder. Appen, samlingen og GitHub hentes alltid fra nettet som før. */
-const CACHE = "vinylvault-bilder-v1";
+const CACHE = "vinylvault-bilder-v2";                // v2: gamle «opaque»-svar (kan være feilsvar) ble kastet
 const MAX = 1500;                                  // eldste bilder fjernes over dette antallet
 
 self.addEventListener("install", () => self.skipWaiting());
@@ -18,8 +18,8 @@ self.addEventListener("fetch", e => {
     const hit = await c.match(r);
     if (hit) return hit;
     const res = await fetch(r);
-    // vanlige svar må være OK; bilder fra andre nettsteder er «opaque» og kan ikke sjekkes
-    if (res.ok || res.type === "opaque") e.waitUntil(c.put(r, res.clone()).then(() => trim(c)).catch(() => {}));
+    // bare vanlige, sjekkbare svar huskes. «Opaque» svar (bilder fra andre nettsteder uten CORS) kan være feilsvar og huskes ikke
+    if (res.ok && res.type !== "opaque") e.waitUntil(c.put(r, res.clone()).then(() => trim(c)).catch(() => {}));
     return res;
   })());
 });

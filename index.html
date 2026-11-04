@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vinyl Vault</title>
 <meta name="theme-color" content="#0b0d12">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.github.com https://musicbrainz.org; object-src 'none'; base-uri 'none'; form-action 'self'">
 <meta name="description" content="Oversikt over vinylsamlingen: hva du eier, hva du mangler og hvor komplett hver artist er.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23111'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23333' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23f5a524'/%3E%3Ccircle cx='32' cy='32' r='2' fill='%23111'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.11.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.11.1 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -395,11 +396,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.11.0
+   Vinyl Vault v1.11.1
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.11.0";
+const APP_VERSION = "1.11.1";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -420,6 +421,11 @@ const today = () => { const d = new Date(); return d.getFullYear() + "-" + Strin
 const byName = (a, b) => a.localeCompare(b, "nb", { sensitivity: "base" });
 const sortName = s => String(s).replace(/^(the|a|an)\s+/i, "");   // «The Wall» sorteres under W
 function hash(s){ let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+
+const dec = s => { try{ return decodeURIComponent(s); }catch(e){ return s; } };   // ødelagt %-kode i adressen skal ikke stoppe siden
+/* sant når du skriver i et felt på siden: bakgrunnsjobber skal da ikke tegne siden på nytt (teksten ville forsvunnet) */
+const typing = () => !!document.querySelector("#view textarea") || !!document.activeElement?.matches?.("#view input,#view select");
+const bgRefresh = () => { if (!typing()) refresh(); };
 
 /* ---------- ikoner ---------- */
 const IC = {
@@ -639,16 +645,29 @@ function seed(){
   return out;
 }
 
-function validate(d){
+/* info (valgfritt) fylles med { dropped, dupes }: album uten gyldig artist/mappe som ble hoppet over, og id-er som ble rettet */
+function validate(d, info = {}){
   if (!d || typeof d !== "object" || !Array.isArray(d.artists) || !Array.isArray(d.albums)) throw new Error("Filen er ikke en Vinyl Vault-samling.");
-  const artists = d.artists.filter(a => a && a.id && String(a.name || "").trim()).map(a => ({ id: String(a.id), name: String(a.name).trim(), notes: String(a.notes || ""), mbid: /^[0-9a-f-]{36}$/.test(a.mbid || "") ? a.mbid : "" }));
-  const ids = new Set(artists.map(a => a.id));
-  const folders = (Array.isArray(d.folders) ? d.folders : []).filter(f => f && f.id && String(f.name || "").trim()).map(f => ({ id: String(f.id), name: String(f.name).trim(), notes: String(f.notes || "") }));
-  const fids = new Set(folders.map(f => f.id));
-  const albums = d.albums.filter(a => a && a.title && (fids.has(String(a.folderId || "")) || ids.has(String(a.artistId)))).map(a => {
-    const inFolder = fids.has(String(a.folderId || ""));
-    return blankAlbum({ ...a, id: String(a.id || uid()), artistId: inFolder ? "" : String(a.artistId), folderId: inFolder ? String(a.folderId) : "", artistText: inFolder ? a.artistText : "" });
-  });
+  info.dropped = 0; info.dupes = 0;
+  const ids = new Set(), artists = [];
+  for (const a of d.artists) {
+    if (!a || !a.id || !String(a.name || "").trim()) continue;
+    const id = String(a.id); if (ids.has(id)) { info.dupes++; continue; }
+    ids.add(id); artists.push({ id, name: String(a.name).trim(), notes: String(a.notes || ""), mbid: /^[0-9a-f-]{36}$/.test(a.mbid || "") ? a.mbid : "" });
+  }
+  const fids = new Set(), folders = [];
+  for (const f of (Array.isArray(d.folders) ? d.folders : [])) {
+    if (!f || !f.id || !String(f.name || "").trim()) continue;
+    const id = String(f.id); if (fids.has(id)) { info.dupes++; continue; }
+    fids.add(id); folders.push({ id, name: String(f.name).trim(), notes: String(f.notes || "") });
+  }
+  const aids = new Set(), albums = [];
+  for (const a of d.albums) {
+    const inFolder = !!a && fids.has(String(a.folderId || ""));
+    if (!a || !a.title || !(inFolder || ids.has(String(a.artistId)))) { info.dropped++; continue; }
+    let id = String(a.id || uid()); if (aids.has(id)) { id = uid(); info.dupes++; } aids.add(id);
+    albums.push(blankAlbum({ ...a, id, artistId: inFolder ? "" : String(a.artistId), folderId: inFolder ? String(a.folderId) : "", artistText: inFolder ? a.artistText : "" }));
+  }
   return { version: 1, artists, albums, folders };
 }
 const ls = {
@@ -711,7 +730,7 @@ async function loadCoverIndex(){
     if (!j || typeof j !== "object" || Array.isArray(j)) return;
     if (JSON.stringify(j) === JSON.stringify(coverIndex)) return;
     coverIndex = j; try{ localStorage.setItem(COVER_KEY, JSON.stringify(j)); }catch(e){}
-    if (loadState === "ok" && !$("#modal") && !document.activeElement?.matches("input,textarea,select")) refresh();
+    if (loadState === "ok" && !$("#modal") && !document.activeElement?.matches("input,textarea,select")) bgRefresh();
   }catch(e){ /* ingen lokale cover ennå – bildene hentes fra nettet */ }
 }
 async function load(){
@@ -721,6 +740,9 @@ async function load(){
   route();
   try{
     const rem = await fetchRemote();
+    if (rem.fromPages && canEdit() && cached){   // GitHub svarte ikke: Pages-kopien kan være eldre enn det du har lagret her
+      loadState = "ok"; toast("Fikk ikke kontakt med GitHub – viser lagret kopi"); refresh(); return;
+    }
     if (canEdit() && sync.dirty && cached){
       // endringer på denne enheten ble ikke lastet opp sist
       if (rem.missing || !rem.sha || rem.sha === sync.sha){ loadState = "ok"; refresh(); save(); return; }
@@ -782,6 +804,7 @@ async function pushNow(){
 async function conflict(){
   let rem;
   try{ rem = await fetchRemote(); }catch(e){ setSync("error", e.message); return; }
+  while ($("#modal")) await sleep(800);   // ikke bytt ut et skjema du holder på med
   const mine = await confirmBox("Samlingen er endret et annet sted", "Det er lagret en nyere versjon fra en annen enhet. Vil du overskrive den med det du har her?", "Overskriv", false, "Bruk den nyeste");
   sync.sha = rem.sha;
   if (mine) { saveSync(); pushAgain = true; return; }
@@ -932,7 +955,7 @@ let charts = [];
 function route(){
   charts.forEach(c => { try{ c.destroy(); }catch(e){} }); charts = [];
   if (/^#\/samling\?kjop/.test(location.hash)) { ui.samling.sort = "kjop"; ui.samling.status = "eier"; history.replaceState(null, "", "#/samling"); }
-  const parts = location.hash.split("?")[0].replace(/^#\/?/, "").split("/").map(decodeURIComponent);
+  const parts = location.hash.split("?")[0].replace(/^#\/?/, "").split("/").map(dec);
   let [r, id, sub] = parts;
   drawNav(parts);
   const V = $("#view");
@@ -1050,13 +1073,19 @@ after[""] = () => drawCharts();
 /* Chart.js (ca. 70 kB) hentes først når oversikten vises, og bare én gang */
 const CHART_URL = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js";
 let chartLoad = null;
-function loadChartJs(){
-  if (typeof Chart !== "undefined") return Promise.resolve();
-  if (!chartLoad) chartLoad = new Promise((res, rej) => {
-    const sc = document.createElement("script"); sc.src = CHART_URL; sc.async = true;
-    sc.onload = () => res(); sc.onerror = () => { chartLoad = null; sc.remove(); rej(new Error("Chart.js")); };
+/* Chart.js: egen kopi i repoet (vendor/, lagt dit av GitHub-jobben) brukes først, så det ikke lastes kode fra tredjepart. cdnjs er reserve. */
+const CHART_LOCAL = "vendor/chart.umd.js";
+function loadScript(src){
+  return new Promise((res, rej) => {
+    const sc = document.createElement("script"); sc.src = src; sc.async = true;
+    sc.onload = () => typeof Chart !== "undefined" ? res() : (sc.remove(), rej(new Error("Chart.js")));
+    sc.onerror = () => { sc.remove(); rej(new Error("Chart.js")); };
     document.head.appendChild(sc);
   });
+}
+function loadChartJs(){
+  if (typeof Chart !== "undefined") return Promise.resolve();
+  if (!chartLoad) chartLoad = loadScript(CHART_LOCAL).catch(() => loadScript(CHART_URL)).catch(e => { chartLoad = null; throw e; });
   return chartLoad;
 }
 function drawCharts(){
@@ -1411,11 +1440,12 @@ function drawTracks(id, editing){
        <div><a class="glink" href="${googleUrl(a)}" target="_blank" rel="noopener">🔎 Søk etter vinylplaten på Google ↗</a></div>`;
   P.onclick = e => {
     const b = e.target.closest("[data-tr]"); if (!b) return;
+    const a = album(id); if (!a) return;
     if (b.dataset.tr === "edit") { drawTracks(id, true); $("#trackTa").focus(); }
     if (b.dataset.tr === "fetch" && canEdit()) {
       b.disabled = true; b.innerHTML = '<span class="spin"></span>Henter …';
       const old = trackRows(a);
-      mbTracks(a.rgid).then(t => {
+      mbTracks(a.rgid, a.tracks.length).then(t => {
         if (!t.length) { toast("MusicBrainz har ingen trackliste for dette albumet"); drawTracks(id, false); return; }
         setTracks(a, t); save(); refresh();
         toast(old.length ? "Tracklisten er oppdatert med spilletid" + (a.trackSide.length ? " og sider" : "") : "Tracklisten er hentet",
@@ -1444,6 +1474,7 @@ function drawNotes(id, editing){
        ${a.notes ? `<p class="notes" style="margin:0">${esc(a.notes)}</p>` : '<p class="muted" style="margin:0">Ingen notater.</p>'}`;
   P.onclick = e => {
     const b = e.target.closest("[data-nt]"); if (!b) return;
+    const a = album(id); if (!a) return;
     if (b.dataset.nt === "edit") { drawNotes(id, true); $("#noteTa").focus(); }
     if (b.dataset.nt === "cancel") drawNotes(id, false);
     if (!canEdit()) return;
@@ -1524,6 +1555,7 @@ async function drawSingles(id, mode){
   const shown = manual ? a.singles : a.rgid ? freshSingles(a.rgid) : null;
   P.onclick = e => {
     const b = e.target.closest("[data-sg]"); if (!b) return;
+    const a = album(id); if (!a) return;
     if (b.dataset.sg === "reload") drawSingles(id, "reload");
     if (b.dataset.sg === "edit") drawSingles(id, "edit");
     if (b.dataset.sg === "cancel") drawSingles(id);
@@ -1721,8 +1753,9 @@ after.data = () => {
   $("#importFile").addEventListener("change", async e => {
     const f = e.target.files[0]; e.target.value = ""; if (!f || !canEdit()) return;
     try{
-      const d = validate(JSON.parse(await f.text()));
-      const ok = await confirmBox("Importere samling?", `Filen har ${d.artists.length} artister og ${d.albums.length} album. Den erstatter samlingen din. En backup tas først.`, "Importer");
+      const info = {}, d = validate(JSON.parse(await f.text()), info);
+      const ok = await confirmBox("Importere samling?", `Filen har ${d.artists.length} artister og ${d.albums.length} album. Den erstatter samlingen din. En backup tas først.`
+        + (info.dropped ? ` ${info.dropped} album i filen mangler gyldig artist eller mappe og blir ikke med.` : "") + (info.dupes ? ` ${info.dupes} dobbelte id-er er rettet.` : ""), "Importer");
       if (!ok) return;
       doBackup(true); db = d; save(); toast("Samlingen er importert"); refresh();
     }catch(err){ toast("Kunne ikke importere: " + (err.message || "ugyldig fil")); }
@@ -1822,15 +1855,33 @@ async function mbGenre(mbid){
     return g ? titleCase(g.name) : "";
   }catch(e){ return ""; }
 }
-/* trackliste: velger helst en offisiell vinylutgave, ellers den eldste offisielle */
-async function mbTracks(rgid){
-  const j = await mb(`/release?release-group=${rgid}&status=official&inc=recordings+media&limit=25`);
-  const rel = (j.releases || []).filter(x => (x.media || []).some(m => (m.tracks || []).length));
+/* utgivelsene i en release group (med format og antall spor per plate, uten selve sporene). Opptil 300. */
+async function mbReleases(rgid, status){
+  const out = []; let off = 0;
+  for (let page = 0; page < 3; page++){
+    const j = await mb(`/release?release-group=${rgid}${status ? "&status=" + status : ""}&inc=media&limit=100&offset=${off}`);
+    const l = j.releases || [];
+    out.push(...l); off += l.length;
+    if (!l.length || (j["release-count"] ? off >= j["release-count"] : l.length < 100)) break;
+  }
+  return out;
+}
+const relCount = x => (x.media || []).reduce((n, m) => n + (m["track-count"] || (m.tracks || []).length || 0), 0);
+const isVinyl = x => (x.media || []).some(m => /vinyl/i.test(m.format || ""));
+/* vinyl først. Med hint (antall spor platen har fra før) velges utgaven som passer best (±2 spor), så du ikke får et bokssett; ellers den eldste */
+function pickRelease(rel, hint){
+  const date = x => x.date || "9999", diff = x => Math.abs(relCount(x) - hint);
+  const near = hint ? rel.filter(x => diff(x) <= 2) : [];
+  return [...(near.length ? near : rel)].sort((a, b) => (isVinyl(b) - isVinyl(a)) || (near.length ? diff(a) - diff(b) : 0) || date(a).localeCompare(date(b)))[0];
+}
+/* trackliste med spilletid og side. Offisielle utgivelser først; finnes ingen med spor, prøves alle statuser */
+async function mbTracks(rgid, hint = 0){
+  let rel = (await mbReleases(rgid, "official")).filter(x => relCount(x) > 0);
+  if (!rel.length) rel = (await mbReleases(rgid, "")).filter(x => relCount(x) > 0);
   if (!rel.length) return [];
-  const isVinyl = x => (x.media || []).some(m => /vinyl/i.test(m.format || ""));
-  const date = x => x.date || "9999";
-  rel.sort((a, b) => (isVinyl(b) - isVinyl(a)) || date(a).localeCompare(date(b)));
-  return rel[0].media.flatMap(m => (m.tracks || []).map(t => {
+  const best = pickRelease(rel, hint);
+  const full = (best.media || []).some(m => (m.tracks || []).length) ? best : await mb(`/release/${best.id}?inc=recordings`);
+  return (full.media || []).flatMap(m => (m.tracks || []).map(t => {
     const num = String(t.number || "").trim(), sm = num.match(/^([A-Z]{1,2})\s*\d*$/i);
     return { t: t.title || (t.recording || {}).title || "", len: Math.round((t.length || (t.recording || {}).length || 0) / 1000) || null, side: sm ? sm[1].toUpperCase() : "" };
   })).filter(x => x.t);
@@ -1857,14 +1908,14 @@ const tnorm = s => norm(s).replace(/\(.*?\)|\[.*?\]/g, "").replace(/[^a-z0-9æø
 /* overskriver tittel, år, sjanger, cover, trackliste (og artistnavn for plater i mapper) med info fra nettet.
    Pris, tilstand, kjøpsdato, notater og eierstatus er dine egne og blir stående. */
 async function overwriteInfo(a, x){
-  const changed = [];
+  const changed = [], same = a.rgid === x.rgid;
   a.rgid = x.rgid;
   if (x.title && x.title !== a.title) { a.title = x.title; changed.push("tittel"); }
   if (a.folderId && x.artist && x.artist !== a.artistText) { a.artistText = x.artist; changed.push("artist"); }
   if (x.year && x.year !== a.year) { a.year = x.year; changed.push("år"); }
   const cov = caaCover(x.rgid); if (a.cover !== cov) { a.cover = cov; changed.push("cover"); }
   if (x.artistMbid) { const g = await mbGenreCached(x.artistMbid); const gg = g ? (x.live ? g + " · Live" : g) : ""; if (gg && gg !== a.genre) { a.genre = gg; changed.push("sjanger"); } }
-  try{ const t = await mbTracks(x.rgid); if (t.length && JSON.stringify(t) !== JSON.stringify(trackRows(a))) { setTracks(a, t); changed.push(t.length + " spor"); } }catch(e){}
+  try{ const t = await mbTracks(x.rgid, same ? a.tracks.length : 0); if (t.length && JSON.stringify(t) !== JSON.stringify(trackRows(a))) { setTracks(a, t); changed.push(t.length + " spor"); } }catch(e){}
   return changed;
 }
 /* fyller bare felt som er tomme – brukes når en hel mappe hentes på én gang */
@@ -1908,6 +1959,7 @@ function fetchInfoFlow(albumId){
       const before = { title: a.title, artistText: a.artistText, year: a.year, genre: a.genre, cover: a.cover, tracks: [...a.tracks], trackLen: [...a.trackLen], trackSide: [...a.trackSide], rgid: a.rgid };
       const changed = await overwriteInfo(a, list[+b.dataset.pick]);
       if (!album(a.id)) return;
+      if (gone()) { Object.assign(a, before); toast("Avbrutt – ingenting er endret"); return; }
       save(); if (!gone()) $("#modalRoot").innerHTML = ""; refresh();
       toast(changed.length ? "Oppdatert fra nettet: " + changed.join(", ") : "Alt stemte med info fra nettet", changed.length ? () => {
         const x = album(a.id); if (!x || !canEdit()) return; Object.assign(x, before); save(); refresh(); toast("Endringene er angret");
@@ -1971,7 +2023,7 @@ function fetchLenAllFlow(){
       const a = todo[i]; if (!album(a.id) || a.trackLen.length) continue;
       const st = $("#mbStat"); if (st) st.innerHTML = `<span class="spin"></span>${i + 1} av ${todo.length}: ${esc(albArtist(a))} – ${esc(a.title)}`;
       try{
-        const t = await mbTracks(a.rgid);
+        const t = await mbTracks(a.rgid, a.tracks.length);
         if (cancelled) break;
         if (!t.length || !t.some(x => x.len)) { line("❓", `${esc(albArtist(a))} – ${esc(a.title)}: ingen spilletid i MusicBrainz`); continue; }
         setTracks(a, t); ok++; save();
@@ -1999,7 +2051,7 @@ async function runTrackQueue(){
     if (!a || !a.rgid || a.tracks.length || !canEdit()) continue;
     try{
       const t = await mbTracks(a.rgid);
-      if (t.length && album(a.id) && !a.tracks.length){ setTracks(a, t); done++; save(); if (location.hash === "#/album/" + a.id) refresh(); }
+      if (t.length && album(a.id) && !a.tracks.length){ setTracks(a, t); done++; save(); if (location.hash === "#/album/" + a.id) bgRefresh(); }
     }catch(e){ /* albumsiden har en knapp for å prøve igjen */ }
   }
   trackRunning = false;
@@ -2287,7 +2339,7 @@ document.addEventListener("click", async e => {
   if (act === "restore"){
     const bk = readBackup(); if (!bk) return;
     if (await confirmBox("Gjenopprette backup?", `Samlingen erstattes med backupen fra ${new Date(bk.date).toLocaleString("nb-NO")} (${bk.data.albums.length} album).`, "Gjenopprett", false)){
-      try{ db = validate(bk.data); save(); toast("Backupen er gjenopprettet"); refresh(); }catch(err){ toast("Backupen er skadet"); }
+      try{ const info = {}; db = validate(bk.data, info); save(); toast("Backupen er gjenopprettet" + (info.dropped ? ` (${info.dropped} album uten gyldig artist ble hoppet over)` : "")); refresh(); }catch(err){ toast("Backupen er skadet"); }
     }
   }
   if (act === "loadDemo"){
@@ -2303,15 +2355,15 @@ document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.ma
 $("#fab").addEventListener("click", () => {
   if (!canEdit()) return;
   const fm = location.hash.match(/^#\/mappe\/([^/?]+)(?:\/([^?]+))?/), am = location.hash.match(/^#\/album\/(.+)$/);
-  if (fm && folder(decodeURIComponent(fm[1]))) {
-    const fid = decodeURIComponent(fm[1]), g = fm[2] && folderGroups(fid).get(decodeURIComponent(fm[2]));
+  if (fm && folder(dec(fm[1]))) {
+    const fid = dec(fm[1]), g = fm[2] && folderGroups(fid).get(dec(fm[2]));
     return albumForm(null, "", fid, g ? g[0].artistText : "");
   }
-  const fa = am && album(decodeURIComponent(am[1]));
+  const fa = am && album(dec(am[1]));
   if (fa && fa.folderId) return albumForm(null, "", fa.folderId, (folderGroups(fa.folderId).get(akey(fa.artistText)) || []).length >= 2 ? fa.artistText : "");
   if (!db.artists.length) return artistForm();
   const m = location.hash.match(/^#\/artist\/(.+)$/);
-  albumForm(null, m ? decodeURIComponent(m[1]) : am && album(decodeURIComponent(am[1])) ? album(decodeURIComponent(am[1])).artistId : "");
+  albumForm(null, m ? dec(m[1]) : am && album(dec(am[1])) ? album(dec(am[1])).artistId : "");
 });
 
 let toastT;
@@ -2330,8 +2382,8 @@ function toast(msg, undo){
 
 /* oppdater hvis samlingen endres i en annen fane */
 addEventListener("storage", e => {
-  if (e.key === CACHE_KEY) { const d = readCache(); if (d) { db = d; refresh(); } }
-  if (e.key === TOKEN_KEY) { token = ls.get(TOKEN_KEY) || ""; drawLock(); refresh(); }
+  if (e.key === CACHE_KEY) { const d = readCache(); if (d) { db = d; bgRefresh(); } }
+  if (e.key === TOKEN_KEY) { token = ls.get(TOKEN_KEY) || ""; drawLock(); bgRefresh(); }
 });
 /* lagre med en gang hvis appen lukkes eller legges i bakgrunnen */
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden" && sync.dirty && canEdit()) pushNow(); });

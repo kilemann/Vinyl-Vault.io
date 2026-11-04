@@ -1,5 +1,20 @@
 # Endringslogg – Vinyl Vault
 
+## 1.11.1 – 2026-11-04
+Rettinger etter gjennomgang av koden:
+- Tekst du holder på å skrive (notater, trackliste, singler) forsvinner ikke lenger når en bakgrunnsjobb eller en annen fane oppdaterer siden. Lagring bruker alltid den nyeste samlingen.
+- Ødelagt adresse (f.eks. `#/album/%`) gir «Fant ikke siden» i stedet for en feil.
+- Import og gjenoppretting: dobbelte id-er rettes, og du får beskjed om album som ikke blir med fordi artisten eller mappen mangler.
+- «Hent info»: Avbryt mens info hentes stopper nå overskrivingen.
+- Konfliktdialogen («Samlingen er endret et annet sted») venter til et åpent skjema er lukket, så du ikke mister det du holder på med.
+- Hvis GitHub ikke svarer ved oppstart, beholdes den lagrede kopien på enheten i stedet for en eldre kopi fra GitHub Pages.
+- Bedre valg av vinylutgave: alle utgivelser i MusicBrainz sjekkes (opptil 300, før 25), og utgaven som passer best med antall spor platen har fra før velges (±2). Hindrer at et bokssett erstatter en vanlig LP. Finnes ingen offisiell utgave med spor, prøves alle statuser.
+- Bildebufferen (`sw.js`) lagrer bare bilder den kan kontrollere. Bilder fra andre nettsteder uten svar-info lagres ikke, siden de kan være feilsvar. Gammel buffer ryddes bort.
+
+Sikkerhet:
+- Innholdspolicy (CSP): siden kan bare kontakte seg selv, GitHub og MusicBrainz. Det begrenser hva et eventuelt skadelig script kunne gjort med GitHub-nøkkelen.
+- Chart.js lagres som egen kopi i repoet (`vendor/`, hentes én gang fra npm av GitHub-jobben) og brukes før cdnjs. Til da brukes cdnjs som før.
+
 ## 1.11.0 – 2026-11-04
 Albumsiden:
 - Ny layout på PC/nettbrett: cover og trackliste til venstre, info, singler og notater til høyre.

@@ -1,4 +1,4 @@
-// Vinyl Vault – lagrer coverbilder i repoet (v1.4.0)
+// Vinyl Vault – lagrer coverbilder i repoet (v1.11.1)
 // Kjøres av GitHub Actions når collection.json endres (.github/workflows/covers.yml).
 // Henter cover som mangler, legger dem i covers/ og skriver covers/index.json,
 // som appen leser for å vise bildene fra GitHub Pages i stedet for fra Cover Art Archive.
@@ -11,7 +11,7 @@ const ROOT = process.env.VV_ROOT || process.cwd();
 const DIR = path.join(ROOT, "covers");
 const INDEX = path.join(DIR, "index.json");
 const CAA = (process.env.VV_CAA_BASE || "https://coverartarchive.org").replace(/\/$/, "");
-const UA = "VinylVault/1.4.0 (https://github.com/kilemann/Vinyl-Vault.io)";
+const UA = "VinylVault/1.11.1 (https://github.com/kilemann/Vinyl-Vault.io)";
 const MAX_BYTES = 2 * 1024 * 1024;          // egne cover-lenker over 2 MB hoppes over
 const RETRY_DAYS = 14;                       // album uten cover sjekkes på nytt etter så mange dager
 const PAUSE_MS = Number(process.env.VV_PAUSE_MS ?? 400);
