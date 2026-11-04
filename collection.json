@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:11:48.204Z",
+  "updated": "2026-11-04T12:11:50.321Z",
   "version": 1,
   "artists": [
     {
@@ -3578,8 +3578,28 @@
         "This Time Around / Owed to ‘G’ (instrumental)",
         "You Keep on Moving"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        232,
+        165,
+        216,
+        229,
+        262,
+        241,
+        185,
+        367,
+        318
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
