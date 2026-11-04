@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.9.0",
-  "updated": "2026-11-01T09:50:22.845Z",
+  "appVersion": "1.11.0",
+  "updated": "2026-11-04T12:11:48.204Z",
   "version": 1,
   "artists": [
     {
@@ -133,6 +133,28 @@
         "Wild West End",
         "Lions"
       ],
+      "trackLen": [
+        241,
+        327,
+        200,
+        252,
+        179,
+        352,
+        379,
+        283,
+        307
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -142,6 +164,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "0c9bc273-a9e9-3290-b423-c61b9f8d20bc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -163,6 +186,28 @@
         "Single‐Handed Sailor",
         "Follow Me Home"
       ],
+      "trackLen": [
+        318,
+        256,
+        228,
+        345,
+        222,
+        272,
+        267,
+        285,
+        342
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -172,6 +217,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "7e1ada24-6fb0-3b23-a671-9cdaf865c515",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -191,6 +237,24 @@
         "Solid Rock",
         "Les Boys"
       ],
+      "trackLen": [
+        489,
+        354,
+        379,
+        303,
+        289,
+        200,
+        246
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -200,6 +264,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "5b0a15ce-8aa9-323b-8fb6-02b657756ba9",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -217,6 +282,20 @@
         "Love Over Gold",
         "It Never Rains"
       ],
+      "trackLen": [
+        857,
+        406,
+        351,
+        377,
+        477
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -226,6 +305,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "935dde7e-8390-39fa-8e0d-1350db96bc3f",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -243,9 +323,31 @@
         "Your Latest Trick",
         "Why Worry",
         "Ride Across the River",
-        "The Man's Too Strong",
+        "The Man’s Too Strong",
         "One World",
         "Brothers in Arms"
+      ],
+      "trackLen": [
+        239,
+        423,
+        251,
+        289,
+        329,
+        418,
+        280,
+        221,
+        424
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
       ],
       "owned": true,
       "favorite": false,
@@ -256,6 +358,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "b02f651e-32a1-30ae-bc23-070b59170278",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -280,6 +383,34 @@
         "Planet of New Orleans",
         "How Long"
       ],
+      "trackLen": [
+        387,
+        304,
+        301,
+        231,
+        257,
+        359,
+        296,
+        190,
+        266,
+        333,
+        468,
+        229
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -289,6 +420,7 @@
       "notes": "",
       "added": "2026-10-29T17:50:56.676Z",
       "rgid": "b286b831-931e-3680-97f1-aa18541f5cc2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -309,6 +441,17 @@
         "I’ll Keep on Trying",
         "Wake Up (Set Your Sights)"
       ],
+      "trackLen": [
+        400,
+        273,
+        230,
+        248,
+        282,
+        221,
+        328,
+        382
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -318,6 +461,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "7486e67b-89f9-372b-8624-9cb11fd44773",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -337,6 +481,16 @@
         "What Should Be Done",
         "Love Machine"
       ],
+      "trackLen": [
+        308,
+        240,
+        625,
+        298,
+        516,
+        251,
+        217
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -346,6 +500,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "99100318-0642-3138-9023-6e5d681a2b7e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -364,6 +519,22 @@
         "Simon the Bullet Freak",
         "Salisbury"
       ],
+      "trackLen": [
+        219,
+        338,
+        242,
+        273,
+        205,
+        982
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -373,6 +544,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "62d88709-b653-3c37-b7f1-52974ea05010",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -394,6 +566,18 @@
         "Paradise",
         "The Spell"
       ],
+      "trackLen": [
+        183,
+        207,
+        158,
+        257,
+        387,
+        267,
+        168,
+        307,
+        423
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -403,6 +587,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "19f95cb8-6ffc-307f-a474-369103dd1b82",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -423,6 +608,26 @@
         "Tales",
         "The Magician's Birthday"
       ],
+      "trackLen": [
+        246,
+        147,
+        214,
+        291,
+        240,
+        256,
+        250,
+        622
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -432,6 +637,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "35453797-1c54-383d-bbb1-4d12dfa5e74e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -452,6 +658,26 @@
         "Circus",
         "Pilgrim"
       ],
+      "trackLen": [
+        221,
+        289,
+        167,
+        396,
+        343,
+        232,
+        164,
+        430
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -461,6 +687,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "5d94cee4-0756-3fc0-9673-718dd6921a44",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -482,6 +709,28 @@
         "We Got We",
         "Dreams"
       ],
+      "trackLen": [
+        274,
+        221,
+        273,
+        222,
+        165,
+        179,
+        364,
+        220,
+        371
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -491,6 +740,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "eb02333a-88dc-3f5e-851b-99c0dd7c97bc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -512,6 +762,28 @@
         "Why Did You Go",
         "A Year or A Day"
       ],
+      "trackLen": [
+        352,
+        288,
+        290,
+        295,
+        191,
+        263,
+        260,
+        235,
+        265
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -521,6 +793,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "ef753054-4db6-3a62-a86f-b1948a6d32fa",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -543,6 +816,30 @@
         "Make a Little Love",
         "Confession"
       ],
+      "trackLen": [
+        280,
+        307,
+        257,
+        340,
+        230,
+        190,
+        238,
+        211,
+        207,
+        129
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -552,6 +849,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "265b3998-4596-3405-902b-86aa449f8f33",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -572,6 +870,26 @@
         "Do You Know",
         "Firefly"
       ],
+      "trackLen": [
+        304,
+        289,
+        220,
+        283,
+        223,
+        383,
+        196,
+        381
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -581,6 +899,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "8c9c245c-8cd0-368a-aa7f-af8a95780dfc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -602,6 +921,28 @@
         "The Dance",
         "Choices"
       ],
+      "trackLen": [
+        227,
+        202,
+        284,
+        190,
+        311,
+        218,
+        297,
+        292,
+        347
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -611,6 +952,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "f0c44ac2-6467-33f2-b5d9-80e6718083a2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -633,6 +975,19 @@
         "I'm Alive",
         "Fallen Angel"
       ],
+      "trackLen": [
+        247,
+        179,
+        215,
+        248,
+        262,
+        220,
+        214,
+        182,
+        257,
+        291
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -642,6 +997,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "85b45baa-9854-39cf-b303-1799e700e62d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -662,6 +1018,26 @@
         "Out on the Street",
         "It Ain't Easy"
       ],
+      "trackLen": [
+        360,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -671,6 +1047,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "4786dbab-8b07-33a5-8ab5-a668ed915b8a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -693,6 +1070,30 @@
         "Sell Your Soul",
         "Think It Over"
       ],
+      "trackLen": [
+        226,
+        280,
+        194,
+        239,
+        264,
+        245,
+        268,
+        226,
+        322,
+        208
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -702,6 +1103,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "b1c57669-8bb9-3897-a8c6-3d2f291116b6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -724,6 +1126,30 @@
         "Straight Through the Heart",
         "Weekend Warriors"
       ],
+      "trackLen": [
+        236,
+        217,
+        247,
+        232,
+        220,
+        138,
+        179,
+        336,
+        209,
+        230
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -733,6 +1159,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "d7271a6a-1cb7-3a13-9d12-077f14e77e08",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -755,6 +1182,19 @@
         "Heartache City",
         "Night of the Wolf"
       ],
+      "trackLen": [
+        272,
+        214,
+        283,
+        290,
+        263,
+        262,
+        394,
+        265,
+        303,
+        275
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -764,6 +1204,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "2e08c703-922c-32e5-adec-1d7e9c4ce15f",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -786,6 +1227,19 @@
         "Lifeline",
         "Rough Justice"
       ],
+      "trackLen": [
+        273,
+        251,
+        259,
+        289,
+        275,
+        251,
+        214,
+        309,
+        293,
+        260
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -795,6 +1249,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "9c4eb4be-9a2c-3fd5-b02a-39ae37421d66",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -817,6 +1272,19 @@
         "One on One",
         "Cross That Line"
       ],
+      "trackLen": [
+        278,
+        292,
+        259,
+        268,
+        257,
+        246,
+        215,
+        234,
+        247,
+        335
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -826,6 +1294,7 @@
       "notes": "",
       "added": "2026-10-29T18:18:44.743Z",
       "rgid": "b758605b-912c-387f-9adc-fbfc42ed3000",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -847,6 +1316,28 @@
         "I Can’t Quit You Baby",
         "How Many More Times"
       ],
+      "trackLen": [
+        163,
+        400,
+        390,
+        387,
+        281,
+        126,
+        146,
+        282,
+        210
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -856,6 +1347,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
       "rgid": "0f18ec88-aa87-38a9-8a65-f03d81763560",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -877,6 +1369,28 @@
         "Moby Dick",
         "Bring It On Home"
       ],
+      "trackLen": [
+        333,
+        287,
+        380,
+        290,
+        255,
+        160,
+        275,
+        265,
+        259
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -886,6 +1400,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
       "rgid": "33b4653d-006e-3cc1-8afb-386b15a6cd6e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -908,6 +1423,30 @@
         "Bron‐Yr‐Aur Stomp",
         "Hats Off to (Roy) Harper"
       ],
+      "trackLen": [
+        144,
+        233,
+        206,
+        443,
+        241,
+        292,
+        189,
+        337,
+        257,
+        220
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -917,6 +1456,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.846Z",
       "rgid": "53f80f76-f8af-3558-bfd5-e7221e055c75",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -937,6 +1477,17 @@
         "Going to California",
         "When the Levee Breaks"
       ],
+      "trackLen": [
+        295,
+        220,
+        338,
+        475,
+        279,
+        289,
+        216,
+        428
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -946,6 +1497,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "2e61da88-39e9-3473-81d2-c964cb394952",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -966,6 +1518,26 @@
         "No Quarter",
         "The Ocean"
       ],
+      "trackLen": [
+        330,
+        459,
+        290,
+        197,
+        223,
+        263,
+        421,
+        273
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -975,6 +1547,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "9b5006e5-b276-3a05-bcdd-8d986842320b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1002,6 +1575,40 @@
         "Black Country Woman",
         "Sick Again"
       ],
+      "trackLen": [
+        254,
+        337,
+        666,
+        242,
+        337,
+        508,
+        527,
+        126,
+        316,
+        393,
+        218,
+        250,
+        233,
+        273,
+        283
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "C",
+        "C",
+        "C",
+        "C",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -1011,6 +1618,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "116c9490-6af4-3827-8261-2d5b1f508fe7",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1030,6 +1638,24 @@
         "Hots On for Nowhere",
         "Tea for One"
       ],
+      "trackLen": [
+        628,
+        384,
+        179,
+        374,
+        251,
+        282,
+        563
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1039,6 +1665,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "42f8acce-90fc-3471-a4cd-ace1ab816276",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1058,6 +1685,24 @@
         "All My Love",
         "I’m Gonna Crawl"
       ],
+      "trackLen": [
+        408,
+        251,
+        368,
+        195,
+        628,
+        351,
+        328
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -1067,6 +1712,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "2fbf4c3e-09e5-38f0-ae59-fbdc9ea16b87",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1087,6 +1733,26 @@
         "Bonzo’s Montreux",
         "Wearing and Tearing"
       ],
+      "trackLen": [
+        156,
+        183,
+        256,
+        264,
+        215,
+        304,
+        255,
+        327
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1096,6 +1762,7 @@
       "notes": "",
       "added": "2026-10-29T18:23:44.847Z",
       "rgid": "61de0438-6c34-363f-904e-b4d6267c79b9",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1174,6 +1841,75 @@
         "Baby It's You",
         "Bottle Take Effect"
       ],
+      "trackLen": [
+        175,
+        105,
+        261,
+        132,
+        162,
+        168,
+        414,
+        114,
+        149,
+        156,
+        121,
+        173,
+        101,
+        149,
+        231,
+        131,
+        155,
+        184,
+        256,
+        140,
+        293,
+        192,
+        271,
+        112,
+        153,
+        191,
+        237,
+        196,
+        154,
+        171,
+        247,
+        181,
+        249,
+        178,
+        141,
+        165,
+        239,
+        169,
+        184,
+        188,
+        123,
+        123,
+        210,
+        189,
+        240,
+        137,
+        155,
+        129,
+        164,
+        207,
+        172,
+        209,
+        214,
+        196,
+        170,
+        199,
+        236,
+        137,
+        228,
+        177,
+        248,
+        238,
+        153,
+        110,
+        190,
+        151
+      ],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -1183,6 +1919,7 @@
       "notes": "",
       "added": "2026-10-29T19:00:22.297Z",
       "rgid": "50b00cbd-959d-4056-a5bb-9889eaa01d46",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1206,6 +1943,8 @@
         "Det er noe faenskap i gang",
         "Dritkjipt å miste dama"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -1215,6 +1954,7 @@
       "notes": "",
       "added": "2026-10-29T19:15:02.794Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Marquee Band"
     },
@@ -1239,6 +1979,34 @@
         "Coming Home",
         "Trying So Hard to Forget"
       ],
+      "trackLen": [
+        142,
+        258,
+        174,
+        174,
+        304,
+        227,
+        209,
+        234,
+        162,
+        157,
+        161,
+        285
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1248,6 +2016,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "265dda3d-802e-3e21-b133-34ac7e064146",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1272,6 +2041,34 @@
         "The World Keep On Turning",
         "Got to Move"
       ],
+      "trackLen": [
+        180,
+        251,
+        138,
+        122,
+        177,
+        174,
+        204,
+        172,
+        178,
+        199,
+        152,
+        199
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1281,6 +2078,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "ccac79cd-3df4-3fd1-80bd-a328dc049664",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1303,6 +2101,30 @@
         "I Need Some Air",
         "Someday Baby"
       ],
+      "trackLen": [
+        322,
+        174,
+        207,
+        373,
+        184,
+        181,
+        315,
+        188,
+        281,
+        183
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1312,6 +2134,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "51c70552-4906-3b27-b3f4-f64e764551d0",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1338,6 +2161,38 @@
         "Like Crying",
         "Before the Beginning"
       ],
+      "trackLen": [
+        226,
+        295,
+        162,
+        272,
+        235,
+        184,
+        193,
+        145,
+        210,
+        273,
+        416,
+        214,
+        144,
+        206
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1347,6 +2202,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "f8d4b05b-e5dc-3c67-aed8-13cac163b06c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1369,6 +2225,30 @@
         "Tell Me All the Things You Do",
         "Mission Bell"
       ],
+      "trackLen": [
+        165,
+        349,
+        164,
+        185,
+        197,
+        128,
+        241,
+        203,
+        250,
+        152
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1378,6 +2258,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "612a2c86-9e8f-385b-89a3-c22f00d9a44f",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1398,6 +2279,26 @@
         "Lay It All Down",
         "Show Me a Smile"
       ],
+      "trackLen": [
+        316,
+        328,
+        132,
+        495,
+        455,
+        327,
+        272,
+        199
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1407,6 +2308,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "10510365-3d3a-3ec9-8ba1-e210432c8234",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1429,6 +2331,30 @@
         "Dust",
         "Thoughts on a Grey Day"
       ],
+      "trackLen": [
+        329,
+        244,
+        204,
+        193,
+        307,
+        275,
+        202,
+        225,
+        163,
+        105
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1438,6 +2364,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "22b4b56c-47e0-31ea-9762-99ce3414fb20",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1462,6 +2389,21 @@
         "For Your Love",
         "Why"
       ],
+      "trackLen": [
+        215,
+        251,
+        207,
+        289,
+        248,
+        244,
+        217,
+        230,
+        304,
+        163,
+        227,
+        296
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1471,6 +2413,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "c7ffbb18-ced8-3fb3-bc77-72fc0cc3f14b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1492,6 +2435,28 @@
         "Night Watch",
         "Caught in the Rain"
       ],
+      "trackLen": [
+        166,
+        274,
+        224,
+        296,
+        170,
+        301,
+        224,
+        377,
+        168
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1501,6 +2466,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "794390eb-7d85-3427-ac16-0973a8998133",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1524,6 +2490,32 @@
         "Born Enchanter",
         "Safe Harbour"
       ],
+      "trackLen": [
+        216,
+        235,
+        235,
+        248,
+        288,
+        180,
+        206,
+        208,
+        238,
+        175,
+        151
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1533,6 +2525,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "a0d6e4c6-f7cd-3245-ac2d-aba871b9d353",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1556,6 +2549,32 @@
         "Sugar Daddy",
         "I’m So Afraid"
       ],
+      "trackLen": [
+        168,
+        230,
+        151,
+        252,
+        214,
+        312,
+        251,
+        185,
+        265,
+        249,
+        255
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1565,6 +2584,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "6b5d9bf1-f496-34b5-9488-7df2533d6208",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1588,6 +2608,32 @@
         "Oh Daddy",
         "Gold Dust Woman"
       ],
+      "trackLen": [
+        163,
+        254,
+        122,
+        191,
+        218,
+        200,
+        268,
+        211,
+        191,
+        234,
+        291
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -1597,6 +2643,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "416bb5e5-c7d1-3977-8fd7-7c9daf6c2be6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1629,6 +2676,50 @@
         "Tusk",
         "Never Forget"
       ],
+      "trackLen": [
+        274,
+        128,
+        164,
+        162,
+        386,
+        212,
+        331,
+        183,
+        191,
+        282,
+        294,
+        110,
+        267,
+        137,
+        185,
+        161,
+        321,
+        227,
+        216,
+        214
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "C",
+        "C",
+        "C",
+        "C",
+        "C",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1638,6 +2729,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "22deeac8-6009-31ad-a069-26e85d246412",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1662,6 +2754,34 @@
         "Eyes of the World",
         "Wish You Were Here"
       ],
+      "trackLen": [
+        194,
+        162,
+        189,
+        201,
+        264,
+        248,
+        171,
+        257,
+        224,
+        153,
+        224,
+        285
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1671,6 +2791,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "a0e25b7f-30d4-3e87-b469-df315573bb16",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1695,6 +2816,34 @@
         "When I See You Again",
         "You and I, Part II"
       ],
+      "trackLen": [
+        223,
+        225,
+        230,
+        237,
+        245,
+        192,
+        224,
+        250,
+        225,
+        256,
+        232,
+        159
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1704,6 +2853,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "680b3cd8-426b-3112-bcf3-42cd66f75fa9",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1729,6 +2879,36 @@
         "When It Comes to Love",
         "The Second Time"
       ],
+      "trackLen": [
+        226,
+        198,
+        423,
+        259,
+        255,
+        262,
+        198,
+        258,
+        241,
+        292,
+        252,
+        248,
+        151
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1738,6 +2918,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "0088f94b-d9f5-37a0-a7ce-499319c6e8ee",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1749,6 +2930,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/2bb97402-547b-4b0f-ad09-dfd74eb0b16b/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1758,6 +2941,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "2bb97402-547b-4b0f-ad09-dfd74eb0b16b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1769,6 +2953,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/a012a156-0ad1-480b-856f-8809cdf563dd/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1778,6 +2964,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "a012a156-0ad1-480b-856f-8809cdf563dd",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1803,6 +2990,22 @@
         "All Over Again",
         "These Strange Times"
       ],
+      "trackLen": [
+        297,
+        346,
+        268,
+        268,
+        268,
+        189,
+        226,
+        342,
+        270,
+        287,
+        251,
+        217,
+        427
+      ],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1812,6 +3015,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "1941ab98-f1d0-3a61-b788-e49c5e42a69d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1842,6 +3046,46 @@
         "Say Goodbye",
         "Goodbye Baby"
       ],
+      "trackLen": [
+        227,
+        251,
+        290,
+        248,
+        257,
+        237,
+        227,
+        250,
+        359,
+        272,
+        273,
+        239,
+        213,
+        245,
+        268,
+        266,
+        204,
+        230
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "C",
+        "C",
+        "C",
+        "C",
+        "C",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1851,6 +3095,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "450b9699-fcc4-3c6f-9a91-9c4cf86d6522",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1862,6 +3107,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/5b3a26aa-592f-40d9-8e17-670a4c09c264/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1871,6 +3118,7 @@
       "notes": "",
       "added": "2026-10-29T19:18:00.077Z",
       "rgid": "5b3a26aa-592f-40d9-8e17-670a4c09c264",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1892,6 +3140,28 @@
         "Love Help Me",
         "Hey Joe"
       ],
+      "trackLen": [
+        276,
+        251,
+        195,
+        165,
+        293,
+        355,
+        345,
+        214,
+        458
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "",
+        "",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1901,6 +3171,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "bdb083d6-be5e-32b3-97df-3d899a8ff858",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1920,6 +3191,24 @@
         "Anthem",
         "River Deep, Mountain High"
       ],
+      "trackLen": [
+        245,
+        316,
+        287,
+        424,
+        366,
+        391,
+        605
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1929,6 +3218,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "3a2bbe30-d2c7-367b-9326-f0082adad661",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1948,6 +3238,24 @@
         "Bird Has Flown",
         "April"
       ],
+      "trackLen": [
+        336,
+        327,
+        306,
+        339,
+        305,
+        337,
+        724
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -1957,6 +3265,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "bacc3ccf-32aa-3103-b50c-4edaa35e6fb6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -1976,6 +3285,24 @@
         "Living Wreck",
         "Hard Lovin’ Man"
       ],
+      "trackLen": [
+        259,
+        252,
+        616,
+        472,
+        209,
+        270,
+        429
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -1985,6 +3312,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "ebdb53c3-fbae-34b1-81cb-f825c9a56822",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2004,6 +3332,24 @@
         "Fools",
         "No One Came"
       ],
+      "trackLen": [
+        203,
+        414,
+        318,
+        282,
+        321,
+        498,
+        384
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2013,6 +3359,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "b9547871-240a-3ca4-97d7-9f2dfffe471c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2032,6 +3379,24 @@
         "Lazy",
         "Space Truckin’"
       ],
+      "trackLen": [
+        371,
+        296,
+        305,
+        238,
+        340,
+        412,
+        273
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2041,6 +3406,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "d00243c5-adcf-3018-9aa7-1957d7a5a774",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2060,6 +3426,24 @@
         "Place in Line",
         "Our Lady"
       ],
+      "trackLen": [
+        352,
+        266,
+        177,
+        252,
+        327,
+        393,
+        309
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2069,6 +3453,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "edba2b6f-8f50-3bc9-b2ac-1df8bdb51daa",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2089,6 +3474,26 @@
         "Mistreated",
         "“A” 200"
       ],
+      "trackLen": [
+        360,
+        276,
+        255,
+        348,
+        287,
+        295,
+        445,
+        231
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2098,6 +3503,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "e8459360-b0d1-331e-a1e7-9717c962d29f",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2119,6 +3525,28 @@
         "The Gypsy",
         "Soldier of Fortune"
       ],
+      "trackLen": [
+        243,
+        263,
+        268,
+        305,
+        199,
+        204,
+        266,
+        253,
+        194
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2128,6 +3556,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "95d17f98-dfe2-36c4-b950-fcdc1bdbc279",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2149,6 +3578,8 @@
         "This Time Around / Owed to ‘G’ (instrumental)",
         "You Keep on Moving"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2158,6 +3589,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "d12f085d-7861-36cd-a2fb-55a18ddc6e56",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2175,6 +3607,8 @@
         "You Fool No One",
         "Stormbringer"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2184,6 +3618,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "ef2cbff3-f65e-39c1-b366-5da7cd69616e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2204,6 +3639,8 @@
         "Wasted Sunsets",
         "Hungry Daze"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2213,6 +3650,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "41a276ce-ea2b-377c-9ad8-0ef0bfd1f5c2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2224,6 +3662,8 @@
       "genre": "Hard Rock",
       "cover": "https://coverartarchive.org/release-group/d69e5ab6-a884-4c5b-9cbe-31f8b2d15411/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2233,6 +3673,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "d69e5ab6-a884-4c5b-9cbe-31f8b2d15411",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2255,6 +3696,8 @@
         "Mitzi Dupree",
         "Dead or Alive"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2264,6 +3707,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "3627b95b-c892-3c42-bbf6-d203ef6ffe6b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2285,6 +3729,8 @@
         "Too Much Is Not Enough",
         "Wicked Ways"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2294,6 +3740,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "f00f78f4-f04c-3e38-9797-892c047f3a0a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2316,6 +3763,8 @@
         "Solitaire",
         "One Man’s Meat"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2325,6 +3774,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "4859ab03-71a1-3217-93ec-df15dca6e2e3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2350,6 +3800,8 @@
         "The Purpendicular Waltz",
         "Don’t Hold Your Breath"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2359,6 +3811,7 @@
       "notes": "",
       "added": "2026-10-29T19:22:13.664Z",
       "rgid": "ed6487db-873e-317b-9a72-6085b53ea966",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2388,6 +3841,8 @@
         "Du er eit svin",
         "Evert Tabbe"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2397,6 +3852,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
       "rgid": "da7002bf-070c-46c3-9036-a5eeb87b1de8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2426,6 +3882,8 @@
         "Trio Khramphathah",
         "Grethe Waitz"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2435,6 +3893,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
       "rgid": "0e48be49-f1e4-3368-adb2-361d366200d8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2464,6 +3923,8 @@
         "En smule rotete",
         "Konkurranse: Låt"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2473,6 +3934,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.349Z",
       "rgid": "2e00dec6-8fd3-460c-85d3-400af2987476",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2502,6 +3964,8 @@
         "Snørr og tårer",
         "Salzkammerpop"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2511,6 +3975,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
       "rgid": "64e7e29a-9ed7-4e72-92d5-5ecea6aa6e7c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2539,6 +4004,8 @@
         "Bettong",
         "Balladen om en vellykket sjef"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2548,6 +4015,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
       "rgid": "d71cda5b-2d0d-49b2-90c0-515b0fb31f06",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2577,6 +4045,8 @@
         "Boom Bang a Bang",
         "Min gamle flamme"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2586,6 +4056,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
       "rgid": "d2d20ae5-7790-4fe9-858d-6c6e565d66a8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2614,6 +4085,8 @@
         "Olavs menn - Alternative",
         "Brannen i treningsdrakten"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -2623,6 +4096,7 @@
       "notes": "",
       "added": "2026-10-29T19:24:45.350Z",
       "rgid": "bfdfc6df-9fc8-486e-a76c-66b1c7e13c35",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2644,6 +4118,8 @@
         "Morning Dew",
         "King Is Dead"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2653,6 +4129,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.160Z",
       "rgid": "61fe7e06-0344-3197-bfc0-4d1fd57bce65",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2675,6 +4152,8 @@
         "Sad Song",
         "1692 (Glen Coe Massacre)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2684,6 +4163,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "b927b247-1666-360a-91ba-3c5fafaead14",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2704,6 +4184,8 @@
         "Child in the Sun",
         "The Ballad of Hollis Brown"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2713,6 +4195,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "012ced1a-45b5-3736-aaf8-35d6fad66fcc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2734,6 +4217,8 @@
         "Too Bad, Too Sad",
         "Broken Down Angel"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2743,6 +4228,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1c9736e1-a608-3deb-aa2d-b60d21f6e2ab",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2763,6 +4249,8 @@
         "Sunshine",
         "Shapes of Things / Space Safari"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2772,6 +4260,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "3056bf8e-c292-35da-b006-fb719d753211",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2792,6 +4281,8 @@
         "Whiski Drinkin’ Woman",
         "Please Don’t Judas Me"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2801,6 +4292,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "d3178fcf-56f6-3188-b921-f57d98876434",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2822,6 +4314,8 @@
         "Lift the Lid",
         "You're the Violin"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2831,6 +4325,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "67d10906-4afd-373f-813c-428e7388c87b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2852,6 +4347,8 @@
         "Wild Honey",
         "L.A. Girls"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2861,6 +4358,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1bc8ecb3-008b-36bd-aa3b-3c9d7300fbb2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2883,6 +4381,8 @@
         "Place in Your Heart",
         "All the Kings Horses"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2892,6 +4392,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "ed5bfedd-6493-32fd-b118-ad81b0d2a994",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2912,6 +4413,8 @@
         "What's in It for Me",
         "No Mean City, Parts 1 & 2"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2921,6 +4424,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "601b5e30-af94-3350-981c-3a7ccfe010ff",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2943,6 +4447,8 @@
         "Ship of Dreams",
         "Turning a New Leaf"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -2952,6 +4458,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "3057a94d-976a-3881-bbe0-0d460cdcd6cc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -2974,6 +4481,8 @@
         "Cocaine (live version)",
         "Victoria"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -2983,6 +4492,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "6a0f4783-61f4-3798-8f2b-9bfe59f5182d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3006,6 +4516,8 @@
         "Take the Rap",
         "Mexico"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3015,6 +4527,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1a8179ec-7a42-3e98-9bad-f0e1df15cb1d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3037,6 +4550,8 @@
         "Local Still",
         "Where Are You Now"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3046,6 +4561,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "4b03c3c3-548d-3a17-acc3-37a4190a1c6c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3067,6 +4583,8 @@
         "Sweetheart Tree",
         "Road to Nowhere"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3076,6 +4594,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "4cbdf8de-6f33-40c9-9f15-799c4d5e218b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3097,6 +4616,8 @@
         "White Boy",
         "A Veteran’s Song"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3106,6 +4627,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "5ee64e49-30d1-3803-a871-f1b1159fde3c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3128,6 +4650,8 @@
         "Donna - Get Off That Crack",
         "Helpless"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3137,6 +4661,7 @@
       "notes": "",
       "added": "2026-10-29T19:27:50.161Z",
       "rgid": "1e8138bc-c614-3217-b0de-bc2e03b4c9dc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3161,6 +4686,8 @@
         "Looking For Somebody",
         "Stop Messin’ Round"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3170,6 +4697,7 @@
       "notes": "",
       "added": "2026-10-29T19:29:44.107Z",
       "rgid": "20328c16-1b75-4979-b954-018127fbb3d8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3192,6 +4720,8 @@
         "Ships Don’t Disappear in the Night (Do They?)",
         "Fresh Air for My Mama"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3201,6 +4731,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "c4950b4d-cd2f-39a4-b83d-210e4a853f2a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3223,6 +4754,8 @@
         "The Sacro-Iliac",
         "Oh Effendi"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3232,6 +4765,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "909e7c30-838a-32ac-bf8b-c65a7e101fec",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3252,6 +4786,8 @@
         "Life Is A Minestrone",
         "The Film Of My Love"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3261,6 +4797,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "a043938b-94d7-307b-a6cf-e15e4494a8fd",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3282,6 +4819,8 @@
         "Head Room",
         "Don’t Hang Up"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3291,6 +4830,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "12e8510d-f95b-3b10-8b62-8048f2578844",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3312,6 +4852,8 @@
         "You've Got a Cold",
         "Feel the Benefit, Part 1, 2 & 3"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3321,6 +4863,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "66c6544c-43bf-3d81-8278-680c5c1790fc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3345,6 +4888,8 @@
         "From Rochdale to Ocho Rios",
         "Everything You’ve Wanted to Know About !!! (Exclamation Marks)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3354,6 +4899,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "c9d4a138-fd56-3173-92dd-b7c48ede65ee",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3377,6 +4923,8 @@
         "Strange Lover",
         "L.A. Inflatable"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3386,6 +4934,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "2335a168-3874-3ce8-b42d-9118f95386ff",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3408,6 +4957,8 @@
         "Lying Here With You",
         "Survivor"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3417,6 +4968,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "e0678398-284b-3284-b15c-e48153f78187",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3437,6 +4989,8 @@
         "Working Girls",
         "Taxi Taxi"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3446,6 +5000,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "843431ea-c658-3504-bb08-8b7aecb5da5d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3468,6 +5023,8 @@
         "Shine A Light In The Dark",
         "Don't Break The Promises"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3477,6 +5034,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.862Z",
       "rgid": "de9bd816-8c2f-3d2d-bbca-36e8ad611158",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3499,6 +5057,8 @@
         "Age of Consent",
         "Everything Is Not Enough"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3508,6 +5068,7 @@
       "notes": "",
       "added": "2026-10-29T19:32:58.863Z",
       "rgid": "91fef7a2-b7b8-3caf-b8b5-86a9dd852538",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3530,6 +5091,8 @@
         "Love Leads to Madness",
         "Sunshine"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3539,6 +5102,7 @@
       "notes": "",
       "added": "2026-10-29T19:37:51.007Z",
       "rgid": "b18ddebc-4d8b-415c-99c7-f76d6b6a65b3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3562,6 +5126,8 @@
         "The Scarecrow",
         "Bike"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3571,6 +5137,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "6792b6d1-4e65-3c3c-9d20-d08aa1dcfc60",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3590,6 +5157,8 @@
         "See‐Saw",
         "Jugband Blues"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3599,6 +5168,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "8a9caa40-b7c6-33eb-a13c-6c15f09b1c44",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3620,6 +5190,8 @@
         "The Narrow Way - Part 1; Part 2; Part 3",
         "The Grand Vizier’s Garden Party, Part 1 - Entrance, Part 2 - Entertainment, Part 3 - Exit"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3629,6 +5201,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "b7aa61ae-3572-32c0-8b93-6af78ea83760",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3646,6 +5219,8 @@
         "Fat Old Sun",
         "Alan’s Psychedelic Breakfast: a) Rise and Shine / b) Sunny Side Up / c) Morning Glory"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3655,6 +5230,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "e2f503d7-5488-3fe1-b3ac-f236d9f1b44c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3673,6 +5249,8 @@
         "Seamus",
         "Echoes"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3682,6 +5260,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "4e98c9b4-92f6-3049-b9da-a1088b623672",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3704,6 +5283,8 @@
         "Brain Damage",
         "Eclipse"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -3713,6 +5294,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "f5093c06-23e3-404f-aeaa-40f72885ee3a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3730,6 +5312,8 @@
         "Wish You Were Here",
         "Shine On You Crazy Diamond, Parts 6–9"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -3739,6 +5323,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "1a272023-10d3-38ee-bab3-317b55fcc21d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3756,6 +5341,8 @@
         "Sheep",
         "Pigs on the Wing, Part 2"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3765,6 +5352,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "20c77fb4-1c9f-33c8-9d7e-c4977f11e847",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3803,6 +5391,8 @@
         "The Trial",
         "Outside the Wall"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -3812,6 +5402,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "f2026101-945b-3d05-9ef4-aa718fc3feef",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3836,6 +5427,8 @@
         "Not Now John",
         "Two Suns in the Sunset"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3845,6 +5438,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "e8b7e7a3-ef56-34a5-bedf-085783c9a076",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3867,6 +5461,8 @@
         "A New Machine, Part 2",
         "Sorrow"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3876,6 +5472,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "4940b8aa-898b-3e60-9992-94e073bab6f6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3899,6 +5496,8 @@
         "Lost for Words",
         "High Hopes"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3908,6 +5507,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "90878b63-f639-3c8b-aefb-190bdf3d1790",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3938,6 +5538,8 @@
         "Surfacing",
         "Louder Than Words"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -3947,6 +5549,7 @@
       "notes": "",
       "added": "2026-10-29T20:31:23.697Z",
       "rgid": "38b4c840-16ce-40fa-b7c0-a354b7c87178",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -3969,6 +5572,8 @@
         "Lady in Black (single edit)",
         "Return to Fantasy"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -3978,6 +5583,7 @@
       "notes": "",
       "added": "2026-10-31T09:36:19.184Z",
       "rgid": "6c291b8f-201e-3c25-8871-377b648b9ce3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4010,6 +5616,8 @@
         "Hold Your Head Up",
         "Blood on Stone"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4019,6 +5627,7 @@
       "notes": "",
       "added": "2026-10-31T09:36:19.184Z",
       "rgid": "1e2debec-897c-3121-a42e-c01c9ac1eff6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4041,6 +5650,8 @@
         "Drivin’ With Your Eyes Closed",
         "Land of the Living"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4050,6 +5661,7 @@
       "notes": "",
       "added": "2026-10-31T09:40:00.833Z",
       "rgid": "cb763b61-26ae-3fbb-80ff-946275a4e697",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Don Henley"
     },
@@ -4071,6 +5683,8 @@
         "A call to arms",
         "Taken in"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4080,6 +5694,7 @@
       "notes": "",
       "added": "2026-10-31T09:41:41.945Z",
       "rgid": "eb8f4523-a2f2-385a-86b8-3a8e5651907d",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Mike + the mechanics"
     },
@@ -4101,6 +5716,8 @@
         "Goodbye Mickey Mouse\t4:07",
         "Vive La Fantasy"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4110,6 +5727,7 @@
       "notes": "",
       "added": "2026-10-31T09:47:51.734Z",
       "rgid": "a8095cf5-60d3-31c4-b612-15da5eded4b8",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Shakatak"
     },
@@ -4133,6 +5751,8 @@
         "Ta mæ med",
         "Apekoret"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4142,6 +5762,7 @@
       "notes": "",
       "added": "2026-10-31T09:50:46.707Z",
       "rgid": "b01ca7be-675f-478d-ba39-d03e28d2d318",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Unit five"
     },
@@ -4163,6 +5784,8 @@
         "You Just Don't Care",
         "Soul Sacrifice"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4172,6 +5795,7 @@
       "notes": "",
       "added": "2026-10-31T09:51:54.752Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Santana"
     },
@@ -4193,6 +5817,8 @@
         "Heavy Traffic",
         "The Invisible Man"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4202,6 +5828,7 @@
       "notes": "",
       "added": "2026-10-31T10:00:02.205Z",
       "rgid": "ef791eac-d21e-3afb-8501-2d673a013e49",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Michael Cretu"
     },
@@ -4225,6 +5852,8 @@
         "Barrom Roses",
         "Give Me Strength"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4234,6 +5863,7 @@
       "notes": "",
       "added": "2026-10-31T10:01:17.073Z",
       "rgid": "f370c1b4-fe41-41e3-8648-302364960e43",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Claudia & Big Hand & Casino"
     },
@@ -4255,6 +5885,8 @@
         "No One Else Will Do",
         "Rock ’n’ Roll Connection"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4264,6 +5896,7 @@
       "notes": "",
       "added": "2026-10-31T10:02:38.881Z",
       "rgid": "cc1ef8fb-7631-37ad-b543-8f4722f2545f",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Far corporation"
     },
@@ -4286,6 +5919,8 @@
         "Riding With The Wind",
         "Matts Mood II"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4295,6 +5930,7 @@
       "notes": "",
       "added": "2026-10-31T10:03:54.307Z",
       "rgid": "efdf287b-4d24-40e6-a768-6f18b26324dd",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Matt Bianco"
     },
@@ -4317,6 +5953,8 @@
         "Take Me",
         "With Every Beat of My Heart"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4326,6 +5964,7 @@
       "notes": "",
       "added": "2026-10-31T10:05:22.533Z",
       "rgid": "70706fd9-e724-37ed-8be5-243ff0dc5ab1",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Laura Branigan"
     },
@@ -4341,6 +5980,8 @@
         "Careless Whisper (Special version)",
         "Careless Whisper (instrumental)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4350,6 +5991,7 @@
       "notes": "",
       "added": "2026-10-31T10:06:34.615Z",
       "rgid": "91d9ccb1-0c30-3413-8b66-9c2e9a2d86a8",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "George Michael"
     },
@@ -4372,6 +6014,8 @@
         "Right on Time",
         "Lonely Girls"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4381,6 +6025,7 @@
       "notes": "",
       "added": "2026-10-31T10:07:54.677Z",
       "rgid": "a2de1d1e-ed74-3317-8a72-d73934c0d474",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Van Zant"
     },
@@ -4403,6 +6048,8 @@
         "Long Gone",
         "Ain’t Gonna Cry"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4412,6 +6059,7 @@
       "notes": "",
       "added": "2026-10-31T10:12:58.170Z",
       "rgid": "fe1d2bcd-cdb6-333b-b2c6-8389e5890f04",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Bryan Adams"
     },
@@ -4434,6 +6082,8 @@
         "You Are My Love",
         "Our Day Will Come"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4443,6 +6093,7 @@
       "notes": "",
       "added": "2026-10-31T10:13:43.250Z",
       "rgid": "270019a2-10a9-3635-92ba-839a5f2cb895",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Dionne Warwick"
     },
@@ -4462,6 +6113,8 @@
         "I'm Not Afraid",
         "Only Because of You"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4471,6 +6124,7 @@
       "notes": "",
       "added": "2026-10-31T10:15:00.589Z",
       "rgid": "4abc2d79-a253-33a2-a7b5-7ce860552949",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Roger Hodgson"
     },
@@ -4507,6 +6161,8 @@
         "Hey Willy",
         "Long Cool Woman (In A Black Dress)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4516,6 +6172,7 @@
       "notes": "",
       "added": "2026-10-31T10:17:57.968Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "The Hollies"
     },
@@ -4537,6 +6194,8 @@
         "Fire Dance",
         "Lady (To Billie Holiday)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4546,6 +6205,7 @@
       "notes": "",
       "added": "2026-10-31T10:23:09.116Z",
       "rgid": "a371b43e-ccac-3c88-b955-a645e2e10df1",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Shakatak"
     },
@@ -4568,6 +6228,8 @@
         "Try Again",
         "Surely"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4577,6 +6239,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.835Z",
       "rgid": "3a30fbc9-f118-3e8c-98a3-c9283f1c8f7a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4599,6 +6262,8 @@
         "Friend in Need",
         "Aries"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4608,6 +6273,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.835Z",
       "rgid": "f81825b3-69cc-37ff-b409-fd138d47b013",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4628,6 +6294,8 @@
         "If Everyone Was Listening",
         "Crime of the Century"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4637,6 +6305,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.835Z",
       "rgid": "c3749af5-0d0c-3ed1-b1c0-8b4a8f6c3436",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4659,6 +6328,8 @@
         "The Meaning",
         "Two of Us"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4668,6 +6339,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.835Z",
       "rgid": "7155e424-2bf4-30de-b997-fe2a352a494b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4687,6 +6359,8 @@
         "From Now On",
         "Fool’s Overture"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4696,6 +6370,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.835Z",
       "rgid": "c4b68591-5d85-393e-9c97-d42a0d89900c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4718,6 +6393,8 @@
         "Casual Conversations",
         "Child of Vision"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4727,6 +6404,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "d584f7e7-55b4-39a1-87e9-af3b86773132",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4748,6 +6426,8 @@
         "Waiting So Long",
         "Don’t Leave Me Now"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4757,6 +6437,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "51e2b9c7-d95d-3054-83be-8910ef6b9c4e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4775,6 +6456,8 @@
         "Brother Where You Bound",
         "Ever Open Door"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4784,6 +6467,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "ee113645-7a6c-377c-91ac-e5cae75315d0",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4805,6 +6489,8 @@
         "Thing for You",
         "An Awful Thing to Waste"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4814,6 +6500,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "50fa1bf7-cee9-3bc9-951b-19121c789744",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4838,6 +6525,8 @@
         "C’est What?",
         "Where There’s a Will"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4847,6 +6536,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "e6cc181c-42a0-35c1-a412-35b8d96e92b7",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4868,6 +6558,8 @@
         "Goldrush",
         "Dead Man's Blues"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -4877,6 +6569,7 @@
       "notes": "",
       "added": "2026-10-31T10:26:35.836Z",
       "rgid": "610138b1-1d41-3c54-9ef3-652734586f21",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -4903,6 +6596,8 @@
         "Birthday",
         "Get Back"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4912,6 +6607,7 @@
       "notes": "",
       "added": "2026-10-31T10:29:50.125Z",
       "rgid": "2b07f108-6fc2-466e-a610-a79002aab1cc",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "The Beatles"
     },
@@ -4933,6 +6629,8 @@
         "Bastard",
         "The Outsider"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4942,6 +6640,7 @@
       "notes": "",
       "added": "2026-10-31T10:31:36.945Z",
       "rgid": "8655fed3-10eb-3584-b100-357a73c594a7",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Ian Hunter"
     },
@@ -4965,6 +6664,8 @@
         "Reverie",
         "Song for Guy"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -4974,6 +6675,7 @@
       "notes": "",
       "added": "2026-10-31T10:33:04.377Z",
       "rgid": "09064761-d34e-335b-a3da-eb4063042dc6",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Elton John"
     },
@@ -5001,6 +6703,8 @@
         "A Winter’s Tale",
         "One Eyed Hound"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5010,6 +6714,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "0a7225eb-7177-3cdc-92d8-23e8541831ee",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5028,6 +6733,8 @@
         "Dusk",
         "The Knife"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5037,6 +6744,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "aa86c6bb-d1c7-3a03-bcb4-3c6f0a469328",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5056,6 +6764,8 @@
         "Harlequin",
         "The Fountain of Salmacis"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5065,6 +6775,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "863a205e-07c3-3930-8561-a23045719466",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5083,6 +6794,8 @@
         "Horizons",
         "Supper’s Ready"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5092,6 +6805,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "81d890d2-e71a-3e96-b3f1-4ddb3b6feb81",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5112,6 +6826,8 @@
         "The Cinema Show",
         "Aisle of Plenty"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5121,6 +6837,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "1fadec3d-7451-32e8-9194-ad7e5312cb9b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5156,6 +6873,8 @@
         "In the Rapids",
         "it."
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5165,6 +6884,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "f2e5d462-6ec1-3cf8-8ea8-06eab8fe51f5",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5185,6 +6905,8 @@
         "A Trick of the Tail",
         "Los Endos"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5194,6 +6916,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "adcc32d7-cb30-3201-84fa-488e35c9c9ed",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5215,6 +6938,8 @@
         "…in That Quiet Earth’",
         "Afterglow"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5224,6 +6949,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "96e0f4a1-52b2-3da7-a11f-1cfa861baeb6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5247,6 +6973,8 @@
         "The Lady Lies",
         "Follow You Follow Me"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5256,6 +6984,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "f599ecff-d76c-361a-97c2-523d4aa1f0b4",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5267,6 +6996,8 @@
       "genre": "Progressive Rock",
       "cover": "https://coverartarchive.org/release-group/bc68ceea-7838-4c1d-8cc0-920ca1dc55d9/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5276,6 +7007,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "bc68ceea-7838-4c1d-8cc0-920ca1dc55d9",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5300,6 +7032,8 @@
         "Duke’s Travels",
         "Duke’s End"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5309,6 +7043,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "ffcfe407-d820-38ba-a798-8734b5dff61c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5330,6 +7065,8 @@
         "Like It or Not",
         "Another Record"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5339,6 +7076,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "b76520a1-3c5f-3a0c-a755-4c4d99b97c98",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5360,6 +7098,8 @@
         "Silver Rainbow",
         "It’s Gonna Get Better"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5369,6 +7109,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5389,6 +7130,8 @@
         "Throwing It All Away",
         "The Brazilian"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5398,6 +7141,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "cd5b8b39-cdfd-337a-9fab-c2571be315c0",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5422,6 +7166,8 @@
         "Since I Lost You",
         "Fading Lights"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5431,6 +7177,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "1f94530c-4206-3c2f-a3e8-8f9bed86590e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5454,6 +7201,8 @@
         "There Must Be Some Other Way",
         "One Man’s Fool"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5463,6 +7212,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "ecb68a84-e8dd-301b-979a-d185e3cc87e4",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5474,6 +7224,8 @@
       "genre": "Progressive Rock",
       "cover": "https://coverartarchive.org/release-group/1fffea03-11a4-435f-bf68-62abfc668ce4/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5483,6 +7235,7 @@
       "notes": "",
       "added": "2026-10-31T10:35:03.807Z",
       "rgid": "1fffea03-11a4-435f-bf68-62abfc668ce4",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5510,6 +7263,8 @@
         "Syrenprinsessen",
         "Om lidt"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5519,6 +7274,7 @@
       "notes": "",
       "added": "2026-10-31T10:36:03.577Z",
       "rgid": "1714d8ac-6d18-352e-a905-7774d1c49c1a",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kim Larsen"
     },
@@ -5541,6 +7297,8 @@
         "Bird Has Flown",
         "China in Your Heart"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5550,6 +7308,7 @@
       "notes": "",
       "added": "2026-10-31T10:37:05.572Z",
       "rgid": "dadda20e-1b62-44c6-a5e5-244fd72f8508",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Broken Home"
     },
@@ -5570,6 +7329,8 @@
         "Gloomy",
         "Walk on the Water"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5579,6 +7340,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "871da799-a7f7-39df-8332-e246584458dd",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5598,6 +7360,8 @@
         "Proud Mary",
         "Keep On Chooglin’"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5607,6 +7371,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "ef55850c-7b38-30fc-8f8d-d10f28784094",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5628,6 +7393,8 @@
         "Sinister Purpose",
         "The Night Time Is the Right Time"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5637,6 +7404,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "6c08878c-d6a1-37b6-84c3-9566748545c1",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5659,6 +7427,8 @@
         "Side o’ the Road",
         "Effigy"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5668,6 +7438,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "5fdea541-32fc-3b17-b7c4-50b40f65203d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5691,6 +7462,8 @@
         "I Heard It Through the Grapevine",
         "Long as I Can See the Light"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5700,6 +7473,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "3a31800f-1916-3f4c-a7ae-26b783d00670",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5722,6 +7496,8 @@
         "Molina",
         "Rude Awakening Number Two"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5731,6 +7507,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "da556835-e464-3389-881f-362ef8f984b3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5753,6 +7530,8 @@
         "Door to Door",
         "Sweet Hitch‐Hiker"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -5762,6 +7541,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:15.443Z",
       "rgid": "b0732b50-1b4e-34a3-bd82-d23c8437d6ba",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5782,6 +7562,8 @@
         "Fortunate Son",
         "Hey Tonight"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5791,6 +7573,7 @@
       "notes": "",
       "added": "2026-10-31T10:43:53.398Z",
       "rgid": "",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -5813,6 +7596,8 @@
         "Mr. Blackwell",
         "I"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5822,6 +7607,7 @@
       "notes": "",
       "added": "2026-10-31T10:45:47.698Z",
       "rgid": "8ee07b4e-25bb-36cc-9cc5-7330b7776f71",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kiss"
     },
@@ -5844,6 +7630,8 @@
         "I Wanna Celebrate\t3:38",
         "Low Dee Low"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5853,6 +7641,7 @@
       "notes": "",
       "added": "2026-10-31T10:46:24.302Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Tore Hansen"
     },
@@ -5875,6 +7664,8 @@
         "Goodmorning little Schoolgirl",
         "You got your troubles O.K."
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5884,6 +7675,7 @@
       "notes": "",
       "added": "2026-10-31T10:48:03.632Z",
       "rgid": "04bdecbc-f9bd-4614-99f4-71d5822eff2f",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Delta Cross Band"
     },
@@ -5913,6 +7705,8 @@
         "We Will Rock You",
         "We Are the Champions"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5922,6 +7716,7 @@
       "notes": "",
       "added": "2026-10-31T10:48:56.560Z",
       "rgid": "69ce61c8-127f-3809-95d8-62fdf3ae1347",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Queen"
     },
@@ -5944,6 +7739,8 @@
         "Gimme Love",
         "Tears"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5953,6 +7750,7 @@
       "notes": "",
       "added": "2026-10-31T10:50:06.742Z",
       "rgid": "ecdb2790-1e8b-414a-9710-4738f42032c3",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Frankie Miller"
     },
@@ -5975,6 +7773,8 @@
         "Crime of Passion",
         "Don’t Give Up on Each Other"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -5984,6 +7784,7 @@
       "notes": "",
       "added": "2026-10-31T10:52:06.600Z",
       "rgid": "85acdb79-10db-3647-9b45-f2b701f40a1e",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Diana Ross"
     },
@@ -6006,6 +7807,8 @@
         "Fool for You Anyway",
         "I Need You"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6015,6 +7818,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "edb7bc18-e4f1-33c0-ad9e-ef748664dfde",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6037,6 +7841,8 @@
         "Lonely Children",
         "Spellbinder"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6046,6 +7852,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "1833c951-a01f-3b37-9b37-15e180e69bc8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6068,6 +7875,8 @@
         "Do What You Like",
         "Rev on the Red Line"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6077,6 +7886,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "7269afc9-c5d9-3040-99bc-382cae70e215",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6099,6 +7909,8 @@
         "Girl on the Moon",
         "Don’t Let Go"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6108,6 +7920,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "b29a37cd-e84f-435e-a671-fd7541f65c53",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6130,6 +7943,8 @@
         "Two Different Worlds",
         "She’s Too Tough"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6139,6 +7954,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "24b59933-12b7-3f19-97d2-14891192f06b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6161,6 +7977,8 @@
         "Out of the Blue",
         "A Night to Remember"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6170,6 +7988,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "f79a9d2a-7dd2-31b8-a1aa-171dc7d1507d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6193,6 +8012,8 @@
         "Flesh Wound",
         "Unusual Heat"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6202,6 +8023,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "687504dc-f2c9-3c39-a110-0ede7c794aa6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6225,6 +8047,8 @@
         "Under the Gun",
         "Hand on My Heart"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6234,6 +8058,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "1077f2e1-bd79-3050-a434-5b9e039062e3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6259,6 +8084,8 @@
         "Angel Tonight",
         "Fool for You Anyway"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6268,6 +8095,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "41a60f4e-fdf1-49d9-a7fc-fbcd3d52c689",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6292,6 +8120,8 @@
         "Juke Box Hero",
         "That's All Right"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6301,6 +8131,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:12.290Z",
       "rgid": "a19f57cc-67e7-4174-beaf-169b5797ed7c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6327,6 +8158,8 @@
         "Your Mamma Won't Like Me",
         "I've Never Been in Love"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6336,6 +8169,7 @@
       "notes": "",
       "added": "2026-10-31T10:53:41.595Z",
       "rgid": "ad04187e-4435-3f28-be27-99b08aea7738",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Suzi Quatro"
     },
@@ -6356,6 +8190,8 @@
         "A Battle For The Crown (Drugwar Remix)",
         "Jennifer Corvino"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6365,6 +8201,7 @@
       "notes": "",
       "added": "2026-10-31T10:56:42.001Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Apoptgyma Berzerk"
     },
@@ -6386,6 +8223,8 @@
         "Love In Chains",
         "Goodbye"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6395,6 +8234,7 @@
       "notes": "",
       "added": "2026-10-31T11:00:05.979Z",
       "rgid": "217877c6-9d80-4976-8724-18465a95c6f2",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Kiss"
     },
@@ -6417,6 +8257,8 @@
         "Hvordan",
         "Skjønner ingenting"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6426,6 +8268,7 @@
       "notes": "",
       "added": "2026-10-31T11:02:56.449Z",
       "rgid": "58d6af7e-f23f-4e00-9722-3878f00cfadf",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Lars Kilevold"
     },
@@ -6448,6 +8291,8 @@
         "La fuente del ritmo",
         "Every Step of the Way"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6457,6 +8302,7 @@
       "notes": "",
       "added": "2026-10-31T11:03:53.853Z",
       "rgid": "5dc38932-b507-3bcd-94a9-3b39c1d96526",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Santana"
     },
@@ -6479,6 +8325,8 @@
         "Back to Bradford",
         "Wild Wild Angels"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6488,6 +8336,7 @@
       "notes": "",
       "added": "2026-10-31T11:05:33.581Z",
       "rgid": "411219a7-856c-4cd0-a243-3833b58d670f",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Smokie"
     },
@@ -6510,6 +8359,8 @@
         "John I'm Only Dancing (Again) (1975)",
         "D.J."
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6519,6 +8370,7 @@
       "notes": "",
       "added": "2026-10-31T11:06:56.340Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "David Bowie"
     },
@@ -6541,6 +8393,8 @@
         "Love You In The Rain (Instr.)",
         "Tallerkenvaskerens Blues (Live)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6550,6 +8404,7 @@
       "notes": "",
       "added": "2026-10-31T11:10:05.477Z",
       "rgid": "d6a91ad3-5c7f-4f6c-acc8-9131d67031aa",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Franz Beckerlee"
     },
@@ -6571,6 +8426,8 @@
         "Mr. Pitiful",
         "I Should've Quit You"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6580,6 +8437,7 @@
       "notes": "",
       "added": "2026-10-31T11:10:59.870Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jimi Hendrix"
     },
@@ -6608,6 +8466,8 @@
         "Dave Edmunds –\tI Hear You Knocking\t2:44",
         "Wizzard (2) –\tSee My Baby Jive"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6617,6 +8477,7 @@
       "notes": "",
       "added": "2026-10-31T11:15:02.734Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Various"
     },
@@ -6644,6 +8505,8 @@
         "Tequila Band – Pub Rock",
         "Stormy –\tShould I Ever Be"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6653,6 +8516,7 @@
       "notes": "",
       "added": "2026-10-31T11:18:23.668Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Moron Cafe"
     },
@@ -6675,6 +8539,8 @@
         "Tomorrow's Dream",
         "Sweet Leaf"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6684,6 +8550,7 @@
       "notes": "",
       "added": "2026-10-31T11:26:24.561Z",
       "rgid": "a0a6e8e0-71dc-39d3-9f1f-066ae17e869b",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Black Sabbath"
     },
@@ -6704,6 +8571,8 @@
         "Hold on to Love",
         "The Law of the Jungle"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6713,6 +8582,7 @@
       "notes": "",
       "added": "2026-10-31T11:28:06.819Z",
       "rgid": "8169e694-095b-3e29-a1d7-3853d5242036",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Gary Moore"
     },
@@ -6748,6 +8618,8 @@
         "Suffragette City\t3:25",
         "Rock 'N' Roll Suicide"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6757,6 +8629,7 @@
       "notes": "",
       "added": "2026-10-31T11:28:54.469Z",
       "rgid": "",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "David Bowie"
     },
@@ -6779,6 +8652,8 @@
         "Beast of Burden",
         "Shattered"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6788,6 +8663,7 @@
       "notes": "",
       "added": "2026-10-31T11:33:56.044Z",
       "rgid": "b44bc358-a28f-3a1f-b07e-604910f12d37",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6811,6 +8687,8 @@
         "No Use in Crying",
         "Waiting on a Friend"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6820,6 +8698,7 @@
       "notes": "",
       "added": "2026-10-31T11:33:56.044Z",
       "rgid": "fdbc4f51-817d-33ab-af9f-4bcc22286932",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6847,6 +8726,8 @@
         "Live With Me",
         "Honky Tonk Women"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6856,6 +8737,7 @@
       "notes": "",
       "added": "2026-10-31T11:34:02.058Z",
       "rgid": "e2316b84-25ed-41fd-880e-77a6d3c3f359",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6887,6 +8769,8 @@
         "Long Long While",
         "If You Let Me"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6896,6 +8780,7 @@
       "notes": "",
       "added": "2026-10-31T11:35:00.514Z",
       "rgid": "e335177c-b3b7-4c28-9a10-ad4679741e9c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6918,6 +8803,8 @@
         "Start Me Up",
         "(I Can’t Get No) Satisfaction / Outro: Star Spangled Banner"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -6927,6 +8814,7 @@
       "notes": "",
       "added": "2026-10-31T11:36:30.804Z",
       "rgid": "6af00e13-eae1-3ad2-a8d1-b66187163914",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6951,6 +8839,8 @@
         "Pene ben",
         "En skabbete hund krysser sine spor"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6960,6 +8850,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "78ca3864-965a-307b-b010-57593b763d26",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -6985,6 +8876,8 @@
         "Billa",
         "To fulle menn"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -6994,6 +8887,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "83cbbc45-46bc-3175-9aaa-2492d65723a8",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7018,6 +8912,8 @@
         "Telefonen ringer",
         "Koteletter"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7027,6 +8923,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "36e88085-9fb8-377a-98b2-20d64d9633e3",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7052,6 +8949,8 @@
         "Eller var det en drøm",
         "Aftenbønn"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7061,6 +8960,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "d8cf139f-a064-3c3c-ae7a-8cf5a4719632",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7085,6 +8985,8 @@
         "Hyttetur",
         "Alt kan repeteres"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7094,6 +8996,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "8fb32a19-64af-38f7-812a-0b450ef3ba99",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7130,6 +9033,8 @@
         "Eller var det en drøm",
         "Alt kan repareres"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7139,6 +9044,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "85ac6c1f-0cbd-3f99-9548-48a4f35f2199",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7196,6 +9102,8 @@
         "Narkoman",
         "Alt kan repareres"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7205,6 +9113,7 @@
       "notes": "",
       "added": "2026-10-31T11:37:36.844Z",
       "rgid": "5d1b18d7-567e-3779-bcbf-8a24df5f823a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7227,6 +9136,8 @@
         "Prima Donna",
         "Once in a Lifetime"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7236,6 +9147,7 @@
       "notes": "",
       "added": "2026-10-31T12:15:39.158Z",
       "rgid": "3053c046-7bf3-34e7-b314-1fa2682ca81b",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Chicago"
     },
@@ -7258,6 +9170,8 @@
         "I Believe",
         "One More Day"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7267,6 +9181,7 @@
       "notes": "",
       "added": "2026-10-31T12:16:09.392Z",
       "rgid": "3dafdde9-a5a6-3be4-b555-e68fffbf49d0",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Chicago"
     },
@@ -7287,6 +9202,8 @@
         "Domedagsprofeter",
         "Farväl"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7296,6 +9213,7 @@
       "notes": "",
       "added": "2026-10-31T12:17:54.985Z",
       "rgid": "adff6f8a-828f-4109-9521-4a92c884227e",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jerusalem"
     },
@@ -7318,6 +9236,8 @@
         "Pusselbiten",
         "Heartbeat"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7327,6 +9247,7 @@
       "notes": "",
       "added": "2026-10-31T12:18:21.422Z",
       "rgid": "8e438b76-bcf3-4dd2-b0e7-743d7422bfb2",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jerusalem"
     },
@@ -7351,6 +9272,8 @@
         "Fångsång",
         "Neutral"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7360,6 +9283,7 @@
       "notes": "",
       "added": "2026-10-31T12:19:46.456Z",
       "rgid": "6b513263-4dbe-42a1-94e6-495d7d746b61",
+      "singles": null,
       "folderId": "dea0cdc6-a8bf-4904-b075-837147af132f",
       "artistText": "Jerusalem"
     },
@@ -7383,6 +9307,8 @@
         "Mary’s Song (Oh My My My)",
         "Our Song"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7392,6 +9318,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "ba1d0c2a-bb07-38bc-835c-a880f76f1309",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7417,6 +9344,8 @@
         "The Best Day",
         "Change"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7426,6 +9355,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "63eba062-847c-3b73-8b0f-6baf27bba6fa",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7452,6 +9382,8 @@
         "Last Kiss",
         "Long Live"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7461,6 +9393,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "ba1259eb-d41e-41c5-a70c-0e6fa73e6708",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7495,6 +9428,8 @@
         "Red (original demo recording)",
         "State of Grace (acoustic version)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7504,6 +9439,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "a73cecde-0923-40ad-aad1-e8c24ba6c3d2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7529,6 +9465,8 @@
         "I Know Places",
         "Clean"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7538,6 +9476,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "4d9ec1c2-58ec-48a4-aa0a-916718adead0",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7565,6 +9504,8 @@
         "Call It What You Want",
         "New Year’s Day"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7574,6 +9515,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "f060c8fd-bec9-426e-800e-8efc040a71e6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7606,6 +9548,8 @@
         "I Forgot That You Existed (piano/vocal)",
         "Lover (piano/vocal)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7615,6 +9559,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "30e9785b-7b50-4d29-b3d1-96fb55e3397f",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7642,6 +9587,8 @@
         "closure",
         "evermore"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7651,6 +9598,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.803Z",
       "rgid": "e86d6219-f5a2-4edd-bf2b-3f9eab190ae0",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7679,6 +9627,8 @@
         "peace",
         "hoax"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7688,6 +9638,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "f1d08326-c23b-4b43-be3b-20b33ab10bf6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7726,6 +9677,8 @@
         "Don’t You (Taylor’s version) (from The Vault)",
         "Bye Bye Baby (Taylor’s version) (from The Vault)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7735,6 +9688,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "d2e4838d-90e1-471c-bda0-fd816dabb2d4",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7777,6 +9731,8 @@
         "The Very First Night (Taylor’s version) (from The Vault)",
         "All Too Well (10 minute version) (Taylor’s version) (from The Vault)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7786,6 +9742,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "67727253-f1c0-4243-9270-f9f1401c3b8c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7797,6 +9754,8 @@
       "genre": "Pop",
       "cover": "https://coverartarchive.org/release-group/2c049f28-a4e0-41c9-b7d8-e0a98951f357/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7806,6 +9765,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "2c049f28-a4e0-41c9-b7d8-e0a98951f357",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7831,6 +9791,8 @@
         "Sweet Nothing",
         "Mastermind"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7840,6 +9802,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "0dcc84fb-c592-46e9-ba92-a52bb44dd553",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7873,6 +9836,8 @@
         "Suburban Legends (Taylor’s version) (from The Vault)",
         "Is It Over Now? (Taylor’s version) (from The Vault)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7882,6 +9847,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "1c4770b3-b7a3-4d44-a7a9-8e2dbb74b85a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7916,6 +9882,8 @@
         "Foolish One (Taylor’s version) (from The Vault)",
         "Timeless (Taylor’s version) (from The Vault)"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7925,6 +9893,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "0441b1b2-de57-4a9a-b007-1f6e159921d5",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7936,6 +9905,8 @@
       "genre": "Pop",
       "cover": "https://coverartarchive.org/release-group/2a6b9e56-7314-4709-9dc7-924cdc300385/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -7945,6 +9916,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "2a6b9e56-7314-4709-9dc7-924cdc300385",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -7974,6 +9946,8 @@
         "Clara Bow",
         "The Manuscript"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7983,6 +9957,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "71c3eed6-466c-4aef-ad12-65a36d19467a",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8007,6 +9982,8 @@
         "Honey",
         "The Life of a Showgirl"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8016,6 +9993,7 @@
       "notes": "",
       "added": "2026-10-31T12:44:52.804Z",
       "rgid": "9ae7e7e9-ac40-4874-bd43-d77a9bb9b617",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8038,6 +10016,8 @@
         "Dead Flowers",
         "Moonlight Mile"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8047,6 +10027,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "4a4213d0-f224-3d51-bcca-476f61162681",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8077,6 +10058,8 @@
         "Shine a Light",
         "Soul Survivor"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8086,6 +10069,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "4838a3c9-fd2b-30a5-83eb-e32545b5d7fc",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8108,6 +10092,8 @@
         "Can You Hear the Music",
         "Star Star"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8117,6 +10103,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "e82ba8db-3712-3de0-bbe5-0311b89db7e2",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8139,6 +10126,8 @@
         "Short and Curlies",
         "Fingerprint File"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8148,6 +10137,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "cc0ef7ba-01f1-3faf-8238-b63369ff5d2b",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8168,6 +10158,8 @@
         "Fool to Cry",
         "Crazy Mama"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8177,6 +10169,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "b13da40b-fb15-382e-b305-b65ced849782",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8188,6 +10181,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/1b6bb99e-d50d-42c0-990d-b882ba187ed6/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8197,6 +10192,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "1b6bb99e-d50d-42c0-990d-b882ba187ed6",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8219,6 +10215,8 @@
         "She’s So Cold",
         "All About You"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8228,6 +10226,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "0c977adb-6dd3-330c-9acb-a40d2104a539",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8239,6 +10238,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/e517105e-097c-4a19-af4a-4e4dc08b2d97/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8248,6 +10249,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "e517105e-097c-4a19-af4a-4e4dc08b2d97",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8270,6 +10272,8 @@
         "All the Way Down",
         "It Must Be Hell"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8279,6 +10283,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "515d36a9-a39a-35d8-a522-7f5670fe558e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8301,6 +10306,8 @@
         "Had It With You",
         "Sleep Tonight"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8310,6 +10317,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "fb2dc90c-9f8a-3fa3-b9bc-2001dbe6a561",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8321,6 +10329,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/f06004c2-50ec-4554-8f1e-6c7fce2f231e/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8330,6 +10340,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "f06004c2-50ec-4554-8f1e-6c7fce2f231e",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8341,6 +10352,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/254e2d8e-bce5-4662-9bca-1fcb5ab97181/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8350,6 +10363,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "254e2d8e-bce5-4662-9bca-1fcb5ab97181",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8374,6 +10388,8 @@
         "Break the Spell",
         "Slipping Away"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8383,6 +10399,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "ef78739b-ea31-32e2-a927-58fe228c7354",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8394,6 +10411,8 @@
       "genre": "Rock",
       "cover": "https://coverartarchive.org/release-group/2a81c989-e814-481b-bbb8-7700c3738091/front-500",
       "tracks": [],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8403,6 +10422,7 @@
       "notes": "",
       "added": "2026-10-31T13:09:58.492Z",
       "rgid": "2a81c989-e814-481b-bbb8-7700c3738091",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8447,6 +10467,8 @@
         "Gamle Hansens Polly",
         "Gight feber [/ silence / Brannen i treningsdrakten]"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": true,
@@ -8456,6 +10478,7 @@
       "notes": "",
       "added": "2026-10-31T13:44:43.666Z",
       "rgid": "f2a4964c-ccb2-3fef-b190-ae835f411e41",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8478,6 +10501,8 @@
         "Arabian Disco",
         "New Beginnings"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8487,6 +10512,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.504Z",
       "rgid": "d1445e5e-1150-38bb-8767-f1c86b278976",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8509,6 +10535,8 @@
         "Blood",
         "Spirit"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8518,6 +10546,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "0103c698-c972-3de3-897f-0907814affca",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8539,6 +10568,8 @@
         "The Morning After",
         "Woodpecker From Mars"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8548,6 +10579,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "1ba7c980-4882-31fb-9918-12791f59d303",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8574,6 +10606,8 @@
         "Crack Hitler",
         "Midnight Cowboy"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8583,6 +10617,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "503e5b85-df2a-365a-82e4-32ca30538d8d",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8609,6 +10644,8 @@
         "The Last to Know",
         "Just a Man"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8618,6 +10655,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "1428e1d2-119e-3739-bee7-42bb6835a7f9",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8642,6 +10680,8 @@
         "Home Sick Home",
         "Pristina"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8651,6 +10691,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "1fe2c990-8b5f-38fc-ad00-d288da963969",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     },
@@ -8673,6 +10714,8 @@
         "Matador",
         "From the Dead"
       ],
+      "trackLen": [],
+      "trackSide": [],
       "owned": false,
       "favorite": false,
       "wishlist": false,
@@ -8682,6 +10725,7 @@
       "notes": "",
       "added": "2026-10-31T19:04:31.510Z",
       "rgid": "4c66e1db-6315-405b-b655-24f228c53a8c",
+      "singles": null,
       "folderId": "",
       "artistText": ""
     }
