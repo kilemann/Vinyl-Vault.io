@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:05.238Z",
+  "updated": "2026-11-04T12:13:07.102Z",
   "version": 1,
   "artists": [
     {
@@ -6029,8 +6029,32 @@
         "The Scarecrow",
         "Bike"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        252,
+        188,
+        189,
+        166,
+        267,
+        186,
+        581,
+        134,
+        222,
+        131,
+        202
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
