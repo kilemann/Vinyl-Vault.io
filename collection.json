@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:14:10.370Z",
+  "updated": "2026-11-04T12:14:12.272Z",
   "version": 1,
   "artists": [
     {
@@ -7890,8 +7890,30 @@
         "The Meaning",
         "Two of Us"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        137,
+        315,
+        311,
+        299,
+        377,
+        325,
+        307,
+        243,
+        325,
+        205
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
