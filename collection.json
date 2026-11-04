@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:03.522Z",
+  "updated": "2026-11-04T12:13:05.238Z",
   "version": 1,
   "artists": [
     {
@@ -5972,8 +5972,30 @@
         "Love Leads to Madness",
         "Sunshine"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        235,
+        236,
+        210,
+        217,
+        289,
+        208,
+        253,
+        246,
+        242,
+        227
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
