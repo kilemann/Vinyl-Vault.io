@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:50.861Z",
+  "updated": "2026-11-04T12:13:52.702Z",
   "version": 1,
   "artists": [
     {
@@ -7332,8 +7332,30 @@
         "Take Me",
         "With Every Beat of My Heart"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        250,
+        248,
+        258,
+        248,
+        206,
+        236,
+        250,
+        230,
+        223,
+        252
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
