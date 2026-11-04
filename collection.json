@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:14:08.700Z",
+  "updated": "2026-11-04T12:14:10.370Z",
   "version": 1,
   "artists": [
     {
@@ -7838,8 +7838,26 @@
         "If Everyone Was Listening",
         "Crime of the Century"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        336,
+        274,
+        410,
+        404,
+        214,
+        442,
+        247,
+        335
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
