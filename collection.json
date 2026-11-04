@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:14:12.272Z",
+  "updated": "2026-11-04T12:14:14.011Z",
   "version": 1,
   "artists": [
     {
@@ -7943,8 +7943,24 @@
         "From Now On",
         "Fool’s Overture"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        249,
+        410,
+        389,
+        241,
+        291,
+        382,
+        654
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": false,
