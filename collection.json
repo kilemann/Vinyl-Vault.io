@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:11:52.234Z",
+  "updated": "2026-11-04T12:11:54.266Z",
   "version": 1,
   "artists": [
     {
@@ -3671,8 +3671,26 @@
         "Wasted Sunsets",
         "Hungry Daze"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        425,
+        275,
+        240,
+        261,
+        322,
+        312,
+        238,
+        297
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": false,
       "favorite": false,
       "wishlist": true,
