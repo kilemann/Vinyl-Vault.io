@@ -1,5 +1,14 @@
 # Endringslogg – Vinyl Vault
 
+## 1.10.0 – 2026-11-04
+- Ny boks «Singler» på albumsiden: singlene som ble gitt ut fra albumet, med år og cover. Trykk for detaljer på MusicBrainz.
+  - Hentes fra MusicBrainz-relasjonen «single from» (singel tatt fra albumet).
+  - Er ingen registrert: artistens singler med samme tittel som et spor på albumet, utgitt fra året før til 3 år etter, merket «sannsynlig».
+  - Huskes på enheten i 30 dager, så det blir ingen lagringer til GitHub av å bla. ↻ henter på nytt.
+  - Vises også for besøkende uten redigeringstilgang.
+- Singler kan legges inn eller rettes for hånd (én per linje, år i parentes). Da lagres de på platen. Tøm feltet for å hente fra nettet igjen.
+- Krever at platen er koblet til nettet med «🔎 Hent info».
+
 ## 1.9.0 – 2026-10-31
 - Hent info for én plate overskriver nå med info fra nettet: tittel, år, sjanger, cover og trackliste (og artistnavn for plater i mapper).
   Pris, tilstand, kjøpsdato, notater og eierstatus beholdes. «Angre» i 7 sekunder.

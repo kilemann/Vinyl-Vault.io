@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.9.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.10.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -211,6 +211,17 @@ select.sel{height:46px;padding:0 12px;border-radius:14px;border:1px solid var(--
 .tracks{list-style:none;margin:0;padding:0;counter-reset:t}
 .tracks li{counter-increment:t;display:flex;gap:14px;padding:10px 6px;border-bottom:1px solid var(--line);align-items:baseline}
 .tracks li:last-child{border-bottom:0}
+.singles{list-style:none;margin:0;padding:0}
+.singles li{border-bottom:1px solid var(--line)}
+.singles li:last-child{border-bottom:0}
+.singles a{display:flex;align-items:center;gap:12px;padding:8px 2px;text-decoration:none}
+.singles .sth{width:44px;height:44px;flex:none;border-radius:6px;overflow:hidden;position:relative;background:#111 radial-gradient(circle,#2a2a2a 0 18%,#111 19% 100%)}
+.singles .sth img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.singles .st{flex:1;min-width:0}
+.singles .st b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.singles .st span{color:var(--muted);font-size:.82rem}
+.guess{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;border:1px solid var(--line2);font-size:.7rem;color:var(--muted);vertical-align:1px}
+.ph .acts2{display:flex;gap:14px;align-items:center}
 .tracks li::before{content:counter(t);min-width:22px;text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;font-size:.85rem}
 .notes{white-space:pre-wrap;color:var(--ink)}
 .muted{color:var(--muted)}
@@ -372,11 +383,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.9.0
+   Vinyl Vault v1.10.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.9.0";
+const APP_VERSION = "1.10.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -476,6 +487,7 @@ function blankAlbum(p = {}){
     condition: String(p.condition || ""), purchaseDate: /^\d{4}-\d{2}-\d{2}$/.test(p.purchaseDate || "") ? p.purchaseDate : "",
     notes: String(p.notes || ""), added: p.added || new Date().toISOString(),
     rgid: /^[0-9a-f-]{36}$/.test(p.rgid || "") ? p.rgid : "",   // MusicBrainz release group (for cover og trackliste)
+    singles: Array.isArray(p.singles) ? p.singles.filter(x => x && String(x.t || "").trim()).map(x => ({ t: String(x.t).trim(), y: Number(x.y) || null, rg: /^[0-9a-f-]{36}$/.test(x.rg || "") ? x.rg : "" })) : null,   // bare når singlene er lagt inn/rettet for hånd
     folderId: String(p.folderId || ""),                           // satt når albumet ligger i en mappe (artistId er da tom)
     artistText: String(p.artistText || "").trim(),                // artistnavnet for album i mapper
   };
@@ -1313,6 +1325,7 @@ function viewAlbum(id){
         ${fact("Kjøpsdato", fmtDate(a.purchaseDate))}${fact("Status", (a.owned ? "✅ Eier" : "❌ Mangler") + (a.favorite ? " · ❤️" : "") + (a.wishlist && !a.owned ? " · ⭐" : ""))}
       </div>
       <div class="panel glass" id="trackPanel"></div>
+      <div class="panel glass" id="singlePanel"></div>
       <div class="panel glass" id="notePanel"></div>
     </div>
   </div>`;
@@ -1372,7 +1385,107 @@ function drawNotes(id, editing){
 }
 /* fjerner nummer som «1.», «01 -» eller «A1» hvis de limes inn */
 const parseTracks = s => String(s).split(/\r?\n/).map(t => t.replace(/^\s*(?:\d{1,2}\s*[.):\-–]\s*|[A-D]\d{1,2}[.):\-–]?\s+)/i, "").trim()).filter(Boolean);
-after.album = id => { drawTracks(id, false); drawNotes(id, false); };
+after.album = id => { drawTracks(id, false); drawSingles(id); drawNotes(id, false); };
+
+/* =====================================================================
+   SINGLER fra albumet
+   1) MusicBrainz-relasjonen «single from» (singel → albumet den er hentet fra)
+   2) reserve: artistens singler med samme tittel som et spor på albumet, utgitt rundt samme tid («sannsynlig»)
+   Resultatet huskes på enheten i 30 dager (ingen lagring til GitHub). Singler lagt inn for hånd lagres på platen.
+   ===================================================================== */
+const SINGLES_KEY = "vinylVault.singles";
+const singleCache = (() => { try{ return JSON.parse(localStorage.getItem(SINGLES_KEY) || "{}") || {}; }catch(e){ return {}; } })();
+function cacheSingles(rgid, list){
+  singleCache[rgid] = { at: Date.now(), list };
+  const keys = Object.keys(singleCache);
+  if (keys.length > 400) keys.sort((a, b) => singleCache[a].at - singleCache[b].at).slice(0, keys.length - 400).forEach(k => delete singleCache[k]);
+  try{ localStorage.setItem(SINGLES_KEY, JSON.stringify(singleCache)); }catch(e){}
+}
+const freshSingles = rgid => { const c = singleCache[rgid]; return c && Date.now() - c.at < 30 * 864e5 ? c.list : null; };
+const yr = d => parseInt(String(d || "").slice(0, 4)) || null;
+async function mbSingles(a){
+  const j = await mb(`/release-group/${a.rgid}?inc=release-group-rels+artist-credits`);
+  const seen = new Set(), out = [];
+  const add = (g, guess) => { const k = tnorm(g.title); if (!g.id || !k || seen.has(k)) return; seen.add(k); out.push({ t: g.title, y: yr(g["first-release-date"]), rg: g.id, guess }); };
+  for (const rel of j.relations || []) {
+    const g = rel.release_group || rel["release-group"];
+    if (rel.type === "single from" && rel.direction !== "forward" && g && g.id !== a.rgid) add(g, false);
+  }
+  // reserve når ingen er registrert: spor på albumet som også er gitt ut som singel
+  const artistId = ((j["artist-credit"] || [])[0] || {}).artist?.id;
+  const fnorm = t => norm(t).replace(/[^a-z0-9æøå]+/g, "");   // som tnorm, men beholder tekst i parentes («Part II»)
+  const tracks = new Set(a.tracks.flatMap(t => [tnorm(t), fnorm(t)]).filter(Boolean));
+  const ay = a.year || yr(j["first-release-date"]);
+  if (!out.length && artistId && tracks.size) {
+    for (let off = 0; off < 300; off += 100) {
+      const b = await mb(`/release-group?artist=${artistId}&type=single&limit=100&offset=${off}`);
+      for (const g of b["release-groups"] || []) {
+        const y = yr(g["first-release-date"]), titles = String(g.title || "").split(/\s+\/\s+/).flatMap(t => [tnorm(t), fnorm(t)]);
+        if (titles.some(t => tracks.has(t)) && (!ay || !y || (y >= ay - 1 && y <= ay + 3))) add(g, true);
+      }
+      if ((b["release-groups"] || []).length < 100) break;
+    }
+  }
+  return out.sort((x, y) => (x.y || 9999) - (y.y || 9999) || byName(x.t, y.t));
+}
+const parseSingles = txt => String(txt).split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => {
+  const m = l.match(/^(.*?)[\s,–-]*\(?((?:19|20)\d{2})\)?\s*$/);
+  return m && m[1].trim() ? { t: m[1].trim(), y: +m[2], rg: "" } : { t: l, y: null, rg: "" };
+});
+function singlesList(list){
+  return `<ul class="singles">${list.map(x => {
+    const inner = `<div class="sth">${x.rg ? `<img src="https://coverartarchive.org/release-group/${x.rg}/front-250" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</div>
+      <div class="st"><b>${esc(x.t)}${x.guess ? '<span class="guess" title="Sporet finnes på albumet og ble gitt ut som singel rundt samme tid">sannsynlig</span>' : ""}</b><span>${x.y || "Ukjent år"}</span></div>`;
+    return `<li>${x.rg ? `<a href="https://musicbrainz.org/release-group/${x.rg}" target="_blank" rel="noopener">${inner}</a>` : `<a>${inner}</a>`}</li>`; }).join("")}</ul>`;
+}
+async function drawSingles(id, mode){
+  const a = album(id), P = $("#singlePanel"); if (!a || !P) return;
+  P.dataset.aid = id;
+  const head = btns => `<div class="ph"><h2>Singler</h2><div class="acts2">${btns}</div></div>`;
+  const manual = Array.isArray(a.singles);
+  const shown = manual ? a.singles : a.rgid ? freshSingles(a.rgid) : null;
+  P.onclick = e => {
+    const b = e.target.closest("[data-sg]"); if (!b) return;
+    if (b.dataset.sg === "reload") drawSingles(id, "reload");
+    if (b.dataset.sg === "edit") drawSingles(id, "edit");
+    if (b.dataset.sg === "cancel") drawSingles(id);
+    if (b.dataset.sg === "save" && canEdit()) {
+      const nv = parseSingles($("#sgTa").value), old = a.singles;
+      a.singles = nv.length ? nv : null; save(); drawSingles(id);
+      toast(nv.length ? "Singlene er lagret" : "Singlene hentes fra nettet igjen", () => { const x = album(id); if (!x || !canEdit()) return; x.singles = old; save(); refresh(); toast("Angret"); });
+    }
+  };
+  if (mode === "edit") {
+    const cur = shown || [];
+    P.innerHTML = head("") + `<textarea class="ta" id="sgTa" style="min-height:120px" placeholder="Én singel per linje, f.eks.&#10;Money (1973)">${esc(cur.map(x => x.t + (x.y ? ` (${x.y})` : "")).join("\n"))}</textarea>
+      <p class="muted" style="font-size:.8rem;margin:6px 0 0">Én singel per linje, med år i parentes hvis du vil. Tøm feltet for å hente fra nettet igjen.</p>
+      <div class="btns" style="margin-top:10px;justify-content:flex-end"><button class="btn" data-sg="cancel">Avbryt</button><button class="btn pri" data-sg="save">Lagre</button></div>`;
+    $("#sgTa").focus();
+    return;
+  }
+  const editBtn = `<button class="link edit-only" data-sg="edit">${manual || (shown && shown.length) ? "Rediger" : "Legg inn"}</button>`;
+  const reloadBtn = !manual && a.rgid ? `<button class="link" data-sg="reload" title="Hent på nytt fra MusicBrainz">↻</button>` : "";
+  if (shown && mode !== "reload") {
+    P.innerHTML = head(reloadBtn + editBtn) + (shown.length ? singlesList(shown)
+      : '<p class="muted" style="margin:0">Ingen singler funnet for dette albumet i MusicBrainz.</p>')
+      + (manual ? '<p class="src">Lagt inn for hånd.</p>' : shown.length ? '<p class="src">Fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>. Trykk på en singel for detaljer.</p>' : "");
+    return;
+  }
+  if (!a.rgid) {
+    P.innerHTML = head(editBtn) + '<p class="muted" style="margin:0">Koble platen til nettet med «🔎 Hent info» for å se singler fra albumet.</p>';
+    return;
+  }
+  P.innerHTML = head("") + '<p class="muted" style="margin:0"><span class="spin"></span>Henter singler fra MusicBrainz …</p>';
+  try{
+    const list = await mbSingles(a);
+    cacheSingles(a.rgid, list);
+  }catch(e){
+    if (P.dataset.aid !== id || !document.body.contains(P)) return;
+    P.innerHTML = head(editBtn) + `<p class="muted" style="margin:0">${esc(e.message)}</p><button class="btn" data-sg="reload" style="margin-top:10px">Prøv igjen</button>`;
+    return;
+  }
+  if (P.dataset.aid === id && document.body.contains(P)) drawSingles(id);
+}
 
 /* =====================================================================
    4. SAMLINGSVISNING
