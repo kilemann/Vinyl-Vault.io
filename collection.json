@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:56.106Z",
+  "updated": "2026-11-04T12:14:06.947Z",
   "version": 1,
   "artists": [
     {
@@ -7479,8 +7479,30 @@
         "Long Gone",
         "Ain’t Gonna Cry"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        272,
+        194,
+        234,
+        243,
+        284,
+        215,
+        156,
+        195,
+        237,
+        246
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7513,8 +7535,30 @@
         "You Are My Love",
         "Our Day Will Come"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        257,
+        265,
+        304,
+        232,
+        247,
+        208,
+        208,
+        231,
+        223,
+        226
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7544,8 +7588,24 @@
         "I'm Not Afraid",
         "Only Because of You"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        508,
+        357,
+        254,
+        308,
+        454,
+        425,
+        517
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7625,8 +7685,28 @@
         "Fire Dance",
         "Lady (To Billie Holiday)"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        202,
+        274,
+        262,
+        268,
+        205,
+        265,
+        322,
+        300,
+        191
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
@@ -7659,8 +7739,30 @@
         "Try Again",
         "Surely"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        31,
+        334,
+        317,
+        240,
+        404,
+        74,
+        294,
+        264,
+        723,
+        189
+      ],
+      "trackSide": [
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "B",
+        "B",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
