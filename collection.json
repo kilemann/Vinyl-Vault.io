@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:13:52.702Z",
+  "updated": "2026-11-04T12:13:54.374Z",
   "version": 1,
   "artists": [
     {
@@ -7381,8 +7381,16 @@
         "Careless Whisper (Special version)",
         "Careless Whisper (instrumental)"
       ],
-      "trackLen": [],
-      "trackSide": [],
+      "trackLen": [
+        391,
+        281,
+        302
+      ],
+      "trackSide": [
+        "A",
+        "B",
+        "B"
+      ],
       "owned": true,
       "favorite": false,
       "wishlist": false,
