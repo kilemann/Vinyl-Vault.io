@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.11.0",
-  "updated": "2026-11-04T12:14:06.947Z",
+  "updated": "2026-11-04T12:14:08.700Z",
   "version": 1,
   "artists": [
     {
@@ -7795,7 +7795,18 @@
         "Friend in Need",
         "Aries"
       ],
-      "trackLen": [],
+      "trackLen": [
+        184,
+        264,
+        181,
+        252,
+        301,
+        144,
+        284,
+        229,
+        128,
+        457
+      ],
       "trackSide": [],
       "owned": false,
       "favorite": false,
