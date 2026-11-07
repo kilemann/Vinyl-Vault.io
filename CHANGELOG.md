@@ -1,5 +1,11 @@
 # Endringslogg – Vinyl Vault
 
+## 1.13.0 – 2026-11-07
+- Under tracklisten er Google-søket byttet med en Wikipedia-lenke («📖 Wikipedia ↗»).
+  - Har MusicBrainz en Wikidata-kobling for albumet, åpnes den engelske Wikipedia-artikkelen direkte (via Wikidata).
+  - Ellers (eller før koblingen er hentet, eller for plater uten MusicBrainz-kobling) åpnes et søk på engelsk Wikipedia.
+  - Koblingen huskes på enheten i 30 dager, så det blir ett kall per album.
+
 ## 1.12.0 – 2026-11-04
 - Navn, versjon og info-knapp (i) øverst til venstre (i sidemenyen på PC), med bruksanvisning og versjonsliste, som i de andre appene.
 
