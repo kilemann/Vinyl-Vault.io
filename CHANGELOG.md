@@ -1,5 +1,10 @@
 # Endringslogg – Vinyl Vault
 
+## 1.15.0 – 2026-11-07
+- Ny lenke «📖 Wikipedia ↗» til artisten øverst på artistsiden (ikke i artistlisten). Samme oppslag som for album: MusicBrainz → Wikidata → engelsk Wikipedia, ellers norsk.
+- Artister uten MusicBrainz-kobling får et søk på engelsk Wikipedia med artistnavnet. Koble artisten med «🔎 Hent album» for en direkte lenke.
+- Resultatet huskes på enheten i 30 dager.
+
 ## 1.14.0 – 2026-11-07
 - Wikipedia-lenken under tracklisten slår nå opp artikkelen via Wikidata: engelsk Wikipedia først, ellers norsk. Finnes ingen av dem, åpnes et søk på engelsk Wikipedia.
 - Svarer ikke Wikidata, brukes Wikidatas egen videresending til engelsk artikkel som før.

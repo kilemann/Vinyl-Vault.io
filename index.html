@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.14.0 – se CHANGELOG.md */
+/* Vinyl Vault v1.15.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -412,11 +412,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.14.0
+   Vinyl Vault v1.15.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.14.0";
+const APP_VERSION = "1.15.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -1197,6 +1197,7 @@ function viewArtist(id){
       <div class="txt"><h1>${esc(a.name)}</h1>
         <p class="sub">${s.own} av ${s.total} album · ${s.miss ? `mangler ${s.miss}` : s.total ? "komplett 🎉" : "ingen album ennå"}</p>
         ${a.notes ? `<p class="sub notes">${esc(a.notes)}</p>` : ""}
+        <p class="sub" style="margin-top:8px"><a class="glink" id="wikiLinkArtist" data-id="${a.id}" href="${wikiUrl(freshWiki(a.mbid), wikiSearch(a.name))}" target="_blank" rel="noopener">📖 Wikipedia ↗</a></p>
         <div class="btns edit-only" style="margin-top:14px">
           <button class="btn pri" data-act="newAlbum" data-artist="${a.id}">${IC.plus}Legg til album</button>
           <button class="btn" data-act="fetchAlbums" data-id="${a.id}">🔎 Hent album</button>
@@ -1447,11 +1448,11 @@ function trackListHtml(a){
    Resultatet huskes på enheten i 30 dager. */
 const WIKI_KEY = "vinylVault.wiki";
 const wikiCache = (() => { try{ return JSON.parse(localStorage.getItem(WIKI_KEY) || "{}") || {}; }catch(e){ return {}; } })();
-const wikiSearch = a => "https://en.wikipedia.org/w/index.php?go=Go&search=" + encodeURIComponent(`${albArtist(a)} ${a.title} album`);
-const wikiUrl = (a, c) => c && c.u ? c.u : c && c.q && c.u === undefined ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${c.q}` : wikiSearch(a);
-const freshWiki = rgid => { const c = wikiCache[rgid]; return c && Date.now() - c.at < 30 * 864e5 ? c : null; };
-async function mbWiki(rgid){
-  const j = await mb(`/release-group/${rgid}?inc=url-rels`);
+const wikiSearch = (q) => "https://en.wikipedia.org/w/index.php?go=Go&search=" + encodeURIComponent(q);
+const wikiUrl = (c, search) => c && c.u ? c.u : c && c.q && c.u === undefined ? `https://www.wikidata.org/wiki/Special:GoToLinkedPage/enwiki/${c.q}` : search;
+const freshWiki = key => { const c = key && wikiCache[key]; return c && Date.now() - c.at < 30 * 864e5 ? c : null; };
+async function mbWiki(path){   // path: "release-group/ID" eller "artist/ID"
+  const j = await mb(`/${path}?inc=url-rels`);
   for (const rel of j.relations || []) {
     const m = String((rel.url || {}).resource || "").match(/wikidata\.org\/(?:wiki|entity)\/(Q\d+)/i);
     if (rel.type === "wikidata" && m) return m[1].toUpperCase();
@@ -1465,22 +1466,26 @@ async function wikidataUrl(q){
   const u = (sl.enwiki || sl.nowiki || {}).url || "";
   return /^https:\/\/(en|no)\.wikipedia\.org\//.test(u) ? u : "";
 }
-async function setWikiLink(a){
-  if (!a.rgid) return;
-  let c = freshWiki(a.rgid);
+/* finner riktig adresse for lenken #elId (nøkkel = MusicBrainz-id, path = hvor Wikidata-koblingen hentes) */
+async function setWiki(key, path, search, elId, dataId){
+  if (!key) return;
+  let c = freshWiki(key);
   if (!c || (c.q && c.u === undefined)) {
     try{
-      const q = c ? c.q : await mbWiki(a.rgid);
+      const q = c ? c.q : await mbWiki(path);
       c = { at: c ? c.at : Date.now(), q };
       if (q) { try{ c.u = await wikidataUrl(q); }catch(e){} }
     }catch(e){ return; }
-    wikiCache[a.rgid] = c;
-    const keys = Object.keys(wikiCache); if (keys.length > 400) keys.sort((x, y) => wikiCache[x].at - wikiCache[y].at).slice(0, keys.length - 400).forEach(k => delete wikiCache[k]);
+    wikiCache[key] = c;
+    const keys = Object.keys(wikiCache); if (keys.length > 600) keys.sort((x, y) => wikiCache[x].at - wikiCache[y].at).slice(0, keys.length - 600).forEach(k => delete wikiCache[k]);
     try{ localStorage.setItem(WIKI_KEY, JSON.stringify(wikiCache)); }catch(e){}
   } else if (!c.q) c.u = "";
-  const el = document.getElementById("wikiLink");
-  if (el && el.dataset.aid === a.id) el.href = wikiUrl(a, c);
+  const el = document.getElementById(elId);
+  if (el && el.dataset.id === dataId) el.href = wikiUrl(c, search);
 }
+const albumWikiSearch = a => wikiSearch(`${albArtist(a)} ${a.title} album`);
+const setWikiLink = a => setWiki(a.rgid, "release-group/" + a.rgid, albumWikiSearch(a), "wikiLink", a.id);
+after.artist = id => { const a = artist(id); if (a) setWiki(a.mbid, "artist/" + a.mbid, wikiSearch(a.name), "wikiLinkArtist", a.id); };
 function drawTracks(id, editing){
   const a = album(id), P = $("#trackPanel");
   P.innerHTML = editing
@@ -1491,7 +1496,7 @@ function drawTracks(id, editing){
     : `<div class="ph"><h2>Trackliste</h2><div class="acts2">${totalLen(a) ? `<span class="tot">${hmmss(totalLen(a))}</span>` : ""}<button class="link edit-only" data-tr="edit">${a.tracks.length ? "Rediger" : "Legg inn"}</button></div></div>
        ${a.tracks.length ? trackListHtml(a) : '<p class="muted">Ingen spor registrert.</p>'}
        ${a.rgid && (!a.tracks.length || !a.trackLen.length) ? `<button class="btn edit-only" data-tr="fetch" style="margin-top:10px">🔎 ${a.tracks.length ? "Hent spilletid og sider" : "Hent trackliste"} fra MusicBrainz</button>` : ""}
-       <div><a class="glink" id="wikiLink" data-aid="${a.id}" href="${wikiUrl(a, freshWiki(a.rgid))}" target="_blank" rel="noopener">📖 Wikipedia ↗</a></div>`;
+       <div><a class="glink" id="wikiLink" data-id="${a.id}" href="${wikiUrl(freshWiki(a.rgid), albumWikiSearch(a))}" target="_blank" rel="noopener">📖 Wikipedia ↗</a></div>`;
   if (!editing) setWikiLink(a);
   P.onclick = e => {
     const b = e.target.closest("[data-tr]"); if (!b) return;
@@ -2464,7 +2469,7 @@ function openInfo(){
     <h3>Info fra nettet</h3>
     <p>Album, cover og tracklister hentes fra MusicBrainz og Cover Art Archive. Coverbildene lagres i repoet og på enheten, så de vises raskt neste gang.</p>
     <h3>Versjoner</h3>
-    <div class="vlog"><b>v1.14.0</b><span>Wikipedia-lenken åpner engelsk artikkel, ellers norsk, direkte.</span><b>v1.13.0</b><span>Wikipedia-lenke under tracklisten i stedet for Google-søk.</span><b>v1.12.0</b><span>Navn, versjon og info-knapp øverst til venstre, som i de andre appene.</span><b>v1.11.1</b><span>Rettinger: tekst du skriver forsvinner ikke ved oppdatering, bedre valg av vinylutgave, innholdspolicy.</span><b>v1.11.0</b><span>Ny layout på albumsiden for PC og nettbrett.</span><b>v1.10.0</b><span>Singler fra albumet vises på albumsiden.</span><b>v1.9.0</b><span>«Hent info» oppdaterer tittel, år, sjanger, cover og trackliste.</span><b>v1.8.0</b><span>Mapper: artister med flere plater samles i en stabel.</span><b>v1.7.0</b><span>Artister vises før mappene.</span><b>v1.6.0</b><span>Statistikk bare for artister med minst 2 plater.</span><b>v1.5.0</b><span>Lagrer til GitHub 1 minutt etter siste endring.</span><b>v1.4.0</b><span>Coverbilder lagres i repoet.</span><b>v1.3.0</b><span>Mindre cover i rutenett og lister.</span><b>v1.2.0</b><span>Henter album automatisk fra MusicBrainz for nye artister.</span><b>v1.1.0</b><span>Samlingen ligger i GitHub, lik for alle.</span><b>v1.0.0</b><span>Første versjon.</span></div></div>`);
+    <div class="vlog"><b>v1.15.0</b><span>Wikipedia-lenke til artisten på artistsiden.</span><b>v1.14.0</b><span>Wikipedia-lenken åpner engelsk artikkel, ellers norsk, direkte.</span><b>v1.13.0</b><span>Wikipedia-lenke under tracklisten i stedet for Google-søk.</span><b>v1.12.0</b><span>Navn, versjon og info-knapp øverst til venstre, som i de andre appene.</span><b>v1.11.1</b><span>Rettinger: tekst du skriver forsvinner ikke ved oppdatering, bedre valg av vinylutgave, innholdspolicy.</span><b>v1.11.0</b><span>Ny layout på albumsiden for PC og nettbrett.</span><b>v1.10.0</b><span>Singler fra albumet vises på albumsiden.</span><b>v1.9.0</b><span>«Hent info» oppdaterer tittel, år, sjanger, cover og trackliste.</span><b>v1.8.0</b><span>Mapper: artister med flere plater samles i en stabel.</span><b>v1.7.0</b><span>Artister vises før mappene.</span><b>v1.6.0</b><span>Statistikk bare for artister med minst 2 plater.</span><b>v1.5.0</b><span>Lagrer til GitHub 1 minutt etter siste endring.</span><b>v1.4.0</b><span>Coverbilder lagres i repoet.</span><b>v1.3.0</b><span>Mindre cover i rutenett og lister.</span><b>v1.2.0</b><span>Henter album automatisk fra MusicBrainz for nye artister.</span><b>v1.1.0</b><span>Samlingen ligger i GitHub, lik for alle.</span><b>v1.0.0</b><span>Første versjon.</span></div></div>`);
 }
 document.addEventListener("click", e => { if (e.target.closest && e.target.closest("[data-info]")) openInfo(); });
 $("#brandVer").textContent = "v" + APP_VERSION;
