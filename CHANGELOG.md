@@ -1,5 +1,11 @@
 # Endringslogg – Vinyl Vault
 
+## 1.14.0 – 2026-11-07
+- Wikipedia-lenken under tracklisten slår nå opp artikkelen via Wikidata: engelsk Wikipedia først, ellers norsk. Finnes ingen av dem, åpnes et søk på engelsk Wikipedia.
+- Svarer ikke Wikidata, brukes Wikidatas egen videresending til engelsk artikkel som før.
+- Innholdspolicyen (CSP) tillater nå også kall til wikidata.org.
+- Resultatet huskes på enheten i 30 dager (ett kall til MusicBrainz og ett til Wikidata per album).
+
 ## 1.13.0 – 2026-11-07
 - Under tracklisten er Google-søket byttet med en Wikipedia-lenke («📖 Wikipedia ↗»).
   - Har MusicBrainz en Wikidata-kobling for albumet, åpnes den engelske Wikipedia-artikkelen direkte (via Wikidata).
