@@ -1,5 +1,11 @@
 # Endringslogg – Vinyl Vault
 
+## 1.15.1 – 2026-11-15
+Rettinger etter ny gjennomgang:
+- Oversikten: feilen «Canvas is already in use» er borte. Den oppsto når siden ble tegnet to ganger mens Chart.js ble lastet.
+- Samlingen kan bli større enn 1 MB. GitHub gir ikke innholdet i vanlige svar for så store filer, så appen henter det da som råtekst. Uten dette ville redigering stoppet ved ca. 800 plater.
+- Meldingen når diagrammene ikke kan lastes, nevner ikke lenger cdnjs.
+
 ## 1.15.0 – 2026-11-07
 - Ny lenke «📖 Wikipedia ↗» til artisten øverst på artistsiden (ikke i artistlisten). Samme oppslag som for album: MusicBrainz → Wikidata → engelsk Wikipedia, ellers norsk.
 - Artister uten MusicBrainz-kobling får et søk på engelsk Wikipedia med artistnavnet. Koble artisten med «🔎 Hent album» for en direkte lenke.
