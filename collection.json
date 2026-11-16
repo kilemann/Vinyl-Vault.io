@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.15.0",
-  "updated": "2026-11-09T18:38:44.770Z",
+  "appVersion": "1.15.1",
+  "updated": "2026-11-16T18:26:02.465Z",
   "version": 1,
   "artists": [
     {
@@ -7980,7 +7980,7 @@
       ],
       "owned": false,
       "favorite": false,
-      "wishlist": false,
+      "wishlist": true,
       "price": null,
       "condition": "",
       "purchaseDate": "",
@@ -8083,7 +8083,7 @@
       ],
       "owned": false,
       "favorite": false,
-      "wishlist": false,
+      "wishlist": true,
       "price": null,
       "condition": "",
       "purchaseDate": "",
@@ -8139,7 +8139,7 @@
       ],
       "owned": false,
       "favorite": false,
-      "wishlist": false,
+      "wishlist": true,
       "price": null,
       "condition": "",
       "purchaseDate": "",
