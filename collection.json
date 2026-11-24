@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:08:17.035Z",
+  "updated": "2026-11-24T21:09:11.369Z",
   "version": 1,
   "artists": [
     {
@@ -1929,7 +1929,7 @@
       "title": "Verken fioliner eller englekor",
       "year": 1981,
       "genre": "Pop",
-      "cover": "",
+      "cover": "mycovers/041204c8-2ba8-41cd-9c48-2c84205bbffc-mwv6t667.jpg",
       "tracks": [
         "Gammelråkk i kåken",
         "Svarte penger",
