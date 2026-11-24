@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:05:40.477Z",
+  "updated": "2026-11-24T21:06:37.613Z",
   "version": 1,
   "artists": [
     {
@@ -7745,7 +7745,7 @@
       "title": "The history of the Hollies",
       "year": null,
       "genre": "Pop",
-      "cover": "",
+      "cover": "mycovers/cfeacb34-a489-473b-946b-196a91669123-mwv6ptfa.jpg",
       "tracks": [
         "(Ain't That) Just Like Me",
         "Searchin'",
