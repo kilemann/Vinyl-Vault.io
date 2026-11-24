@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
-  "appVersion": "1.15.1",
-  "updated": "2026-11-16T18:26:02.465Z",
+  "appVersion": "1.16.0",
+  "updated": "2026-11-24T21:03:57.027Z",
   "version": 1,
   "artists": [
     {
@@ -10877,7 +10877,7 @@
       "title": "Nein Danke",
       "year": null,
       "genre": "",
-      "cover": "",
+      "cover": "mycovers/b19aa1ef-ab02-4d06-8487-cbc4057666d1-mwv6m8eh.jpg",
       "tracks": [
         "Soma Coma",
         "Atom & Eve",
