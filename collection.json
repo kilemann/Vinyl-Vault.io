@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:10:13.069Z",
+  "updated": "2026-11-24T21:10:54.868Z",
   "version": 1,
   "artists": [
     {
@@ -10055,7 +10055,7 @@
       "title": "Uniforms",
       "year": 1984,
       "genre": "Pop",
-      "cover": "",
+      "cover": "mycovers/11e48f27-f1dd-4019-94fc-9397b80c7a84-mwv6vglo.jpg",
       "tracks": [
         "Uniforms\t3:56",
         "Nowhere To Go\t3:12",
