@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:04:44.977Z",
+  "updated": "2026-11-24T21:05:40.477Z",
   "version": 1,
   "artists": [
     {
@@ -11437,7 +11437,7 @@
       "title": "Rock Galaxy",
       "year": null,
       "genre": "",
-      "cover": "",
+      "cover": "mycovers/3c1f5137-1b47-4f90-bfbd-1b23d7435c15-mwv6ocx1.jpg",
       "tracks": [
         "Changes\t3:34",
         "Oh! You Pretty Things\t3:11",
