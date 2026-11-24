@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:07:24.965Z",
+  "updated": "2026-11-24T21:08:17.035Z",
   "version": 1,
   "artists": [
     {
@@ -10972,7 +10972,7 @@
       "title": "Livet er for kjipt",
       "year": 1981,
       "genre": "",
-      "cover": "https://coverartarchive.org/release-group/58d6af7e-f23f-4e00-9722-3878f00cfadf/front-500",
+      "cover": "mycovers/2196b8a9-e845-461e-b704-6803d9c6eb99-mwv6rxq6.jpg",
       "tracks": [
         "Barnets mor",
         "Bare 4 år",
