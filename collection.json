@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:12:06.519Z",
+  "updated": "2026-11-24T21:13:25.361Z",
   "version": 1,
   "artists": [
     {
@@ -7197,7 +7197,7 @@
       "title": "Debut album",
       "year": 1969,
       "genre": "Art Rock",
-      "cover": "",
+      "cover": "mycovers/4b4f9bae-6cc1-49f0-a086-742128e04144-mwv6xsmm.jpg",
       "tracks": [
         "Waiting",
         "Evil Ways",
