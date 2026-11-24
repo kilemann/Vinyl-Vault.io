@@ -1,5 +1,13 @@
 # Endringslogg – Vinyl Vault
 
+## 1.16.0 – 2026-11-24
+- Eget coverbilde: «📷 Eget cover» på albumsiden (bare i redigeringsmodus). Velg et bilde fra mobilen (kamera eller galleri) eller PC-en.
+  - Forhåndsvisning med «↻ Roter». Bildet beskjæres til et kvadrat i midten og skaleres til 500 px og 250 px (JPEG).
+  - Bildene lagres i repoet i `mycovers/` via GitHub API. Egen mappe, fordi cover-roboten rydder i `covers/`.
+  - GitHub Pages bruker noen minutter på å vise nye filer, så bildet vises fra en kopi på enheten det første døgnet.
+  - Angre-knapp etter lagring.
+- «Oppdater fra nettet» beholder et eget opplastet cover.
+
 ## 1.15.1 – 2026-11-15
 Rettinger etter ny gjennomgang:
 - Oversikten: feilen «Canvas is already in use» er borte. Den oppsto når siden ble tegnet to ganger mens Chart.js ble lastet.

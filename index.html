@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Vinyl Vault v1.15.1 – se CHANGELOG.md */
+/* Vinyl Vault v1.16.0 – se CHANGELOG.md */
 :root{
   --bg:#0b0d12; --bg2:#12151d;
   --glass:rgba(255,255,255,.055); --glass2:rgba(255,255,255,.09); --line:rgba(255,255,255,.10); --line2:rgba(255,255,255,.18);
@@ -361,6 +361,7 @@ body.ro .status{pointer-events:none}
 .pick label.opt.have{opacity:.5;cursor:default}
 .pick .th{width:44px;height:44px;flex:none;border-radius:6px;overflow:hidden;position:relative;background:#111}
 .pick .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cvprev{display:block;width:min(320px,100%);aspect-ratio:1;height:auto;margin:4px auto 12px;border-radius:14px;background:#111;box-shadow:0 10px 28px rgba(0,0,0,.45)}
 .spin{display:inline-block;width:18px;height:18px;border:2px solid var(--line2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-3px;margin-right:8px}
 .src{font-size:.75rem;color:var(--dim);margin-top:10px}
 .src a{color:var(--muted)}
@@ -412,11 +413,11 @@ body.ro .status{pointer-events:none}
 <script>
 "use strict";
 /* =====================================================================
-   Vinyl Vault v1.15.1
+   Vinyl Vault v1.16.0
    Én fil, ingen egen server. Samlingen ligger i collection.json i GitHub-repoet:
    alle kan lese den, men bare den som har en GitHub-nøkkel med skrivetilgang kan endre den.
    ===================================================================== */
-const APP_VERSION = "1.15.1";
+const APP_VERSION = "1.16.0";
 const STORE_KEY = "vinylVault.data.v1";      // v1.0.0: samlingen lå bare her (flyttes til GitHub ved opplåsing)
 const BACKUP_KEY = "vinylVault.backup.v1";
 const CACHE_KEY = "vinylVault.cache.v2";      // siste kjente samling, vises straks ved oppstart
@@ -489,8 +490,26 @@ function urlKey(u){   // samme som i scripts/fetch-covers.mjs
   for (const b of new TextEncoder().encode(String(u).trim())) { h ^= b; h = Math.imul(h, 16777619) >>> 0; }
   return "u-" + h.toString(16).padStart(8, "0");
 }
+/* ---------- eget coverbilde (lastet opp fra mobil/PC) ----------
+   Bildet beskjæres til kvadrat i midten, skaleres til 500 px og 250 px (JPEG) og lagres i repoet i mycovers/
+   (egen mappe: roboten rydder i covers/). GitHub Pages bruker noen minutter på å vise nye filer, så bildet vises
+   fra en kopi på denne enheten det første døgnet. */
+const MYCOVER_RE = /^mycovers\/[\w-]+\.jpg$/;
+const PEND_KEY = "vinylVault.myCovers";
+let myCovers = (() => { try{ const o = JSON.parse(localStorage.getItem(PEND_KEY) || "{}") || {}; for (const k in o) if (!(Date.now() - o[k].at < 864e5)) delete o[k]; return o; }catch(e){ return {}; } })();
+function saveMyCovers(){
+  const keys = Object.keys(myCovers).sort((a, b) => myCovers[b].at - myCovers[a].at);
+  keys.slice(10).forEach(k => delete myCovers[k]);   // maks 10 kopier på enheten
+  try{ localStorage.setItem(PEND_KEY, JSON.stringify(myCovers)); }catch(e){}
+}
+function myCoverSrc(c, big){
+  const p = myCovers[c];
+  if (p && Date.now() - p.at < 864e5) return big ? p.l : p.s;
+  return big ? c : c.replace(/\.jpg$/, "-s.jpg");
+}
 function coverSrc(al, big){
   const c = String(al.cover || "").trim();
+  if (MYCOVER_RE.test(c)) return { src: myCoverSrc(c, big), fb: big ? "" : myCoverSrc(c, true) };
   if (!isUrl(c) || /^data:/i.test(c)) return { src: c, fb: "" };
   const m = c.match(CAA_RE);
   const web = m && !big ? c.replace(/\/front(?:-(?:500|1200))?$/, "/front-250") : c;
@@ -1426,6 +1445,7 @@ function viewAlbum(id){
         <button class="iconbtn${a.favorite ? " on" : ""}" data-flag="favorite" data-id="${a.id}" aria-pressed="${a.favorite}" title="Favoritt" aria-label="Favoritt">${a.favorite ? "❤️" : "🤍"}</button>
         ${a.owned ? "" : `<button class="iconbtn wish${a.wishlist ? " on" : ""}" data-flag="wishlist" data-id="${a.id}" aria-pressed="${a.wishlist}" title="Ønskeliste" aria-label="Ønskeliste">${a.wishlist ? "⭐" : "☆"}</button>`}
         <button class="btn" data-act="editAlbum" data-id="${a.id}">${IC.edit}Rediger</button>
+        <button class="btn" data-act="coverAlbum" data-id="${a.id}">📷 Eget cover</button>
         <button class="btn" data-act="moveAlbum" data-id="${a.id}">📁 ${fo ? "Flytt" : "Flytt til mappe"}</button>
         <button class="btn" data-act="fetchInfo" data-id="${a.id}">🔎 ${a.rgid ? "Oppdater fra nettet" : "Hent info"}</button>
         <button class="btn danger" data-act="delAlbum" data-id="${a.id}">${IC.trash}Slett</button>
@@ -1875,6 +1895,80 @@ function confirmBox(title, text, okText = "Slett", danger = true, cancelText = "
    ===================================================================== */
 const MB = "https://musicbrainz.org/ws/2";
 const sleep = ms => new Promise(res => setTimeout(res, ms));
+
+/* ---------- eget cover: velg bilde, roter, lagre i repoet ---------- */
+function pickImage(cb){
+  const inp = document.createElement("input");
+  inp.type = "file"; inp.accept = "image/*"; inp.style.display = "none";
+  inp.addEventListener("change", () => { const f = inp.files && inp.files[0]; inp.remove(); if (f) cb(f); });
+  document.body.appendChild(inp); inp.click();
+}
+async function loadImg(file){
+  if (!/^image\//.test(file.type || "image/")) throw new Error("type");
+  const url = URL.createObjectURL(file);
+  try{ const img = new Image(); img.src = url; await img.decode(); if (!img.naturalWidth) throw new Error("tomt"); return img; }
+  finally{ URL.revokeObjectURL(url); }
+}
+/* tegner midten av bildet som kvadrat på lerretet, rotert rot × 90° */
+function squareTo(cv, img, rot, size = 500){
+  cv.width = cv.height = size;
+  const x = cv.getContext("2d"), w = img.naturalWidth, h = img.naturalHeight, s = Math.min(w, h);
+  x.fillStyle = "#111"; x.fillRect(0, 0, size, size);
+  x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high";
+  x.save(); x.translate(size / 2, size / 2); x.rotate(rot * Math.PI / 2);
+  x.drawImage(img, (w - s) / 2, (h - s) / 2, s, s, -size / 2, -size / 2, size, size);
+  x.restore();
+  return cv;
+}
+async function ghPutFile(path, b64, message){
+  for (let i = 0; i < 2; i++){
+    const r = await fetch(`${API}/contents/${path}`, { method: "PUT", headers: { ...ghHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ message, content: b64, branch: GH.branch }) });
+    if (r.ok) return;
+    if (r.status === 409 && i === 0) { await sleep(1500); continue; }   // en annen commit kom samtidig: prøv én gang til
+    throw await httpErr(r);
+  }
+}
+async function coverFlow(id){
+  if (!album(id) || !canEdit()) return;
+  pickImage(async file => {
+    let img;
+    try{ img = await loadImg(file); }catch(e){ toast("Fikk ikke lest bildet. Velg et JPG- eller PNG-bilde."); return; }
+    const a = album(id); if (!a) return;
+    let rot = 0;
+    openModal(`<h2>Eget cover: ${esc(a.title)}</h2>
+      <canvas class="cvprev" id="cvPrev" width="500" height="500" aria-label="Forhåndsvisning av coveret"></canvas>
+      <p class="muted" style="font-size:.85rem;margin:0 0 6px">Bildet beskjæres til et kvadrat i midten. Står det feil vei, trykk «↻ Roter».</p>
+      <p class="muted" style="font-size:.85rem;margin:0 0 12px">Det lagres i repoet. Andre enheter ser det etter noen minutter.</p>
+      <p id="cvMsg" class="muted" style="min-height:1.3em;margin:0 0 8px"></p>
+      <div class="btns" style="justify-content:flex-end"><button class="btn" data-cv="rot">↻ Roter</button><button class="btn" data-close>Avbryt</button><button class="btn pri" data-cv="ok">Bruk bildet</button></div>`, (m, close) => {
+      const draw = () => squareTo($("#cvPrev"), img, rot);
+      draw();
+      m.addEventListener("click", async e => {
+        const b = e.target.closest("[data-cv]"); if (!b) return;
+        if (b.dataset.cv === "rot") { rot = (rot + 1) % 4; draw(); return; }
+        const btns = [...m.querySelectorAll("button")]; btns.forEach(x => x.disabled = true);
+        $("#cvMsg").innerHTML = '<span class="spin"></span>Lagrer bildet i repoet …';
+        try{
+          const L = squareTo(document.createElement("canvas"), img, rot, 500).toDataURL("image/jpeg", 0.85);
+          const S = squareTo(document.createElement("canvas"), img, rot, 250).toDataURL("image/jpeg", 0.82);
+          const base = `mycovers/${String(id).replace(/[^\w-]/g, "")}-${Date.now().toString(36)}`, msg = `Eget cover: ${a.title} (Vinyl Vault ${APP_VERSION})`;
+          await ghPutFile(base + "-s.jpg", S.split(",")[1], msg);
+          await ghPutFile(base + ".jpg", L.split(",")[1], msg);
+          myCovers[base + ".jpg"] = { at: Date.now(), s: S, l: L }; saveMyCovers();
+          const x = album(id);
+          if (!x) { close(); return; }
+          const old = x.cover; x.cover = base + ".jpg"; save(); close(); refresh();
+          toast("Coveret er lagret", () => { const y = album(id); if (!y || !canEdit()) return; y.cover = old; save(); refresh(); toast("Angret"); });
+        }catch(err){
+          if (err.auth) { close(); lockOut(err.message); return; }
+          if (!document.contains(m)) return;
+          $("#cvMsg").textContent = "Klarte ikke å lagre: " + err.message; btns.forEach(x => x.disabled = false);
+        }
+      });
+    });
+  });
+}
 let mbNext = 0, mbChain = Promise.resolve();
 function mb(path){
   const run = async () => {
@@ -1981,7 +2075,7 @@ async function overwriteInfo(a, x){
   if (x.title && x.title !== a.title) { a.title = x.title; changed.push("tittel"); }
   if (a.folderId && x.artist && x.artist !== a.artistText) { a.artistText = x.artist; changed.push("artist"); }
   if (x.year && x.year !== a.year) { a.year = x.year; changed.push("år"); }
-  const cov = caaCover(x.rgid); if (a.cover !== cov) { a.cover = cov; changed.push("cover"); }
+  const cov = caaCover(x.rgid); if (!MYCOVER_RE.test(a.cover) && a.cover !== cov) { a.cover = cov; changed.push("cover"); }
   if (x.artistMbid) { const g = await mbGenreCached(x.artistMbid); const gg = g ? (x.live ? g + " · Live" : g) : ""; if (gg && gg !== a.genre) { a.genre = gg; changed.push("sjanger"); } }
   try{ const t = await mbTracks(x.rgid, same ? a.tracks.length : 0); if (t.length && JSON.stringify(t) !== JSON.stringify(trackRows(a))) { setTracks(a, t); changed.push(t.length + " spor"); } }catch(e){}
   return changed;
@@ -1998,7 +2092,7 @@ async function applyInfo(a, x, withTracks){
 }
 function fetchInfoFlow(albumId){
   const a = album(albumId); if (!a || !canEdit()) return;
-  const src = '<p class="src">Data fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>, cover fra <a href="https://coverartarchive.org" target="_blank" rel="noopener">Cover Art Archive</a>.</p><p class="src" style="margin-top:4px">Tittel, år, sjanger, cover og trackliste' + (a.folderId ? " og artistnavn" : "") + ' erstattes med info fra nettet. Pris, tilstand, kjøpsdato og notater beholdes.</p>';
+  const src = '<p class="src">Data fra <a href="https://musicbrainz.org" target="_blank" rel="noopener">MusicBrainz</a>, cover fra <a href="https://coverartarchive.org" target="_blank" rel="noopener">Cover Art Archive</a>.</p><p class="src" style="margin-top:4px">Tittel, år, sjanger, cover og trackliste' + (a.folderId ? " og artistnavn" : "") + ' erstattes med info fra nettet. Pris, tilstand, kjøpsdato og notater beholdes' + (MYCOVER_RE.test(a.cover) ? ", og ditt eget cover" : "") + '.</p>';
   let cancelled = false;
   openModal(`<h2>Hent info: ${esc(a.title)}</h2><div id="mbBody"></div>`, () => {});
   const body = () => document.getElementById("mbBody"), gone = () => cancelled || !body();
@@ -2249,7 +2343,7 @@ function albumForm(id, presetArtist, presetFolder, presetText){
       <datalist id="genres">${[...new Set(db.albums.map(x => x.genre).filter(Boolean))].sort(byName).map(g => `<option value="${esc(g)}">`).join("")}</datalist></div>
     <div class="field full"><label for="fCover">Cover-URL</label>
       <div class="prev"><div class="cover" id="fPrev">${coverHtml(a)}</div><input id="fCover" type="url" inputmode="url" placeholder="https://…/cover.jpg" value="${esc(a.cover)}" autocomplete="off"></div>
-      <div class="hint">Lim inn en lenke til et bilde. Uten lenke lages et cover automatisk.</div></div>
+      <div class="hint">Lim inn en lenke til et bilde, eller lagre platen og trykk «📷 Eget cover» på albumsiden for å laste opp et bilde. Uten bilde lages et cover automatisk.</div></div>
     <div class="field full"><label>Status</label>
       <div class="ownpick">
         <input type="radio" name="own" id="fOwn1" value="1"${a.owned ? " checked" : ""}><label class="o" for="fOwn1">✅ Eier platen</label>
@@ -2276,7 +2370,8 @@ function albumForm(id, presetArtist, presetFolder, presetText){
       const tmp = blankAlbum({ title: g("#fTitle").value || "Album", year: g("#fYear").value, cover: g("#fCover").value,
         artistId: inF ? "" : g("#fArtist").value });
       const nm = inF ? (g("#fArtistText").value || "Ukjent artist") : g("#fArtist").value === "__new" ? (g("#fNewArtist").value || "Ny artist") : artistName(tmp.artistId);
-      g("#fPrev").innerHTML = coverSvg(tmp, nm) + (isUrl(tmp.cover) ? `<img src="${esc(tmp.cover)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : "");
+      const cs = isUrl(tmp.cover) || MYCOVER_RE.test(tmp.cover) ? coverSrc(tmp, false).src : "";
+      g("#fPrev").innerHTML = coverSvg(tmp, nm) + (cs ? `<img src="${esc(cs)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">` : "");
     };
     ["#fTitle", "#fYear", "#fCover", "#fNewArtist", "#fArtistText"].forEach(s => g(s)?.addEventListener("input", upd));
     if (!inF) g("#fArtist").addEventListener("change", () => { g("#newArtistBox").classList.toggle("on", g("#fArtist").value === "__new"); if (g("#fArtist").value === "__new") g("#fNewArtist").focus(); upd(); });
@@ -2330,7 +2425,7 @@ function albumForm(id, presetArtist, presetFolder, presetText){
 /* =====================================================================
    FELLES KLIKK
    ===================================================================== */
-const EDIT_ACTS = new Set(["fetchLenAll", "newFolderAlbum", "newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
+const EDIT_ACTS = new Set(["coverAlbum", "fetchLenAll", "newFolderAlbum", "newFolder", "editFolder", "delFolder", "moveAlbum", "fetchInfo", "fetchInfoAll", "fetchAlbums", "newArtist", "editArtist", "newAlbum", "editAlbum", "delAlbum", "delArtist", "backup", "restore", "loadDemo", "wipe"]);
 document.addEventListener("click", async e => {
   if (!canEdit() && e.target.closest("[data-toggle],[data-flagrow],[data-set],[data-flag]")) return;
   const tg = e.target.closest("[data-toggle]");
@@ -2357,6 +2452,7 @@ document.addEventListener("click", async e => {
   if (act === "newFolder") folderForm();
   if (act === "editFolder") folderForm(id);
   if (act === "moveAlbum") moveDialog(id);
+  if (act === "coverAlbum") coverFlow(id);
   if (act === "fetchInfo") fetchInfoFlow(id);
   if (act === "fetchInfoAll") fetchInfoAllFlow(id);
   if (act === "fetchLenAll") fetchLenAllFlow();
@@ -2475,9 +2571,9 @@ function openInfo(){
     <p>Alle som åpner lenken ser samlingen, men bare den som har en GitHub-nøkkel kan endre den. Trykk <b>🔒 Lås opp</b> og lim inn nøkkelen. Den lagres bare på denne enheten.</p>
     <p>Endringer lagres til GitHub 1 minutt etter siste endring, eller med en gang med «💾 Lagre nå». Hver lagring blir en commit, så all historikk finnes i GitHub.</p>
     <h3>Info fra nettet</h3>
-    <p>Album, cover og tracklister hentes fra MusicBrainz og Cover Art Archive. Coverbildene lagres i repoet og på enheten, så de vises raskt neste gang.</p>
+    <p>Album, cover og tracklister hentes fra MusicBrainz og Cover Art Archive. Coverbildene lagres i repoet og på enheten, så de vises raskt neste gang. Mangler et cover, kan du laste opp et eget bilde med «📷 Eget cover» på albumsiden.</p>
     <h3>Versjoner</h3>
-    <div class="vlog"><b>v1.15.1</b><span>Rettet diagramfeil på oversikten. Samlingen kan nå bli større enn 1 MB.</span><b>v1.15.0</b><span>Wikipedia-lenke til artisten på artistsiden.</span><b>v1.14.0</b><span>Wikipedia-lenken åpner engelsk artikkel, ellers norsk, direkte.</span><b>v1.13.0</b><span>Wikipedia-lenke under tracklisten i stedet for Google-søk.</span><b>v1.12.0</b><span>Navn, versjon og info-knapp øverst til venstre, som i de andre appene.</span><b>v1.11.1</b><span>Rettinger: tekst du skriver forsvinner ikke ved oppdatering, bedre valg av vinylutgave, innholdspolicy.</span><b>v1.11.0</b><span>Ny layout på albumsiden for PC og nettbrett.</span><b>v1.10.0</b><span>Singler fra albumet vises på albumsiden.</span><b>v1.9.0</b><span>«Hent info» oppdaterer tittel, år, sjanger, cover og trackliste.</span><b>v1.8.0</b><span>Mapper: artister med flere plater samles i en stabel.</span><b>v1.7.0</b><span>Artister vises før mappene.</span><b>v1.6.0</b><span>Statistikk bare for artister med minst 2 plater.</span><b>v1.5.0</b><span>Lagrer til GitHub 1 minutt etter siste endring.</span><b>v1.4.0</b><span>Coverbilder lagres i repoet.</span><b>v1.3.0</b><span>Mindre cover i rutenett og lister.</span><b>v1.2.0</b><span>Henter album automatisk fra MusicBrainz for nye artister.</span><b>v1.1.0</b><span>Samlingen ligger i GitHub, lik for alle.</span><b>v1.0.0</b><span>Første versjon.</span></div></div>`);
+    <div class="vlog"><b>v1.16.0</b><span>Eget coverbilde: last opp et bilde fra mobil eller PC med «📷 Eget cover» på albumsiden.</span><b>v1.15.1</b><span>Rettet diagramfeil på oversikten. Samlingen kan nå bli større enn 1 MB.</span><b>v1.15.0</b><span>Wikipedia-lenke til artisten på artistsiden.</span><b>v1.14.0</b><span>Wikipedia-lenken åpner engelsk artikkel, ellers norsk, direkte.</span><b>v1.13.0</b><span>Wikipedia-lenke under tracklisten i stedet for Google-søk.</span><b>v1.12.0</b><span>Navn, versjon og info-knapp øverst til venstre, som i de andre appene.</span><b>v1.11.1</b><span>Rettinger: tekst du skriver forsvinner ikke ved oppdatering, bedre valg av vinylutgave, innholdspolicy.</span><b>v1.11.0</b><span>Ny layout på albumsiden for PC og nettbrett.</span><b>v1.10.0</b><span>Singler fra albumet vises på albumsiden.</span><b>v1.9.0</b><span>«Hent info» oppdaterer tittel, år, sjanger, cover og trackliste.</span><b>v1.8.0</b><span>Mapper: artister med flere plater samles i en stabel.</span><b>v1.7.0</b><span>Artister vises før mappene.</span><b>v1.6.0</b><span>Statistikk bare for artister med minst 2 plater.</span><b>v1.5.0</b><span>Lagrer til GitHub 1 minutt etter siste endring.</span><b>v1.4.0</b><span>Coverbilder lagres i repoet.</span><b>v1.3.0</b><span>Mindre cover i rutenett og lister.</span><b>v1.2.0</b><span>Henter album automatisk fra MusicBrainz for nye artister.</span><b>v1.1.0</b><span>Samlingen ligger i GitHub, lik for alle.</span><b>v1.0.0</b><span>Første versjon.</span></div></div>`);
 }
 document.addEventListener("click", e => { if (e.target.closest && e.target.closest("[data-info]")) openInfo(); });
 $("#brandVer").textContent = "v" + APP_VERSION;
