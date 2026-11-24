@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:09:11.369Z",
+  "updated": "2026-11-24T21:10:13.069Z",
   "version": 1,
   "artists": [
     {
@@ -11292,7 +11292,7 @@
       "title": "Noe godt fra sør",
       "year": 1981,
       "genre": "Art Rock",
-      "cover": "",
+      "cover": "mycovers/506ad5d4-479a-49c2-8d84-d328c61efe2d-mwv6ue49.jpg",
       "tracks": [
         "Krypton - On My Way Down",
         "Square Wave  – Dont Wanna Climb To Daddy No More",
