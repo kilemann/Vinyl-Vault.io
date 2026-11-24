@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:06:37.613Z",
+  "updated": "2026-11-24T21:07:24.965Z",
   "version": 1,
   "artists": [
     {
@@ -11219,7 +11219,7 @@
       "title": "Mr. Pityful",
       "year": 1981,
       "genre": "Rock",
-      "cover": "",
+      "cover": "mycovers/111bd9eb-4bb0-4f1d-9607-cc737d94145b-mwv6r011.jpg",
       "tracks": [
         "Wolly Bully",
         "Left Alone",
