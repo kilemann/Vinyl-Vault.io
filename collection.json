@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:10:54.868Z",
+  "updated": "2026-11-24T21:12:06.519Z",
   "version": 1,
   "artists": [
     {
@@ -11252,7 +11252,7 @@
       "title": "Salute To British Rock",
       "year": 1979,
       "genre": "Rock",
-      "cover": "",
+      "cover": "mycovers/4bd2f8a3-4dda-4b74-a236-253cb06d2279-mwv6we57.jpg",
       "tracks": [
         "Electric Light Orchestra –\tRoll Over Beethoven\t4:28",
         "George Harrison –\tMy Sweet Lord\t4:35",
