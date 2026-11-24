@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:13:25.361Z",
+  "updated": "2026-11-24T21:14:27.572Z",
   "version": 1,
   "artists": [
     {
@@ -11599,7 +11599,7 @@
       "title": "Solid rock",
       "year": 1981,
       "genre": "Rock",
-      "cover": "https://coverartarchive.org/release-group/e2316b84-25ed-41fd-880e-77a6d3c3f359/front-500",
+      "cover": "mycovers/a9d64254-ba1f-4331-a7eb-c6107a12018a-mwv6zvsf.jpg",
       "tracks": [
         "Carol",
         "(Get Your Kicks on) Route 66",
