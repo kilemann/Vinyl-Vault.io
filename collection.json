@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:14:27.572Z",
+  "updated": "2026-11-24T21:16:13.509Z",
   "version": 1,
   "artists": [
     {
@@ -11654,7 +11654,7 @@
       "title": "Heart Breakers 19 Love Songs",
       "year": 1981,
       "genre": "Rock",
-      "cover": "https://coverartarchive.org/release-group/e335177c-b3b7-4c28-9a10-ad4679741e9c/front-500",
+      "cover": "mycovers/0ec78e66-2de3-4e63-bb76-53d105725902-mwv71lyr.jpg",
       "tracks": [
         "Tell Me",
         "Time Is on My Side",
