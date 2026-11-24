@@ -1,7 +1,7 @@
 {
   "app": "Vinyl Vault",
   "appVersion": "1.16.0",
-  "updated": "2026-11-24T21:03:57.027Z",
+  "updated": "2026-11-24T21:04:44.977Z",
   "version": 1,
   "artists": [
     {
@@ -11140,7 +11140,7 @@
       "title": "Changes two Bowie",
       "year": 1981,
       "genre": "Art Rock",
-      "cover": "",
+      "cover": "mycovers/60d1c79b-19fd-4a81-89e8-61de29fdc59b-mwv6nk01.jpg",
       "tracks": [
         "Aladdin Sane (1913-1938-197?) / On Broadway",
         "Oh! You Pretty Things",
